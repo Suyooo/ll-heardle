@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LL Heardle</title>
+    <meta name="description" content="Guess the Love Live! song from the intro!">
+
+    <link rel="stylesheet" href="vendor/normalize.css">
+    <link rel="stylesheet" href="vendor/skeleton.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="vendor/fuzzycomplete.min.css">
+</head>
+<body>
+<div class="container">
+    <div id="player">
+        <div id="ytplayer"></div>
+        <br>
+        <b id="playeranswer"></b>
+    </div>
+    <div id="backwarn" class="warn" style="display:block">
+        <div>⚠ The original site is back</div>
+        <div>
+            In case you haven't seen, Kach has taken over the original site, so head back over and play there!<br>
+            <a href="https://lovelive-heardle.glitch.me/" style="color: var(--blue1)">https://lovelive-heardle.glitch.me/</a><br>
+            This version will go down after today, but I will upload the code to GitHub for anyone interested.<br>
+            (And maybe I'll do something else in this place...)
+        </div>
+    </div>
+    <div id="ioswarn" class="warn">
+        <div>⚠ iOS Spoiler Warning</div>
+        <div>
+            It looks like you're playing on an iOS device - be warned that depending on the browser you use, the Now
+            Playing panel in your Control Center might spoil the answer because it takes the info from the YouTube
+            video, and there's nothing I can do about it. Avoid the Control Center until you're done if you don't want
+            to reveal the answer!
+        </div>
+    </div>
+    <div id="guessing"><br><br>
+        <b>Which song is this?</b><br>
+        <div class="playrow">
+            <input type="button" id="control" value="Loading..." onclick="playClick()">
+            <div id="bar">
+                <span id="length"></span>
+                <span id="playbar"></span>
+                <span id="marker1"></span>
+                <span id="marker2"></span>
+                <span id="marker3"></span>
+                <span id="marker4"></span>
+                <span id="marker5"></span>
+            </div>
+        </div>
+        <br><br>
+        <label for="song">Your guess (<span id="guesscount"></span>):</label>
+        <input style="width:100%" name="song" id="song" onkeyup="buttonlabel()" onchange="buttonlabel()"
+               onblur="buttonlabel()">
+        <input type="button" id="send" value="Skip (+1 second)" onclick="submit()"> <span id="note"></span><br>
+    </div>
+    <div id="guesses"></div>
+
+    <div id="copybuttons">
+        <br><b>A new LL Heardle will appear at midnight JST!</b> (<span id="resettime"></span> in your timezone)<br>
+        <input type="button" id="share" value="Share Result" onclick="share()">
+        <input type="button" id="copy" value="Copy Result" onclick="copy()">
+    </div>
+    <div id="copything"></div>
+    <small style="float:right">Made by <a href="https://twitter.com/Suyo_">@Suyo_</a></small>
+</div>
+
+<script src="vendor/jquery.js"></script>
+<script>
+    // Use unix timestamp to figure out what day it is in JST
+    const DAY = Math.floor((new Date().getTime() - 1665154800000) / (1000 * 60 * 60 * 24)) + 1;
+    const SHARELABEL = "LL Heardle #" + DAY;
+    const SHAREPOST = "https://suyo.be/llheardle/ #LoveLiveHeardle";
+
+    // Changing this does change the playback lengths for the video, however, it's hardcoded in a bunch of other places
+    // (Like the css play bar, the markers on it...)
+    const LENGTHS = [1, 2, 4, 7, 11, 16];
+
+    // Can use the same unix timestamp to display the correct time for each player (date doesn't matter after all)
+    $("#resettime").text(new Date(1665154800000).toLocaleTimeString(undefined, {hour: "numeric", minute: "numeric"}));
+
+    // https://stackoverflow.com/a/9039885/1381397
+    function iOS() {
+        return [
+                'iPad Simulator',
+                'iPhone Simulator',
+                'iPod Simulator',
+                'iPad',
+                'iPhone',
+                'iPod'
+            ].includes(navigator.platform)
+            // iPad on iOS 13 detection
+            || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+    }
+    $("#ioswarn").toggle(iOS());
+</script>
+<script src="vendor/fuse.js"></script>
+<script src="vendor/fuzzycomplete.min.js"></script>
+<script src="js/songlist.js"></script>
+<script src="js/song.js"></script>
+<script src="js/player.js"></script>
+<script src="js/guess.js"></script>
+<script src="js/storage.js"></script>
+</body>
+</html>

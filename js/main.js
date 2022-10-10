@@ -15,9 +15,7 @@ const DAY = Math.floor((new Date().getTime() - RESETTIME) / (1000 * 60 * 60 * 24
  ****/
 
 const $playerbar = $("#playerbar");
-const $guesslistChildren = $("#guesslist").children().toArray().map(e => $(e));
 const $loading = $("#loading");
-const $playprompt = $("#playprompt");
 const $audio = $("#audio_player");
 const audio = $audio[0];
 
@@ -31,8 +29,15 @@ const $control = $("#control");
 const $timecurrent = $("#timecurrent");
 const $playbarcurrent = $("#playbarcurrent");
 const $timelimit = $("#timelimit");
+const $timeduration = $("#timeduration");
 const $playbarlimit = $("#playbarlimit");
 const $playbarmarkersChildren = $("#playbarmarkers").children().toArray().map(e => $(e));
+
+const $guessingscreen = $("#guessingscreen");
+const $guesslistChildren = $("#guesslist").children().toArray().map(e => $(e));
+const $playprompt = $("#playprompt");
+
+const $resultscreen = $("#resultscreen");
 
 
 /*****
@@ -106,7 +111,7 @@ if (lastDay === null || DAY > parseInt(lastDay)) {
     prepareNextGuess();
 } else {
     if (state.finished) {
-        // TODO reveal(state.cleared, state.guesses.at(-1));
+        reveal(state.cleared, state.guesses.at(-1));
     } else {
         state.guesses.forEach((guess, guessNo) => showWrongGuess(guessNo, guess));
         prepareNextGuess();
@@ -142,26 +147,31 @@ function addToStatistics() {
 
 prngSeed(DAY);
 const CURRENT_HEARDLE = SONGPOOL[Math.floor(prngRandom() * SONGPOOL.length)];
-const THE_CORRECT_ONE = CURRENT_HEARDLE.titleEn + " - " + CURRENT_HEARDLE.artistEn;
+
+function getCorrectGuess() {
+    return CURRENT_HEARDLE.artistEn + " - " + CURRENT_HEARDLE.titleEn;
+}
 
 
 /*****
  * Audio Player
  ****/
 
-function playerTimeUpdate(event) {
+function playerTimeUpdate() {
     $timecurrent.text((audio.currentTime < 10 ? "0:0" : "0:") + Math.floor(audio.currentTime));
     $playbarcurrent.width((audio.currentTime / (state.finished ? audio.duration : LENGTHS[state.failed]) * 100) + "%");
     if (!state.finished && audio.currentTime >= LENGTHS[state.failed]) {
-        playerReset();
-    } else {
+        playerStop();
+    } else if (!audio.paused) {
         requestAnimationFrame(playerTimeUpdate);
     }
 }
 
 $audio
-    .attr("src", "https://static.wikia.nocookie.net/love-live/images/9/9f/Oh%2CLove%26Peace!.ogg")
+    .attr("src", "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/09%20ENDLESS%20PARADE%20.mp3?v=1665431748049")
     .one("canplay", () => {
+        const fullSongSeconds = Math.floor(audio.duration % 60);
+        $timeduration.text(Math.floor(audio.duration / 60) + ":" + (fullSongSeconds < 10 ? "0" : "") + fullSongSeconds);
         $loading.hide();
         $playerbar.show();
     });
@@ -169,21 +179,27 @@ $control.on("click", controlClicked);
 
 function controlClicked() {
     if (audio.duration > 0 && !audio.paused) {
-        playerReset();
+        playerStop();
     } else {
         playerPlay();
     }
 }
 
 function playerPlay() {
+    audio.currentTime = 0;
     audio.play();
     $playprompt.hide();
     requestAnimationFrame(playerTimeUpdate);
 }
 
+function playerStop() {
+    audio.pause();
+}
+
 function playerReset() {
     audio.pause();
     audio.currentTime = 0;
+    playerTimeUpdate();
 }
 
 // Set native "Now Playing" info on mobile devices
@@ -198,26 +214,119 @@ setInterval(() => {
  * Guessing
  ****/
 
+// When selecting an option from the dropdown using the Enter key, it should *not* immediately submit
+// This is what this variable does: When a guess is set, it will block the keyUp event until it was re-pressed
+let blockNextUp = false;
+$field.on("keydown", e => {
+    if (e.key === "Enter" && !e.originalEvent.repeat) blockNextUp = false;
+});
+$field.on("keyup", e => {
+    if (e.key === "Enter" && !blockNextUp) submit();
+});
+
+const autoCompleter = new autoComplete({
+    selector: "#field",
+    data: {
+        src: SONGPOOL.map(song => ({
+            en: song.artistEn + " - " + song.titleEn,
+            ja: song.artistJa + " - " + song.titleJa
+        })),
+        cache: false,
+        keys: ["en", "ja"],
+        filter: (list) => {
+            // This function uses autoComplete.js as only a first step - it doesn't rank results, just filters them
+            // Remove dupes (happens if a search term appears in multiple fields)
+            // TODO: Maybe have a toggle between English/Japanese and only show those results?
+            const foundValues = new Set();
+            list = list.filter(result => {
+                if (foundValues.has(result.value)) return false;
+                foundValues.add(result.value);
+                return true;
+            });
+
+            // Rank results by bigram similarity (bigram: every substring of two letters)
+            const searchQuery = $field.val();
+            // 1) Split the search query into bigrams
+            const queryBigrams = makeBigrams(searchQuery.toLowerCase());
+            list.forEach(result => {
+                // 2) Split each result into bigrams
+                const resultBigrams = makeBigrams(result.value[result.key].toLowerCase());
+
+                // 3) Search how many of the bigrams of each result appear in the bigrams of the search query
+                let hits = 0;
+                queryBigrams.forEach(queryBigram => {
+                    const matchingIndex = resultBigrams.indexOf(queryBigram);
+                    if (matchingIndex !== -1) {
+                        resultBigrams[matchingIndex] = null; // don't match the same bigram more than once
+                        hits++;
+                    }
+                });
+
+                // 4) Score based on number of hits
+                result.score = (2 * hits) / (queryBigrams.length + resultBigrams.length);
+            });
+
+            // 5) Sort by calculated score (the higher the better)
+            return list.sort((a, b) => b.score - a.score);
+        }
+    },
+    threshold: 1,
+    wrapper: false,
+    resultsList: {
+        maxResults: 6,
+        tabSelect: true
+    },
+    diacritics: true,
+    noresults: true,
+    searchEngine: "loose",
+    resultItem: {
+        highlight: true
+    },
+    events: {
+        input: {
+            selection: (e) => {
+                if ($field.val() === "") return;
+                const value = e.detail.selection.value["en"];
+                if (value !== $field.val()) {
+                    blockNextUp = true;
+                    $field.val(value).focus();
+                }
+            },
+        }
+    }
+});
+
+function makeBigrams(s) {
+    if (s.length < 2) return [s];
+    const bigrams = [];
+    for (let i = 0; i < s.length - 1; i++) {
+        bigrams.push(s.slice(i, i + 2));
+    }
+    return bigrams;
+}
+
 $skipbutton.on("click", () => {
     resolveGuess(state.failed, false, null);
 });
 
-$submitbutton.on("click", () => {
+function submit() {
     const guess = $field.val();
-    // Block input that is not an autocompleted option
-    const option = [0]; // TODO $("select[name='song'] option").toArray().filter(e => e.innerText === guess);
-    if (option.length > 0) {
+    // Block input that is not an option in the song pool
+    if (SONGPOOL.some(song => song.artistEn + " - " + song.titleEn === guess)) {
         // addToStatistics() is called in the guess submission method instead of reveal()
         // so it is guaranteed a round only gets added to statistics exactly once
-        if (guess === THE_CORRECT_ONE) {
+        if (guess === getCorrectGuess()) {
             resolveGuess(state.failed, true, guess);
         } else {
             resolveGuess(state.failed, false, guess);
         }
+        $field.val("");
     } else {
-        // TODO $("#note").text("Please pick one of the options (or leave the field empty to skip)");
+        $("#invalid").show();
     }
-});
+}
+
+$submitbutton.on("click", submit);
 
 $fieldclear.on("click", () => {
     $field.val("");
@@ -230,16 +339,21 @@ $fieldclear.on("click", () => {
 
 function resolveGuess(guessNo, wasCorrect, guess) {
     if (state.finished) return;
+    $("#invalid").hide();
     state.guesses.push(guess);
     if (wasCorrect) {
         state.cleared = true;
         reveal(true, guess);
         addToStatistics();
+        playerReset();
+        playerPlay();
     } else {
         state.failed++;
         if (state.failed >= 6) {
             reveal(false, guess);
             addToStatistics();
+            playerReset();
+            playerPlay();
         } else {
             showWrongGuess(guessNo, guess);
             prepareNextGuess();
@@ -294,15 +408,17 @@ function reveal(success, lastGuess) {
     state.finished = true;
     $guessbar.hide();
 
-    // Show full song and play
+    // Show result screen
+    $guessingscreen.hide();
+    $resultscreen.show();
+
+    // Show full song
     $playbarlimit.width("100%");
     $playbarmarkersChildren.forEach(($element) => $element.remove());
-    const fullSongSeconds = Math.floor(audio.duration % 60);
-    $timelimit.text(Math.floor(audio.duration / 60) + ":" + (fullSongSeconds < 10 ? "0" : "") + fullSongSeconds);
-    playerReset();
-    playerPlay();
+    $timelimit.hide();
+    $timeduration.show();
 
-    $("#guessing").html("<span style='font-size:200%'>" + (success ? "you did it!" : "oops") + "</span>");
+    /* TODO $("#guessing").html("<span style='font-size:200%'>" + (success ? "you did it!" : "oops") + "</span>");
     $("#copybuttons").show();
 
     const copything = $("#copything")[0];
@@ -329,7 +445,7 @@ function reveal(success, lastGuess) {
             copything.innerHTML += "🟥";
         copything.innerHTML += " X/6";
     }
-    copything.innerHTML += "<br>" + SHAREPOST;
+    copything.innerHTML += "<br>" + SHAREPOST;*/
 }
 
 function share() {
@@ -341,39 +457,13 @@ function share() {
         });
     } else {
         // PC browsers usually don't have a native share mechanism - just copy it instead
-        copy();
+        navigator.clipboard.writeText($("#copything").html().replace(/<br>/g, "\n")).then(function () {
+            $('#copy').val("Copied!");
+        }, function (err) {
+            console.error("Could not copy text: ", err);
+        });
     }
 }
-
-function copy() {
-    navigator.clipboard.writeText($("#copything").html().replace(/<br>/g, "\n")).then(function () {
-        $('#copy').val("Copied!");
-    }, function (err) {
-        console.error("Could not copy text: ", err);
-    });
-}
-
-document.onkeypress = e => {
-    if (e.key === "Enter") submit();
-}
-
-/* TODO const fuseOptions = {keys: ["titleEn", "artistEn"]};
-const options = {display: (e) => e["titleEn"] + " - " + e["artistEn"], key: "videoId", fuseOptions: fuseOptions};
-const songfield = $("#song")[0];
-$(songfield).fuzzyComplete(Object.keys(SONGPOOL).map(k => SONGPOOL[k]), options);
-
-// Create setter method for the song field so the button label can be updated if the player clicks an option
-// https://stackoverflow.com/a/58585971/1381397
-const descriptor = Object.getOwnPropertyDescriptor(Object.getPrototypeOf(songfield), "value");
-Object.defineProperty(songfield, "value", {
-    set: function (t) {
-        descriptor.set.apply(this, arguments);
-        buttonlabel();
-    },
-    get: function () {
-        return descriptor.get.apply(this);
-    }
-});*/
 
 
 /*****

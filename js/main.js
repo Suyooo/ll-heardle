@@ -173,7 +173,7 @@ function playerTimeUpdate() {
 }
 
 $audio
-    .attr("src", "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/09%20ENDLESS%20PARADE%20.mp3?v=1665431748049")
+    .attr("src", "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/09%20ENDLESS%20PARADE%20.mp3?v=1665437862685")
     .one("canplay", () => {
         const fullSongSeconds = Math.floor(audio.duration % 60);
         $timeduration.text(Math.floor(audio.duration / 60) + ":" + (fullSongSeconds < 10 ? "0" : "") + fullSongSeconds);

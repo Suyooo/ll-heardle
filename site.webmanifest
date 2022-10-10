@@ -3,24 +3,44 @@
   "short_name": "LL! Heardle",
   "icons": [
     {
-      "src": "https://cdn.glitch.global/9eb28e94-1c2e-4ae8-a344-4ecb8160663c/bla.jpg?v=1649884643455",
+      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-72x72.png?v=1665437221964",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-96x96.png?v=1665437223098",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-128x128.png?v=1665437225327",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-144x144.png?v=1665437227569",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-152x152.png?v=1665437229725",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-192x192.png?v=1665437231987",
       "sizes": "192x192",
-      "type": "image/jpg"
+      "type": "image/png"
     },
     {
-      "src": "https://cdn.glitch.global/9eb28e94-1c2e-4ae8-a344-4ecb8160663c/bla.jpg?v=1649884643455",
+      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-384x384.png?v=1665437233985",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-512x512.png?v=1665437236226",
       "sizes": "512x512",
-      "type": "image/jpg"
-    },
-    {
-      "src": "https://cdn.glitch.global/9eb28e94-1c2e-4ae8-a344-4ecb8160663c/bla.jpg?v=1649884643455",
-      "sizes": "32x32",
-      "type": "image/jpg"
-    },
-    {
-      "src": "https://cdn.glitch.global/9eb28e94-1c2e-4ae8-a344-4ecb8160663c/bla.jpg?v=1649884643455",
-      "sizes": "16x16",
-      "type": "image/jpg"
+      "type": "image/png"
     }
   ],
   "theme_color": "#de0a82",

@@ -7,8 +7,6 @@
 const LENGTHS = [1, 2, 4, 7, 11, 16];
 // UNIX timestamp (in ms) of the first day
 const RESETTIME = 1665154800000;
-// Use unix timestamp to figure out what day it is in JST
-const DAY = Math.floor((new Date().getTime() - RESETTIME) / (1000 * 60 * 60 * 24));
 
 /*****
  * Grab element references
@@ -25,6 +23,8 @@ const $fieldclear = $("#fieldclear");
 const $skipbutton = $("#skipbutton");
 const $submitbutton = $("#submitbutton");
 const $control = $("#control");
+const $controlpaused = $("#controlpaused");
+const $controlplaying = $("#controlplaying");
 
 const $timecurrent = $("#timecurrent");
 const $playbarcurrent = $("#playbarcurrent");
@@ -69,6 +69,10 @@ function prngRandom() {
  * State and Local Storage
  ****/
 
+// Use unix timestamp to figure out what day it is in JST
+// TODO: base day on a common time or on local timezone?
+const DAY = Math.floor((new Date().getTime() - RESETTIME) / (1000 * 60 * 60 * 24));
+
 const tempstate = localStorage.getItem("today_state");
 const state = tempstate !== null ? JSON.parse(tempstate) : {
     day: DAY,
@@ -91,6 +95,7 @@ const lastDay = localStorage.getItem("last_visited_day");
 if (lastDay === null || DAY > parseInt(lastDay)) {
     // new day started
     if (lastDay !== null) {
+        // TODO: reset streak if a day was skipped?
         // check whether last day was unfinished
         if (!state.finished) {
             state.failed = 6;
@@ -189,12 +194,16 @@ function playerPlay() {
     // TODO: stop symbol on button
     audio.currentTime = 0;
     audio.play();
+    $controlpaused.hide();
+    $controlplaying.show();
     $playprompt.hide();
     requestAnimationFrame(playerTimeUpdate);
 }
 
 function playerStop() {
     audio.pause();
+    $controlpaused.show();
+    $controlplaying.hide();
 }
 
 function playerReset() {
@@ -366,10 +375,10 @@ function resolveGuess(guessNo, wasCorrect, guess) {
 function showWrongGuess(guessNo, guess) {
     const guesslistRow = $guesslistChildren[guessNo];
     const symbol = guess === null ? symbolSkip() : symbolIncorrect();
-    const text = guess === null ? styleGuessSkipped().text("SKIPPED") : styleGuessSong().text(guess);
+    const text = guess === null ? styleGuessRowTitleSkipped().text("SKIPPED") : styleGuessRowTitleSong().text(guess);
     guesslistRow
-        .append($(`<div class="mr-2"></div>`).append(symbol))
-        .append($(`<div class="flex flex-1 justify-between items-center"></div>`).append(text))
+        .append(styleGuessRowSymbol().append(symbol))
+        .append(styleGuessRowTitle().append(text))
         .removeClass("border-custom-line");
 }
 
@@ -479,10 +488,18 @@ function symbolIncorrect() {
     return $(`<svg xmlns="http://www.w3.org/2000/svg" class="text-custom-negative w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`)
 }
 
-function styleGuessSkipped() {
+function styleGuessRowSymbol() {
+    return $(`<div class="mr-2"></div>`);
+}
+
+function styleGuessRowTitle() {
+    return $(`<div class="flex flex-1 justify-between items-center"></div>`);
+}
+
+function styleGuessRowTitleSkipped() {
     return $(`<div class="text-custom-mg tracking-widest font-semibold"></div>`);
 }
 
-function styleGuessSong() {
+function styleGuessRowTitleSong() {
     return $(`<div class="text-white text-sm"></div>`);
 }

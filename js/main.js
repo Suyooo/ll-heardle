@@ -186,6 +186,7 @@ function controlClicked() {
 }
 
 function playerPlay() {
+    // TODO: stop symbol on button
     audio.currentTime = 0;
     audio.play();
     $playprompt.hide();
@@ -418,8 +419,8 @@ function reveal(success, lastGuess) {
     $timelimit.hide();
     $timeduration.show();
 
-    /* TODO $("#guessing").html("<span style='font-size:200%'>" + (success ? "you did it!" : "oops") + "</span>");
-    $("#copybuttons").show();
+    $resultscreen.html("<center><span style='font-size:200%'>" + (success ? "you did it!" : "oops") + "</span></center>");
+    /*TODO $("#copybuttons").show();
 
     const copything = $("#copything")[0];
     copything.innerHTML = "🔈";

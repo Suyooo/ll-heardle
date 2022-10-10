@@ -1,0 +1,29 @@
+{
+  "name": "Love Live! Heardle - Daily Love Live song intro game",
+  "short_name": "Love Live! Heardle",
+  "icons": [
+    {
+      "src": "https://cdn.glitch.global/9eb28e94-1c2e-4ae8-a344-4ecb8160663c/bla.jpg?v=1649884643455",
+      "sizes": "192x192",
+      "type": "image/jpg"
+    },
+    {
+      "src": "https://cdn.glitch.global/9eb28e94-1c2e-4ae8-a344-4ecb8160663c/bla.jpg?v=1649884643455",
+      "sizes": "512x512",
+      "type": "image/jpg"
+    },
+    {
+      "src": "https://cdn.glitch.global/9eb28e94-1c2e-4ae8-a344-4ecb8160663c/bla.jpg?v=1649884643455",
+      "sizes": "32x32",
+      "type": "image/jpg"
+    },
+    {
+      "src": "https://cdn.glitch.global/9eb28e94-1c2e-4ae8-a344-4ecb8160663c/bla.jpg?v=1649884643455",
+      "sizes": "16x16",
+      "type": "image/jpg"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

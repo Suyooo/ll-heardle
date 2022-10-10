@@ -353,17 +353,11 @@ function resolveGuess(guessNo, wasCorrect, guess) {
     state.guesses.push(guess);
     if (wasCorrect) {
         state.cleared = true;
-        reveal(true, guess);
-        addToStatistics();
-        playerReset();
-        playerPlay();
+        endGame(true, guess);
     } else {
         state.failed++;
         if (state.failed >= 6) {
-            reveal(false, guess);
-            addToStatistics();
-            playerReset();
-            playerPlay();
+            endGame(false, guess);
         } else {
             showWrongGuess(guessNo, guess);
             prepareNextGuess();
@@ -411,6 +405,13 @@ function updateSkipLabel() {
         const diff = LENGTHS[state.failed + 1] - LENGTHS[state.failed];
         $skipbutton.text("SKIP (+" + diff + "s)");
     }
+}
+
+function endGame(success, lastGuess) {
+    reveal(success, lastGuess);
+    addToStatistics();
+    playerReset();
+    playerPlay();
 }
 
 function reveal(success, lastGuess) {

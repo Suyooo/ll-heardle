@@ -1,6 +1,6 @@
 {
-  "name": "Love Live! Heardle - Daily Love Live song intro game",
-  "short_name": "Love Live! Heardle",
+  "name": "Love Live! Heardle",
+  "short_name": "LL! Heardle",
   "icons": [
     {
       "src": "https://cdn.glitch.global/9eb28e94-1c2e-4ae8-a344-4ecb8160663c/bla.jpg?v=1649884643455",
@@ -23,7 +23,7 @@
       "type": "image/jpg"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#de0a82",
+  "background_color": "#121212",
   "display": "standalone"
 }

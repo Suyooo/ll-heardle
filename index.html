@@ -1,107 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LL Heardle</title>
-    <meta name="description" content="Guess the Love Live! song from the intro!">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Love Live Heardle - That Love Live song intros game</title>
+    <meta name="description" content="Guess the Love Live song from the intro in as little tries as possible.">
+    <meta itemprop="name" content="Love Live Heardle - That daily Love Live song intros game">
+    <meta itemprop="description" content="Guess the Love Live song from the intro in as little tries as possible.">
+    <meta itemprop="image"
+          content="https://cdn.glitch.global/9eb28e94-1c2e-4ae8-a344-4ecb8160663c/bla.jpg?v=1649884643455">
+    <meta property="og:url" content="https://lovelive-heardle.glitch.me/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Love Live Heardle - That Love Live song intros game">
+    <meta property="og:description" content="Guess the Love Live song from the intro in as little tries as possible.">
+    <meta property="og:image"
+          content="https://cdn.glitch.global/9eb28e94-1c2e-4ae8-a344-4ecb8160663c/bla.jpg?v=1649884643455">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Love Live Heardle - That Love Live song intros game">
+    <meta name="twitter:description" content="Guess the Love Live song from the intro in as little tries as possible.">
+    <meta name="twitter:image"
+          content="https://cdn.glitch.global/9eb28e94-1c2e-4ae8-a344-4ecb8160663c/bla.jpg?v=1649884643455">
 
-    <link rel="stylesheet" href="vendor/normalize.css">
-    <link rel="stylesheet" href="vendor/skeleton.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="vendor/fuzzycomplete.min.css">
+    <link rel="icon" type="image/png"
+          href="https://cdn.glitch.global/9eb28e94-1c2e-4ae8-a344-4ecb8160663c/icon?v=1649018583460">
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="https://cdn.glitch.global/9eb28e94-1c2e-4ae8-a344-4ecb8160663c/icon?v=1649018583460">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="https://cdn.glitch.global/9eb28e94-1c2e-4ae8-a344-4ecb8160663c/icon?v=1649018583460">
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="https://cdn.glitch.global/9eb28e94-1c2e-4ae8-a344-4ecb8160663c/bla.jpg?v=1649884643455">
+    <link rel="shortcut icon"
+          href="https://cdn.glitch.global/9eb28e94-1c2e-4ae8-a344-4ecb8160663c/bla.jpg?v=1649884643455">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/bundle.css">
 </head>
+
 <body>
-<div class="container">
-    <div id="player">
-        <div id="ytplayer"></div>
-        <br>
-        <b id="playeranswer"></b>
+<main class="bg-custom-bg text-custom-fg overflow-auto flex flex-col h-screen">
+    <div class="flex-none">
+        <header class="border-b border-custom-line">
+            <div class="max-w-screen-md mx-auto ">
+                <div class="flex justify-evenly text-custom-fgcolor p-3 items-center">
+                    <div class="flex flex-1">
+                        <button class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="16" x2="12" y2="12"></line>
+                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                            </svg>
+                        </button>
+                        <button class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <h1 class="font-serif text-3xl font-bold flex-grow text-center flex-1">LoveLive! Heardle</h1>
+                    <div class="flex flex-1 justify-end">
+                        <button class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </button>
+                        <button class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
     </div>
-    <div id="backwarn" class="warn" style="display:block">
-        <div>⚠ The original site is back</div>
-        <div>
-            In case you haven't seen, Kach has taken over the original site, so head back over and play there!<br>
-            <a href="https://lovelive-heardle.glitch.me/" style="color: var(--blue1)">https://lovelive-heardle.glitch.me/</a><br>
-            This version will go down after today, but I will upload the code to GitHub for anyone interested.<br>
-            (And maybe I'll do something else in this place...)
-        </div>
-    </div>
-    <div id="ioswarn" class="warn">
-        <div>⚠ iOS Spoiler Warning</div>
-        <div>
-            It looks like you're playing on an iOS device - be warned that depending on the browser you use, the Now
-            Playing panel in your Control Center might spoil the answer because it takes the info from the YouTube
-            video, and there's nothing I can do about it. Avoid the Control Center until you're done if you don't want
-            to reveal the answer!
-        </div>
-    </div>
-    <div id="guessing"><br><br>
-        <b>Which song is this?</b><br>
-        <div class="playrow">
-            <input type="button" id="control" value="Loading..." onclick="playClick()">
-            <div id="bar">
-                <span id="length"></span>
-                <span id="playbar"></span>
-                <span id="marker1"></span>
-                <span id="marker2"></span>
-                <span id="marker3"></span>
-                <span id="marker4"></span>
-                <span id="marker5"></span>
+    <div class="w-full flex flex-col flex-grow relative">
+        <div class="max-w-screen-sm w-full mx-auto h-full flex flex-col justify-between overflow-auto">
+            <div id="guesslist" class="p-3 flex-col items-evenly">
+                <div class="p-2 mb-2 border border-custom-mg flex items-center last:mb-0">
+                    <div class="w-5 h-5"></div>
+                </div>
+                <div class="p-2 mb-2 border border-custom-mg flex items-center last:mb-0">
+                    <div class="w-5 h-5"></div>
+                </div>
+                <div class="p-2 mb-2 border border-custom-mg flex items-center last:mb-0">
+                    <div class="w-5 h-5"></div>
+                </div>
+                <div class="p-2 mb-2 border border-custom-mg flex items-center last:mb-0">
+                    <div class="w-5 h-5"></div>
+                </div>
+                <div class="p-2 mb-2 border border-custom-mg flex items-center last:mb-0">
+                    <div class="w-5 h-5"></div>
+                </div>
+                <div class="p-2 mb-2 border border-custom-mg flex items-center last:mb-0">
+                    <div class="w-5 h-5"></div>
+                </div>
             </div>
         </div>
-        <br><br>
-        <label for="song">Your guess (<span id="guesscount"></span>):</label>
-        <input style="width:100%" name="song" id="song" onkeyup="buttonlabel()" onchange="buttonlabel()"
-               onblur="buttonlabel()">
-        <input type="button" id="send" value="Skip (+1 second)" onclick="submit()"> <span id="note"></span><br>
     </div>
-    <div id="guesses"></div>
+    <div class="text-center p-3 flex flex-col items-center text-sm text-custom-line">
+        <p>
+            Turn up the volume and tap to start the track!
+        </p>
 
-    <div id="copybuttons">
-        <br><b>A new LL Heardle will appear at midnight JST!</b> (<span id="resettime"></span> in your timezone)<br>
-        <input type="button" id="share" value="Share Result" onclick="share()">
-        <input type="button" id="copy" value="Copy Result" onclick="copy()">
+        <svg class="mt-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 9l6 6 6-6"></path>
+        </svg>
     </div>
-    <div id="copything"></div>
-    <small style="float:right">Made by <a href="https://twitter.com/Suyo_">@Suyo_</a></small>
-</div>
-
-<script src="vendor/jquery.js"></script>
-<script>
-    // Use unix timestamp to figure out what day it is in JST
-    const DAY = Math.floor((new Date().getTime() - 1665154800000) / (1000 * 60 * 60 * 24)) + 1;
-    const SHARELABEL = "LL Heardle #" + DAY;
-    const SHAREPOST = "https://suyo.be/llheardle/ #LoveLiveHeardle";
-
-    // Changing this does change the playback lengths for the video, however, it's hardcoded in a bunch of other places
-    // (Like the css play bar, the markers on it...)
-    const LENGTHS = [1, 2, 4, 7, 11, 16];
-
-    // Can use the same unix timestamp to display the correct time for each player (date doesn't matter after all)
-    $("#resettime").text(new Date(1665154800000).toLocaleTimeString(undefined, {hour: "numeric", minute: "numeric"}));
-
-    // https://stackoverflow.com/a/9039885/1381397
-    function iOS() {
-        return [
-                'iPad Simulator',
-                'iPhone Simulator',
-                'iPod Simulator',
-                'iPad',
-                'iPhone',
-                'iPod'
-            ].includes(navigator.platform)
-            // iPad on iOS 13 detection
-            || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
-    }
-    $("#ioswarn").toggle(iOS());
-</script>
-<script src="vendor/fuse.js"></script>
-<script src="vendor/fuzzycomplete.min.js"></script>
-<script src="js/songlist.js"></script>
-<script src="js/song.js"></script>
-<script src="js/player.js"></script>
-<script src="js/guess.js"></script>
-<script src="js/storage.js"></script>
+    <div class="border-t border-custom-line">
+        <div class="max-w-screen-sm w-full mx-auto px-3 flex-col">
+            <div class="h-3 w-full relative overflow-hidden ">
+                <div class="h-full absolute bg-custom-mg overflow-hidden" style="width: 6.25%;">
+                    <div class="h-full absolute bg-custom-positive" style="width: 0%;"></div>
+                </div>
+                <div class="w-full h-full absolute">
+                    <div class="bg-custom-line w-px h-full absolute right-0"></div>
+                    <div class="w-px h-full absolute bg-custom-line" style="left: 6.25%;"></div>
+                    <div class="w-px h-full absolute bg-custom-mg" style="left: 12.5%;"></div>
+                    <div class="w-px h-full absolute bg-custom-mg" style="left: 25%;"></div>
+                    <div class="w-px h-full absolute bg-custom-mg" style="left: 43.75%;"></div>
+                    <div class="w-px h-full absolute bg-custom-mg" style="left: 68.75%;"></div>
+                    <div class="w-px h-full absolute bg-custom-mg" style="left: 100%;"></div>
+                    <div class="bg-custom-mg w-px h-full absolute right-0"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border-t border-custom-line">
+        <div class="max-w-screen-sm w-full mx-auto flex-col">
+            <div class="px-3 ">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center">
+                        <div>0:00</div>
+                    </div>
+                    <div class="flex justify-center items-center p-1">
+                        <button id="control" class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk">
+                            <div class="flex justify-center items-center text-custom-fg h-14 w-14 border-2 rounded-full relative overflow-hidden">
+                                <div class="ml-1 relative z-10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="currentColor" stroke="currentColor" stroke-width="2"
+                                         stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                    </svg>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                    <div>0:16</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hidden">
+        <audio id="audio_player" preload="auto"></audio>
+    </div>
+    <div class="max-w-screen-sm w-full mx-auto flex-col">
+        <div class="m-3 mt-0">
+            <div>
+                <div class="autoComplete_wrapper relative">
+                    <svg class="absolute top-4 left-3" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input class="focus:outline-none focus:border-custom-positive w-full p-3 pl-9 placeholder:text-custom-line bg-custom-bg text-custom-fg border-custom-mg"
+                           id="autoComplete" type="search" dir="ltr" spellcheck="false" autocorrect="off"
+                           autocomplete="off" autocapitalize="none" aria-controls="autoComplete_list_1"
+                           aria-autocomplete="both" placeholder="Know it? Search for the artist / title" role="combobox"
+                           aria-owns="autoComplete_list_1" aria-haspopup="true" aria-expanded="false">
+                    <ul id="autoComplete_list_1" role="listbox" hidden=""></ul>
+                    <div class="absolute right-3 top-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </div>
+                </div>
+                <div class="flex justify-between pt-3">
+                    <button id="skipbutton" class="px-2 py-2 uppercase tracking-widest bg-custom-mg border-none flex items-center font-semibold text-sm svelte-1r54uzk">
+                        Skip <span id="skiplength" class="tracking-normal lowercase">(+1s)</span></button>
+                    <button id="submitbutton" class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk bg-custom-positive">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/js/songpool.js"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>

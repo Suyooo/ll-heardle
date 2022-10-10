@@ -54,3 +54,7 @@ button:not(:disabled):active {
 button:focus {
     border-color: #666666;
 }
+
+#playbarlimit {
+    transition: width .5s;
+}

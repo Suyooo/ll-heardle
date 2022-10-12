@@ -11,7 +11,7 @@ if (location.protocol !== 'https:') {
 // (Like the markers on the play bar, the amount of allowed attempts, the slots on the guess list...)
 const LENGTHS = [1, 2, 4, 7, 11, 16];
 // UNIX timestamp (in ms) of the first day
-const RESETTIME = 1665154800000;
+const FIRST_DAY_TIME = 1665154800000;
 
 /*****
  * Grab element references
@@ -55,6 +55,7 @@ const $clearmessage = $("#clearmessage");
 const $resultmessage = $("#resultmessage");
 const $resultcolorrowChildren = $("#resultcolorrow").children().toArray().map(e => $(e));
 const $resultshare = $("#resultshare");
+const $resulttimer = $("#resulttimer");
 
 const $modals = $("#modals");
 const $modalsChildren = $modals.children().toArray().map(e => $(e));
@@ -115,10 +116,11 @@ function timer(fullSeconds) {
 
 // Use unix timestamp to figure out what day it is in JST
 // TODO: base day on a common time or on local timezone?
-const DAY = Math.floor((new Date().getTime() - RESETTIME) / (1000 * 60 * 60 * 24));
+const MS_PER_DAY = 1000 * 60 * 60 * 24;
+const CURRENT_DAY = Math.floor((new Date().getTime() - FIRST_DAY_TIME) / MS_PER_DAY);
 
-prngSeed(DAY);
-const FILTERED_SONGPOOL = SONGPOOL.filter(s => s.songUrl !== "" && DAY >= s.startOnDay);
+prngSeed(CURRENT_DAY);
+const FILTERED_SONGPOOL = SONGPOOL.filter(s => s.songUrl !== "" && CURRENT_DAY >= s.startOnDay);
 const CURRENT_HEARDLE = FILTERED_SONGPOOL[Math.floor(prngRandom() * FILTERED_SONGPOOL.length)];
 
 
@@ -130,7 +132,7 @@ const CURRENT_HEARDLE = FILTERED_SONGPOOL[Math.floor(prngRandom() * FILTERED_SON
 
 const tempstate = localStorage.getItem("today_state");
 const state = tempstate !== null ? JSON.parse(tempstate) : {
-    day: DAY,
+    day: CURRENT_DAY,
     failed: 0,
     guesses: [],
     cleared: false,
@@ -147,7 +149,7 @@ const stats = tempstats !== null ? JSON.parse(tempstats) : {
 }
 
 const lastDay = localStorage.getItem("last_visited_day");
-if (lastDay === null || DAY > parseInt(lastDay)) {
+if (lastDay === null || CURRENT_DAY > parseInt(lastDay)) {
     // new day started
     if (lastDay !== null) {
         // TODO: reset streak if a day was skipped?
@@ -159,8 +161,8 @@ if (lastDay === null || DAY > parseInt(lastDay)) {
         }
     }
 
-    localStorage.setItem("last_visited_day", DAY.toString());
-    state.day = DAY;
+    localStorage.setItem("last_visited_day", CURRENT_DAY.toString());
+    state.day = CURRENT_DAY;
     state.failed = 0;
     state.guesses = [];
     state.cleared = false;
@@ -478,7 +480,9 @@ function reveal(success) {
             $element.addClass("bg-custom-mg");
         }
     });
-    // TODO: timer
+    const nextDayTime = FIRST_DAY_TIME + (CURRENT_DAY + 1) * MS_PER_DAY;
+    updateResultTimer(nextDayTime);
+    setInterval(updateResultTimer.bind(this, nextDayTime), 1000);
 
     // Show full song
     $playbarlimit.width("100%");
@@ -487,8 +491,12 @@ function reveal(success) {
     $timeduration.removeClass("hidden");
 }
 
+function updateResultTimer(target) {
+    $resulttimer.text(timer((target - Date.now()) / 1000));
+}
+
 $resultshare.on("click", () => {
-    let shareText = "Love Live! Heardle #" + DAY + "\n🔉";
+    let shareText = "Love Live! Heardle #" + CURRENT_DAY + "\n🔉";
     $resultcolorrowChildren.forEach($element => {
         if ($element.hasClass("bg-custom-fg")) shareText += "️⬜";
         else if ($element.hasClass("bg-custom-negative")) shareText += "🟥️";

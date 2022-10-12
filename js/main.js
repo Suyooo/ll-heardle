@@ -48,6 +48,7 @@ const $playprompt = $("#playprompt");
 
 const $resultscreen = $("#resultscreen");
 const $resultsongbox = $("#resultsongbox");
+const $resultcover = $("#resultcover");
 const $resultartist = $("#resultartist");
 const $resulttitle = $("#resulttitle");
 const $clearmessage = $("#clearmessage");
@@ -96,7 +97,7 @@ function prngRandom() {
 const DAY = Math.floor((new Date().getTime() - RESETTIME) / (1000 * 60 * 60 * 24));
 
 prngSeed(DAY);
-const FILTERED_SONGPOOL = SONGPOOL.filter(s => s.url !== "");
+const FILTERED_SONGPOOL = SONGPOOL.filter(s => s.songUrl !== "" && DAY >= s.startOnDay);
 const CURRENT_HEARDLE = FILTERED_SONGPOOL[Math.floor(prngRandom() * FILTERED_SONGPOOL.length)];
 
 function getCorrectGuess() {
@@ -196,7 +197,7 @@ function playerTimeUpdate() {
 }
 
 $audio
-    .attr("src", CURRENT_HEARDLE.url)
+    .attr("src", CURRENT_HEARDLE.songUrl)
     .one("canplay", () => {
         const fullSongSeconds = Math.floor(audio.duration % 60);
         $timeduration.text(Math.floor(audio.duration / 60) + ":" + (fullSongSeconds < 10 ? "0" : "") + fullSongSeconds);
@@ -449,6 +450,7 @@ function reveal(success) {
         ? "You got today's Love Live! Heardle within " + LENGTHS[state.failed] + (LENGTHS[state.failed] === 1 ? " second!" : " seconds!")
         : "You didn't get today's Love Live! Heardle. Better luck tomorrow!");
     $resultsongbox.addClass(success ? "bg-custom-positive" : "bg-custom-mg");
+    $resultcover.attr("src", CURRENT_HEARDLE.coverUrl).attr("alt", CURRENT_HEARDLE.artistEn + " - " + CURRENT_HEARDLE.titleEn)
     $resultartist.text(CURRENT_HEARDLE.artistEn);
     $resulttitle.text(CURRENT_HEARDLE.titleEn);
     $resultcolorrowChildren.forEach(($element, index) => {

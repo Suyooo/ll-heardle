@@ -3312,8 +3312,8 @@ const SONGPOOL = [
         "artistJa": "Liella!"
     },
     {
-        "songUrl": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/Dancing%20Heart%20La-Pa-Pa-Pa!.mp3?v=1665586696902",
-        "coverUrl": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/kimisora1.jpg?v=1665598658306",
+        "songUrl": "",
+        "coverUrl": "",
         "startOnDay": 0,
         "titleEn": "Dancing Heart La-Pa-Pa-Pa!",
         "artistEn": "Liella!",
@@ -3348,8 +3348,8 @@ const SONGPOOL = [
         "artistJa": "Liella!"
     },
     {
-        "songUrl": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/Dreaming%20Energy.mp3?v=1665586704117",
-        "coverUrl": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/kimisora1.jpg?v=1665598658306",
+        "songUrl": "",
+        "coverUrl": "",
         "startOnDay": 0,
         "titleEn": "Dreaming Energy",
         "artistEn": "Liella!",
@@ -3366,8 +3366,8 @@ const SONGPOOL = [
         "artistJa": "Liella!"
     },
     {
-        "songUrl": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/Hajimari%20wa%20Kimi%20no%20Sora.mp3?v=1665586703788",
-        "coverUrl": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/kimisora1.jpg?v=1665598658306",
+        "songUrl": "",
+        "coverUrl": "",
         "startOnDay": 0,
         "titleEn": "Hajimari wa Kimi no Sora",
         "artistEn": "Liella!",
@@ -3528,8 +3528,8 @@ const SONGPOOL = [
         "artistJa": "Liella!"
     },
     {
-        "songUrl": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/Watashi%20no%20Symphony.mp3?v=1665586702002",
-        "coverUrl": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/kimisora2.jpg?v=1665598659348",
+        "songUrl": "",
+        "coverUrl": "",
         "startOnDay": 0,
         "titleEn": "Watashi no Symphony",
         "artistEn": "Liella!",
@@ -3716,4 +3716,23 @@ const SONGPOOL = [
         "titleJa": "LIVE with a smile!",
         "artistJa": "Aqours / 虹ヶ咲学園スクールアイドル同好会 / Liella!"
     },
+    /*
+    Missing songs (from what I can tell) - probably would be better to add new songs by release order to the end of
+    this list instead of alphabetically, so it's easier to keep track of what is still missing using a song listing
+    like https://ll-fans.jp/data/song?sortKey=SORT_RELEASED_ON&order=DESC
+        Aqours - Gemstone DE-A-I
+        Aqours 3rd solos: Namioto Refrain, Minamo no Piano, Ai Kotoba
+
+        Niji Anime Season 2:
+            QU4RTZ - 4 SEASONS (ENJOY IT! B-Side)
+            Eternal Light (+ B-Side)
+            Infinity Our Wings (+ B-Side)
+            Lanzhu/Shio/Mia solos
+            Blu-ray bonuses (Fashionista, Fuwa Fuwa Hour, Romance no Naka de, Look at me now)
+        DiverDiva - Shadow Effect (+ B-Side)
+        R3BIRTH - Vroom Vroom (+ B-Side)
+        Eien no Isshun (+ B-Side)
+
+        Liella Anime Season 2: everything
+     */
 ];

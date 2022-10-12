@@ -89,6 +89,25 @@ function prngRandom() {
     return result;
 }
 
+/*****
+ * Helper Functions
+ ****/
+
+function timer(fullSeconds) {
+    if (fullSeconds < 60) {
+        return (fullSeconds < 10 ? "0:0" : "0:") + Math.floor(fullSeconds);
+    } else if (fullSeconds < 3600) {
+        const minutes = Math.floor(fullSeconds / 60);
+        const seconds = Math.floor(fullSeconds) % 60;
+        return minutes + (seconds < 10 ? ":0" : ":") + seconds;
+    } else {
+        const hours = Math.floor(fullSeconds / 3600);
+        const minutes = Math.floor(fullSeconds / 60) % 60;
+        const seconds = Math.floor(fullSeconds) % 60;
+        return hours + (minutes < 10 ? ":0" : ":") + minutes + (seconds < 10 ? ":0" : ":") + seconds;
+    }
+}
+
 
 /*****
  * Pick a song
@@ -106,6 +125,8 @@ const CURRENT_HEARDLE = FILTERED_SONGPOOL[Math.floor(prngRandom() * FILTERED_SON
 /*****
  * State and Local Storage
  ****/
+
+// TODO: Import old Heardle info
 
 const tempstate = localStorage.getItem("today_state");
 const state = tempstate !== null ? JSON.parse(tempstate) : {
@@ -185,7 +206,7 @@ function addToStatistics() {
  ****/
 
 function playerTimeUpdate() {
-    $timecurrent.text((audio.currentTime < 10 ? "0:0" : "0:") + Math.floor(audio.currentTime));
+    $timecurrent.text(timer(audio.currentTime));
     $playbarcurrent.width((audio.currentTime / (state.finished ? audio.duration : LENGTHS[state.failed]) * 100) + "%");
     if (!state.finished && audio.currentTime >= LENGTHS[state.failed]) {
         playerStop();
@@ -197,8 +218,7 @@ function playerTimeUpdate() {
 $audio
     .attr("src", CURRENT_HEARDLE.songUrl)
     .one("canplay", () => {
-        const fullSongSeconds = Math.floor(audio.duration % 60);
-        $timeduration.text(Math.floor(audio.duration / 60) + ":" + (fullSongSeconds < 10 ? "0" : "") + fullSongSeconds);
+        $timeduration.text(timer(audio.duration));
         $loading.addClass("hidden");
         $playerbar.removeClass("hidden");
     });
@@ -413,7 +433,7 @@ function prepareNextGuess() {
             $element.removeClass("bg-custom-mg").addClass("bg-custom-line");
         }
     });
-    $timelimit.text((LENGTHS[state.failed] < 10 ? "0:0" : "0:") + LENGTHS[state.failed]);
+    $timelimit.text(timer(LENGTHS[state.failed]));
 }
 
 function updateSkipLabel() {
@@ -470,10 +490,10 @@ function reveal(success) {
 $resultshare.on("click", () => {
     let shareText = "Love Live! Heardle #" + DAY + "\n🔉";
     $resultcolorrowChildren.forEach($element => {
-        if ($element.hasClass("bg-custom-fg")) shareText += "⬛️";
+        if ($element.hasClass("bg-custom-fg")) shareText += "️⬜";
         else if ($element.hasClass("bg-custom-negative")) shareText += "🟥️";
         else if ($element.hasClass("bg-custom-correct")) shareText += "🟩️";
-        else if ($element.hasClass("bg-custom-mg")) shareText += "⬜️️";
+        else if ($element.hasClass("bg-custom-mg")) shareText += "️️⬛";
     });
     shareText += "\n#loveliveheardle #lovelive #ラブライブ\nhttps://lovelive-heardle.glitch.me";
 
@@ -522,7 +542,6 @@ $openHelp.on("click", () => {
     $modals.removeClass("hidden");
     $modalHelp.removeClass("hidden");
 });
-console.log(lastDay);
 if (lastDay === null) {
     // First ever play? Show help modal
     $openHelp.trigger("click");

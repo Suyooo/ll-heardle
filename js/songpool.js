@@ -2576,7 +2576,7 @@ const SONGPOOL = [
         "artistJa": "Liella!"
     },
     {
-        "url": "",
+        "url": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/Dancing%20Heart%20La-Pa-Pa-Pa!.mp3?v=1665586696902",
         "titleEn": "Dancing Heart La-Pa-Pa-Pa!",
         "artistEn": "Liella!",
         "titleJa": "Dancing Heart La-Pa-Pa-Pa!",
@@ -2604,7 +2604,7 @@ const SONGPOOL = [
         "artistJa": "Liella!"
     },
     {
-        "url": "",
+        "url": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/Dreaming%20Energy.mp3?v=1665586704117",
         "titleEn": "Dreaming Energy",
         "artistEn": "Liella!",
         "titleJa": "Dreaming Energy",
@@ -2618,7 +2618,7 @@ const SONGPOOL = [
         "artistJa": "Liella!"
     },
     {
-        "url": "",
+        "url": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/Hajimari%20wa%20Kimi%20no%20Sora.mp3?v=1665586703788",
         "titleEn": "Hajimari wa Kimi no Sora",
         "artistEn": "Liella!",
         "titleJa": "始まりは君の空",
@@ -2744,7 +2744,7 @@ const SONGPOOL = [
         "artistJa": "Liella!"
     },
     {
-        "url": "",
+        "url": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/Watashi%20no%20Symphony.mp3?v=1665586702002",
         "titleEn": "Watashi no Symphony",
         "artistEn": "Liella!",
         "titleJa": "私のSymphony",

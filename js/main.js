@@ -151,7 +151,8 @@ function addToStatistics() {
  ****/
 
 prngSeed(DAY);
-const CURRENT_HEARDLE = SONGPOOL[Math.floor(prngRandom() * SONGPOOL.length)];
+const FILTERED_SONGPOOL = SONGPOOL.filter(s => s.url !== "");
+const CURRENT_HEARDLE = FILTERED_SONGPOOL[Math.floor(prngRandom() * FILTERED_SONGPOOL.length)];
 
 function getCorrectGuess() {
     return CURRENT_HEARDLE.artistEn + " - " + CURRENT_HEARDLE.titleEn;
@@ -173,7 +174,7 @@ function playerTimeUpdate() {
 }
 
 $audio
-    .attr("src", "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/09%20ENDLESS%20PARADE%20.mp3?v=1665437862685")
+    .attr("src", CURRENT_HEARDLE.url)
     .one("canplay", () => {
         const fullSongSeconds = Math.floor(audio.duration % 60);
         $timeduration.text(Math.floor(audio.duration / 60) + ":" + (fullSongSeconds < 10 ? "0" : "") + fullSongSeconds);

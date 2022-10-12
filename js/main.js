@@ -492,7 +492,12 @@ function reveal(success) {
 }
 
 function updateResultTimer(target) {
-    $resulttimer.text(timer((target - Date.now()) / 1000));
+    const msLeft = target - Date.now();
+    if (msLeft <= 0) {
+        $resulttimer.text("NOW! (refresh the page)");
+    } else {
+        $resulttimer.text(timer(msLeft / 1000));
+    }
 }
 
 $resultshare.on("click", () => {

@@ -140,7 +140,7 @@ if (lastDay === null || DAY > parseInt(lastDay)) {
     prepareNextGuess();
 } else {
     if (state.finished) {
-        reveal(state.cleared, state.guesses.at(-1));
+        reveal(state.cleared);
     } else {
         state.guesses.forEach((guess, guessNo) => showWrongGuess(guessNo, guess));
         prepareNextGuess();
@@ -364,11 +364,11 @@ function resolveGuess(guessNo, wasCorrect, guess) {
     state.guesses.push(guess);
     if (wasCorrect) {
         state.cleared = true;
-        endGame(true, guess);
+        endGame(true);
     } else {
         state.failed++;
         if (state.failed >= 6) {
-            endGame(false, guess);
+            endGame(false);
         } else {
             showWrongGuess(guessNo, guess);
             prepareNextGuess();
@@ -418,14 +418,14 @@ function updateSkipLabel() {
     }
 }
 
-function endGame(success, lastGuess) {
-    reveal(success, lastGuess);
+function endGame(success) {
+    reveal(success);
     addToStatistics();
     playerReset();
     playerPlay();
 }
 
-function reveal(success, lastGuess) {
+function reveal(success) {
     // Disallow guessing
     state.finished = true;
     $guessbar.addClass("hidden");
@@ -460,7 +460,7 @@ function reveal(success, lastGuess) {
 
 $resultshare.on("click", () => {
     let shareText = "Love Live! Heardle #" + DAY + "\n🔉";
-    $resultcolorrowChildren.forEach(($element, index) => {
+    $resultcolorrowChildren.forEach($element => {
         if ($element.hasClass("bg-custom-fg")) shareText += "⬛️";
         else if ($element.hasClass("bg-custom-negative")) shareText += "🟥️";
         else if ($element.hasClass("bg-custom-correct")) shareText += "🟩️";
@@ -475,7 +475,7 @@ $resultshare.on("click", () => {
     } else {
         // PC browsers usually don't have a native share mechanism - just copy it instead
         navigator.clipboard.writeText(shareText).then(function () {
-            $resultshare.text("Copied!");
+            $resultshare.text("Copied to your Clipboard!");
         }, function (err) {
             alert("Unable to share or copy text: " + err);
         });

@@ -354,8 +354,6 @@ function submit() {
             resolveGuess(state.failed, false, guess);
         }
         $field.val("");
-    } else {
-        $("#invalid").removeClass("hidden");
     }
 }
 
@@ -372,7 +370,6 @@ $fieldclear.on("click", () => {
 
 function resolveGuess(guessNo, wasCorrect, guess) {
     if (state.finished) return;
-    $("#invalid").addClass("hidden");
     state.guesses.push(guess);
     if (wasCorrect) {
         state.cleared = true;

@@ -1,5 +1,10 @@
+// Before doing anything: Make sure the user is on HTTPS, as navigator.share only works on HTTPS
+if (location.protocol !== 'https:') {
+    location.replace(`https:${location.href.substring(location.protocol.length)}`);
+}
+
 /*****
- * CONFIGURATION
+ * Configuration
  ****/
 
 // Changing this does change the playback lengths for the video, however, it's hardcoded in a bunch of other places
@@ -470,6 +475,7 @@ $resultshare.on("click", () => {
 
     if (navigator.share) {
         navigator.share({
+            url: "https://lovelive-heardle.glitch.me",
             text: shareText
         });
     } else {

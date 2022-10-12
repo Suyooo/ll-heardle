@@ -473,10 +473,12 @@ $resultshare.on("click", () => {
     });
     shareText += "\n#loveliveheardle #lovelive #ラブライブ\nhttps://lovelive-heardle.glitch.me";
 
-    if (navigator.share) {
+    if (true || navigator.share) {
         // Firefox for Android does not support sharing text. Copy instead
-        if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Android")) {
-            $resultshare.replaceWith($("<textarea>").text(shareText).select());
+        if (true || navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Android")) {
+            const textarea = $("<textarea>").text(shareText);
+            $resultshare.replaceWith(textarea);
+            requestAnimationFrame(() => textarea.select());
         } else {
             navigator.share({ text: shareText });
         }

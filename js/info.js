@@ -3717,3 +3717,11 @@ const SONGPOOL = [
         "artistJa": "Aqours / 虹ヶ咲学園スクールアイドル同好会 / Liella!"
     },
 ];
+
+const CURRENT_ANNOUNCEMENT = {
+    notificationId: 0, // increase this number if you want the "new announcement" hint to show on the button
+    title: "This is where announcements go!",
+    date: "October 12th, 2022",
+    // You can use HTML (<br>, <a href="..."> etc) in this
+    text: "Right now, there is nothing here though."
+};

@@ -51,10 +51,14 @@
                         </button>
                         <button id="open-announce"
                                 class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round">
+                            <svg id="open-announce-read" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden">
                                 <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path>
+                            </svg>
+                            <svg id="open-announce-unread" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="#DE0A82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path>
+                                <circle fill="#DE0A82" stroke-width="0" cx="22" cy="2" r="2"></circle>
                             </svg>
                         </button>
                     </div>
@@ -299,6 +303,31 @@
                 </div>
             </div>
         </div>
+        <div id="modal-announce" class="hidden modal max-w-screen-xs w-full mx-auto top-20 relative rounded-sm"
+             role="dialog" aria-modal="true">
+            <div class="bg-custom-bg border border-custom-mg p-6">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="flex-1 pl-7">
+                        <h2 class="text-sm text-center uppercase text-custom-line font-semibold tracking-widest">
+                            News</h2>
+                    </div>
+                    <div class="close-modals justify-self-end flex">
+                        <button autofocus="" class="border-none text-custom-mg">
+                            <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="text">
+                    <h2 id="modal-announcetitle" class="text-custom-positive uppercase tracking-widest font-bold"></h2>
+                    <p id="modal-announcedate" class="text-custom-line text-xs mb-3"></p>
+                    <p id="modal-announcetext"></p>
+                </div>
+            </div>
+        </div>
         <div id="modal-help" class="hidden pointer-events-auto modal max-w-screen-xs w-full mx-auto top-20 relative rounded-sm"
              role="dialog" aria-modal="true">
             <div class="bg-custom-bg border border-custom-mg p-6">
@@ -377,7 +406,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
         integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="/js/songpool.js"></script>
+<script src="/js/info.js"></script>
 <script src="/js/main.js"></script>
 </body>
 </html>

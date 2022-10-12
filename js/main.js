@@ -59,11 +59,24 @@ const $resulttimer = $("#resulttimer");
 
 const $modals = $("#modals");
 const $modalsChildren = $modals.children().toArray().map(e => $(e));
+const $closeModals = $(".close-modals, #modals");
+
 const $modalAbout = $("#modal-about");
 const $openAbout = $("#open-about");
+
+const $modalAnnounce = $("#modal-announce");
+const $modalAnnounceTitle = $("#modal-announcetitle");
+const $modalAnnounceDate = $("#modal-announcedate");
+const $modalAnnounceText = $("#modal-announcetext");
+const $openAnnounce = $("#open-announce");
+const $openAnnounceRead = $("#open-announce-read");
+const $openAnnounceUnread = $("#open-announce-unread");
+
+const $modalStats = $("#modal-stats");
+const $openStats = $("#open-stats");
+
 const $modalHelp = $("#modal-help");
 const $openHelp = $("#open-help");
-const $closeModals = $(".close-modals, #modals");
 
 
 /*****
@@ -547,8 +560,17 @@ $openAbout.on("click", () => {
     $modalAbout.removeClass("hidden");
 });
 
-// TODO: announcement modal
-// TODO: highlight announcement button
+$openAnnounce.on("click", () => {
+    $modalAnnounceTitle.text(CURRENT_ANNOUNCEMENT.title);
+    $modalAnnounceDate.text(CURRENT_ANNOUNCEMENT.date);
+    $modalAnnounceText.html(CURRENT_ANNOUNCEMENT.text);
+    $modals.removeClass("hidden");
+    $modalAnnounce.removeClass("hidden");
+    $openAnnounceRead.removeClass("hidden");
+    $openAnnounceUnread.addClass("hidden");
+});
+// TODO: highlight announcement button if unread
+
 // TODO: stats modal
 
 $openHelp.on("click", () => {

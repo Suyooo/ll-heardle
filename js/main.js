@@ -473,24 +473,42 @@ $resultshare.on("click", () => {
     });
     shareText += "\n#loveliveheardle #lovelive #ラブライブ\nhttps://lovelive-heardle.glitch.me";
 
-    if (true || navigator.share) {
-        // Firefox for Android does not support sharing text. Copy instead
-        if (true || navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Android")) {
+    if (navigator.share) {
+        if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Android")) {
+            // Firefox for Android does not support sharing text via navigator.share.
+            // Instead, do two things:
+            // 1) Create a textarea with the share text and select all - the browser will tnen offer it's own share popup
+            // 2) Just in case that does not work, copy the share text to the clipboard as well
+            // There is no way to programmatically check whether a browser supports sharing text via the native share
+            // mechanism, so we simply have to remember to manually remove this when it is implemented in Firefox.
             const textarea = $("<textarea>").text(shareText);
-            $resultshare.replaceWith(textarea);
-            requestAnimationFrame(() => textarea.select());
+            $resultshare.before(textarea);
+            $resultshare.off("click").on("click", () => {
+                textarea.select();
+                requestAnimationFrame(() => {
+                    textarea.scrollTop(0);
+                });
+                copy(shareText);
+            });
+            $resultshare.trigger("click");
         } else {
-            navigator.share({ text: shareText });
+            navigator.share({text: shareText});
         }
     } else {
         // PC browsers usually don't have a native share mechanism - just copy it instead
-        navigator.clipboard.writeText(shareText).then(function () {
-            $resultshare.text("Copied to your Clipboard!");
-        }, function (err) {
-            alert("Unable to share or copy text: " + err);
-        });
+        copy(shareText);
     }
 });
+
+function copy(t) {
+    navigator.clipboard.writeText(t)
+        .then(() => {
+            $resultshare.text("Copied to your Clipboard!");
+        })
+        .catch((err) => {
+            alert("Unable to share or copy text: " + err);
+        });
+}
 
 
 /*****

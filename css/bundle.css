@@ -1070,3 +1070,9 @@ a.svelte-1d3p4dy.svelte-1d3p4dy {
         transform: rotate(0) scale(1)
     }
 }
+
+textarea {
+    height: 0;
+    border: 0;
+    outline: none;
+}

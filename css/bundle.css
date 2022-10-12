@@ -896,11 +896,11 @@ input[type="textfield"] {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.6);
     z-index: 1000
 }
 button.svelte-1r54uzk {
-    color: #fff,
+    color: #fff;
 }
 @-webkit-keyframes svelte-15swa4o-gg-bar {
     10% {

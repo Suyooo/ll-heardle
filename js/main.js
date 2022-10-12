@@ -55,6 +55,12 @@ const $resultmessage = $("#resultmessage");
 const $resultcolorrowChildren = $("#resultcolorrow").children().toArray().map(e => $(e));
 const $resultshare = $("#resultshare");
 
+const $modals = $("#modals");
+const $modalsChildren = $modals.children().toArray().map(e => $(e));
+const $modalAbout = $("#modal-about");
+const $openAbout = $("#open-about");
+const $closeModals = $(".close-modals, #modals");
+
 
 /*****
  * Pseudo Random Number Generator from https://stackoverflow.com/a/19301306
@@ -455,6 +461,7 @@ function reveal(success) {
             $element.addClass("bg-custom-mg");
         }
     });
+    // TODO: timer
 
     // Show full song
     $playbarlimit.width("100%");
@@ -489,6 +496,33 @@ $resultshare.on("click", () => {
             });
     }
 });
+
+
+/*****
+ * Modals
+ ****/
+
+$closeModals.on("click", () => {
+    $modals.addClass("hidden");
+    $modalsChildren.forEach($element => $element.addClass("hidden"));
+});
+
+// Stop propagation of click events for each modal, so clicks within in the modal itself don't close it
+$modalsChildren.forEach($element => $element.on("click", (e) => {
+    e.stopPropagation();
+}));
+
+$openAbout.on("click", () => {
+    $modals.removeClass("hidden");
+    $modalAbout.removeClass("hidden");
+});
+
+// TODO: announcement modal
+// TODO: highlight announcement button
+// TODO: stats modal
+// TODO: help modal
+// TODO: show help modal on first visit
+// TODO: remove reset button
 
 
 /*****

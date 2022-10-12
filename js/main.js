@@ -48,6 +48,7 @@ const $resulttitle = $("#resulttitle");
 const $clearmessage = $("#clearmessage");
 const $resultmessage = $("#resultmessage");
 const $resultcolorrowChildren = $("#resultcolorrow").children().toArray().map(e => $(e));
+const $resultshare = $("#resultshare");
 
 
 /*****
@@ -455,52 +456,31 @@ function reveal(success, lastGuess) {
     $playbarmarkersChildren.forEach(($element) => $element.remove());
     $timelimit.addClass("hidden");
     $timeduration.removeClass("hidden");
-
-    /*TODO $("#copybuttons").removeClass("hidden");
-
-    const copything = $("#copything")[0];
-    copything.innerHTML = "🔈";
-
-    for (let i = 0; i < (success ? state.failed : 5); i++) {
-        if ($("#guesses")[0].children[i]?.innerHTML === "⬜ (skip)")
-            copything.innerHTML += "⬜";
-        else
-            copything.innerHTML += "🟥";
-    }
-
-    if (success) {
-        copything.innerHTML += "🟩";
-        for (let i = 0; i < 5 - state.failed; i++) {
-            copything.innerHTML += "⬛";
-        }
-        copything.innerHTML += " " + (state.failed + 1) + "/6";
-    } else {
-        // Latest guess might not be added to the DOM yet, handle it seperately
-        if (lastGuess === "")
-            copything.innerHTML += "⬜";
-        else
-            copything.innerHTML += "🟥";
-        copything.innerHTML += " X/6";
-    }
-    copything.innerHTML += "<br>" + SHAREPOST;*/
 }
 
-function share() {
+$resultshare.on("click", () => {
+    let shareText = "Love Live! Heardle #" + DAY + "\n🔉";
+    $resultcolorrowChildren.forEach(($element, index) => {
+        if ($element.hasClass("bg-custom-fg")) shareText += "⬛️";
+        else if ($element.hasClass("bg-custom-negative")) shareText += "🟥️";
+        else if ($element.hasClass("bg-custom-correct")) shareText += "🟩️";
+        else if ($element.hasClass("bg-custom-mg")) shareText += "⬜️️";
+    });
+    shareText += "\n#loveliveheardle #lovelive #ラブライブ\nhttps://lovelive-heardle.glitch.me";
+
     if (navigator.share) {
         navigator.share({
-            title: 'LL Heardle',
-            text: $("#copything").html().replace(/<br>/g, "\n"),
-            url: 'https://suyo.be/llheardle'
+            text: shareText
         });
     } else {
         // PC browsers usually don't have a native share mechanism - just copy it instead
-        navigator.clipboard.writeText($("#copything").html().replace(/<br>/g, "\n")).then(function () {
-            $('#copy').val("Copied!");
+        navigator.clipboard.writeText(shareText).then(function () {
+            $resultshare.text("Copied!");
         }, function (err) {
-            console.error("Could not copy text: ", err);
+            alert("Unable to share or copy text: " + err);
         });
     }
-}
+});
 
 
 /*****

@@ -226,7 +226,7 @@ $control.on("click", controlClicked);
 
 function controlClicked() {
     if (audio.duration > 0 && !audio.paused) {
-        playerStop();
+        playerReset();
     } else {
         playerPlay();
     }
@@ -248,7 +248,7 @@ function playerStop() {
 }
 
 function playerReset() {
-    audio.pause();
+    playerStop();
     audio.currentTime = 0;
     playerTimeUpdate();
 }

@@ -12,6 +12,10 @@ const RESETTIME = 1665154800000;
  * Grab element references
  ****/
 
+const $fadeout = $("#fadeout");
+const $fadeouttext = $("#fadeouttext");
+const $fadeoutwarning = $("#fadeoutwarning");
+
 const $playerbar = $("#playerbar");
 const $loading = $("#loading");
 const $audio = $("#audio_player");
@@ -38,6 +42,12 @@ const $guesslistChildren = $("#guesslist").children().toArray().map(e => $(e));
 const $playprompt = $("#playprompt");
 
 const $resultscreen = $("#resultscreen");
+const $resultsongbox = $("#resultsongbox");
+const $resultartist = $("#resultartist");
+const $resulttitle = $("#resulttitle");
+const $clearmessage = $("#clearmessage");
+const $resultmessage = $("#resultmessage");
+const $resultcolorrowChildren = $("#resultcolorrow").children().toArray().map(e => $(e));
 
 
 /*****
@@ -66,12 +76,25 @@ function prngRandom() {
 
 
 /*****
- * State and Local Storage
+ * Pick a song
  ****/
 
 // Use unix timestamp to figure out what day it is in JST
 // TODO: base day on a common time or on local timezone?
 const DAY = Math.floor((new Date().getTime() - RESETTIME) / (1000 * 60 * 60 * 24));
+
+prngSeed(DAY);
+const FILTERED_SONGPOOL = SONGPOOL.filter(s => s.url !== "");
+const CURRENT_HEARDLE = FILTERED_SONGPOOL[Math.floor(prngRandom() * FILTERED_SONGPOOL.length)];
+
+function getCorrectGuess() {
+    return CURRENT_HEARDLE.artistEn + " - " + CURRENT_HEARDLE.titleEn;
+}
+
+
+/*****
+ * State and Local Storage
+ ****/
 
 const tempstate = localStorage.getItem("today_state");
 const state = tempstate !== null ? JSON.parse(tempstate) : {
@@ -147,19 +170,6 @@ function addToStatistics() {
 
 
 /*****
- * Pick a song
- ****/
-
-prngSeed(DAY);
-const FILTERED_SONGPOOL = SONGPOOL.filter(s => s.url !== "");
-const CURRENT_HEARDLE = FILTERED_SONGPOOL[Math.floor(prngRandom() * FILTERED_SONGPOOL.length)];
-
-function getCorrectGuess() {
-    return CURRENT_HEARDLE.artistEn + " - " + CURRENT_HEARDLE.titleEn;
-}
-
-
-/*****
  * Audio Player
  ****/
 
@@ -178,8 +188,8 @@ $audio
     .one("canplay", () => {
         const fullSongSeconds = Math.floor(audio.duration % 60);
         $timeduration.text(Math.floor(audio.duration / 60) + ":" + (fullSongSeconds < 10 ? "0" : "") + fullSongSeconds);
-        $loading.hide();
-        $playerbar.show();
+        $loading.addClass("hidden");
+        $playerbar.removeClass("hidden");
     });
 $control.on("click", controlClicked);
 
@@ -192,19 +202,18 @@ function controlClicked() {
 }
 
 function playerPlay() {
-    // TODO: stop symbol on button
     audio.currentTime = 0;
     audio.play();
-    $controlpaused.hide();
-    $controlplaying.show();
-    $playprompt.hide();
+    $controlpaused.addClass("hidden");
+    $controlplaying.removeClass("hidden");
+    $playprompt.addClass("hidden");
     requestAnimationFrame(playerTimeUpdate);
 }
 
 function playerStop() {
     audio.pause();
-    $controlpaused.show();
-    $controlplaying.hide();
+    $controlpaused.removeClass("hidden");
+    $controlplaying.addClass("hidden");
 }
 
 function playerReset() {
@@ -333,7 +342,7 @@ function submit() {
         }
         $field.val("");
     } else {
-        $("#invalid").show();
+        $("#invalid").removeClass("hidden");
     }
 }
 
@@ -350,7 +359,7 @@ $fieldclear.on("click", () => {
 
 function resolveGuess(guessNo, wasCorrect, guess) {
     if (state.finished) return;
-    $("#invalid").hide();
+    $("#invalid").addClass("hidden");
     state.guesses.push(guess);
     if (wasCorrect) {
         state.cleared = true;
@@ -418,20 +427,36 @@ function endGame(success, lastGuess) {
 function reveal(success, lastGuess) {
     // Disallow guessing
     state.finished = true;
-    $guessbar.hide();
+    $guessbar.addClass("hidden");
 
     // Show result screen
-    $guessingscreen.hide();
-    $resultscreen.show();
+    $guessingscreen.addClass("hidden");
+    $resultscreen.removeClass("hidden");
+    $clearmessage.text(success ? "You got it!" : "Too bad...");
+    $resultmessage.text(success
+        ? "You got today's Love Live! Heardle within " + LENGTHS[state.failed] + (LENGTHS[state.failed] === 1 ? " second!" : " seconds!")
+        : "You didn't get today's Love Live! Heardle. Better luck tomorrow!");
+    $resultsongbox.addClass(success ? "bg-custom-positive" : "bg-custom-mg");
+    $resultartist.text(CURRENT_HEARDLE.artistEn);
+    $resulttitle.text(CURRENT_HEARDLE.titleEn);
+    $resultcolorrowChildren.forEach(($element, index) => {
+        if (index < state.failed) {
+            if (state.guesses[index] === null) $element.addClass("bg-custom-fg");
+            else $element.addClass("bg-custom-negative");
+        } else if (index === state.failed && success) {
+            $element.addClass("bg-custom-correct");
+        } else {
+            $element.addClass("bg-custom-mg");
+        }
+    });
 
     // Show full song
     $playbarlimit.width("100%");
     $playbarmarkersChildren.forEach(($element) => $element.remove());
-    $timelimit.hide();
-    $timeduration.show();
+    $timelimit.addClass("hidden");
+    $timeduration.removeClass("hidden");
 
-    $resultscreen.html("<center><span style='font-size:200%'>" + (success ? "you did it!" : "oops") + "</span></center>");
-    /*TODO $("#copybuttons").show();
+    /*TODO $("#copybuttons").removeClass("hidden");
 
     const copything = $("#copything")[0];
     copything.innerHTML = "🔈";
@@ -505,3 +530,9 @@ function styleGuessRowTitleSkipped() {
 function styleGuessRowTitleSong() {
     return $(`<div class="text-white text-sm"></div>`);
 }
+
+
+// Once everything is prepared, fade in
+$fadeout.fadeOut(250);
+setTimeout(() => $fadeouttext.fadeIn(250), 2000);
+setTimeout(() => $fadeoutwarning.fadeIn(250), 10000);

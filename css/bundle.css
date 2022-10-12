@@ -259,6 +259,9 @@ video {
 .relative {
     position: relative
 }
+.top-0 {
+    top: 0
+}
 .top-3 {
     top: 0.75rem
 }
@@ -277,11 +280,17 @@ video {
 .bottom-0 {
     bottom: 0px
 }
+.left-0 {
+    left: 0
+}
 .left-3 {
     left: 0.75rem
 }
 .z-10 {
     z-index: 10
+}
+.z-10000 {
+    z-index: 10000
 }
 .m-0 {
     margin: 0px
@@ -411,6 +420,9 @@ video {
 }
 .w-full {
     width: 100%
+}
+.w-screen {
+    width: 100vw;
 }
 .max-w-screen-sm {
     max-width: 640px
@@ -589,6 +601,9 @@ video {
 }
 .bg-custom-positive {
     background-color: var(--color-positive)
+}
+.bg-custom-correct {
+    background-color: var(--color-correct)
 }
 .bg-custom-negative {
     background-color: var(--color-negative)
@@ -805,20 +820,13 @@ body {
     overflow: auto;
     background: var(--color-bg)
 }
-p a,
-p a:visited,
-p a:hover,
-p a:active {
-    color: var(--color-fg);
-    text-decoration: underline;
-    text-underline-offset: 2.5px
-}
 a,
 a:visited,
 a:hover,
 a:active {
-    color: var(--color-fg);
-    text-decoration: none
+    color: var(--color-positive);
+    text-decoration: underline;
+    text-underline-offset: 2.5px;
 }
 .text-custom-line a,
 .text-custom-line a:visited,
@@ -830,6 +838,7 @@ a:active {
 }
 :root {
     --color-positive: #de0a82;
+    --color-correct: #00ff00;
     --color-negative: #ff0000;
     --color-fg: #ffffff;
     --color-mg: #444;

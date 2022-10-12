@@ -39,7 +39,8 @@
             <div class="max-w-screen-md mx-auto ">
                 <div class="flex justify-evenly text-custom-fgcolor p-3 items-center">
                     <div class="flex flex-1">
-                        <button id="open-about" class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk">
+                        <button id="open-about"
+                                class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                  stroke-linejoin="round">
@@ -48,7 +49,8 @@
                                 <line x1="12" y1="8" x2="12.01" y2="8"></line>
                             </svg>
                         </button>
-                        <button class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk">
+                        <button id="open-announce"
+                                class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                  stroke-linejoin="round">
@@ -58,14 +60,16 @@
                     </div>
                     <h1 class="font-serif text-2xl font-bold flex-grow text-center flex-1">Love Live! Heardle</h1>
                     <div class="flex flex-1 justify-end">
-                        <button class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk">
+                        <button id="open-stats"
+                                class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                  stroke-linejoin="round">
                                 <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                             </svg>
                         </button>
-                        <button class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk">
+                        <button id="open-help"
+                                class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                  stroke-linejoin="round">
@@ -256,11 +260,13 @@
         </div>
     </div>
     <div id="modals" class="hidden modal-background p-3 svelte-1nyqrwd">
-        <div id="modal-about" class="hidden modal max-w-screen-xs w-full mx-auto top-20 relative rounded-sm" role="dialog" aria-modal="true">
+        <div id="modal-about" class="hidden modal max-w-screen-xs w-full mx-auto top-20 relative rounded-sm"
+             role="dialog" aria-modal="true">
             <div class="bg-custom-bg border border-custom-mg p-6">
                 <div class="flex items-center justify-center mb-6">
                     <div class="flex-1 pl-7">
-                        <h2 class="text-sm text-center uppercase text-custom-line font-semibold tracking-widest">About</h2>
+                        <h2 class="text-sm text-center uppercase text-custom-line font-semibold tracking-widest">
+                            About</h2>
                     </div>
                     <div class="close-modals justify-self-end flex">
                         <button autofocus="" class="border-none text-custom-mg">
@@ -273,10 +279,13 @@
                     </div>
                 </div>
                 <div class="text">
-                    <p class="mb-3">Run and maintained by <a href="https://twitter.com/Kachx" target="_blank">@Kachx</a></p>
+                    <p class="mb-3">Run and maintained by <a href="https://twitter.com/Kachx" target="_blank">@Kachx</a>
+                    </p>
                     <p class="mb-3">Some coding by <a href="https://twitter.com/Suyo_" target="_blank">@Suyo_</a></p>
-                    <p class="mb-3">Formerly run by <a href="https://twitter.com/eienfriendz" target="_blank">@eienfriendz</a></p>
-                    <p class="mb-3">Original Heardle by <a href="https://omakase.studio" target="_blank">Studio Omakase</a></p>
+                    <p class="mb-3">Formerly run by <a href="https://twitter.com/eienfriendz" target="_blank">@eienfriendz</a>
+                    </p>
+                    <p class="mb-3">Original Heardle by <a href="https://omakase.studio" target="_blank">Studio
+                        Omakase</a></p>
 
                     <p class="text-xs mb-3 text-custom-line">Some of the cool stuff this site uses:
                         <a href="https://jquery.com">jQuery</a>,
@@ -287,6 +296,65 @@
                         <a href="https://tarekraafat.github.io/autoComplete.js/#/">autocomplete.js</a>.
                         Powered by <a href="https://glitch.com/">Glitch</a>.
                     </p>
+                </div>
+            </div>
+        </div>
+        <div id="modal-help" class="hidden pointer-events-auto modal max-w-screen-xs w-full mx-auto top-20 relative rounded-sm"
+             role="dialog" aria-modal="true">
+            <div class="bg-custom-bg border border-custom-mg p-6">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="flex-1 pl-7">
+                        <h2 class="text-sm text-center uppercase text-custom-line font-semibold tracking-widest">How To Play</h2>
+                    </div>
+                    <div class="justify-self-end flex">
+                        <button autofocus="" class="close-modals border-none text-custom-mg">
+                            <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="mr-4 w-8 text-custom-line">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                 class="h-7 w-7">
+                                <circle cx="5.5" cy="17.5" r="2.5"></circle>
+                                <circle cx="17.5" cy="15.5" r="2.5"></circle>
+                                <path d="M8 17V5l12-2v12"></path>
+                            </svg>
+                        </div>
+                        <div><p>Listen to the intro, then find the correct Love Live! song in the list.</p></div>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <div class="mr-4 w-8 text-custom-line">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                 class="h-6 w-6">
+                                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                            </svg>
+                        </div>
+                        <div><p>Skipped or incorrect attempts unlock more of the intro!</p></div>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <div class="mr-4 w-8 text-custom-line">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                 class="h-6 w-7">
+                                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                            </svg>
+                        </div>
+                        <div><p>Answer in as few tries as possible and share your score!</p></div>
+                    </div>
+                    <div class="justify-center flex py-2 mt-2">
+                        <button class="close-modals px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk bg-custom-positive">
+                            Play
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

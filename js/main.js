@@ -60,6 +60,8 @@ const $modals = $("#modals");
 const $modalsChildren = $modals.children().toArray().map(e => $(e));
 const $modalAbout = $("#modal-about");
 const $openAbout = $("#open-about");
+const $modalHelp = $("#modal-help");
+const $openHelp = $("#open-help");
 const $closeModals = $(".close-modals, #modals");
 
 
@@ -515,8 +517,17 @@ $openAbout.on("click", () => {
 // TODO: announcement modal
 // TODO: highlight announcement button
 // TODO: stats modal
-// TODO: help modal
-// TODO: show help modal on first visit
+
+$openHelp.on("click", () => {
+    $modals.removeClass("hidden");
+    $modalHelp.removeClass("hidden");
+});
+console.log(lastDay);
+if (lastDay === null) {
+    // First ever play? Show help modal
+    $openHelp.trigger("click");
+}
+
 // TODO: remove reset button
 
 

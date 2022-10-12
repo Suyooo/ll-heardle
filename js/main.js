@@ -487,7 +487,7 @@ $resultshare.on("click", () => {
         navigator.share({text: shareText});
     } else {
         // PC browsers usually don't have a native share mechanism - just copy it instead
-        navigator.clipboard.writeText(t)
+        navigator.clipboard.writeText(shareText)
             .then(() => {
                 $resultshare.text("Copied to your Clipboard!");
             })

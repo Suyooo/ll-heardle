@@ -474,10 +474,12 @@ $resultshare.on("click", () => {
     shareText += "\n#loveliveheardle #lovelive #ラブライブ\nhttps://lovelive-heardle.glitch.me";
 
     if (navigator.share) {
-        navigator.share({
-            url: "https://lovelive-heardle.glitch.me",
-            title: shareText
-        });
+        // Firefox for Android does not support sharing text. Copy instead
+        if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Android")) {
+            $resultshare.replaceWith($("<textarea>").text(shareText).select());
+        } else {
+            navigator.share({ text: shareText });
+        }
     } else {
         // PC browsers usually don't have a native share mechanism - just copy it instead
         navigator.clipboard.writeText(shareText).then(function () {

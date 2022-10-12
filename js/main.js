@@ -476,7 +476,7 @@ $resultshare.on("click", () => {
     if (navigator.share) {
         navigator.share({
             url: "https://lovelive-heardle.glitch.me",
-            text: shareText
+            title: shareText
         });
     } else {
         // PC browsers usually don't have a native share mechanism - just copy it instead

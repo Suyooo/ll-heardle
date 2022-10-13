@@ -3,6 +3,7 @@ if (location.protocol !== 'https:') {
     location.replace(`https:${location.href.substring(location.protocol.length)}`);
 }
 
+
 /*****
  * Configuration
  ****/
@@ -13,6 +14,7 @@ const LENGTHS = [1, 2, 4, 7, 11, 16];
 
 // First day (YYYY/MM/DD)
 const FIRST_DAY_DATE = Date.parse("2022/04/04");
+
 
 /*****
  * Grab element references
@@ -135,13 +137,14 @@ const CURRENT_DAY = Math.floor((new Date().getTime() - FIRST_DAY_DATE) / MS_PER_
 // If the location hash is set, we're in testing mode
 const TESTING_SONG = window.location.hash && window.location.hash.startsWith("#http") ? window.location.hash.slice(1) : null;
 
-// Prepare random pick
+// Do random pick
 prngSeed(CURRENT_DAY);
 const FILTERED_SONGPOOL = SONGPOOL.filter(s => s.songUrl !== "" && CURRENT_DAY >= s.startOnDay);
+const CURRENT_HEARDLE_ID = Math.floor(prngRandom() * FILTERED_SONGPOOL.length);
 
 const CURRENT_HEARDLE = TESTING_SONG !== null
     ? SONGPOOL.filter(s => s.songUrl === TESTING_SONG)[0]
-    : FILTERED_SONGPOOL[Math.floor(prngRandom() * FILTERED_SONGPOOL.length)];
+    : FILTERED_SONGPOOL[CURRENT_HEARDLE_ID];
 
 /*****
  * State and Local Storage
@@ -149,20 +152,14 @@ const CURRENT_HEARDLE = TESTING_SONG !== null
 
 // TODO: Import old Heardle info
 
-const LOADED_STATE = localStorage.getItem("today_state");
-const STATE = LOADED_STATE !== null && TESTING_SONG === null
-    ? JSON.parse(LOADED_STATE)
-    : {
-        day: CURRENT_DAY,
-        failed: 0,
-        guesses: [],
-        cleared: false,
-        finished: false
-    };
+const LOADED_PLAY_STATES = localStorage.getItem("play_states");
+const PLAY_STATES = LOADED_PLAY_STATES !== null && TESTING_SONG === null
+    ? JSON.parse(LOADED_PLAY_STATES)
+    : [];
 
-const LOADED_STATS = localStorage.getItem("stats");
-const STATS = LOADED_STATS !== null && TESTING_SONG === null
-    ? JSON.parse(LOADED_STATS)
+const LOADED_STATISTICS = localStorage.getItem("statistics");
+const STATISTICS = LOADED_STATISTICS !== null && TESTING_SONG === null
+    ? JSON.parse(LOADED_STATISTICS)
     : {
         byFailCount: [0, 0, 0, 0, 0, 0, 0],
         viewed: 0,
@@ -171,44 +168,50 @@ const STATS = LOADED_STATS !== null && TESTING_SONG === null
         highestStreak: 0
     };
 
-const LAST_DAY = parseInt(localStorage.getItem("last_visited_day")); // NaN if first visit
+let CURRENT_PLAY_STATE = PLAY_STATES.at(-1); // undefined if player's first visit
+const IS_FIRST_PLAY = CURRENT_PLAY_STATE === undefined;
 const LAST_ANNOUNCEMENT = parseInt(localStorage.getItem("last_announcement_no")); // NaN if news were never read
+
 if (TESTING_SONG === null) {
-    if (isNaN(LAST_DAY) || CURRENT_DAY > LAST_DAY) {
-        // Was a new day started, or is it the player's first ever visit?
-        if (!isNaN(LAST_DAY)) {
-            // check whether last day was unfinished
-            if (!STATE.finished) {
-                STATE.failed = 6;
-                STATE.finished = true;
-                addToStatistics();
+    // Regular play: Check for day change, load saved data and get the correct state ready
+    if (CURRENT_PLAY_STATE === undefined || CURRENT_DAY > CURRENT_PLAY_STATE.day) {
+        // It's a new day, or it's the player's first ever visit
+        if (CURRENT_PLAY_STATE !== undefined) {
+            // If the player played before...
+            if (!CURRENT_PLAY_STATE.finished) {
+                // If the last day was unfinished, add a fail to the statistics
+                addToStatistics(true);
             }
-            // check whether a day was skipped - and break streak if so
-            if (CURRENT_DAY - LAST_DAY > 1) {
-                STATS.currentStreak = 0;
+            if (CURRENT_DAY - CURRENT_PLAY_STATE.day > 1) {
+                // If a day was skipped, break strak
+                STATISTICS.currentStreak = 0;
             }
         }
 
         localStorage.setItem("last_visited_day", CURRENT_DAY.toString());
-        STATE.day = CURRENT_DAY;
-        STATE.failed = 0;
-        STATE.guesses = [];
-        STATE.cleared = false;
-        STATE.finished = false;
-        saveTodayState();
-        STATS.viewed += 1;
-        saveStats();
+        CURRENT_PLAY_STATE = {
+            day: CURRENT_DAY,
+            heardle_id: CURRENT_HEARDLE_ID,
+            failed: 0,
+            guesses: [],
+            cleared: false,
+            finished: false
+        };
+        PLAY_STATES.push(CURRENT_PLAY_STATE);
+        savePlayStates();
+        STATISTICS.viewed += 1;
+        saveStatistics();
         prepareNextGuess();
     } else {
-        if (STATE.finished) {
-            reveal(STATE.cleared);
+        if (CURRENT_PLAY_STATE.finished) {
+            reveal(CURRENT_PLAY_STATE.cleared);
         } else {
-            STATE.guesses.forEach((guess, guessNo) => showWrongGuess(guessNo, guess));
+            CURRENT_PLAY_STATE.guesses.forEach((guess, guessNo) => showWrongGuess(guessNo, guess));
             prepareNextGuess();
         }
     }
 } else {
-    // testing mode - don't save anything
+    // Testing mode: don't load/save anything, just get the game started
     if (CURRENT_HEARDLE === undefined) {
         alert("The requested test song was not found in the song pool.");
     } else {
@@ -217,29 +220,29 @@ if (TESTING_SONG === null) {
     }
 }
 
-function saveTodayState() {
+function savePlayStates() {
     if (TESTING_SONG !== null) return;
-    localStorage.setItem("today_state", JSON.stringify(STATE));
+    localStorage.setItem("play_states", JSON.stringify(PLAY_STATES));
 }
 
-function saveStats() {
+function saveStatistics() {
     if (TESTING_SONG !== null) return;
-    localStorage.setItem("stats", JSON.stringify(STATS));
+    localStorage.setItem("statistics", JSON.stringify(STATISTICS));
 }
 
-function addToStatistics() {
+function addToStatistics(forceFailed = false) {
     if (TESTING_SONG !== null) return;
-    STATS.byFailCount[STATE.failed] += 1;
-    if (STATE.cleared) {
-        STATS.cleared += 1;
-        STATS.currentStreak += 1;
-        if (STATS.currentStreak > STATS.highestStreak) {
-            STATS.highestStreak = STATS.currentStreak;
+    STATISTICS.byFailCount[forceFailed ? 6 : CURRENT_PLAY_STATE.failed] += 1;
+    if (CURRENT_PLAY_STATE.cleared && !forceFailed) {
+        STATISTICS.cleared += 1;
+        STATISTICS.currentStreak += 1;
+        if (STATISTICS.currentStreak > STATISTICS.highestStreak) {
+            STATISTICS.highestStreak = STATISTICS.currentStreak;
         }
     } else {
-        STATS.currentStreak = 0;
+        STATISTICS.currentStreak = 0;
     }
-    saveStats();
+    saveStatistics();
 }
 
 
@@ -249,8 +252,8 @@ function addToStatistics() {
 
 function playerTimeUpdate() {
     $timecurrent.text(timer(audio.currentTime));
-    $playbarcurrent.width((audio.currentTime / (STATE.finished ? audio.duration : LENGTHS[STATE.failed]) * 100) + "%");
-    if (!STATE.finished && audio.currentTime >= LENGTHS[STATE.failed]) {
+    $playbarcurrent.width((audio.currentTime / (CURRENT_PLAY_STATE.finished ? audio.duration : LENGTHS[CURRENT_PLAY_STATE.failed]) * 100) + "%");
+    if (!CURRENT_PLAY_STATE.finished && audio.currentTime >= LENGTHS[CURRENT_PLAY_STATE.failed]) {
         playerStop();
     } else if (!audio.paused) {
         requestAnimationFrame(playerTimeUpdate);
@@ -402,7 +405,7 @@ function makeBigrams(s) {
 }
 
 $skipbutton.on("click", () => {
-    resolveGuess(STATE.failed, false, null);
+    resolveGuess(CURRENT_PLAY_STATE.failed, false, null);
 });
 
 function submit() {
@@ -412,9 +415,9 @@ function submit() {
         // addToStatistics() is called in the guess submission method instead of reveal()
         // so it is guaranteed a round only gets added to statistics exactly once
         if (guess === CURRENT_HEARDLE.artistEn + " - " + CURRENT_HEARDLE.titleEn || guess === CURRENT_HEARDLE.artistJa + " - " + CURRENT_HEARDLE.titleJa) {
-            resolveGuess(STATE.failed, true, guess);
+            resolveGuess(CURRENT_PLAY_STATE.failed, true, guess);
         } else {
-            resolveGuess(STATE.failed, false, guess);
+            resolveGuess(CURRENT_PLAY_STATE.failed, false, guess);
         }
         $field.val("");
     }
@@ -432,21 +435,21 @@ $fieldclear.on("click", () => {
  ****/
 
 function resolveGuess(guessNo, wasCorrect, guess) {
-    if (STATE.finished) return;
-    STATE.guesses.push(guess);
+    if (CURRENT_PLAY_STATE.finished) return;
+    CURRENT_PLAY_STATE.guesses.push(guess);
     if (wasCorrect) {
-        STATE.cleared = true;
+        CURRENT_PLAY_STATE.cleared = true;
         endGame(true);
     } else {
-        STATE.failed++;
-        if (STATE.failed >= 6) {
+        CURRENT_PLAY_STATE.failed++;
+        if (CURRENT_PLAY_STATE.failed >= 6) {
             endGame(false);
         } else {
             showWrongGuess(guessNo, guess);
             prepareNextGuess();
         }
     }
-    saveTodayState();
+    savePlayStates();
 }
 
 function showWrongGuess(guessNo, guess) {
@@ -464,28 +467,28 @@ function prepareNextGuess() {
     updateSkipLabel();
 
     // Show "Click Play" prompt if no guesses have been made yet
-    $playprompt.toggle(STATE.failed === 0);
+    $playprompt.toggle(CURRENT_PLAY_STATE.failed === 0);
 
     // Mark current guess list row
-    $guesslistChildren[STATE.failed].addClass("border-custom-line");
+    $guesslistChildren[CURRENT_PLAY_STATE.failed].addClass("border-custom-line");
 
     // Show timelimit in / next to play bar
-    $playbarlimit.width((LENGTHS[STATE.failed] / LENGTHS.at(-1) * 100) + "%");
+    $playbarlimit.width((LENGTHS[CURRENT_PLAY_STATE.failed] / LENGTHS.at(-1) * 100) + "%");
     $playbarmarkersChildren.forEach(($element, index) => {
-        if (index <= STATE.failed) {
+        if (index <= CURRENT_PLAY_STATE.failed) {
             $element.removeClass("bg-custom-line bg-custom-mg").addClass("bg-custom-bg");
-        } else if (index === STATE.failed + 1) {
+        } else if (index === CURRENT_PLAY_STATE.failed + 1) {
             $element.removeClass("bg-custom-mg").addClass("bg-custom-line");
         }
     });
-    $timelimit.text(timer(LENGTHS[STATE.failed]));
+    $timelimit.text(timer(LENGTHS[CURRENT_PLAY_STATE.failed]));
 }
 
 function updateSkipLabel() {
-    if (STATE.failed === 5) {
+    if (CURRENT_PLAY_STATE.failed === 5) {
         $skipbutton.text("GIVE UP");
     } else {
-        const diff = LENGTHS[STATE.failed + 1] - LENGTHS[STATE.failed];
+        const diff = LENGTHS[CURRENT_PLAY_STATE.failed + 1] - LENGTHS[CURRENT_PLAY_STATE.failed];
         $skipbutton.text("SKIP (+" + diff + "s)");
     }
 }
@@ -499,7 +502,7 @@ function endGame(success) {
 
 function reveal(success) {
     // Disallow guessing
-    STATE.finished = true;
+    CURRENT_PLAY_STATE.finished = true;
     $guessbar.addClass("hidden");
 
     // Show result screen
@@ -507,17 +510,17 @@ function reveal(success) {
     $resultscreen.removeClass("hidden");
     $clearmessage.text(success ? "You got it!" : "Too bad...");
     $resultmessage.text(success
-        ? "You got today's Love Live! Heardle within " + LENGTHS[STATE.failed] + (LENGTHS[STATE.failed] === 1 ? " second!" : " seconds!")
+        ? "You got today's Love Live! Heardle within " + LENGTHS[CURRENT_PLAY_STATE.failed] + (LENGTHS[CURRENT_PLAY_STATE.failed] === 1 ? " second!" : " seconds!")
         : "You didn't get today's Love Live! Heardle. Better luck tomorrow!");
     $resultsongbox.addClass(success ? "bg-custom-positive" : "bg-custom-mg");
     $resultcover.attr("src", CURRENT_HEARDLE.coverUrl).attr("alt", CURRENT_HEARDLE.artistEn + " - " + CURRENT_HEARDLE.titleEn)
     $resultartist.text(CURRENT_HEARDLE.artistEn);
     $resulttitle.text(CURRENT_HEARDLE.titleEn);
     $resultcolorrowChildren.forEach(($element, index) => {
-        if (index < STATE.failed) {
-            if (STATE.guesses[index] === null) $element.addClass("bg-custom-fg");
+        if (index < CURRENT_PLAY_STATE.failed) {
+            if (CURRENT_PLAY_STATE.guesses[index] === null) $element.addClass("bg-custom-fg");
             else $element.addClass("bg-custom-negative");
-        } else if (index === STATE.failed && success) {
+        } else if (index === CURRENT_PLAY_STATE.failed && success) {
             $element.addClass("bg-custom-correct");
         } else {
             $element.addClass("bg-custom-mg");
@@ -613,7 +616,7 @@ $openHelp.on("click", () => {
     $modals.removeClass("hidden");
     $modalHelp.removeClass("hidden");
 });
-if (isNaN(LAST_DAY)) {
+if (IS_FIRST_PLAY) {
     // First ever play? Show help modal
     $openHelp.trigger("click");
 }

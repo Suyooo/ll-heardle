@@ -2,10 +2,21 @@ const CURRENT_ANNOUNCEMENT = {
     // Increase this number for every new announcement - this will be stored/checked for marking the button as unread or not
     announcementNo: 0,
 
-    title: "This is where announcements go!",
-    date: "October 12th, 2022",
+    title: "Site Update",
+    date: "October 13th, 2022",
     // You can use HTML (<br>, <a href="..."> etc) in the text
-    text: "Right now, there is nothing here though."
+    text:
+`Hello, everyone!<br>
+<br>
+Today, we've updated the site to use new code. You might notice some small differences (this news section, for example),
+but the majority of changes concerns running and maintaining the site. We hope that this update helps with song
+availability and allows us to add features to <i>Love Live! Heardle</i> in the future more easily!<br>
+<br>
+Your statistics and streak have been carried over from the old version of the site already. We made sure to make this
+new version play just like the old one, but of course, there could always be some issues or oversights that snuck in.
+If you run into any problems, like your data not carrying over, not saving or other errors, let us know!<br>
+<br>
+Thanks for playing <i>Love Live! Heardle</i>!`
 };
 
 const SONGPOOL = [

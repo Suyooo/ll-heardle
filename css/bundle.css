@@ -704,6 +704,9 @@ video {
 .text-center {
     text-align: center
 }
+.text-justify {
+    text-align: justify
+}
 .font-serif {
     font-family: Noto Serif Display, ui-serif, Georgia
 }
@@ -917,6 +920,9 @@ input[type="textfield"] {
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
     z-index: 1000
+}
+.max-h-50 {
+    max-height: 50vh;
 }
 @-webkit-keyframes gg-bar {
     10% {

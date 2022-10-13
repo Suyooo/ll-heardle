@@ -274,10 +274,24 @@ $audio
         $timeduration.text(timer(audio.duration));
         $loading.addClass("hidden");
         $playerbar.removeClass("hidden");
+
+        // Show "Click Play" prompt if no guesses have been made yet
+        if (CURRENT_PLAY_STATE.failed === 0) {
+            $playprompt.removeClass("hidden");
+        }
     })
     .one("error", () => {
-        $loading.text("Failed to load today's song. Please double-check your connection!");
-        // TODO: add "emergency clear"? (Mark song as finished to keep streak going, do not append statistics)
+        $loading.text("Failed to load today's song. Please double-check your connection and refresh!");
+        if (!CURRENT_PLAY_STATE.finished) {
+            $loading.append($("<div>").addClass("mb-6").text("If you're sure it's an error on the Heardle instead of on your side, and can't play this round because of it, you can use the button below to skip this round."))
+            $loading.append($("<a>").text("SKIP (finish this round, but keep your streak and avoid a fail recorded in your stats)").on("click", () => {
+                CURRENT_PLAY_STATE.finished = true;
+                savePlayStates();
+                STATISTICS.viewed--;
+                saveStatistics();
+                window.location.reload();
+            }));
+        }
     });
 $control.on("click", controlClicked);
 
@@ -473,9 +487,6 @@ function showWrongGuess(guessNo, guess) {
 function prepareNextGuess() {
     playerReset();
     updateSkipLabel();
-
-    // Show "Click Play" prompt if no guesses have been made yet
-    $playprompt.toggle(CURRENT_PLAY_STATE.failed === 0);
 
     // Mark current guess list row
     $guesslistChildren[CURRENT_PLAY_STATE.failed].addClass("border-custom-line");

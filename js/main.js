@@ -149,9 +149,9 @@ const CURRENT_HEARDLE = TESTING_SONG !== null
 
 // TODO: Import old Heardle info
 
-const tempstate = localStorage.getItem("today_state");
-const state = tempstate !== null && !TESTING_SONG
-    ? JSON.parse(tempstate)
+const LOADED_STATE = localStorage.getItem("today_state");
+const STATE = LOADED_STATE !== null && TESTING_SONG === null
+    ? JSON.parse(LOADED_STATE)
     : {
         day: CURRENT_DAY,
         failed: 0,
@@ -160,9 +160,9 @@ const state = tempstate !== null && !TESTING_SONG
         finished: false
     };
 
-const tempstats = localStorage.getItem("stats");
-const stats = tempstats !== null && !TESTING_SONG
-    ? JSON.parse(tempstats)
+const LOADED_STATS = localStorage.getItem("stats");
+const STATS = LOADED_STATS !== null && TESTING_SONG === null
+    ? JSON.parse(LOADED_STATS)
     : {
         byFailCount: [0, 0, 0, 0, 0, 0, 0],
         viewed: 0,
@@ -171,38 +171,39 @@ const stats = tempstats !== null && !TESTING_SONG
         highestStreak: 0
     };
 
-const lastDay = parseInt(localStorage.getItem("last_visited_day")); // NaN if first visit
-if (!TESTING_SONG) {
-    if (isNaN(lastDay) || CURRENT_DAY > lastDay) {
+const LAST_DAY = parseInt(localStorage.getItem("last_visited_day")); // NaN if first visit
+const LAST_ANNOUNCEMENT = parseInt(localStorage.getItem("last_announcement_no")); // NaN if news were never read
+if (TESTING_SONG === null) {
+    if (isNaN(LAST_DAY) || CURRENT_DAY > LAST_DAY) {
         // Was a new day started, or is it the player's first ever visit?
-        if (!isNaN(lastDay)) {
+        if (!isNaN(LAST_DAY)) {
             // check whether last day was unfinished
-            if (!state.finished) {
-                state.failed = 6;
-                state.finished = true;
+            if (!STATE.finished) {
+                STATE.failed = 6;
+                STATE.finished = true;
                 addToStatistics();
             }
             // check whether a day was skipped - and break streak if so
-            if (CURRENT_DAY - lastDay > 1) {
-                stats.currentStreak = 0;
+            if (CURRENT_DAY - LAST_DAY > 1) {
+                STATS.currentStreak = 0;
             }
         }
 
         localStorage.setItem("last_visited_day", CURRENT_DAY.toString());
-        state.day = CURRENT_DAY;
-        state.failed = 0;
-        state.guesses = [];
-        state.cleared = false;
-        state.finished = false;
+        STATE.day = CURRENT_DAY;
+        STATE.failed = 0;
+        STATE.guesses = [];
+        STATE.cleared = false;
+        STATE.finished = false;
         saveTodayState();
-        stats.viewed += 1;
+        STATS.viewed += 1;
         saveStats();
         prepareNextGuess();
     } else {
-        if (state.finished) {
-            reveal(state.cleared);
+        if (STATE.finished) {
+            reveal(STATE.cleared);
         } else {
-            state.guesses.forEach((guess, guessNo) => showWrongGuess(guessNo, guess));
+            STATE.guesses.forEach((guess, guessNo) => showWrongGuess(guessNo, guess));
             prepareNextGuess();
         }
     }
@@ -217,26 +218,26 @@ if (!TESTING_SONG) {
 }
 
 function saveTodayState() {
-    if (TESTING_SONG) return;
-    localStorage.setItem("today_state", JSON.stringify(state));
+    if (TESTING_SONG !== null) return;
+    localStorage.setItem("today_state", JSON.stringify(STATE));
 }
 
 function saveStats() {
-    if (TESTING_SONG) return;
-    localStorage.setItem("stats", JSON.stringify(stats));
+    if (TESTING_SONG !== null) return;
+    localStorage.setItem("stats", JSON.stringify(STATS));
 }
 
 function addToStatistics() {
-    if (TESTING_SONG) return;
-    stats.byFailCount[state.failed] += 1;
-    if (state.cleared) {
-        stats.cleared += 1;
-        stats.currentStreak += 1;
-        if (stats.currentStreak > stats.highestStreak) {
-            stats.highestStreak = stats.currentStreak;
+    if (TESTING_SONG !== null) return;
+    STATS.byFailCount[STATE.failed] += 1;
+    if (STATE.cleared) {
+        STATS.cleared += 1;
+        STATS.currentStreak += 1;
+        if (STATS.currentStreak > STATS.highestStreak) {
+            STATS.highestStreak = STATS.currentStreak;
         }
     } else {
-        stats.currentStreak = 0;
+        STATS.currentStreak = 0;
     }
     saveStats();
 }
@@ -248,8 +249,8 @@ function addToStatistics() {
 
 function playerTimeUpdate() {
     $timecurrent.text(timer(audio.currentTime));
-    $playbarcurrent.width((audio.currentTime / (state.finished ? audio.duration : LENGTHS[state.failed]) * 100) + "%");
-    if (!state.finished && audio.currentTime >= LENGTHS[state.failed]) {
+    $playbarcurrent.width((audio.currentTime / (STATE.finished ? audio.duration : LENGTHS[STATE.failed]) * 100) + "%");
+    if (!STATE.finished && audio.currentTime >= LENGTHS[STATE.failed]) {
         playerStop();
     } else if (!audio.paused) {
         requestAnimationFrame(playerTimeUpdate);
@@ -401,7 +402,7 @@ function makeBigrams(s) {
 }
 
 $skipbutton.on("click", () => {
-    resolveGuess(state.failed, false, null);
+    resolveGuess(STATE.failed, false, null);
 });
 
 function submit() {
@@ -411,9 +412,9 @@ function submit() {
         // addToStatistics() is called in the guess submission method instead of reveal()
         // so it is guaranteed a round only gets added to statistics exactly once
         if (guess === CURRENT_HEARDLE.artistEn + " - " + CURRENT_HEARDLE.titleEn || guess === CURRENT_HEARDLE.artistJa + " - " + CURRENT_HEARDLE.titleJa) {
-            resolveGuess(state.failed, true, guess);
+            resolveGuess(STATE.failed, true, guess);
         } else {
-            resolveGuess(state.failed, false, guess);
+            resolveGuess(STATE.failed, false, guess);
         }
         $field.val("");
     }
@@ -431,14 +432,14 @@ $fieldclear.on("click", () => {
  ****/
 
 function resolveGuess(guessNo, wasCorrect, guess) {
-    if (state.finished) return;
-    state.guesses.push(guess);
+    if (STATE.finished) return;
+    STATE.guesses.push(guess);
     if (wasCorrect) {
-        state.cleared = true;
+        STATE.cleared = true;
         endGame(true);
     } else {
-        state.failed++;
-        if (state.failed >= 6) {
+        STATE.failed++;
+        if (STATE.failed >= 6) {
             endGame(false);
         } else {
             showWrongGuess(guessNo, guess);
@@ -463,28 +464,28 @@ function prepareNextGuess() {
     updateSkipLabel();
 
     // Show "Click Play" prompt if no guesses have been made yet
-    $playprompt.toggle(state.failed === 0);
+    $playprompt.toggle(STATE.failed === 0);
 
     // Mark current guess list row
-    $guesslistChildren[state.failed].addClass("border-custom-line");
+    $guesslistChildren[STATE.failed].addClass("border-custom-line");
 
     // Show timelimit in / next to play bar
-    $playbarlimit.width((LENGTHS[state.failed] / LENGTHS.at(-1) * 100) + "%");
+    $playbarlimit.width((LENGTHS[STATE.failed] / LENGTHS.at(-1) * 100) + "%");
     $playbarmarkersChildren.forEach(($element, index) => {
-        if (index <= state.failed) {
+        if (index <= STATE.failed) {
             $element.removeClass("bg-custom-line bg-custom-mg").addClass("bg-custom-bg");
-        } else if (index === state.failed + 1) {
+        } else if (index === STATE.failed + 1) {
             $element.removeClass("bg-custom-mg").addClass("bg-custom-line");
         }
     });
-    $timelimit.text(timer(LENGTHS[state.failed]));
+    $timelimit.text(timer(LENGTHS[STATE.failed]));
 }
 
 function updateSkipLabel() {
-    if (state.failed === 5) {
+    if (STATE.failed === 5) {
         $skipbutton.text("GIVE UP");
     } else {
-        const diff = LENGTHS[state.failed + 1] - LENGTHS[state.failed];
+        const diff = LENGTHS[STATE.failed + 1] - LENGTHS[STATE.failed];
         $skipbutton.text("SKIP (+" + diff + "s)");
     }
 }
@@ -498,7 +499,7 @@ function endGame(success) {
 
 function reveal(success) {
     // Disallow guessing
-    state.finished = true;
+    STATE.finished = true;
     $guessbar.addClass("hidden");
 
     // Show result screen
@@ -506,17 +507,17 @@ function reveal(success) {
     $resultscreen.removeClass("hidden");
     $clearmessage.text(success ? "You got it!" : "Too bad...");
     $resultmessage.text(success
-        ? "You got today's Love Live! Heardle within " + LENGTHS[state.failed] + (LENGTHS[state.failed] === 1 ? " second!" : " seconds!")
+        ? "You got today's Love Live! Heardle within " + LENGTHS[STATE.failed] + (LENGTHS[STATE.failed] === 1 ? " second!" : " seconds!")
         : "You didn't get today's Love Live! Heardle. Better luck tomorrow!");
     $resultsongbox.addClass(success ? "bg-custom-positive" : "bg-custom-mg");
     $resultcover.attr("src", CURRENT_HEARDLE.coverUrl).attr("alt", CURRENT_HEARDLE.artistEn + " - " + CURRENT_HEARDLE.titleEn)
     $resultartist.text(CURRENT_HEARDLE.artistEn);
     $resulttitle.text(CURRENT_HEARDLE.titleEn);
     $resultcolorrowChildren.forEach(($element, index) => {
-        if (index < state.failed) {
-            if (state.guesses[index] === null) $element.addClass("bg-custom-fg");
+        if (index < STATE.failed) {
+            if (STATE.guesses[index] === null) $element.addClass("bg-custom-fg");
             else $element.addClass("bg-custom-negative");
-        } else if (index === state.failed && success) {
+        } else if (index === STATE.failed && success) {
             $element.addClass("bg-custom-correct");
         } else {
             $element.addClass("bg-custom-mg");
@@ -593,12 +594,18 @@ $openAnnounce.on("click", () => {
     $modalAnnounceTitle.text(CURRENT_ANNOUNCEMENT.title);
     $modalAnnounceDate.text(CURRENT_ANNOUNCEMENT.date);
     $modalAnnounceText.html(CURRENT_ANNOUNCEMENT.text);
+
     $modals.removeClass("hidden");
     $modalAnnounce.removeClass("hidden");
     $openAnnounceRead.removeClass("hidden");
     $openAnnounceUnread.addClass("hidden");
+
+    localStorage.setItem("last_announcement_no", CURRENT_ANNOUNCEMENT.announcementNo);
 });
-// TODO: highlight announcement button if unread
+if (isNaN(LAST_ANNOUNCEMENT) || CURRENT_ANNOUNCEMENT.announcementNo > LAST_ANNOUNCEMENT) {
+    $openAnnounceRead.addClass("hidden");
+    $openAnnounceUnread.removeClass("hidden");
+}
 
 // TODO: stats modal
 
@@ -606,7 +613,7 @@ $openHelp.on("click", () => {
     $modals.removeClass("hidden");
     $modalHelp.removeClass("hidden");
 });
-if (isNaN(lastDay)) {
+if (isNaN(LAST_DAY)) {
     // First ever play? Show help modal
     $openHelp.trigger("click");
 }

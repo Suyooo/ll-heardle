@@ -1,6 +1,6 @@
 const CURRENT_ANNOUNCEMENT = {
     // Increase this number for every new announcement - this will be stored/checked for marking the button as unread or not
-    notificationNo: 0,
+    announcementNo: 0,
 
     title: "This is where announcements go!",
     date: "October 12th, 2022",

@@ -269,7 +269,7 @@ function playerTimeUpdate() {
 }
 
 $audio
-    .attr("src", "a" + CURRENT_HEARDLE.songUrl)
+    .attr("src", CURRENT_HEARDLE.songUrl)
     .one("canplay", () => {
         $timeduration.text(timer(audio.duration));
         $loading.addClass("hidden");

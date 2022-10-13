@@ -937,20 +937,16 @@ input[type="textfield"] {
         box-shadow: inset 0 -2px 0
     }
 }
-.musicIsPlaying,
-.musicIsPlaying::after,
-.musicIsPlaying::before {
-    -webkit-animation: gg-bar 1.3s ease infinite alternate;
-    animation: gg-bar 1.3s ease infinite alternate
-}
 .gg-loadbar-sound,
 .gg-loadbar-sound::after,
 .gg-loadbar-sound::before {
+    -webkit-animation: gg-bar 1.3s ease infinite alternate;
+    animation: gg-bar 1.3s ease infinite alternate;
     display: block;
     box-sizing: border-box;
     width: 2px;
     height: 12px;
-    box-shadow: inset 0 -1px 0
+    box-shadow: inset 0 -1px 0;
 }
 .gg-loadbar-sound {
     position: relative;

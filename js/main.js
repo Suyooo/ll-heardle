@@ -269,7 +269,7 @@ function playerTimeUpdate() {
 }
 
 $audio
-    .attr("src", "a"+CURRENT_HEARDLE.songUrl)
+    .attr("src", "a" + CURRENT_HEARDLE.songUrl)
     .one("canplay", () => {
         $timeduration.text(timer(audio.duration));
         $loading.addClass("hidden");
@@ -281,20 +281,21 @@ $audio
         }
     })
     .one("error", () => {
-        $loading.text("Failed to load today's song. Please double-check your connection and refresh!");
+        $loading.html("<b>Failed to load today's song. Please double-check your connection and refresh!</b>");
         if (!CURRENT_PLAY_STATE.finished) {
-            $loading.append($("<div>").addClass("mb-6")
-                .text("If you're sure it's an error on the Heardle instead of on your side, and can't play this round" +
-                    " because of it, you can use the button below to skip this round."))
-            $loading.append($("<a>").attr("role","button")
-                .html("<b>SKIP</b> (Give up on this round, but you keep your streak and won't get a fail recorded in your stats. You cannot undo this!)")
-                .on("click", () => {
-                    CURRENT_PLAY_STATE.finished = true;
-                    savePlayStates();
-                    STATISTICS.viewed--;
-                    saveStatistics();
-                    window.location.reload();
-                }));
+            $loading.append($("<div>").addClass("mt-6 text-xs")
+                .text("If you're sure it's an error on the Heardle instead of on your side, and can't play this " +
+                    "round because of it, ")
+                .append($("<a>").attr("role", "button")
+                    .html("click here to give up on this round. You will keep your current streak, and you won't get a " +
+                        "fail recorded in your stats. You cannot undo this!")
+                    .on("click", () => {
+                        CURRENT_PLAY_STATE.finished = true;
+                        savePlayStates();
+                        STATISTICS.viewed--;
+                        saveStatistics();
+                        window.location.reload();
+                    })));
         }
     });
 $control.on("click", controlClicked);

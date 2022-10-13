@@ -174,16 +174,16 @@ const LAST_ANNOUNCEMENT = parseInt(localStorage.getItem("last_announcement_no"))
 
 if (TESTING_SONG === null) {
     // Regular play: Check for day change, load saved data and get the correct state ready
-    if (CURRENT_PLAY_STATE === undefined || CURRENT_DAY > CURRENT_PLAY_STATE.day) {
+    if (IS_FIRST_PLAY || CURRENT_DAY > CURRENT_PLAY_STATE.day) {
         // It's a new day, or it's the player's first ever visit
-        if (CURRENT_PLAY_STATE !== undefined) {
+        if (!IS_FIRST_PLAY) {
             // If the player played before...
             if (!CURRENT_PLAY_STATE.finished) {
                 // If the last day was unfinished, add a fail to the statistics
                 addToStatistics(true);
             }
             if (CURRENT_DAY - CURRENT_PLAY_STATE.day > 1) {
-                // If a day was skipped, break strak
+                // If a day was skipped, break streak
                 STATISTICS.currentStreak = 0;
             }
         }

@@ -3,6 +3,24 @@ const SONGPOOL = [
         "songUrl": "",
         "coverUrl": "",
         "startOnDay": 0,
+        "titleEn": "Mi wa µ'sic no Mi",
+        "artistEn": "µ's",
+        "titleJa": "ミはμ'sicのミ",
+        "artistJa": "µ's"
+    },
+    {
+        "songUrl": "",
+        "coverUrl": "",
+        "startOnDay": 0,
+        "titleEn": "Snow halation",
+        "artistEn": "µ's",
+        "titleJa": "Snow halation",
+        "artistJa": "µ's"
+    },
+    {
+        "songUrl": "",
+        "coverUrl": "",
+        "startOnDay": 0,
         "titleEn": "A song for You! You? You!!",
         "artistEn": "µ's",
         "titleJa": "A song for You! You? You!!",
@@ -743,7 +761,7 @@ const SONGPOOL = [
         "startOnDay": 0,
         "titleEn": "Kimi no Kuse ni!",
         "artistEn": "lily white",
-        "titleJa": "キミのくせに",
+        "titleJa": "キミのくせに！",
         "artistJa": "lily white"
     },
     {
@@ -806,7 +824,7 @@ const SONGPOOL = [
         "startOnDay": 0,
         "titleEn": "Diamond Princess no Yuuutsu",
         "artistEn": "BiBi",
-        "titleJa": "ダイヤモンドプリンセスの憂鬱 ",
+        "titleJa": "ダイヤモンドプリンセスの憂鬱",
         "artistJa": "BiBi"
     },
     {
@@ -1389,9 +1407,9 @@ const SONGPOOL = [
         "songUrl": "",
         "coverUrl": "",
         "startOnDay": 0,
-        "titleEn": "Landing action yeah!!",
+        "titleEn": "Landing action Yeah!!",
         "artistEn": "Aqours",
-        "titleJa": "Landing action yeah!!",
+        "titleJa": "Landing action Yeah!!",
         "artistJa": "Aqours"
     },
     {
@@ -1490,7 +1508,7 @@ const SONGPOOL = [
         "startOnDay": 0,
         "titleEn": "MY Mai☆TONIGHT",
         "artistEn": "Aqours",
-        "titleJa": "MY 舞☆TONIGHT ",
+        "titleJa": "MY舞☆TONIGHT ",
         "artistJa": "Aqours"
     },
     {
@@ -1551,9 +1569,9 @@ const SONGPOOL = [
         "songUrl": "",
         "coverUrl": "",
         "startOnDay": 0,
-        "titleEn": "No. 10",
+        "titleEn": "No.10",
         "artistEn": "Aqours",
-        "titleJa": "No. 10",
+        "titleJa": "No.10",
         "artistJa": "Aqours"
     },
     {
@@ -1760,7 +1778,7 @@ const SONGPOOL = [
         "startOnDay": 0,
         "titleEn": "Yume + Mirai ＝ Mugendai",
         "artistEn": "Aqours",
-        "titleJa": "Yume + Mirai ＝ Mugendai",
+        "titleJa": "ユメ+ミライ＝無限大",
         "artistJa": "Aqours"
     },
     {
@@ -1994,7 +2012,7 @@ const SONGPOOL = [
         "startOnDay": 0,
         "titleEn": "Galaxy HidE and SeeK",
         "artistEn": "AZALEA",
-        "titleJa": "Galaxy HidE and SeeK",
+        "titleJa": "GALAXY HidE and SeeK",
         "artistJa": "AZALEA"
     },
     {
@@ -2082,9 +2100,9 @@ const SONGPOOL = [
         "songUrl": "",
         "coverUrl": "",
         "startOnDay": 0,
-        "titleEn": "We‘ll get the next dream!!!",
+        "titleEn": "We'll get the next dream!!!",
         "artistEn": "AZALEA",
-        "titleJa": "We‘ll get the next dream!!!",
+        "titleJa": "We'll get the next dream!!!",
         "artistJa": "AZALEA"
     },
     {
@@ -2172,9 +2190,9 @@ const SONGPOOL = [
         "songUrl": "",
         "coverUrl": "",
         "startOnDay": 0,
-        "titleEn": "Shadow Gate to Love",
+        "titleEn": "Shadow gate to love",
         "artistEn": "Guilty Kiss",
-        "titleJa": "Shadow Gate to Love",
+        "titleJa": "Shadow gate to love",
         "artistJa": "Guilty Kiss"
     },
     {
@@ -2478,16 +2496,16 @@ const SONGPOOL = [
         "songUrl": "",
         "coverUrl": "",
         "startOnDay": 0,
-        "titleEn": "Just Believe!!",
+        "titleEn": "Just Believe!!!",
         "artistEn": "Nijigasaki High School Idol Club",
-        "titleJa": "Just Believe!!",
+        "titleJa": "Just Believe!!!",
         "artistJa": "虹ヶ咲学園スクールアイドル同好会"
     },
     {
         "songUrl": "",
         "coverUrl": "",
         "startOnDay": 0,
-        "titleEn": "L！L！L! (Love the Life We Live)",
+        "titleEn": "L!L!L! (Love the Life We Live)",
         "artistEn": "Nijigasaki High School Idol Club",
         "titleJa": "L！L！L! (Love the Life We Live)",
         "artistJa": "虹ヶ咲学園スクールアイドル同好会"
@@ -2822,7 +2840,7 @@ const SONGPOOL = [
         "startOnDay": 0,
         "titleEn": "Kaika Sengen",
         "artistEn": "Ayumu Uehara (CV: Aguri Onishi)",
-        "titleJa": "開花宣言 ",
+        "titleJa": "開花宣言",
         "artistJa": "上原歩夢 (CV.大西亜玖璃)"
     },
     {
@@ -3081,9 +3099,9 @@ const SONGPOOL = [
         "songUrl": "",
         "coverUrl": "",
         "startOnDay": 0,
-        "titleEn": "CHASE",
+        "titleEn": "CHASE!",
         "artistEn": "Setsuna Yuki (CV: Tomori Kusunoki)",
-        "titleJa": "CHASE",
+        "titleJa": "CHASE!",
         "artistJa": "優木せつ菜 (CV.楠木ともり)"
     },
     {
@@ -3272,16 +3290,16 @@ const SONGPOOL = [
         "startOnDay": 0,
         "titleEn": "Ye Mingzhu",
         "artistEn": "Lanzhu Zhong (CV: Akina Homoto)",
-        "titleJa": "夜明珠 ",
+        "titleJa": "夜明珠（イエミンジュ）",
         "artistJa": "鐘 嵐珠 (CV.法元明菜)"
     },
     {
         "songUrl": "",
         "coverUrl": "",
         "startOnDay": 0,
-        "titleEn": "1,2,3!",
+        "titleEn": "1.2.3!",
         "artistEn": "Liella!",
-        "titleJa": "1,2,3!",
+        "titleJa": "1.2.3!",
         "artistJa": "Liella!"
     },
     {
@@ -3721,10 +3739,8 @@ const SONGPOOL = [
     this list instead of alphabetically, so it's easier to keep track of what is still missing using a song listing
     like https://ll-fans.jp/data/song?sortKey=SORT_RELEASED_ON&order=DESC
 
-        µ's - Snow halation (yeah idk why)
-
         Aqours - Gemstone DE-A-I
-        Aqours 3rd solos: Namioto Refrain, Minamo no Piano, Ai Kotoba
+        Aqours 3rd solos: Namioto Refrain, Minamo ni Piano, Ai Kotoba
 
         Niji Anime Season 2:
             QU4RTZ - 4 SEASONS (ENJOY IT! B-Side)

@@ -171,17 +171,20 @@ const stats = tempstats !== null && !TESTING_SONG
         highestStreak: 0
     };
 
-const lastDay = localStorage.getItem("last_visited_day");
+const lastDay = parseInt(localStorage.getItem("last_visited_day")); // NaN if first visit
 if (!TESTING_SONG) {
-    if (lastDay === null || CURRENT_DAY > parseInt(lastDay)) {
-        // new day started
-        if (lastDay !== null) {
-            // TODO: reset streak if a day was skipped?
+    if (isNaN(lastDay) || CURRENT_DAY > lastDay) {
+        // Was a new day started, or is it the player's first ever visit?
+        if (!isNaN(lastDay)) {
             // check whether last day was unfinished
             if (!state.finished) {
                 state.failed = 6;
                 state.finished = true;
                 addToStatistics();
+            }
+            // check whether a day was skipped - and break streak if so
+            if (CURRENT_DAY - lastDay > 1) {
+                stats.currentStreak = 0;
             }
         }
 
@@ -325,7 +328,6 @@ const autoCompleter = new autoComplete({
         filter: (list) => {
             // This function uses autoComplete.js as only a first step - it doesn't rank results, just filters them
             // Remove dupes (happens if a search term appears in multiple fields)
-            // TODO: Maybe have a toggle between English/Japanese and only show those results?
             const foundValues = new Set();
             list = list.filter(result => {
                 if (foundValues.has(result.value)) return false;
@@ -600,7 +602,7 @@ $openHelp.on("click", () => {
     $modals.removeClass("hidden");
     $modalHelp.removeClass("hidden");
 });
-if (lastDay === null) {
+if (isNaN(lastDay)) {
     // First ever play? Show help modal
     $openHelp.trigger("click");
 }

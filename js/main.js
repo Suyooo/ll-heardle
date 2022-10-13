@@ -262,6 +262,10 @@ $audio
         $timeduration.text(timer(audio.duration));
         $loading.addClass("hidden");
         $playerbar.removeClass("hidden");
+    })
+    .one("error", () => {
+        $loading.text("Failed to load today's song. Please double-check your connection!");
+        // TODO: add "emergency clear"? (Mark song as finished to keep streak going, do not append statistics)
     });
 $control.on("click", controlClicked);
 

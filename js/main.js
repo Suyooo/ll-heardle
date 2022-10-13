@@ -128,15 +128,20 @@ function timer(fullSeconds) {
  * Pick a song
  ****/
 
-// Use unix timestamp to figure out what day it is in JST
-// TODO: base day on a common time or on local timezone?
+// Figure out the current day
 const MS_PER_DAY = 1000 * 60 * 60 * 24;
 const CURRENT_DAY = Math.floor((new Date().getTime() - FIRST_DAY_DATE) / MS_PER_DAY) + 1;
 
+// If the location hash is set, we're in testing mode
+const TESTING_SONG = window.location.hash && window.location.hash.startsWith("#http") ? window.location.hash.slice(1) : null;
+
+// Prepare random pick
 prngSeed(CURRENT_DAY);
 const FILTERED_SONGPOOL = SONGPOOL.filter(s => s.songUrl !== "" && CURRENT_DAY >= s.startOnDay);
-const CURRENT_HEARDLE = FILTERED_SONGPOOL[Math.floor(prngRandom() * FILTERED_SONGPOOL.length)];
 
+const CURRENT_HEARDLE = TESTING_SONG !== null
+    ? SONGPOOL.filter(s => s.songUrl === TESTING_SONG)[0]
+    : FILTERED_SONGPOOL[Math.floor(prngRandom() * FILTERED_SONGPOOL.length)];
 
 /*****
  * State and Local Storage
@@ -145,64 +150,81 @@ const CURRENT_HEARDLE = FILTERED_SONGPOOL[Math.floor(prngRandom() * FILTERED_SON
 // TODO: Import old Heardle info
 
 const tempstate = localStorage.getItem("today_state");
-const state = tempstate !== null ? JSON.parse(tempstate) : {
-    day: CURRENT_DAY,
-    failed: 0,
-    guesses: [],
-    cleared: false,
-    finished: false
-}
+const state = tempstate !== null && !TESTING_SONG
+    ? JSON.parse(tempstate)
+    : {
+        day: CURRENT_DAY,
+        failed: 0,
+        guesses: [],
+        cleared: false,
+        finished: false
+    };
 
 const tempstats = localStorage.getItem("stats");
-const stats = tempstats !== null ? JSON.parse(tempstats) : {
-    byFailCount: [0, 0, 0, 0, 0, 0, 0],
-    viewed: 0,
-    cleared: 0,
-    currentStreak: 0,
-    highestStreak: 0
-}
+const stats = tempstats !== null && !TESTING_SONG
+    ? JSON.parse(tempstats)
+    : {
+        byFailCount: [0, 0, 0, 0, 0, 0, 0],
+        viewed: 0,
+        cleared: 0,
+        currentStreak: 0,
+        highestStreak: 0
+    };
 
 const lastDay = localStorage.getItem("last_visited_day");
-if (lastDay === null || CURRENT_DAY > parseInt(lastDay)) {
-    // new day started
-    if (lastDay !== null) {
-        // TODO: reset streak if a day was skipped?
-        // check whether last day was unfinished
-        if (!state.finished) {
-            state.failed = 6;
-            state.finished = true;
-            addToStatistics();
+if (!TESTING_SONG) {
+    if (lastDay === null || CURRENT_DAY > parseInt(lastDay)) {
+        // new day started
+        if (lastDay !== null) {
+            // TODO: reset streak if a day was skipped?
+            // check whether last day was unfinished
+            if (!state.finished) {
+                state.failed = 6;
+                state.finished = true;
+                addToStatistics();
+            }
+        }
+
+        localStorage.setItem("last_visited_day", CURRENT_DAY.toString());
+        state.day = CURRENT_DAY;
+        state.failed = 0;
+        state.guesses = [];
+        state.cleared = false;
+        state.finished = false;
+        saveTodayState();
+        stats.viewed += 1;
+        saveStats();
+        prepareNextGuess();
+    } else {
+        if (state.finished) {
+            reveal(state.cleared);
+        } else {
+            state.guesses.forEach((guess, guessNo) => showWrongGuess(guessNo, guess));
+            prepareNextGuess();
         }
     }
-
-    localStorage.setItem("last_visited_day", CURRENT_DAY.toString());
-    state.day = CURRENT_DAY;
-    state.failed = 0;
-    state.guesses = [];
-    state.cleared = false;
-    state.finished = false;
-    saveTodayState();
-    stats.viewed += 1;
-    saveStats();
-    prepareNextGuess();
 } else {
-    if (state.finished) {
-        reveal(state.cleared);
+    // testing mode - don't save anything
+    if (CURRENT_HEARDLE === undefined) {
+        alert("The requested test song was not found in the song pool.");
     } else {
-        state.guesses.forEach((guess, guessNo) => showWrongGuess(guessNo, guess));
+        alert("You're in testing mode.");
         prepareNextGuess();
     }
 }
 
 function saveTodayState() {
+    if (TESTING_SONG) return;
     localStorage.setItem("today_state", JSON.stringify(state));
 }
 
 function saveStats() {
+    if (TESTING_SONG) return;
     localStorage.setItem("stats", JSON.stringify(stats));
 }
 
 function addToStatistics() {
+    if (TESTING_SONG) return;
     stats.byFailCount[state.failed] += 1;
     if (state.cleared) {
         stats.cleared += 1;

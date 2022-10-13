@@ -1,3 +1,13 @@
+const CURRENT_ANNOUNCEMENT = {
+    // Increase this number for every new announcement - this will be stored/checked for marking the button as unread or not
+    notificationNo: 0,
+
+    title: "This is where announcements go!",
+    date: "October 12th, 2022",
+    // You can use HTML (<br>, <a href="..."> etc) in the text
+    text: "Right now, there is nothing here though."
+};
+
 const SONGPOOL = [
     {
         "songUrl": "",
@@ -3716,12 +3726,15 @@ const SONGPOOL = [
         "titleJa": "LIVE with a smile!",
         "artistJa": "Aqours / 虹ヶ咲学園スクールアイドル同好会 / Liella!"
     },
+    /*
+     * WHEN ADDING A NEW SONG:
+     * - Copypaste one of the elements above this (so songs are in release order in this list)
+     * - For solos, you can copy the artist line from one of the others above
+     * - !!! Make sure to set "startOnDay" to *at least* two days after the current day (the number that shows in the
+     *       share info plus two), or the current day's Heardle **WILL** break for players!
+     * - After adding, you can test whether the song loads fine and the correct guess is recognized:
+     *   https://lovelive-heardle.glitch.me/#URL
+     *   Where URL is replaced by the URL you put into "songUrl".
+     *   (You might need to refresh - there should be a popup telling you you are in testing mode.)
+     */
 ];
-
-const CURRENT_ANNOUNCEMENT = {
-    notificationId: 0, // increase this number if you want the "new announcement" hint to show on the button
-    title: "This is where announcements go!",
-    date: "October 12th, 2022",
-    // You can use HTML (<br>, <a href="..."> etc) in this
-    text: "Right now, there is nothing here though."
-};

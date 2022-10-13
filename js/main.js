@@ -10,8 +10,9 @@ if (location.protocol !== 'https:') {
 // Changing this does change the playback lengths for the video, however, it's hardcoded in a bunch of other places
 // (Like the markers on the play bar, the amount of allowed attempts, the slots on the guess list...)
 const LENGTHS = [1, 2, 4, 7, 11, 16];
-// UNIX timestamp (in ms) of the first day
-const FIRST_DAY_TIME = 1665154800000;
+
+// First day (YYYY/MM/DD)
+const FIRST_DAY_DATE = Date.parse("2022/04/04");
 
 /*****
  * Grab element references
@@ -130,7 +131,7 @@ function timer(fullSeconds) {
 // Use unix timestamp to figure out what day it is in JST
 // TODO: base day on a common time or on local timezone?
 const MS_PER_DAY = 1000 * 60 * 60 * 24;
-const CURRENT_DAY = Math.floor((new Date().getTime() - FIRST_DAY_TIME) / MS_PER_DAY);
+const CURRENT_DAY = Math.floor((new Date().getTime() - FIRST_DAY_DATE) / MS_PER_DAY) + 1;
 
 prngSeed(CURRENT_DAY);
 const FILTERED_SONGPOOL = SONGPOOL.filter(s => s.songUrl !== "" && CURRENT_DAY >= s.startOnDay);
@@ -493,7 +494,7 @@ function reveal(success) {
             $element.addClass("bg-custom-mg");
         }
     });
-    const nextDayTime = FIRST_DAY_TIME + (CURRENT_DAY + 1) * MS_PER_DAY;
+    const nextDayTime = FIRST_DAY_DATE + CURRENT_DAY * MS_PER_DAY;
     updateResultTimer(nextDayTime);
     setInterval(updateResultTimer.bind(this, nextDayTime), 1000);
 

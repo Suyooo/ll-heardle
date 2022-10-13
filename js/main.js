@@ -269,7 +269,7 @@ function playerTimeUpdate() {
 }
 
 $audio
-    .attr("src", CURRENT_HEARDLE.songUrl)
+    .attr("src", "a"+CURRENT_HEARDLE.songUrl)
     .one("canplay", () => {
         $timeduration.text(timer(audio.duration));
         $loading.addClass("hidden");
@@ -283,14 +283,18 @@ $audio
     .one("error", () => {
         $loading.text("Failed to load today's song. Please double-check your connection and refresh!");
         if (!CURRENT_PLAY_STATE.finished) {
-            $loading.append($("<div>").addClass("mb-6").text("If you're sure it's an error on the Heardle instead of on your side, and can't play this round because of it, you can use the button below to skip this round."))
-            $loading.append($("<a>").text("SKIP (finish this round, but keep your streak and avoid a fail recorded in your stats)").on("click", () => {
-                CURRENT_PLAY_STATE.finished = true;
-                savePlayStates();
-                STATISTICS.viewed--;
-                saveStatistics();
-                window.location.reload();
-            }));
+            $loading.append($("<div>").addClass("mb-6")
+                .text("If you're sure it's an error on the Heardle instead of on your side, and can't play this round" +
+                    " because of it, you can use the button below to skip this round."))
+            $loading.append($("<a>").attr("role","button")
+                .html("<b>SKIP</b> (Give up on this round, but you keep your streak and won't get a fail recorded in your stats. You cannot undo this!)")
+                .on("click", () => {
+                    CURRENT_PLAY_STATE.finished = true;
+                    savePlayStates();
+                    STATISTICS.viewed--;
+                    saveStatistics();
+                    window.location.reload();
+                }));
         }
     });
 $control.on("click", controlClicked);

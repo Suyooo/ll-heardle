@@ -8,18 +8,18 @@
     <meta itemprop="name" content="Love Live! Heardle - Daily Love Live! song intro game">
     <meta itemprop="description" content="Guess the Love Live! song from the intro in as little tries as possible.">
     <meta itemprop="image"
-          content="https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/wide.png?v=1665586313752">
+          content="https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/wide.png?v=1665661024431">
     <meta property="og:url" content="https://lovelive-heardle.glitch.me/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Love Live! Heardle - Daily Love Live! song intro game">
     <meta property="og:description" content="Guess the Love Live! song from the intro in as little tries as possible.">
     <meta property="og:image"
-          content="https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/wide.png?v=1665586313752">
+          content="https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/wide.png?v=1665661024431">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Love Live! Heardle - Daily Love Live! song intro game">
     <meta name="twitter:description" content="Guess the Love Live! song from the intro in as little tries as possible.">
     <meta name="twitter:image"
-          content="https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/square.png?v=1665586312503">
+          content="https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/square.png?v=1665661023231">
 
     <link rel="icon" type="image/png"
           href="https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-72x72.png?v=1665586301258">
@@ -40,7 +40,7 @@
                 <div class="flex justify-evenly text-custom-fgcolor p-3 items-center">
                     <div class="flex flex-1">
                         <button id="open-about"
-                                class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk">
+                                class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                  stroke-linejoin="round">
@@ -50,7 +50,7 @@
                             </svg>
                         </button>
                         <button id="open-announce"
-                                class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk">
+                                class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white">
                             <svg id="open-announce-read" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden">
                                 <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path>
@@ -65,7 +65,7 @@
                     <h1 class="font-serif text-2xl font-bold flex-grow text-center flex-1">Love Live! Heardle</h1>
                     <div class="flex flex-1 justify-end">
                         <button id="open-stats"
-                                class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk">
+                                class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                  stroke-linejoin="round">
@@ -73,7 +73,7 @@
                             </svg>
                         </button>
                         <button id="open-help"
-                                class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk">
+                                class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                  stroke-linejoin="round">
@@ -145,7 +145,7 @@
             <p class="py-1" id="resultmessage"></p>
             <div class="flex flex-col justify-center items-center pt-3">
                 <button id="resultshare"
-                        class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk bg-custom-positive">
+                        class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white bg-custom-positive">
                     Share Result
                     <svg class="inline-block ml-2" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -167,7 +167,7 @@
         </div>
     </div>
     <div id="loading" class="text-sm text-center text-custom-line p-6">
-        <div class="flex justify-center m-3"><span class="loader svelte-57p3aa"></span></div>
+        <div class="flex justify-center m-3"><span class="loader"></span></div>
         <p>loading player</p>
     </div>
     <div id="playerbar" class="hidden">
@@ -198,7 +198,7 @@
                         </div>
                         <div class="flex justify-center items-center p-1">
                             <button id="control"
-                                    class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk">
+                                    class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white">
                                 <div class="flex justify-center items-center text-custom-fg h-14 w-14 border-2 rounded-full relative overflow-hidden">
                                     <div id="controlpaused" class="ml-1 relative z-10">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -210,7 +210,7 @@
                                     </div>
                                     <div id="controlplaying" class="relative z-10 hidden">
                                         <div class="scale-150 transform relative">
-                                            <i class="gg-loadbar-sound svelte-15swa4o musicIsPlaying"></i>
+                                            <i class="gg-loadbar-sound musicIsPlaying"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -251,11 +251,11 @@
                     </div>
                     <div class="flex justify-between pt-3">
                         <button id="skipbutton"
-                                class="px-2 py-2 uppercase tracking-widest bg-custom-mg border-none flex items-center font-semibold text-sm svelte-1r54uzk">
+                                class="px-2 py-2 uppercase tracking-widest bg-custom-mg border-none flex items-center font-semibold text-sm text-white">
                             Skip
                         </button>
                         <button id="submitbutton"
-                                class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk bg-custom-positive">
+                                class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white bg-custom-positive">
                             Submit
                         </button>
                     </div>
@@ -263,7 +263,7 @@
             </div>
         </div>
     </div>
-    <div id="modals" class="hidden modal-background p-3 svelte-1nyqrwd">
+    <div id="modals" class="hidden modal-background p-3">
         <div id="modal-about" class="hidden modal max-w-screen-xs w-full mx-auto top-20 relative rounded-sm"
              role="dialog" aria-modal="true">
             <div class="bg-custom-bg border border-custom-mg p-6">
@@ -291,9 +291,9 @@
                     <p class="mb-3">Original Heardle by <a href="https://omakase.studio" target="_blank">Studio
                         Omakase</a></p>
 
-                    <p class="text-xs mb-3 text-custom-line">Some of the cool stuff this site uses:
+                    <p class="text-xs mb-3 text-custom-line">Created using
                         <a href="https://jquery.com">jQuery</a>,
-                        <a href="https://tailwindcss.com">Tailwind</a>,
+                        <a href="https://tailwindcss.com">Tailwind CSS</a>,
                         <a href="https://fonts.google.com/noto/specimen/Noto+Serif+Display">Noto Serif Display</a>,
                         <a href="https://fonts.google.com/noto/specimen/Noto+Sans">Noto Sans</a>,
                         <a href="https://iconsvg.xyz">IconSVG</a>,
@@ -380,7 +380,7 @@
                         <div><p>Answer in as few tries as possible and share your score!</p></div>
                     </div>
                     <div class="justify-center flex py-2 mt-2">
-                        <button class="close-modals px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk bg-custom-positive">
+                        <button class="close-modals px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white bg-custom-positive">
                             Play
                         </button>
                     </div>

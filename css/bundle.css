@@ -272,13 +272,13 @@ video {
     top: 5rem
 }
 .right-0 {
-    right: 0px
+    right: 0
 }
 .right-3 {
     right: 0.75rem
 }
 .bottom-0 {
-    bottom: 0px
+    bottom: 0
 }
 .left-0 {
     left: 0
@@ -293,7 +293,7 @@ video {
     z-index: 10000
 }
 .m-0 {
-    margin: 0px
+    margin: 0
 }
 .m-3 {
     margin: 0.75rem
@@ -314,7 +314,7 @@ video {
     margin-bottom: 0.5rem
 }
 .mt-0 {
-    margin-top: 0px
+    margin-top: 0
 }
 .mt-2 {
     margin-top: 0.5rem
@@ -434,7 +434,7 @@ video {
     max-width: 468px
 }
 .flex-1 {
-    flex: 1 1 0%
+    flex: 1 1 0
 }
 .flex-none {
     flex: none
@@ -660,7 +660,7 @@ video {
     padding-bottom: 0.75rem
 }
 .pt-0 {
-    padding-top: 0px
+    padding-top: 0
 }
 .pt-1 {
     padding-top: 0.25rem
@@ -672,7 +672,7 @@ video {
     padding-top: 1.5rem
 }
 .pb-0 {
-    padding-bottom: 0px
+    padding-bottom: 0
 }
 .pb-5 {
     padding-bottom: 1.25rem
@@ -830,7 +830,7 @@ a:hover,
 a:active {
     color: var(--color-positive);
     text-decoration: underline;
-    text-underline-offset: 2.5px;
+    text-underline-offset: 2px;
 }
 .text-custom-line a,
 .text-custom-line a:visited,
@@ -894,7 +894,7 @@ input[type="textfield"] {
 #autoComplete_list_1 {
     border-radius: 4px 4px 0 0
 }
-.modal-background.svelte-1nyqrwd {
+.modal-background {
     position: absolute;
     top: 0;
     left: 0;
@@ -903,10 +903,7 @@ input[type="textfield"] {
     background: rgba(0, 0, 0, 0.6);
     z-index: 1000
 }
-button.svelte-1r54uzk {
-    color: #fff;
-}
-@-webkit-keyframes svelte-15swa4o-gg-bar {
+@-webkit-keyframes gg-bar {
     10% {
         box-shadow: inset 0 -4px 0
     }
@@ -923,7 +920,7 @@ button.svelte-1r54uzk {
         box-shadow: inset 0 -2px 0
     }
 }
-@keyframes svelte-15swa4o-gg-bar {
+@keyframes gg-bar {
     10% {
         box-shadow: inset 0 -4px 0
     }
@@ -940,43 +937,43 @@ button.svelte-1r54uzk {
         box-shadow: inset 0 -2px 0
     }
 }
-.musicIsPlaying.svelte-15swa4o,
-.musicIsPlaying.svelte-15swa4o::after,
-.musicIsPlaying.svelte-15swa4o::before {
-    -webkit-animation: svelte-15swa4o-gg-bar 1.3s ease infinite alternate;
-    animation: svelte-15swa4o-gg-bar 1.3s ease infinite alternate
+.musicIsPlaying,
+.musicIsPlaying::after,
+.musicIsPlaying::before {
+    -webkit-animation: gg-bar 1.3s ease infinite alternate;
+    animation: gg-bar 1.3s ease infinite alternate
 }
-.gg-loadbar-sound.svelte-15swa4o,
-.gg-loadbar-sound.svelte-15swa4o::after,
-.gg-loadbar-sound.svelte-15swa4o::before {
+.gg-loadbar-sound,
+.gg-loadbar-sound::after,
+.gg-loadbar-sound::before {
     display: block;
     box-sizing: border-box;
     width: 2px;
     height: 12px;
     box-shadow: inset 0 -1px 0
 }
-.gg-loadbar-sound.svelte-15swa4o {
+.gg-loadbar-sound {
     position: relative;
     margin-right: 5px;
     margin-left: 5px
 }
-.gg-loadbar-sound.svelte-15swa4o::after,
-.gg-loadbar-sound.svelte-15swa4o::before {
+.gg-loadbar-sound::after,
+.gg-loadbar-sound::before {
     content: "";
     position: absolute;
     bottom: 0
 }
-.gg-loadbar-sound.svelte-15swa4o::before {
+.gg-loadbar-sound::before {
     left: -4px;
     -webkit-animation-delay: -2.4s;
     animation-delay: -2.4s
 }
-.gg-loadbar-sound.svelte-15swa4o::after {
+.gg-loadbar-sound::after {
     right: -4px;
     -webkit-animation-delay: -3.7s;
     animation-delay: -3.7s
 }
-.loader.svelte-57p3aa {
+.loader {
     width: 24px;
     height: 24px;
     border: 2px solid var(--color-line);
@@ -984,10 +981,10 @@ button.svelte-1r54uzk {
     border-radius: 50%;
     display: inline-block;
     box-sizing: border-box;
-    -webkit-animation: svelte-57p3aa-rotation 1s linear infinite;
-    animation: svelte-57p3aa-rotation 1s linear infinite
+    -webkit-animation: rotation 1s linear infinite;
+    animation: rotation 1s linear infinite
 }
-@-webkit-keyframes svelte-57p3aa-rotation {
+@-webkit-keyframes rotation {
     0% {
         transform: rotate(0deg)
     }
@@ -995,83 +992,12 @@ button.svelte-1r54uzk {
         transform: rotate(360deg)
     }
 }
-@keyframes svelte-57p3aa-rotation {
+@keyframes rotation {
     0% {
         transform: rotate(0deg)
     }
     100% {
         transform: rotate(360deg)
-    }
-}
-.kofi-button.svelte-1d3p4dy.svelte-1d3p4dy {
-    background-color: rgb(41, 171, 224) !important
-}
-a.svelte-1d3p4dy.svelte-1d3p4dy {
-    text-decoration: none
-}
-.kofitext.svelte-1d3p4dy img.kofiimg.svelte-1d3p4dy {
-    height: 20px !important;
-    width: 28px !important;
-    display: initial;
-    -webkit-animation: svelte-1d3p4dy-kofi-wiggle 1.5s infinite;
-    animation: svelte-1d3p4dy-kofi-wiggle 1.5s infinite
-}
-@-webkit-keyframes svelte-1d3p4dy-kofi-wiggle {
-    0% {
-        transform: rotate(0) scale(1)
-    }
-    60% {
-        transform: rotate(0) scale(1)
-    }
-    75% {
-        transform: rotate(0) scale(1.12)
-    }
-    80% {
-        transform: rotate(0) scale(1.1)
-    }
-    84% {
-        transform: rotate(-10deg) scale(1.1)
-    }
-    88% {
-        transform: rotate(10deg) scale(1.1)
-    }
-    92% {
-        transform: rotate(-10deg) scale(1.1)
-    }
-    96% {
-        transform: rotate(10deg) scale(1.1)
-    }
-    100% {
-        transform: rotate(0) scale(1)
-    }
-}
-@keyframes svelte-1d3p4dy-kofi-wiggle {
-    0% {
-        transform: rotate(0) scale(1)
-    }
-    60% {
-        transform: rotate(0) scale(1)
-    }
-    75% {
-        transform: rotate(0) scale(1.12)
-    }
-    80% {
-        transform: rotate(0) scale(1.1)
-    }
-    84% {
-        transform: rotate(-10deg) scale(1.1)
-    }
-    88% {
-        transform: rotate(10deg) scale(1.1)
-    }
-    92% {
-        transform: rotate(-10deg) scale(1.1)
-    }
-    96% {
-        transform: rotate(10deg) scale(1.1)
-    }
-    100% {
-        transform: rotate(0) scale(1)
     }
 }
 

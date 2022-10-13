@@ -133,9 +133,23 @@ p,
 pre {
     margin: 0
 }
+input,
+button,
+select,
+textarea {
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    border-radius: 2px}
 button {
     background-color: transparent;
-    background-image: none
+    background-image: none;
+    outline: none
+}
+button:not(:disabled):active {
+    background-color: #dddddd;
+}
+button:focus {
+    border-color: #666666;
 }
 fieldset {
     margin: 0;
@@ -1021,4 +1035,21 @@ input[type="textfield"] {
 textarea {
     border: 0;
     outline: none;
+}
+
+#playbarlimit {
+    transition: width .5s;
+}
+
+.logo {
+    color: rgba(0,0,0,0);
+    background: url("https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/logo-tall.png?v=1665661179999") no-repeat center;
+    background-size: contain;
+    height: 4rem;
+}
+@media(min-width: 640px) {
+    .logo {
+        background-image: url("https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/logo-wide.png?v=1665661180923");
+        height: 2rem;
+    }
 }

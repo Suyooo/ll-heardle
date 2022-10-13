@@ -155,11 +155,109 @@ const CURRENT_HEARDLE = TESTING_SONG !== null
     ? SONGPOOL.filter(s => s.songUrl === TESTING_SONG)[0]
     : FILTERED_SONGPOOL[CURRENT_HEARDLE_ID];
 
+
+/*****
+ * Old Heardle Migration
+ ****/
+
+if (localStorage.getItem("userStats") !== null) {
+    try {
+        // Old Heardle data available. Bring it over!
+        const oldInfoString = localStorage.getItem("userStats");
+        localStorage.setItem("old_heardle_userstats", oldInfoString); // back it up, just in case
+        const oldInfo = JSON.parse(oldInfoString);
+
+        function findHeardleIdFromOldHeardleSongTitle(title) {
+            for (const [index, song] of SONGPOOL.entries()) {
+                // Artist might differ
+                if (title === song.titleEn || title.endsWith(" - " + song.titleEn) || title.endsWith(" - " + song.titleEn + " / " + song.titleJa)) {
+                    return index;
+                }
+            }
+            throw new Error("Unable to find new Heardle ID for title " + title);
+        }
+
+        const newPlayStates = oldInfo
+            // Remove broken Heardles (see unfair streak break fixes below)
+            .filter(oldState => oldState.id !== 167 && oldState.id !== 172)
+            .map(oldState => {
+                const newState = {
+                    day: oldState.id + 1,
+                    heardle_id: findHeardleIdFromOldHeardleSongTitle(oldState.correctAnswer),
+                    guesses: oldState.guessList.map(guess => {
+                        if (guess.isSkipped) return null;
+                        const song = findHeardleIdFromOldHeardleSongTitle(guess.answer);
+                        return song.artistEn + " - " + song.titleEn;
+                    }),
+                    cleared: oldState.guessList.some(guess => guess.isCorrect)
+                }
+                newState.failed = newState.guesses.length - (newState.cleared ? 1 : 0);
+                newState.finished = newState.cleared || newState.failed === 6 || newState.day !== CURRENT_DAY;
+                return newState;
+            });
+
+        // Make sure we don't delete in-progress Heardles on the new script
+        const existingStates = JSON.parse(localStorage.getItem("play_states"));
+        if (existingStates !== null) {
+            for (const existingState of existingStates) {
+                console.log(newPlayStates);
+                if (!newPlayStates.some(otherState => otherState.day === existingState.day)) {
+                    newPlayStates.push(existingState);
+                }
+            }
+        }
+        localStorage.setItem("play_states", JSON.stringify(newPlayStates));
+
+        const newStatistics = {
+            byFailCount: [0, 0, 0, 0, 0, 0, 0],
+            viewed: newPlayStates.length,
+            cleared: 0,
+            currentStreak: 0,
+            highestStreak: 0
+        };
+
+        let lastDay = 0;
+        for (const state of newPlayStates) {
+            if (!state.cleared || state.day - lastDay > 1) {
+                // Bonus: since we're recreating streaks anyways, drop some unfair streak breaks
+                // Day 168: Kaguya no Shiro de Odoritai, but the linked song was taken down and nobody could play
+                // Day 173: A placeholder was used as a Heardle and everybody got a free streak break due to errors
+                // Make sure to only allow the streak exactly for those (so for example, if day 167 was skipped, break still)
+                if (!(state.day === 169 && lastDay === 167) &&
+                    !(state.day === 174 && lastDay === 172)) {
+                    newStatistics.currentStreak = 0;
+                }
+            }
+            if (state.cleared) {
+                newStatistics.cleared++;
+                newStatistics.currentStreak++;
+                if (newStatistics.currentStreak > newStatistics.highestStreak) {
+                    newStatistics.highestStreak = newStatistics.currentStreak;
+                }
+                newStatistics.byFailCount[state.failed]++;
+            } else {
+                newStatistics.byFailCount[6]++;
+            }
+            lastDay = state.day;
+        }
+        localStorage.setItem("statistics", JSON.stringify(newStatistics));
+
+        // Migration successful, remove old keys
+        localStorage.removeItem("userStats");
+        localStorage.removeItem("firstTime");
+    } catch (e) {
+        alert("We tried migrating your Heardle save data to a new format, but there was a problem.\nDon't worry, your" +
+            " old save data is still there, so you can keep playing - once we fix this, we'll just add your old data" +
+            " on top of the new one you create from now on!\n" +
+            "Please contact us on Twitter so we know something is wrong. You can find the links by pressing the info" +
+            " button in the top left of the site!\n\nLet us know the following:\n" + e);
+    }
+}
+
+
 /*****
  * State and Local Storage
  ****/
-
-// TODO: Import old Heardle info
 
 const LOADED_PLAY_STATES = localStorage.getItem("play_states");
 const PLAY_STATES = LOADED_PLAY_STATES !== null && TESTING_SONG === null
@@ -189,7 +287,7 @@ if (TESTING_SONG === null) {
             // If the player played before...
             if (!CURRENT_PLAY_STATE.finished) {
                 // If the last day was unfinished, add a fail to the statistics
-                addToStatistics(true);
+                addToStatistics();
             }
             if (CURRENT_DAY - CURRENT_PLAY_STATE.day > 1) {
                 // If a day was skipped, break streak
@@ -238,17 +336,18 @@ function saveStatistics() {
     localStorage.setItem("statistics", JSON.stringify(STATISTICS));
 }
 
-function addToStatistics(forceFailed = false) {
+function addToStatistics() {
     if (TESTING_SONG !== null) return;
-    STATISTICS.byFailCount[forceFailed ? 6 : CURRENT_PLAY_STATE.failed] += 1;
-    if (CURRENT_PLAY_STATE.cleared && !forceFailed) {
+    if (CURRENT_PLAY_STATE.cleared) {
         STATISTICS.cleared += 1;
         STATISTICS.currentStreak += 1;
         if (STATISTICS.currentStreak > STATISTICS.highestStreak) {
             STATISTICS.highestStreak = STATISTICS.currentStreak;
         }
+        STATISTICS.byFailCount[CURRENT_PLAY_STATE.failed] += 1;
     } else {
         STATISTICS.currentStreak = 0;
+        STATISTICS.byFailCount[6] += 1;
     }
     saveStatistics();
 }

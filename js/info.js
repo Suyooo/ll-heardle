@@ -24,6 +24,15 @@ const SONGPOOL = [
         "songUrl": "",
         "coverUrl": "",
         "startOnDay": 0,
+        "titleEn": "Snow halation",
+        "artistEn": "µ's",
+        "titleJa": "Snow halation",
+        "artistJa": "µ's"
+    },
+    {
+        "songUrl": "",
+        "coverUrl": "",
+        "startOnDay": 0,
         "titleEn": "A song for You! You? You!!",
         "artistEn": "µ's",
         "titleJa": "A song for You! You? You!!",

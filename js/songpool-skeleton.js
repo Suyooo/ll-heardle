@@ -3720,6 +3720,9 @@ const SONGPOOL = [
     Missing songs (from what I can tell) - probably would be better to add new songs by release order to the end of
     this list instead of alphabetically, so it's easier to keep track of what is still missing using a song listing
     like https://ll-fans.jp/data/song?sortKey=SORT_RELEASED_ON&order=DESC
+
+        µ's - Snow halation (yeah idk why)
+
         Aqours - Gemstone DE-A-I
         Aqours 3rd solos: Namioto Refrain, Minamo no Piano, Ai Kotoba
 

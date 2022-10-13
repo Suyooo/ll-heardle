@@ -259,6 +259,9 @@ video {
 .relative {
     position: relative
 }
+.top-m-4 {
+    top: -1rem
+}
 .top-0 {
     top: 0
 }
@@ -285,6 +288,9 @@ video {
 }
 .left-3 {
     left: 0.75rem
+}
+.left-50-p {
+    left: 50%
 }
 .z-10 {
     z-index: 10
@@ -456,6 +462,9 @@ video {
     --tw-scale-x: 1.5;
     --tw-scale-y: 1.5
 }
+.transform-x-m-50 {
+    --tw-translate-x: -50%
+}
 @-webkit-keyframes spin {
     to {
         transform: rotate(360deg)
@@ -584,6 +593,9 @@ video {
 .border-b {
     border-bottom-width: 1px
 }
+.border-b-2 {
+    border-bottom-width: 2px
+}
 .border-none {
     border-style: none
 }
@@ -595,6 +607,9 @@ video {
 }
 .border-custom-line {
     border-color: var(--color-line)
+}
+.border-custom-positive {
+    border-color: var(--color-positive)
 }
 .focus\:border-custom-positive:focus {
     border-color: var(--color-positive)

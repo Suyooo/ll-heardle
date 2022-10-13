@@ -77,6 +77,15 @@ const $openAnnounceUnread = $("#open-announce-unread");
 
 const $modalStats = $("#modal-stats");
 const $openStats = $("#open-stats");
+const $modalStatsBarContainer = $("#modal-stats-barcontainer")
+const $modalStatsBars = $modalStatsBarContainer.children().toArray().map(e => $("div.absolute", e));
+const $modalStatsCounters = $modalStatsBarContainer.children().toArray().map(e => $("span.absolute", e));
+const $modalStatsLabels = $modalStatsBarContainer.children().toArray().map(e => $("div.text-center", e));
+const $modalStatsViewed = $("#modal-stats-viewed");
+const $modalStatsCleared = $("#modal-stats-cleared");
+const $modalStatsWinRate = $("#modal-stats-winrate");
+const $modalStatsCurrentStreak = $("#modal-stats-currentstreak");
+const $modalStatsHighestStreak = $("#modal-stats-higheststreak");
 
 const $modalHelp = $("#modal-help");
 const $openHelp = $("#open-help");
@@ -188,7 +197,6 @@ if (TESTING_SONG === null) {
             }
         }
 
-        localStorage.setItem("last_visited_day", CURRENT_DAY.toString());
         CURRENT_PLAY_STATE = {
             day: CURRENT_DAY,
             heardle_id: CURRENT_HEARDLE_ID,
@@ -610,7 +618,40 @@ if (isNaN(LAST_ANNOUNCEMENT) || CURRENT_ANNOUNCEMENT.announcementNo > LAST_ANNOU
     $openAnnounceUnread.removeClass("hidden");
 }
 
-// TODO: stats modal
+$openStats.on("click", () => {
+    const maxBar = STATISTICS.byFailCount.reduce((max, value) => value > max ? value : max, 0);
+    if (maxBar > 0) {
+        $modalStatsBars.forEach(($element, index) => {
+            if (STATISTICS.byFailCount[index] > 0) {
+                $element.css("height", (STATISTICS.byFailCount[index] / maxBar * 100) + "%").addClass("border-b-2");
+            }
+            if (CURRENT_PLAY_STATE.finished && CURRENT_PLAY_STATE.failed === index) {
+                $element.removeClass("bg-custom-mg").addClass("bg-custom-positive").removeClass("border-custom-mg").addClass("border-custom-positive");
+            }
+        });
+    }
+    $modalStatsCounters.forEach(($element, index) => {
+        $element.text(STATISTICS.byFailCount[index]);
+    });
+
+    if (CURRENT_PLAY_STATE.finished) {
+        $modalStatsBars[CURRENT_PLAY_STATE.failed]
+            .removeClass("bg-custom-mg").addClass("bg-custom-positive").removeClass("border-custom-mg").addClass("border-custom-positive");
+        $modalStatsCounters[CURRENT_PLAY_STATE.failed]
+            .addClass("font-semibold").removeClass("text-custom-fg").addClass("text-custom-positive");
+        $modalStatsLabels[CURRENT_PLAY_STATE.failed]
+            .addClass("font-semibold").removeClass("text-custom-fg").addClass("text-custom-positive");
+    }
+
+    $modalStatsViewed.text(STATISTICS.viewed);
+    $modalStatsCleared.text(STATISTICS.cleared);
+    $modalStatsWinRate.text(STATISTICS.viewed === 0 ? "-" : ((STATISTICS.cleared / STATISTICS.viewed * 100).toFixed(1) + "%"));
+    $modalStatsCurrentStreak.text(STATISTICS.currentStreak);
+    $modalStatsHighestStreak.text(STATISTICS.highestStreak);
+
+    $modals.removeClass("hidden");
+    $modalStats.removeClass("hidden");
+});
 
 $openHelp.on("click", () => {
     $modals.removeClass("hidden");

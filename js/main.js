@@ -22,8 +22,6 @@ const FIRST_DAY_DATE = Date.parse("2022/04/04");
  ****/
 
 const $fadeout = $("#fadeout");
-const $fadeouttext = $("#fadeouttext");
-const $fadeoutwarning = $("#fadeoutwarning");
 
 const $playerbar = $("#playerbar");
 const $loading = $("#loading");
@@ -820,5 +818,3 @@ function styleGuessRowTitleSong() {
 
 // Once everything is prepared, fade in
 $fadeout.fadeOut(250);
-setTimeout(() => $fadeouttext.fadeIn(250), 2000);
-setTimeout(() => $fadeoutwarning.fadeIn(250), 10000);

@@ -1,10 +1,3 @@
-// Before doing anything: Make sure the user is on HTTPS, as navigator.share only works on HTTPS
-if (location.protocol !== 'https:') {
-    location.replace(`https:${location.href.substring(location.protocol.length)}`);
-    throw new Error("Redirecting to HTTPS.");
-}
-
-
 /*****
  * Configuration
  ****/

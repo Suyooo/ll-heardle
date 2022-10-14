@@ -29,6 +29,13 @@
           href="https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-72x72.png?v=1665737302420">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="/css/bundle.css">
+
+    <script>
+        // Before doing anything: Make sure the user is on HTTPS, as navigator.share/clipboard only works on HTTPS
+        if (location.protocol !== 'https:') {
+            location.replace(`https:${location.href.substring(location.protocol.length)}`);
+        }
+    </script>
 </head>
 
 <body>

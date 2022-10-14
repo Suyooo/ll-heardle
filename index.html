@@ -31,9 +31,12 @@
     <link rel="stylesheet" href="/css/bundle.css">
 
     <script>
-        // Before doing anything: Make sure the user is on HTTPS, as navigator.share/clipboard only works on HTTPS
-        if (location.protocol !== 'https:') {
-            location.replace(`https:${location.href.substring(location.protocol.length)}`);
+        // Before doing anything: navigator.share/clipboard only works on HTTPS, redirect new users there
+        // However, don't do that if save data exists - HTTP and HTTPS localStorage is seperate
+        // Basically not much we can do about it, old Heardle never enforced HTTPS, so...
+        if (window.location.protocol !== "https:" && window.location.hash !== "#no-redirect"
+            && localStorage.getItem("userStats") === null && localStorage.getItem("play_states") === null) {
+            window.location.replace("https://lovelive-heardle.glitch.me/");
         }
     </script>
 </head>

@@ -685,10 +685,23 @@ $resultshare.on("click", () => {
     });
     shareText += "\n#loveliveheardle #lovelive #ラブライブ\nhttps://lovelive-heardle.glitch.me";
 
-    // Firefox for Android does not support sharing text via navigator.share
-    // There is no way to programmatically check whether a browser supports sharing text via the native share
-    // mechanism, so we simply have to remember to manually remove this when it is implemented in Firefox
-    if (navigator.share && !(navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Android"))) {
+
+    if (window.location.protocol !== "https:") {
+        // If playing via an insecure connection, we cannot share/copy.
+        // Instead, show the result as a textarea so the player can copy manually. Also, add a little hint about why
+        // things are like that, and how to move to the secure connection.
+        const insecureShareDiv = $("<div>").addClass("text-xs flex flex-col");
+        const shareTextarea = $("<textarea>").addClass("mb-6 h-24").val(shareText);
+        shareTextarea.on("focus", () => shareTextarea.select());
+        insecureShareDiv.append(shareTextarea);
+        insecureShareDiv.append($("<span>").text("You are on an insecure connection, so the result cannot be shared automatically."));
+        insecureShareDiv.append($("<a>").text("Click here to learn more.").attr("href","https://gist.github.com/Suyooo/84baa6a8a5fb57f2e05c02d0698985c4"));
+        $resultshare.replaceWith(insecureShareDiv);
+        requestAnimationFrame(() => shareTextarea.select());
+    } else if (navigator.share && !(navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Android"))) {
+        // Firefox for Android does not support sharing text via navigator.share
+        // There is no way to programmatically check whether a browser supports sharing text via the native share
+        // mechanism, so we simply have to remember to manually remove this when it is implemented in Firefox
         navigator.share({text: shareText});
     } else {
         // PC browsers usually don't have a native share mechanism - just copy it instead

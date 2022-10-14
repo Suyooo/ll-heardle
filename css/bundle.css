@@ -972,6 +972,8 @@ input[type="textfield"] {
 textarea {
     border: 0;
     outline: none;
+    background-color: var(--color-mg);
+    resize: none;
 }
 
 #playbarlimit {

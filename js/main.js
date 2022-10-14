@@ -187,8 +187,14 @@ if (localStorage.getItem("userStats") !== null) {
                     heardle_id: findHeardleIdFromOldHeardleSongTitle(oldState.correctAnswer),
                     guesses: oldState.guessList.map(guess => {
                         if (guess.isSkipped) return null;
-                        const song = findHeardleIdFromOldHeardleSongTitle(guess.answer);
-                        return song.artistEn + " - " + song.titleEn;
+                        try {
+                            const song = SONGPOOL[findHeardleIdFromOldHeardleSongTitle(guess.answer)];
+                            return song.artistEn + " - " + song.titleEn;
+                        } catch (e) {
+                            // Misspelled guess - old heardle didn't allow existing songs only, so in that case,
+                            // just take the title as-is
+                            return guess.answer;
+                        }
                     }),
                     cleared: oldState.guessList.some(guess => guess.isCorrect)
                 }
@@ -219,11 +225,11 @@ if (localStorage.getItem("userStats") !== null) {
 
         let lastDay = 0;
         for (const state of newPlayStates) {
+            if (!state.finished) continue;
             if (!state.cleared || state.day - lastDay > 1) {
                 // Bonus: since we're recreating streaks anyways, drop some unfair streak breaks
                 // Day 168: Kaguya no Shiro de Odoritai, but the linked song was taken down and nobody could play
-                // Day 173: A placeholder was used as a Heardle and everybody got a free streak break due to errors
-                // Make sure to only allow the streak exactly for those (so for example, if day 167 was skipped, break still)
+                // Day 173: A placeholder was used as a Heardle and you literally had to guess "Placeholder"
                 if (!(state.day === 169 && lastDay === 167) &&
                     !(state.day === 174 && lastDay === 172)) {
                     newStatistics.currentStreak = 0;

@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Love Live! Heardle - Daily Love Live! song intro game</title>
     <meta name="description" content="Guess the Love Live! song from the intro in as little tries as possible.">
+
+    <script>
+        // Before doing anything: navigator.share/clipboard only works on HTTPS, redirect new users there
+        // However, don't do that if save data exists - HTTP and HTTPS localStorage is seperate
+        // Basically not much we can do about it, old Heardle never enforced HTTPS, so...
+        const redirecting = window.location.protocol !== "https:" && window.location.hash !== "#no-redirect"
+            && localStorage.getItem("userStats") === null && localStorage.getItem("play_states") === null;
+        if (redirecting) {
+            requestAnimationFrame(() => {
+                const main = document.getElementsByTagName("main")[0];
+                main.className += " justify-center items-center";
+                main.innerHTML = "<span>Redirecting you to a secure connection, please wait...</span><a href='https://lovelive-heardle.glitch.me/'>(or click here)</a>";
+            });
+            setTimeout(() => window.location.replace("https://lovelive-heardle.glitch.me/"), 1000);
+        }
+    </script>
+
     <meta itemprop="name" content="Love Live! Heardle - Daily Love Live! song intro game">
     <meta itemprop="description" content="Guess the Love Live! song from the intro in as little tries as possible.">
     <meta itemprop="image"
@@ -29,16 +46,6 @@
           href="https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-72x72.png?v=1665737302420">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="/css/bundle.css">
-
-    <script>
-        // Before doing anything: navigator.share/clipboard only works on HTTPS, redirect new users there
-        // However, don't do that if save data exists - HTTP and HTTPS localStorage is seperate
-        // Basically not much we can do about it, old Heardle never enforced HTTPS, so...
-        if (window.location.protocol !== "https:" && window.location.hash !== "#no-redirect"
-            && localStorage.getItem("userStats") === null && localStorage.getItem("play_states") === null) {
-            window.location.replace("https://lovelive-heardle.glitch.me/");
-        }
-    </script>
 </head>
 
 <body>
@@ -545,14 +552,16 @@
         document.body.append(script);
     }
 
-    setTimeout(() => document.getElementById("fadeouttext").style.display="block", 2000);
-    setTimeout(() => document.getElementById("fadeoutwarning").style.display="block", 20000);
-    loadScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js",
-        "sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==");
-    loadScript("https://cdnjs.cloudflare.com/ajax/libs/tarekraafat-autocomplete.js/10.2.7/autoComplete.min.js",
-        "sha512-NuM5bGxVydsGmzqbWc5F1FbV4mS3yJin2SKbl5G9R9ZEDyTrTGt49VBIZh5fKp9GKIeCZYFtR1FVujNTtMQqjQ==");
-    loadScript("/js/info.js");
-    loadScript("/js/main.js");
+    if (!redirecting) {
+        setTimeout(() => document.getElementById("fadeouttext").style.display = "block", 2000);
+        setTimeout(() => document.getElementById("fadeoutwarning").style.display = "block", 20000);
+        loadScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js",
+            "sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==");
+        loadScript("https://cdnjs.cloudflare.com/ajax/libs/tarekraafat-autocomplete.js/10.2.7/autoComplete.min.js",
+            "sha512-NuM5bGxVydsGmzqbWc5F1FbV4mS3yJin2SKbl5G9R9ZEDyTrTGt49VBIZh5fKp9GKIeCZYFtR1FVujNTtMQqjQ==");
+        loadScript("/js/info.js");
+        loadScript("/js/main.js");
+    }
 </script>
 </body>
 </html>

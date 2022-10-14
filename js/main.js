@@ -366,6 +366,14 @@ if (TESTING_SONG === null) {
         throw new Error("The requested test song was not found in the song pool.");
     } else {
         alert("You're in testing mode.");
+        CURRENT_PLAY_STATE = {
+            day: CURRENT_DAY,
+            heardle_id: CURRENT_HEARDLE_ID,
+            failed: 0,
+            guesses: [],
+            cleared: false,
+            finished: false
+        };
         prepareNextGuess();
     }
 }

@@ -95,6 +95,9 @@ const rand_c = 11;
 
 function prngSeed(i) {
     rand_z = i;
+    // Roll a bit after seeding for improved randomness
+    prngRandom();
+    prngRandom();
 }
 
 // Linear congruential generator, returns number between 0.0 (inclusive) and 1.0 (exclusive)

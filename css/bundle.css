@@ -926,7 +926,7 @@ input[type="textfield"] {
 #autoComplete_list_1 {
     border-radius: 4px 4px 0 0
 }
-.modal-background {
+.modal-container {
     position: absolute;
     top: 0;
     left: 0;

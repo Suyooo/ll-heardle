@@ -32,7 +32,7 @@
 </head>
 
 <body>
-<main class="bg-custom-bg text-custom-fg overflow-auto flex flex-col h-screen">
+<main class="bg-custom-bg text-custom-fg overflow-auto flex flex-col h-full">
     <div class="flex-none">
         <header class="border-b border-custom-line">
             <div class="max-w-screen-md mx-auto ">
@@ -176,10 +176,9 @@
     <div id="playerbar" class="hidden">
         <div class="border-t border-custom-line">
             <div class="max-w-screen-sm w-full mx-auto px-3 flex-col">
-                <div class="h-3 w-full relative overflow-hidden ">
-                    <div id="playbarlimit" class="h-full absolute bg-custom-mg overflow-hidden">
-                        <div id="playbarcurrent" class="h-full absolute bg-custom-positive"></div>
-                    </div>
+                <div class="h-3 w-full relative overflow-hidden">
+                    <div id="playbarlimit" class="h-full absolute bg-custom-mg"></div>
+                    <div id="playbarcurrent" class="h-full absolute bg-custom-positive"></div>
                     <div id="playbarmarkers" class="w-full h-full absolute">
                         <div class="w-px h-full absolute left-0 bg-custom-mg"></div>
                         <div class="w-px h-full absolute bg-custom-mg" style="left: 6.25%;"></div>
@@ -266,7 +265,7 @@
             </div>
         </div>
     </div>
-    <div id="modals" class="hidden modal-background p-3">
+    <div id="modals" class="hidden modal-container p-3">
         <div id="modal-about" class="hidden modal max-w-screen-xs w-full mx-auto top-20 relative rounded-sm"
              role="dialog" aria-modal="true">
             <div class="bg-custom-bg border border-custom-mg p-6">
@@ -513,7 +512,7 @@
             </div>
         </div>
     </div>
-    <div id="fadeout" class="bg-custom-bg w-screen h-screen absolute left-0 top-0 z-10000 flex flex-col justify-center">
+    <div id="fadeout" class="bg-custom-bg w-screen h-full absolute left-0 top-0 z-10000 flex flex-col justify-center">
         <span id="fadeouttext" class="hidden w-full text-center font-bold">loading...</span>
         <span id="fadeoutwarning" class="hidden w-full text-center text-xs">
             This is taking longer than it should. Maybe try refreshing?<br>

@@ -9,8 +9,11 @@ const CURRENT_ANNOUNCEMENT = {
 `Hello, everyone!<br>
 <br>
 Today, we've updated the site to use new code. You might notice some small differences (this news section, for example),
-but the majority of changes concerns running and maintaining the site. We hope that this update helps with song
-availability and allows us to add features to <i>Love Live! Heardle</i> in the future more easily!<br>
+but the majority of changes is about helping us run and maintain the site. For players, the main changes are that the
+audio player has changed, and the song choice for new Heardles is now automatic and randomized.<br>
+<br>
+That does mean there could be some repeating songs, but we hope that this update helps with overall song availability
+and allows us to add features to <i>Love Live! Heardle</i> in the future more easily!<br>
 <br>
 Your statistics and streak have been carried over from the old version of the site already. We made sure to make this
 new version play just like the old one, but of course, there could always be some issues or oversights that snuck in.

@@ -1,6 +1,7 @@
 // Before doing anything: Make sure the user is on HTTPS, as navigator.share only works on HTTPS
 if (location.protocol !== 'https:') {
     location.replace(`https:${location.href.substring(location.protocol.length)}`);
+    throw new Error("Redirecting to HTTPS.");
 }
 
 
@@ -320,6 +321,7 @@ if (TESTING_SONG === null) {
     // Testing mode: don't load/save anything, just get the game started
     if (CURRENT_HEARDLE === undefined) {
         alert("The requested test song was not found in the song pool.");
+        throw new Error("The requested test song was not found in the song pool.");
     } else {
         alert("You're in testing mode.");
         prepareNextGuess();
@@ -359,8 +361,10 @@ function addToStatistics() {
 
 function playerTimeUpdate() {
     $timecurrent.text(timer(audio.currentTime));
-    $playbarcurrent.width((audio.currentTime / (CURRENT_PLAY_STATE.finished ? audio.duration : LENGTHS[CURRENT_PLAY_STATE.failed]) * 100) + "%");
+    const playProgress = audio.currentTime / (CURRENT_PLAY_STATE.finished ? audio.duration : LENGTHS.at(-1));
+    $playbarcurrent.width((playProgress * 100) + "%");
     if (!CURRENT_PLAY_STATE.finished && audio.currentTime >= LENGTHS[CURRENT_PLAY_STATE.failed]) {
+        $playbarcurrent.width((LENGTHS[CURRENT_PLAY_STATE.failed] / LENGTHS.at(-1) * 100) + "%");
         playerStop();
     } else if (!audio.paused) {
         requestAnimationFrame(playerTimeUpdate);
@@ -589,7 +593,6 @@ function showWrongGuess(guessNo, guess) {
 }
 
 function prepareNextGuess() {
-    playerReset();
     updateSkipLabel();
 
     // Mark current guess list row

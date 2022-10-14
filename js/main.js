@@ -135,17 +135,11 @@ function timer(fullSeconds) {
 const MS_PER_DAY = 1000 * 60 * 60 * 24;
 const CURRENT_DAY = Math.floor((new Date().getTime() - FIRST_DAY_DATE) / MS_PER_DAY) + 1;
 
-// If the location hash is set, we're in testing mode
-const TESTING_SONG = window.location.hash && window.location.hash.startsWith("#http") ? window.location.hash.slice(1) : null;
-
 // Do random pick
 prngSeed(CURRENT_DAY);
 const FILTERED_SONGPOOL = SONGPOOL.filter(s => s.songUrl !== "" && CURRENT_DAY >= s.startOnDay);
 const CURRENT_HEARDLE_ID = Math.floor(prngRandom() * FILTERED_SONGPOOL.length);
-
-const CURRENT_HEARDLE = TESTING_SONG !== null
-    ? SONGPOOL.filter(s => s.songUrl === TESTING_SONG)[0]
-    : FILTERED_SONGPOOL[CURRENT_HEARDLE_ID];
+const CURRENT_HEARDLE = FILTERED_SONGPOOL[CURRENT_HEARDLE_ID];
 
 
 /*****
@@ -303,12 +297,12 @@ if (window.location.hash === "#export-save") {
 }
 
 const LOADED_PLAY_STATES = localStorage.getItem("play_states");
-const PLAY_STATES = LOADED_PLAY_STATES !== null && TESTING_SONG === null
+const PLAY_STATES = LOADED_PLAY_STATES !== null
     ? JSON.parse(LOADED_PLAY_STATES)
     : [];
 
 const LOADED_STATISTICS = localStorage.getItem("statistics");
-const STATISTICS = LOADED_STATISTICS !== null && TESTING_SONG === null
+const STATISTICS = LOADED_STATISTICS !== null
     ? JSON.parse(LOADED_STATISTICS)
     : {
         byFailCount: [0, 0, 0, 0, 0, 0, 0],
@@ -322,74 +316,52 @@ let CURRENT_PLAY_STATE = PLAY_STATES.at(-1); // undefined if player's first visi
 const IS_FIRST_PLAY = CURRENT_PLAY_STATE === undefined;
 const LAST_ANNOUNCEMENT = parseInt(localStorage.getItem("last_announcement_no")); // NaN if news were never read
 
-if (TESTING_SONG === null) {
-    // Regular play: Check for day change, load saved data and get the correct state ready
-    if (IS_FIRST_PLAY || CURRENT_DAY > CURRENT_PLAY_STATE.day) {
-        // It's a new day, or it's the player's first ever visit
-        if (!IS_FIRST_PLAY) {
-            // If the player played before...
-            if (!CURRENT_PLAY_STATE.finished) {
-                // If the last day was unfinished, add a fail to the statistics
-                addToStatistics();
-            }
-            if (CURRENT_DAY - CURRENT_PLAY_STATE.day > 1) {
-                // If a day was skipped, break streak
-                STATISTICS.currentStreak = 0;
-            }
+// Check for day change, load saved data and get the correct state ready
+if (IS_FIRST_PLAY || CURRENT_DAY > CURRENT_PLAY_STATE.day) {
+    // It's a new day, or it's the player's first ever visit
+    if (!IS_FIRST_PLAY) {
+        // If the player played before...
+        if (!CURRENT_PLAY_STATE.finished) {
+            // If the last day was unfinished, add a fail to the statistics
+            addToStatistics();
         }
-
-        CURRENT_PLAY_STATE = {
-            day: CURRENT_DAY,
-            heardle_id: CURRENT_HEARDLE_ID,
-            failed: 0,
-            guesses: [],
-            cleared: false,
-            finished: false
-        };
-        PLAY_STATES.push(CURRENT_PLAY_STATE);
-        savePlayStates();
-        STATISTICS.viewed += 1;
-        saveStatistics();
-        prepareNextGuess();
-    } else {
-        if (CURRENT_PLAY_STATE.finished) {
-            reveal(CURRENT_PLAY_STATE.cleared);
-        } else {
-            CURRENT_PLAY_STATE.guesses.forEach((guess, guessNo) => showWrongGuess(guessNo, guess));
-            prepareNextGuess();
+        if (CURRENT_DAY - CURRENT_PLAY_STATE.day > 1) {
+            // If a day was skipped, break streak
+            STATISTICS.currentStreak = 0;
         }
     }
+
+    CURRENT_PLAY_STATE = {
+        day: CURRENT_DAY,
+        heardle_id: CURRENT_HEARDLE_ID,
+        failed: 0,
+        guesses: [],
+        cleared: false,
+        finished: false
+    };
+    PLAY_STATES.push(CURRENT_PLAY_STATE);
+    savePlayStates();
+    STATISTICS.viewed += 1;
+    saveStatistics();
+    prepareNextGuess();
 } else {
-    // Testing mode: don't load/save anything, just get the game started
-    if (CURRENT_HEARDLE === undefined) {
-        alert("The requested test song was not found in the song pool.");
-        throw new Error("The requested test song was not found in the song pool.");
+    if (CURRENT_PLAY_STATE.finished) {
+        reveal(CURRENT_PLAY_STATE.cleared);
     } else {
-        alert("You're in testing mode.");
-        CURRENT_PLAY_STATE = {
-            day: CURRENT_DAY,
-            heardle_id: CURRENT_HEARDLE_ID,
-            failed: 0,
-            guesses: [],
-            cleared: false,
-            finished: false
-        };
+        CURRENT_PLAY_STATE.guesses.forEach((guess, guessNo) => showWrongGuess(guessNo, guess));
         prepareNextGuess();
     }
 }
 
 function savePlayStates() {
-    if (TESTING_SONG !== null) return;
     localStorage.setItem("play_states", JSON.stringify(PLAY_STATES));
 }
 
 function saveStatistics() {
-    if (TESTING_SONG !== null) return;
     localStorage.setItem("statistics", JSON.stringify(STATISTICS));
 }
 
 function addToStatistics() {
-    if (TESTING_SONG !== null) return;
     if (CURRENT_PLAY_STATE.cleared) {
         STATISTICS.cleared += 1;
         STATISTICS.currentStreak += 1;

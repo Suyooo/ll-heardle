@@ -3757,9 +3757,5 @@ const SONGPOOL = [
      *       share info plus three), or the current day's Heardle **WILL** break for players!
      * - Same thing happens if you remove a song, so **never remove a song**! (If you want a song to never be picked
      *   as a daily Heardle again, just remove the song file ("songUrl": "",)
-     * - After adding, you can test whether the song loads fine and the correct guess is recognized:
-     *   https://lovelive-heardle.glitch.me/#URL
-     *   Where URL is replaced by the URL you put into "songUrl".
-     *   (You might need to refresh - there should be a popup telling you you are in testing mode.)
      */
 ];

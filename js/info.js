@@ -3753,8 +3753,8 @@ const SONGPOOL = [
      * WHEN ADDING A NEW SONG:
      * - Copypaste one of the elements above this (so songs are in release order in this list)
      * - For solos, you can copy the artist line from one of the others above
-     * - !!! Make sure to set "startOnDay" to *at least* two days after the current day (the number that shows in the
-     *       share info plus two), or the current day's Heardle **WILL** break for players!
+     * - !!! Make sure to set "startOnDay" to *at least* three days after the current day (the number that shows in the
+     *       share info plus three), or the current day's Heardle **WILL** break for players!
      * - After adding, you can test whether the song loads fine and the correct guess is recognized:
      *   https://lovelive-heardle.glitch.me/#URL
      *   Where URL is replaced by the URL you put into "songUrl".

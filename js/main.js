@@ -176,15 +176,15 @@ if (localStorage.getItem("userStats") !== null) {
             throw new Error("Unable to find new Heardle ID for title " + title);
         }
 
+        // While we're recreating the stats anyways, let's fix some unfair problems
+        // Day 168: Kaguya no Shiro de Odoritai, but the linked song was taken down and nobody could play
+        //  This day is removed all together, since it wasn't fixed at all
+        // Day 173: A placeholder was used as a Heardle and you literally had to guess "Placeholder"
+        //  This one was later replaced with Watashitachi wa Mirai no Hana, so this day is not removed if you
+        //  checked back in later to find the fixed Heardle - otherwise, don't count the streak break
+        // If one of those days is missing after removal, the streak count below will consider those non-breaks
         const newPlayStates = oldInfo
-            // While we're recreating the stats anyways, let's fix some unfair problems
-            // Day 168: Kaguya no Shiro de Odoritai, but the linked song was taken down and nobody could play
-            //  This day is removed all together, since it wasn't fixed at all
-            // Day 173: A placeholder was used as a Heardle and you literally had to guess "Placeholder"
-            //  This day was later replaced with Watashitachi wa Mirai no Hana, so this day is not removed if you
-            //  checked back in later to find the fixed Heardle - otherwise, don't count the streak break
-            // If one of those days is missing after removal, the streak count below will consider those non-breaks
-            .filter(oldState => !(oldState.id === 167 || (oldState.id === 172 && !oldState.guessList.some(guess => guess.isCorrect))))
+            .filter(oldState => !(oldState.id === 167 || (oldState.id === 172 && oldState.guessList.length === 0)))
             .map(oldState => {
                 if (oldState.id === 172) {
                     oldState.correctAnswer = "Sonoda Umi - Watashitachi wa Mirai no Hana / \u79c1\u305f\u3061\u306f\u672a\u6765\u306e\u82b1";
@@ -233,7 +233,7 @@ if (localStorage.getItem("userStats") !== null) {
         for (const state of newPlayStates) {
             if (!state.finished) continue;
             if (!state.cleared || state.day - lastDay > 1) {
-                // Fix unfair streak breaks
+                // Skip unfair streak breaks (see above)
                 if (!(state.day === 169 && lastDay === 167) &&
                     !(state.day === 174 && lastDay === 172)) {
                     newStatistics.currentStreak = 0;

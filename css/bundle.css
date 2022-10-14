@@ -441,9 +441,6 @@ video {
 .w-full {
     width: 100%
 }
-.w-screen {
-    width: 100vw;
-}
 .max-w-screen-sm {
     max-width: 640px
 }
@@ -538,9 +535,6 @@ video {
         -webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
         animation-timing-function: cubic-bezier(0, 0, 0.2, 1)
     }
-}
-.h-screen {
-    height: 100vh;
 }
 .flex-col {
     flex-direction: column
@@ -794,58 +788,6 @@ video {
     outline: 2px solid transparent;
     outline-offset: 2px
 }
-*,
-::before,
-::after {
-    --tw-ring-inset: var(--tw-empty,
-        /*!*/
-        /*!*/
-    );
-    --tw-ring-offset-width: 0px;
-    --tw-ring-offset-color: #fff;
-    --tw-ring-color: rgba(59, 130, 246, 0.5);
-    --tw-ring-offset-shadow: 0 0 #0000;
-    --tw-ring-shadow: 0 0 #0000
-}
-.filter {
-    --tw-blur: var(--tw-empty,
-        /*!*/
-        /*!*/
-    );
-    --tw-brightness: var(--tw-empty,
-        /*!*/
-        /*!*/
-    );
-    --tw-contrast: var(--tw-empty,
-        /*!*/
-        /*!*/
-    );
-    --tw-grayscale: var(--tw-empty,
-        /*!*/
-        /*!*/
-    );
-    --tw-hue-rotate: var(--tw-empty,
-        /*!*/
-        /*!*/
-    );
-    --tw-invert: var(--tw-empty,
-        /*!*/
-        /*!*/
-    );
-    --tw-saturate: var(--tw-empty,
-        /*!*/
-        /*!*/
-    );
-    --tw-sepia: var(--tw-empty,
-        /*!*/
-        /*!*/
-    );
-    --tw-drop-shadow: var(--tw-empty,
-        /*!*/
-        /*!*/
-    );
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
-}
 html,
 body {
     margin: 0;
@@ -1043,13 +985,13 @@ textarea {
 
 .logo {
     color: rgba(0,0,0,0);
-    background: url("https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/logo-tall.png?v=1665661179999") no-repeat center;
+    background: url("https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/logo-tall.png?v=1665737314222") no-repeat center;
     background-size: contain;
     height: 4rem;
 }
 @media(min-width: 640px) {
     .logo {
-        background-image: url("https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/logo-wide.png?v=1665661180923");
+        background-image: url("https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/logo-wide.png?v=1665737315775");
         height: 2rem;
     }
 }

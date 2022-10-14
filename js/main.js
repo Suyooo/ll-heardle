@@ -177,9 +177,18 @@ if (localStorage.getItem("userStats") !== null) {
         }
 
         const newPlayStates = oldInfo
-            // Remove broken Heardles (see unfair streak break fixes below)
-            .filter(oldState => oldState.id !== 167 && oldState.id !== 172)
+            // While we're recreating the stats anyways, let's fix some unfair problems
+            // Day 168: Kaguya no Shiro de Odoritai, but the linked song was taken down and nobody could play
+            //  This day is removed all together, since it wasn't fixed at all
+            // Day 173: A placeholder was used as a Heardle and you literally had to guess "Placeholder"
+            //  This day was later replaced with Watashitachi wa Mirai no Hana, so this day is not removed if you
+            //  checked back in later to find the fixed Heardle - otherwise, don't count the streak break
+            // If one of those days is missing after removal, the streak count below will consider those non-breaks
+            .filter(oldState => !(oldState.id === 167 || (oldState.id === 172 && !oldState.guessList.some(guess => guess.isCorrect))))
             .map(oldState => {
+                if (oldState.id === 172) {
+                    oldState.correctAnswer = "Sonoda Umi - Watashitachi wa Mirai no Hana / \u79c1\u305f\u3061\u306f\u672a\u6765\u306e\u82b1";
+                }
                 const newState = {
                     day: oldState.id + 1,
                     heardle_id: findHeardleIdFromOldHeardleSongTitle(oldState.correctAnswer),
@@ -205,7 +214,6 @@ if (localStorage.getItem("userStats") !== null) {
         const existingStates = JSON.parse(localStorage.getItem("play_states"));
         if (existingStates !== null) {
             for (const existingState of existingStates) {
-                console.log(newPlayStates);
                 if (!newPlayStates.some(otherState => otherState.day === existingState.day)) {
                     newPlayStates.push(existingState);
                 }
@@ -225,9 +233,7 @@ if (localStorage.getItem("userStats") !== null) {
         for (const state of newPlayStates) {
             if (!state.finished) continue;
             if (!state.cleared || state.day - lastDay > 1) {
-                // Bonus: since we're recreating streaks anyways, drop some unfair streak breaks
-                // Day 168: Kaguya no Shiro de Odoritai, but the linked song was taken down and nobody could play
-                // Day 173: A placeholder was used as a Heardle and you literally had to guess "Placeholder"
+                // Fix unfair streak breaks
                 if (!(state.day === 169 && lastDay === 167) &&
                     !(state.day === 174 && lastDay === 172)) {
                     newStatistics.currentStreak = 0;

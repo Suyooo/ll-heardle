@@ -3755,3 +3755,200 @@ const SONGPOOL = [
         Liella Anime Season 2: everything
      */
 ];
+
+const OLD_HEARDLE_ANSWERS = [
+    "Zhong Lanzhu - Queendom", // 0
+    "AZALEA - Torikoriko PLEASE!!", // 1
+    "Printemps - Love marginal", // 2
+    "Osaka Shizuku - Solitude Rain", // 3
+    "µ's - Ruteshi Kisuki Shiteru / るてしキスキしてる", // 4
+    "Aqours - WATER BLUE NEW WORLD", // 5
+    "Kunikida Hanamaru - Akogare Ranraran / あこがれランララン", // 6
+    "Aqours - Kimi no Hitomi wo Meguru Bouken / 君の瞳を巡る冒険", // 7
+    "µ's - Storm in Lover", // 8
+    "lily white - Futari Happiness / ふたりハピネス", // 9
+    "Aqours - Kokoro no Hane yo Kimi e Tondeke! / 心の羽よ君へ飛んでけ！", // 10
+    "QU4RTZ - Make-up session ABC", // 11
+    "BiBi - PSYCHIC FIRE", // 12
+    "Aqours - \"MY LIST\" to you!", // 13
+    "Emma Verde - La Bella Patria", // 14
+    "Liella! - Starlight Prologue", // 15
+    "Mifune Shioriko - Aoi Canaria / 翠いカナリア", // 16
+    "µ's - ENDLESS PARADE", // 17
+    "Nijigasaki - Nijiiro Passions! / 虹色Passions!", // 18
+    "Tsushima Yoshiko - Tatehoko Tsubasa / タテホコツバサ", // 19
+    "Aqours - Seinaru Hi no Inori / 聖なる日の祈り", // 20
+    "Nakasu Kasumi - Poppin' Up!", // 21
+    "lily white - Onaji Hoshi ga Mitai / 同じ星が見たい", // 22
+    "µ's - Natte Shimatta! / なってしまった！", // 23
+    "Heanna Sumire - Heroines☆Runway / ヒロインズ☆ランウェイ", // 24
+    "Aqours / Nijigasaki / Liella - LIVE with a smile!", // 25
+    "Mifune Shioriko - Concentrate! / コンセントレイト！", // 26
+    "µ's - Bokutachi wa Hitotsu no Hikari / 僕たちはひとつの光", // 27
+    "Printemps - Puwa Puwa-O! / ぷわぷわーお！", // 28
+    "Hoshizora Rin - Kururin MIRACLE / くるりんMIRACLE", // 29
+    "Saint Snow - Lonely Snow Planet", // 30
+    "Aqours - i-n-g, I TRY!!", // 31
+    "Guilty Kiss - Shadow Gate to Love", // 32
+    "Nijigasaki - NEO SKY, NEO MAP!", // 33
+    "Watanabe You - Paradise Chime", // 34
+    "Liella! - Dancing Heart La-Pa-Pa-Pa!", // 35
+    "µ's - Donna Toki mo Zutto / どんなときもずっと", // 36
+    "µ's - Yuujou No Change / 友情ノーチェンジ", // 37
+    "DiverDiva - Love Triangle", // 38
+    "R3BIRTH - MONSTER GIRLS", // 39
+    "µ's - Oh,Love&Peace!", // 40
+    "Aqours - Kiseki Hikaru / キセキヒカル", // 41
+    "Aqours - Deep Resonance", // 42
+    "Asaka Karin - Fire Bird", // 43
+    "Nijigasaki - Hurray Hurray", // 44
+    "Liella! - Tiny Stars", // 45
+    "Emma Verde - Itsu datte for you! / いつだってfor you!", // 46
+    "Aqours - Omoi yo Hitotsu ni Nare / 想いよひとつになれ", // 47
+    "Saint Snow - SELF CONTROL!!", // 48
+    "µ's - A song for You! You? You!!", // 49
+    "Konoe Kanata - Märchen Star", // 50
+    "µ's - Garasu no Hanazono / 硝子の花園", // 51
+    "µ's - Mogyutto \"love\" de Sekkin Chuu! / もぎゅっと“love”で接近中!", // 52
+    "Sonoda Umi - Yuuki no Reason / 勇気のReason", // 53
+    "Guilty Kiss - Deep Sea Cocoon", // 54
+    "Nijigasaki - TOKIMEKI Runners", // 55
+    "Aqours - HAPPY PARTY TRAIN", // 56
+    "Kurosawa Dia - WHITE FIRST LOVE", // 57
+    "Nakasu Kasumi - Diamond / ダイアモンド", // 58
+    "Liella! - Nonfiction!! / ノンフィクション!!", // 59
+    "µ's - Korekara no Someday / これからのSomeday", // 60
+    "µ's - Hello, Hoshi o Kazoete / Hello,星を数えて", // 61
+    "Aqours - Misty Frosty Love", // 62
+    "Aqours - KU-RU-KU-RU Cruller!", // 63
+    "µ's - LOVELESS WORLD", // 64
+    "µ's - Angelic Angel", // 65
+    "Nijigasaki - Just Believe!!", // 66
+    "µ's - Sore wa Bokutachi no Kiseki / それは僕たちの奇跡", // 67
+    "Mia Taylor - I'm Still...", // 68
+    "µ's - Takaramonozu / タカラモノズ", // 69
+    "Saint Aqours Snow - Awaken the power", // 70
+    "Guilty Kiss - Guilty Night, Guilty Kiss!", // 71
+    "µ's - Mermaid festa vol.2 ~Passionate~", // 72
+    "BiBi - Silent tonight", // 73
+    "Yuki Setsuna - CHASE", // 74
+    "Aqours - Hop? Stop? Nonstop!", // 75
+    "µ's - Happy maker!", // 76
+    "µ's - Anemone heart", // 77
+    "Nakasu Kasumi - TO BE YOURSELF", // 78
+    "CYaRon! - Aru Hi... Eien Mitai ni! / ある日…永遠みたいに！", // 79
+    "Aqours - Tousou Meisou Mobius Loop / 逃走迷走メビウスループ", // 80
+    "Guilty Kiss - Love Pulsar", // 81
+    "Printemps - NO EXIT ORION", // 82
+    "Tennoji Rina - Analog Heart / アナログハート", // 83
+    "Nishikino Maki - Daring!", // 84
+    "Aqours - Nando Datte Yakusoku! / なんどだって約束！", // 85
+    "Miyashita Ai - Diabolic mulier", // 86
+    "Yuki Setsuna - Yada! / ヤダ！", // 87
+    "Kurosawa Dia - MOTTO-ZUTTO be with you", // 88
+    "AZALEA - We‘ll get the next dream!!!", // 89
+    "Liella! - Mirai Yohou Hallelujah! / 未来予報ハレルヤ!", // 90
+    "Yuki Setsuna - MELODY", // 91
+    "Kurosawa Ruby - Cotton Candy Ei-Ei-Oh! / コットンキャンディえいえいおー！", // 92
+    "A-RISE - Private Wars", // 93
+    "µ's - SUNNY DAY SONG", // 94
+    "Uehara Ayumu - Awakening Promise", // 95
+    "Aqours - Bokura no Hashittekita Michi wa… / 僕らの走ってきた道は…", // 96
+    "Konoe Kanata - Butterfly", // 97
+    "Aqours - smile smile ship Start!", // 98
+    "µ's - Snow halation", // 99
+    "Yazawa Nico - Niko puri♥Joshi dou / にこぷり♥女子道", // 100
+    "µ's - Natsuiro Egao de 1,2,Jump! / 夏色えがおで1,2,Jump!", // 101
+    "Aqours - DREAMY COLOR", // 102
+    "Aqours - Aozora Jumping Heart / 青空Jumping Heart", // 103
+    "µ's - WILD STARS", // 104
+    "Tennoji Rina - Tsunagaru Connect / ツナガルコネクト", // 105
+    "Guilty Kiss - Strawberry Trapper", // 106
+    "Mifune Shioriko - Ketsui no Hikari / 決意の光", // 107
+    "Asaka Karin - VIVID WORLD", // 108
+    "µ's - KiRa-KiRa Sensation!", // 109
+    "Aqours - Natsu no Owari no Amaoto ga / 夏の終わりの雨音が", // 110
+    "Konoe Kanata - Nemureru Mori ni Ikitai na / 眠れる森に行きたいな", // 111
+    "AZALEA - Amazing Travel DNA", // 112
+    "Kousaka Honoka - Ai wa Taiyou Ja Nai? / 愛は太陽じゃない?", // 113
+    "AZALEA - Galaxy HidE and SeeK", // 114
+    "Uehara Ayumu - Yume e no Ippo / 夢への一歩", // 115
+    "lily white - Kimi no Kuse ni! / キミのくせに", // 116
+    "Saint Snow - CRASH MIND", // 117
+    "µ's - LONELIEST BABY", // 118
+    "µ's - Wonderful Rush", // 119
+    "Aqours - Yume de Yozora wo Terashitai / 夢で夜空を照らしたい", // 120
+    "Tennoji Rina - Doki Pipo ☆ Emotion / ドキピポ☆エモーション", // 121
+    "Aqours - Aqours Pirates Desire", // 122
+    "AZALEA - Kuuchuu Renai ron / 空中恋愛論", // 123
+    "Koizumi Hanayo - Nawatobi / なわとび", // 124
+    "µ's - No brand girls", // 125
+    "AZUNA - Folklore ~Kanki no Uta~ / フォルクロア ～歓喜の歌～", // 126
+    "Aqours - CYaZALEA☆Kiss☆Dadandaan / シャゼリア☆キッス☆ダダンダーン", // 127
+    "Aqours - Mirai no Bokura wa Shitteru yo / 未来の僕らは知ってるよ", // 128
+    "Printemps - sweet&sweet holiday", // 129
+    "µ's - START:DASH!!", // 130
+    "Asaka Karin - Starlight", // 131
+    "Aqours - Jump up HIGH!!", // 132
+    "µ's - Bokura wa Ima no Naka de / 僕らは今のなかで", // 133
+    "Uehara Ayumu - Break The System", // 134
+    "QU4RTZ - Sing & Smile!!", // 135
+    "lily white - Shunjou Romantic / 春情ロマンティック", // 136
+    "CYaRon! - Kinmirai Happy End / 近未来ハッピーエンド", // 137
+    "Aqours - Daydream Warrior", // 138
+    "Nijigasaki - Sweet Eyes", // 139
+    "Aqours - Hop・Step・Waai! / ホップ・ステップ・ワーイ！", // 140
+    "Yazawa Nico - Mahoutsukai Hajimemashita! / まほうつかいはじめました!", // 141
+    "µ's - Aishiteru Banzai! / 愛してるばんざーい!", // 142
+    "Miyashita Ai - Tanoshii no Tensai / 楽しいの天才", // 143
+    "Saint Aqours Snow - Over The Next Rainbow", // 144
+    "Emma Verde - Koe Tsunagou yo / 声繋ごうよ", // 145
+    "DiverDiva - SUPER NOVA", // 146
+    "Aqours - Wake up, Challenger!!", // 147
+    "Kousaka Honoka - Mou Hitori Ja Nai yo / もうひとりじゃないよ", // 148
+    "A-RISE - Shocking Party", // 149
+    "µ's - Kitto Seishun ga Kikoeru / きっと青春が聞こえる", // 150
+    "Aqours - Mattete Ai no Uta / 待ってて愛のうた", // 151
+    "µ's - SENTIMENTAL StepS", // 152
+    "Liella! - Mirai wa Kaze no You ni / 未来は風のように", // 153
+    "Tsushima Yoshiko - in this unstable world", // 154
+    "Miyashita Ai - Yuu & Ai / 友 & 愛", // 155
+    "Sunny Passion - Till Sunrise", // 156
+    "µ's - Bokura no LIVE Kimi to no LIFE / 僕らのLIVE 君とのLIFE", // 157
+    "Aqours - Yuuki wa doko ni? Kimi no Mune ni! / 勇気はどこに?君の胸に!", // 158
+    "µ's - baby maybe Koi no Button / baby maybe 恋のボタン", // 159
+    "Nijigasaki - Colorful Dreams! Colorful Smiles!", // 160
+    "Aqours - Taiyou o Oikakero! / 太陽を追いかけろ!", // 161
+    "CYaRon! - Braveheart Coaster", // 162
+    "Minami Kotori - Blueberry♥Train / ぶる～べりぃ♥とれいん", // 163
+    "Guilty Kiss - Guilty Eyes Fever", // 164
+    "Aqours - Yume Kataru yori Yume Utaou / ユメ語るよりユメ歌おう", // 165
+    "µ's - ？ ← HEARTBEAT", // 166
+    "µ's - Kaguya no Shiro de Odoritai / 輝夜の城で踊りたい", // 167
+    "Uehara Ayumu - Dream with You", // 168
+    "Liella! - Hajimari wa Kimi no Sora / 始まりは君の空", // 169
+    "Aqours - No. 10", // 170
+    "Aqours - Daisuki Dattara Daijoubu! / ダイスキだったらダイジョウブ！", // 171
+    "Placeholder", // 172
+    "µ's - Susume→Tomorrow / ススメ→トゥモロウ", // 173
+    "BiBi - Fuyu ga Kureta Yokan / 冬がくれた予感", // 174
+    "Aqours - Dance with Minotaurus", // 175
+    "Printemps - Pure girls project", // 176
+    "Saint Snow - DROPOUT!?", // 177
+    "µ's - Korekara / これから", // 178
+    "Aqours - Kimeta yo Hand in Hand / 決めたよHand in Hand", // 179
+    "AZALEA - Metamorphism / メタモルフィズム", // 180
+    "Guilty Kiss - New Romantic Sailors", // 181
+    "µ's - Arashi no Naka no Koi dakara / 嵐のなかの恋だから", // 182
+    "Aqours - Pops heart de Odorun damon! / Pops heartで踊るんだもん！", // 183
+    "Sakurauchi Riko - Love Spiral Tower", // 184
+    "µ's - Dancing stars on me!", // 185
+    "µ's - Future style", // 186
+    "Zhong Lanzhu - Queendom", // 187
+    "Asaka Karin - VIVID WORLD", // 188
+    "Kunikida Hanamaru - Oyasuminasan! / おやすみなさん！", // 189
+    "Aqours - Namida ga Yuki ni Naru Mae ni / 涙が雪になる前に", // 190
+    "Hazuki Ren - Binetsu no Waltz / 微熱のワルツ", // 191
+    "Aqours - Jump up HIGH!!", // 192
+    "QU4RTZ - ENJOY IT!" // 193
+];

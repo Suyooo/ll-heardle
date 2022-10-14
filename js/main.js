@@ -84,27 +84,23 @@ const $openHelp = $("#open-help");
 
 
 /*****
- * Pseudo Random Number Generator from https://stackoverflow.com/a/19301306
+ * Pseudo Random Number Generator
  ****/
 
 // Using a seperate PRNG with a seed instead of the native one means we can guarantee players will always get
 // the same song on the same day!
-let m_w = 123456789;
-let m_z = 987654321;
-const mask = 0xffffffff;
+let rand_z = 0;
+const rand_a = 1736762321;
+const rand_c = 11;
 
 function prngSeed(i) {
-    m_w = (123456789 + i) & mask;
-    m_z = (987654321 - i) & mask;
+    rand_z = i;
 }
 
-// Returns number between 0 (inclusive) and 1.0 (exclusive), just like Math.random().
+// Linear congruential generator, returns number between 0.0 (inclusive) and 1.0 (exclusive)
 function prngRandom() {
-    m_z = (36969 * (m_z & 65535) + (m_z >> 16)) & mask;
-    m_w = (18000 * (m_w & 65535) + (m_w >> 16)) & mask;
-    let result = ((m_z << 16) + (m_w & 65535)) >>> 0;
-    result /= 4294967296;
-    return result;
+    rand_z = (rand_z * rand_a + rand_c)
+    return rand_z / 4294967296;
 }
 
 /*****

@@ -3,3 +3,4 @@
 dump
 py/secret.py
 __pycache__
+build

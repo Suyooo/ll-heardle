@@ -91,13 +91,17 @@ $skipbutton.on("click", () => {
     resolveGuess(CURRENT_PLAY_STATE.failed, false, null);
 });
 
+const VALID_INPUTS =
+    new Set(SONGPOOL.flatMap(song => [song.artistEn + " - " + song.titleEn, song.artistJa + " - " + song.titleJa]));
+
 function submit() {
     const guess = $field.val();
     // Block input that is not an option in the song pool
-    if (SONGPOOL.some(song => song.artistEn + " - " + song.titleEn === guess || song.artistJa + " - " + song.titleJa === guess)) {
+    if (VALID_INPUTS.has(guess)) {
         // addToStatistics() is called in the guess submission method instead of reveal()
         // so it is guaranteed a round only gets added to statistics exactly once
-        if (guess === CURRENT_HEARDLE.artistEn + " - " + CURRENT_HEARDLE.titleEn || guess === CURRENT_HEARDLE.artistJa + " - " + CURRENT_HEARDLE.titleJa) {
+        if (guess === CURRENT_HEARDLE.artistEn + " - " + CURRENT_HEARDLE.titleEn
+            || guess === CURRENT_HEARDLE.artistJa + " - " + CURRENT_HEARDLE.titleJa) {
             resolveGuess(CURRENT_PLAY_STATE.failed, true, guess);
         } else {
             resolveGuess(CURRENT_PLAY_STATE.failed, false, guess);

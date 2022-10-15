@@ -4,10 +4,13 @@
   "dependencies": {
     "html-minifier": "^4.0.0",
     "css-minify": "^2.0.0",
-    "uglify-js": "^3.17.3"
+    "uglify-js": "^3.17.3",
+    "serve": "^14.0.1"
   },
   "scripts": {
-    "build": "rm -rf build && mkdir -p build/js build/css && uglifyjs js/info.js js/config.js js/dom.js js/rng.js js/utils.js js/song.js js/migration.js js/save-move.js js/state.js js/audio.js js/guess.js js/modals.js js/styles.js js/ui.js --compress sequences=true,conditionals=true,booleans=true,dead_code=true,unused=true,if_return=true,join_vars=true --mangle toplevel=true --enclose --output build/js/bundle.min.js && html-minifier --minify-js --collapse-whitespace -o build/index.html index.html && ./node_modules/.bin/css-minify -f css/bundle.css -o build/css/ && mv build/css/bundle.min.css build/css/bundle.css"
+    "start": "serve build",
+    "build": "mkdir -p build/js build/css && html-minifier --minify-js --collapse-whitespace -o build/index.html index.html && ./node_modules/.bin/css-minify -f css/bundle.css -o build/css/ > /dev/null && uglifyjs js/00info.js js/config.js js/dom.js js/rng.js js/utils.js js/song.js js/migration.js js/save-move.js js/state.js js/audio.js js/guess.js js/modals.js js/styles.js js/ui.js --compress sequences=true,conditionals=true,booleans=true,dead_code=true,unused=true,if_return=true,join_vars=true --mangle toplevel=true,reserved=[SONGPOOL] --wrap llheardle --output build/js/bundle.min.js",
+    "build-debug": "mkdir -p build/js build/css && html-minifier --collapse-whitespace -o build/index.html index.html && ./node_modules/.bin/css-minify -f css/bundle.css -o build/css/ > /dev/null && uglifyjs js/00info.js js/config.js js/dom.js js/rng.js js/utils.js js/song.js js/migration.js js/save-move.js js/state.js js/audio.js js/guess.js js/modals.js js/styles.js js/ui.js --wrap llheardle --output build/js/bundle.min.js"
   },
   "glitch": {
     "projectType": "generated_static",

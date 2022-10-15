@@ -3,42 +3,42 @@
   "short_name": "LL! Heardle",
   "icons": [
     {
-      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-72x72.png?v=1665737302420",
+      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-72x72.png?v=1665824014981",
       "sizes": "72x72",
       "type": "image/png"
     },
     {
-      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-96x96.png?v=1665737303014",
+      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-96x96.png?v=1665824015707",
       "sizes": "96x96",
       "type": "image/png"
     },
     {
-      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-128x128.png?v=1665737304578",
+      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-128x128.png?v=1665824017356",
       "sizes": "128x128",
       "type": "image/png"
     },
     {
-      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-144x144.png?v=1665737306190",
+      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-144x144.png?v=1665824018689",
       "sizes": "144x144",
       "type": "image/png"
     },
     {
-      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-152x152.png?v=1665737307737",
+      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-152x152.png?v=1665824019973",
       "sizes": "152x152",
       "type": "image/png"
     },
     {
-      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-192x192.png?v=1665737309306",
+      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-192x192.png?v=1665824021440",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-384x384.png?v=1665737311418",
+      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-384x384.png?v=1665824023002",
       "sizes": "384x384",
       "type": "image/png"
     },
     {
-      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-512x512.png?v=1665737312854",
+      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-512x512.png?v=1665824024217",
       "sizes": "512x512",
       "type": "image/png"
     }

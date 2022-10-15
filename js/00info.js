@@ -3757,5 +3757,13 @@ const SONGPOOL = [
      *       share info plus three), or the current day's Heardle **WILL** break for players!
      * - Same thing happens if you remove a song, so **never remove a song**! (If you want a song to never be picked
      *   as a daily Heardle again, just remove the song file ("songUrl": "",)
+     * - If you want to make sure everything worked, you can check the song pool via your browser's developer tools.
+     *   Open it with F12, head to the Console, and access the llheardle.SONGPOOL property. For example:
+     *       llheardle.SONGPOOL.at(-1)
+     *   That call will show the last song in the pool (the one right above this comment) so you can check whether the
+     *   pool updated correctly, and the new song you just added is really in there. (Remember to wait for the build
+     *   script or to run it manually - see the README file)
      */
 ];
+
+exports.SONGPOOL = SONGPOOL;

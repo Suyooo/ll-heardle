@@ -21,6 +21,13 @@
             setTimeout(() => window.location.replace("https://lovelive-heardle.glitch.me/"), 1000);
         }
     </script>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+          integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" as="script">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/tarekraafat-autocomplete.js/10.2.7/autoComplete.min.js"
+          integrity="sha512-NuM5bGxVydsGmzqbWc5F1FbV4mS3yJin2SKbl5G9R9ZEDyTrTGt49VBIZh5fKp9GKIeCZYFtR1FVujNTtMQqjQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" as="script">
+    <link rel="preload" href="/js/bundle.min.js" as="script">
 
     <meta itemprop="name" content="Love Live! Heardle - Daily Love Live! song intro game">
     <meta itemprop="description" content="Guess the Love Live! song from the intro in as little tries as possible.">
@@ -526,18 +533,14 @@
             </div>
         </div>
     </div>
-    <div id="fadeout" class="bg-custom-bg absolute left-0 top-0 w-full h-full z-10000 flex flex-col justify-center">
-        <noscript><span class="w-full text-center font-bold">This site requires Javascript to be enabled.</span></noscript>
-        <span id="fadeouttext" class="hidden w-full text-center font-bold">loading...</span>
-        <span id="fadeoutwarning" class="hidden w-full text-center text-xs">
+</main>
+<div id="fadeout" class="bg-custom-bg absolute left-0 top-0 w-full h-full z-10000 flex flex-col justify-center">
+    <noscript><span class="w-full text-center font-bold">This site requires Javascript to be enabled.</span></noscript>
+    <span id="fadeouttext" class="hidden w-full text-center font-bold">loading...</span>
+    <span id="fadeoutwarning" class="hidden w-full text-center text-xs">
             This is taking longer than it should. Maybe try refreshing?<br>
             You can also contact <a href="https://twitter.com/Kachx" target="_blank">@Kachx</a> if you feel like there's an error on our side.
         </span>
-    </div>
-</main>
-<div style="position:absolute;background-color:red;font-weight:bold;left:1em;top:10em;"
-     onclick="localStorage.removeItem('play_states');window.location.reload();">
-    RESET BUTTON
 </div>
 <script>
     function loadScript(src, cdnIntegrity) {

@@ -2,17 +2,11 @@
  * Guessing
  ****/
 
-// When selecting an option from the dropdown using the Enter key, it should *not* immediately submit
-// This is what this variable does: When a guess is set, it will block the keyUp event until it was re-pressed
-let blockNextUp = false;
 $field.on("keydown", e => {
-    if (e.key === "Enter" && !e.originalEvent.repeat) blockNextUp = false;
-});
-$field.on("keyup", e => {
-    if (e.key === "Enter" && !blockNextUp) submit();
+    if (e.key === "Enter" && !e.originalEvent.repeat) submit();
 });
 
-const autoCompleter = new autoComplete({
+const autoCompleteInstance = new autoComplete({
     selector: "#field",
     data: {
         src: SONGPOOL.map(song => ({
@@ -74,11 +68,8 @@ const autoCompleter = new autoComplete({
             selection: (e) => {
                 if ($field.val() === "") return;
                 const value = e.detail.selection.value[e.detail.selection.key];
-                if (value !== $field.val()) {
-                    blockNextUp = true;
-                    $field.val(value).focus();
-                }
-            },
+                $field.val(value).focus();
+            }
         }
     }
 });

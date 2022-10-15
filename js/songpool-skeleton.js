@@ -3950,5 +3950,6 @@ const OLD_HEARDLE_ANSWERS = [
     "Aqours - Namida ga Yuki ni Naru Mae ni / 涙が雪になる前に", // 190
     "Hazuki Ren - Binetsu no Waltz / 微熱のワルツ", // 191
     "Aqours - Jump up HIGH!!", // 192
-    "QU4RTZ - ENJOY IT!" // 193
+    "QU4RTZ - ENJOY IT!", // 193
+    "µ's - baby maybe Koi no Button / baby maybe 恋のボタン", // 194
 ];

@@ -9,8 +9,9 @@ a static site, which means it goes fast and never goes to sleep and doesn't coun
 
 This build script will automatically run a few minutes after you close out of the Glitch editor. That means that if
 you edit something, you won't immediately see the changes on the site! If you want to check your edits without
-closing the editor and waiting for the scripts to run, open the Terminal at the bottom and type `npm run build`.
+closing the editor and waiting for the scripts to run, click the Terminal button in the footer below the editor, and
+type `npm run build`.
 
 `js/00info.js` is the file you'll probably edit the most - it contains the news post info and the list for the song
-pool - so I prefixed the 00 to have it at the top. The news post info is hopefully self-explanatory enough, for the
-song pool, check the comment at the very bottom of the file.
+pool - so I prefixed it with `00` to always have it at the top of the folder. The news post info is hopefully
+self-explanatory enough, for the song pool, check the comment at the very bottom of the file.

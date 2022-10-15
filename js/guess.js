@@ -14,10 +14,14 @@ const autoCompleteInstance = new autoComplete({
             ja: song.artistJa + " - " + song.titleJa
         })),
         cache: false,
-        keys: ["en", "ja"],
+        // If the player's browser is set to Japanese, prefer Japanese song titles, otherwise prefer English
+        // (No matter what, the other language will still show up for autocomplete suggestions if you enter it)
+        keys: navigator.language.startsWith("ja") ? ["ja", "en"] : ["en", "ja"],
         filter: (list) => {
             // This function uses autoComplete.js as only a first step - it doesn't rank results, just filters them
-            // Remove dupes (happens if a search term appears in multiple fields)
+            // So here we make sure to show every song only once at most, and then sort the results by quality
+
+            // Remove dupes (if both EN and JA titles match, the song will appear twice - only keep the first one)
             const foundValues = new Set();
             list = list.filter(result => {
                 if (foundValues.has(result.value)) return false;

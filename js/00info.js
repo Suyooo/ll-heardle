@@ -33,7 +33,7 @@ const SONGPOOL = [
         "artistJa": "dummy artist",
         "listenOn": {
             "spotify": "spotifylink",
-            "youtube": "youtubelink",
+            "youtube": "youtubelink"
         }
     },
     /*
@@ -49,10 +49,13 @@ const SONGPOOL = [
      * - Same thing happens if you remove a song, so **never remove a song**! (We'll have to add that as a new feature,
      *   if you ever need to get rid of a song)
      *
-     * - For the listenOn links, Spotify is straightforward, but YouTube can be kind of a pain, because its own search
-     *   sucks. I had a way easier time using the Google Video search instead, and searching "youtube [Japanese title]"
-     *   (like: https://www.google.com/search?q=youtube+%E3%82%82%E3%81%A3%E3%81%A8%E3%81%AD%EF%BC%81&tbm=vid)
-     *   Make sure the video is from a channel ending with " - Topic", or it's not an official upload
+     * For the listenOn links:
+     * - Spotify is pretty straightforward - search for the song, open the three-dot menu that shows on the right when
+     *   you hover over the result and click "Share" > "Copy Song Link". (Remove the ?si= part if you want.)
+     * - YouTube however can be kind of a pain, because its own search sucks. I had a way easier time using the Google
+     *   video search instead, and searching "youtube [Japanese title]", maybe with the group name too
+     *   (for example: https://www.google.com/search?q=youtube+%E3%82%82%E3%81%A3%E3%81%A8%E3%81%AD%EF%BC%81&tbm=vid)
+     *   Make sure the video is from a channel ending with " - Topic", or it's not an official upload.
      * - If there is no upload on Spotify or no official upload on YT, just leave the field out (remove the entire line)
      *
      * - If you want to make sure everything worked, you can check the song pool via your browser's developer tools.

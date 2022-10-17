@@ -38,10 +38,14 @@ const SONGPOOL = [
     },
     /*
      * WHEN ADDING A NEW SONG:
-     * - Copypaste one of the elements above this (so songs are in release order in this list)
+     * - Copy one of the elements and paste it above this comment block (that way, songs are sorted by release order)
      * - For solos, you can copy the artist line from one of the others above
-     * - !!! Make sure to set startOnDay to *at least* three days after the current day (the number that shows in the
-     *       share info, plus three), or the current day's Heardle **WILL** break for players!
+     * - !!! For new songs, make sure to set startOnDay to *at least* three days after the current day, or the current
+     *       day's Heardle **WILL** break for players! (see below)
+     *
+     * - startOnDay is a number representing the day (same as the one shown when copying share info after clearing a
+     *   Heardle) when the song should be added to the pool of possible daily Heardles. This has to be done so that the
+     *   RNG is guaranteed to deliver the same result, no matter when players visit the site.
      * - Same thing happens if you remove a song, so **never remove a song**! (We'll have to add that as a new feature,
      *   if you ever need to get rid of a song)
      *
@@ -52,10 +56,10 @@ const SONGPOOL = [
      * - If there is no upload on Spotify or no official upload on YT, just leave the field out (remove the entire line)
      *
      * - If you want to make sure everything worked, you can check the song pool via your browser's developer tools.
-     *   Open it with F12, head to the Console, and access the llheardle.SONGPOOL property. For example:
+     *   Open it with F12, head to the Console tab, and access the llheardle.SONGPOOL property. For example:
      *       llheardle.SONGPOOL.at(-1)
-     *   That call will show the last song in the pool (the one right above this comment) so you can check whether the
-     *   pool updated correctly, and the new song you just added is really in there. (Remember to wait for the build
+     *   That call will show the last song in the pool (the one right above this comment), so you can check whether the
+     *   pool updated correctly and the new song you just added is really in there. (Remember to wait for the build
      *   script or to run it manually - see the README file)
      */
 ];

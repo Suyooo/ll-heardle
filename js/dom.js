@@ -34,6 +34,8 @@ const $resultsongbox = $("#resultsongbox");
 const $resultcover = $("#resultcover");
 const $resultartist = $("#resultartist");
 const $resulttitle = $("#resulttitle");
+const $resultspotify = $("#resultspotify");
+const $resultyoutube = $("#resultyoutube");
 const $clearmessage = $("#clearmessage");
 const $resultmessage = $("#resultmessage");
 const $resultcolorrowChildren = $("#resultcolorrow").children().toArray().map(e => $(e));

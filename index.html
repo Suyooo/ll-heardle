@@ -24,7 +24,8 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
           integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
           crossorigin="anonymous" referrerpolicy="no-referrer" as="script">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/tarekraafat-autocomplete.js/10.2.7/autoComplete.min.js"
+    <link rel="preload"
+          href="https://cdnjs.cloudflare.com/ajax/libs/tarekraafat-autocomplete.js/10.2.7/autoComplete.min.js"
           integrity="sha512-NuM5bGxVydsGmzqbWc5F1FbV4mS3yJin2SKbl5G9R9ZEDyTrTGt49VBIZh5fKp9GKIeCZYFtR1FVujNTtMQqjQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer" as="script">
     <link rel="preload" href="/js/bundle.min.js" as="script">
@@ -153,9 +154,29 @@
         <div class="p-3 pb-0 flex-col items-evenly">
             <div id="resultsongbox" class="p-2 flex items-center rounded-sm">
                 <img id="resultcover" class="h-14 w-14">
-                <div class="flex-1 mx-3 text-white">
+                <div class="flex-grow mx-3 text-white">
                     <p id="resultartist" class="text-sm"></p>
                     <p id="resulttitle" class="font-bold"></p>
+                </div>
+                <div class="flex flex-col items-center space-y-2">
+                    <a id="resultspotify" class="hidden flex items-center">
+                        <img class="h-5"
+                             src="https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/spotify.png?v=1666013306415"
+                             alt="Spotify Logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                             stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 18l6-6-6-6"></path>
+                        </svg>
+                    </a>
+                    <a id="resultyoutube" class="hidden flex items-center">
+                        <img class="h-5"
+                             src="https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/youtube.png?v=1666013307494"
+                             alt="YouTube Logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                             stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 18l6-6-6-6"></path>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
@@ -496,7 +517,8 @@
                 <div>
                     <div class="flex items-center mb-6">
                         <div class="mr-4 w-8 text-custom-line">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor"
                                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7">
                                 <circle cx="5.5" cy="17.5" r="2.5"></circle>
                                 <circle cx="17.5" cy="15.5" r="2.5"></circle>
@@ -507,7 +529,8 @@
                     </div>
                     <div class="flex items-center mb-6">
                         <div class="mr-4 w-8 text-custom-line">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor"
                                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7">
                                 <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                                 <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
@@ -517,7 +540,8 @@
                     </div>
                     <div class="flex items-center mb-6">
                         <div class="mr-4 w-8 text-custom-line">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor"
                                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7">
                                 <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
                             </svg>
@@ -534,7 +558,8 @@
         </div>
     </div>
     <div id="fadeout" class="bg-custom-bg absolute left-0 top-0 w-full h-full z-10000 flex flex-col justify-center">
-        <noscript><span class="w-full text-center font-bold">This site requires Javascript to be enabled.</span></noscript>
+        <noscript><span class="w-full text-center font-bold">This site requires Javascript to be enabled.</span>
+        </noscript>
         <span id="fadeouttext" class="hidden w-full text-center font-bold">loading...</span>
         <span id="fadeoutwarning" class="hidden w-full text-center text-xs">
             This is taking longer than it should. Maybe try refreshing?<br>

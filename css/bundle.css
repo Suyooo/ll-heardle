@@ -558,6 +558,9 @@ video {
 .justify-self-end {
     justify-self: end
 }
+.space-y-2 > *:not(.hidden) + * {
+    margin-top: 0.5rem;
+}
 .overflow-auto {
     overflow: auto
 }

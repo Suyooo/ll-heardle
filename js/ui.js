@@ -80,6 +80,14 @@ function reveal(success) {
     $resultcover.attr("src", CURRENT_HEARDLE.coverUrl).attr("alt", CURRENT_HEARDLE.artistEn + " - " + CURRENT_HEARDLE.titleEn)
     $resultartist.text(CURRENT_HEARDLE.artistEn);
     $resulttitle.text(CURRENT_HEARDLE.titleEn);
+
+    if (CURRENT_HEARDLE.listenOn.spotify) {
+        $resultspotify.removeClass("hidden").attr("href", CURRENT_HEARDLE.listenOn.spotify);
+    }
+    if (CURRENT_HEARDLE.listenOn.youtube) {
+        $resultyoutube.removeClass("hidden").attr("href", CURRENT_HEARDLE.listenOn.youtube);
+    }
+
     $resultcolorrowChildren.forEach(($element, index) => {
         if (index < CURRENT_PLAY_STATE.failed) {
             if (CURRENT_PLAY_STATE.guesses[index] === null) $element.addClass("bg-custom-fg");

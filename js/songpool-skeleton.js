@@ -327,15 +327,6 @@ const SONGPOOL = [
         "songUrl": "",
         "coverUrl": "",
         "startOnDay": 0,
-        "titleEn": "Mi wa µ'sic no Mi",
-        "artistEn": "µ's",
-        "titleJa": "ミはμ’sicのミ",
-        "artistJa": "µ's"
-    },
-    {
-        "songUrl": "",
-        "coverUrl": "",
-        "startOnDay": 0,
         "titleEn": "Mogyutto \"love\" de Sekkin Chuu!",
         "artistEn": "µ's",
         "titleJa": "もぎゅっと“love”で接近中!",
@@ -3423,7 +3414,7 @@ const SONGPOOL = [
         "songUrl": "",
         "coverUrl": "",
         "startOnDay": 0,
-        "titleEn": "Mabataki no Saki e",
+        "titleEn": "Matataki no Saki e",
         "artistEn": "Liella!",
         "titleJa": "瞬きの先へ",
         "artistJa": "Liella!"
@@ -3750,7 +3741,7 @@ const SONGPOOL = [
             Blu-ray bonuses (Fashionista, Fuwa Fuwa Hour, Romance no Naka de, Look at me now)
         DiverDiva - Shadow Effect (+ B-Side)
         R3BIRTH - Vroom Vroom (+ B-Side)
-        Eien no Isshun (+ B-Side)
+        OUR P13CES (Eien no Isshun B-Side)
 
         Liella Anime Season 2: everything
      */
@@ -3952,4 +3943,19 @@ const OLD_HEARDLE_ANSWERS = [
     "Aqours - Jump up HIGH!!", // 192
     "QU4RTZ - ENJOY IT!", // 193
     "µ's - baby maybe Koi no Button / baby maybe 恋のボタン", // 194
+    "Liella! - Star Sengen", // 195
+    "Ayase Eli - Arifureta Kanashimi no Hate / ありふれた悲しみの果て", // 196
 ];
+
+/*
+TODO:
+Remove this before applying the listenOns
+- duplicate mi wa µ'sic no mi
+
+Some errors in here, double-check them after applying the listenOns to avoid them in the real pool
+- Bye Bye Shichaeba titleEn capitalization
+- GALAXY HidE and SeeK capitalization
+- Kuuchuu Renai Ron capitalization
+- Make sure there's no Eien no Isshun duplicate
+- Mabataki => Matataki
+ */

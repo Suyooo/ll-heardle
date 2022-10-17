@@ -30,16 +30,27 @@ const SONGPOOL = [
         "titleEn": "dummy song",
         "artistEn": "dummy artist",
         "titleJa": "dummy song",
-        "artistJa": "dummy artist"
+        "artistJa": "dummy artist",
+        "listenOn": {
+            "spotify": "spotifylink",
+            "youtube": "youtubelink",
+        }
     },
     /*
      * WHEN ADDING A NEW SONG:
      * - Copypaste one of the elements above this (so songs are in release order in this list)
      * - For solos, you can copy the artist line from one of the others above
      * - !!! Make sure to set startOnDay to *at least* three days after the current day (the number that shows in the
-     *       share info plus three), or the current day's Heardle **WILL** break for players!
-     * - Same thing happens if you remove a song, so **never remove a song**! (If you want a song to never be picked
-     *   as a daily Heardle again, just remove the song file ("songUrl": "",)
+     *       share info, plus three), or the current day's Heardle **WILL** break for players!
+     * - Same thing happens if you remove a song, so **never remove a song**! (We'll have to add that as a new feature,
+     *   if you ever need to get rid of a song)
+     *
+     * - For the listenOn links, Spotify is straightforward, but YouTube can be kind of a pain, because its own search
+     *   sucks. I had a way easier time using the Google Video search instead, and searching "youtube [Japanese title]"
+     *   (like: https://www.google.com/search?q=youtube+%E3%82%82%E3%81%A3%E3%81%A8%E3%81%AD%EF%BC%81&tbm=vid)
+     *   Make sure the video is from a channel ending with " - Topic", or it's not an official upload
+     * - If there is no upload on Spotify or no official upload on YT, just leave the field out (remove the entire line)
+     *
      * - If you want to make sure everything worked, you can check the song pool via your browser's developer tools.
      *   Open it with F12, head to the Console, and access the llheardle.SONGPOOL property. For example:
      *       llheardle.SONGPOOL.at(-1)

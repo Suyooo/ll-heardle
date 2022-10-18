@@ -126,7 +126,7 @@ $resultshare.on("click", () => {
         else if ($element.hasClass("bg-custom-correct")) shareText += "🟩️";
         else if ($element.hasClass("bg-custom-mg")) shareText += "️️⬛";
     });
-    shareText += "\n#loveliveheardle #lovelive #ラブライブ\nhttps://lovelive-heardle.glitch.me";
+    shareText += "\n#LoveLiveHeardle #lovelive #ラブライブ\nhttps://lovelive-heardle.glitch.me";
 
 
     if (window.location.protocol !== "https:") {

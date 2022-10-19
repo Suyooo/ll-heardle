@@ -25,12 +25,18 @@ if (localStorage.getItem("userStats") !== null) {
         // Day 173: A placeholder was used as a Heardle and you literally had to guess "Placeholder"
         //  This one was later replaced with Watashitachi wa Mirai no Hana, so this day is not removed if you
         //  checked back in later to find the fixed Heardle - otherwise, don't count the streak break
+        // Day 199: Similar to above - answer pool ran out, was later replaced with in this unstable world
         // If one of those days is missing after removal, the streak count below will consider those non-breaks
         const newPlayStates = oldInfo
-            .filter(oldState => !(oldState.id === 167 || (oldState.id === 172 && oldState.guessList.length === 0)))
+            .filter(oldState => !(oldState.id === 167
+                || (oldState.id === 172 && oldState.guessList.length === 0)
+                || (oldState.id === 198 && oldState.guessList.length === 0)))
             .map(oldState => {
                 if (oldState.id === 172) {
                     oldState.correctAnswer = "Sonoda Umi - Watashitachi wa Mirai no Hana / \u79c1\u305f\u3061\u306f\u672a\u6765\u306e\u82b1";
+                } else
+                if (oldState.id === 198) {
+                    oldState.correctAnswer = "Tsushima Yoshiko - in this unstable world";
                 }
                 const newState = {
                     day: oldState.id + 1,
@@ -78,7 +84,8 @@ if (localStorage.getItem("userStats") !== null) {
             if (!state.cleared || state.day - lastDay > 1) {
                 // Skip unfair streak breaks (see above)
                 if (!(state.day === 169 && lastDay === 167) &&
-                    !(state.day === 174 && lastDay === 172)) {
+                    !(state.day === 174 && lastDay === 172) &&
+                    !(state.day === 200 && lastDay === 198)) {
                     newStatistics.currentStreak = 0;
                 }
             }

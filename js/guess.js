@@ -69,6 +69,9 @@ const autoCompleteInstance = new autoComplete({
     },
     events: {
         input: {
+            results: () => {
+                requestAnimationFrame(() => autoCompleteInstance.goTo(0));
+            },
             selection: (e) => {
                 if ($field.val() === "") return;
                 const value = e.detail.selection.value[e.detail.selection.key];

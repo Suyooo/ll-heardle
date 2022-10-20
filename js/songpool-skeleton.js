@@ -588,9 +588,9 @@ const SONGPOOL = [
         "songUrl": "",
         "coverUrl": "",
         "startOnDay": 0,
-        "titleEn": "？ ← HEARTBEAT",
+        "titleEn": "？←HEARTBEAT",
         "artistEn": "µ's",
-        "titleJa": "？ ← HEARTBEAT",
+        "titleJa": "？←HEARTBEAT",
         "artistJa": "µ's"
     },
     {
@@ -3920,7 +3920,7 @@ const OLD_HEARDLE_ANSWERS = [
     "Liella! - Hajimari wa Kimi no Sora / 始まりは君の空", // 169
     "Aqours - No. 10", // 170
     "Aqours - Daisuki Dattara Daijoubu! / ダイスキだったらダイジョウブ！", // 171
-    "Placeholder", // 172
+    "Sonoda Umi - Watashitachi wa Mirai no Hana", // 172
     "µ's - Susume→Tomorrow / ススメ→トゥモロウ", // 173
     "BiBi - Fuyu ga Kureta Yokan / 冬がくれた予感", // 174
     "Aqours - Dance with Minotaurus", // 175
@@ -3945,6 +3945,9 @@ const OLD_HEARDLE_ANSWERS = [
     "µ's - baby maybe Koi no Button / baby maybe 恋のボタン", // 194
     "Liella! - Star Sengen", // 195
     "Ayase Eli - Arifureta Kanashimi no Hate / ありふれた悲しみの果て", // 196
+    "µ's - Listen to my heart!!", // 197
+    "Tsushima Yoshiko - in this unstable world", // 198
+    "Tennoji Rina - Tsunagaru Connect / ツナガルコネクト", // 199
 ];
 
 /*
@@ -3958,4 +3961,8 @@ Some errors in here, double-check them after applying the listenOns to avoid the
 - Kuuchuu Renai Ron capitalization
 - Make sure there's no Eien no Isshun duplicate
 - Mabataki => Matataki
+- Yume de Yozora wo Terashitai => Yume de Yozora o Terashitai
+- … => ...
+- Dadandaaan => DADANDAAAN
+- ？←HEARTBEAT => ?←HEARTBEAT, no spaces on either
  */

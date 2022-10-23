@@ -77,7 +77,11 @@ function reveal(success) {
         ? "You got today's Love Live! Heardle within " + LENGTHS[CURRENT_PLAY_STATE.failed] + (LENGTHS[CURRENT_PLAY_STATE.failed] === 1 ? " second!" : " seconds!")
         : "You didn't get today's Love Live! Heardle. Better luck tomorrow!");
     $resultsongbox.addClass(success ? "bg-custom-positive" : "bg-custom-mg");
-    $resultcover.attr("src", CURRENT_HEARDLE.coverUrl).attr("alt", CURRENT_HEARDLE.artistEn + " - " + CURRENT_HEARDLE.titleEn)
+    if (CURRENT_HEARDLE.coverUrl === "") {
+        $resultcover.remove();
+    } else {
+        $resultcover.attr("src", CURRENT_HEARDLE.coverUrl).attr("alt", CURRENT_HEARDLE.artistEn + " - " + CURRENT_HEARDLE.titleEn);
+    }
     $resultartist.text(CURRENT_HEARDLE.artistEn);
     $resulttitle.text(CURRENT_HEARDLE.titleEn);
 

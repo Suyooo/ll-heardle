@@ -21,6 +21,7 @@ const STATISTICS = LOADED_STATISTICS !== null
 let CURRENT_PLAY_STATE = PLAY_STATES.at(-1); // undefined if player's first visit
 const IS_FIRST_PLAY = CURRENT_PLAY_STATE === undefined;
 const LAST_ANNOUNCEMENT = parseInt(localStorage.getItem("last_announcement_no")); // NaN if news were never read
+let CURRENT_HEARDLE;
 
 // Check for day change, load saved data and get the correct state ready
 if (IS_FIRST_PLAY || CURRENT_DAY > CURRENT_PLAY_STATE.day) {
@@ -45,12 +46,14 @@ if (IS_FIRST_PLAY || CURRENT_DAY > CURRENT_PLAY_STATE.day) {
         cleared: false,
         finished: false
     };
+    CURRENT_HEARDLE = SONGPOOL[CURRENT_PLAY_STATE.heardle_id];
     PLAY_STATES.push(CURRENT_PLAY_STATE);
     savePlayStates();
     STATISTICS.viewed += 1;
     saveStatistics();
     prepareNextGuess();
 } else {
+    CURRENT_HEARDLE = SONGPOOL[CURRENT_PLAY_STATE.heardle_id];
     if (CURRENT_PLAY_STATE.finished) {
         reveal(CURRENT_PLAY_STATE.cleared);
     } else {
@@ -58,7 +61,6 @@ if (IS_FIRST_PLAY || CURRENT_DAY > CURRENT_PLAY_STATE.day) {
         prepareNextGuess();
     }
 }
-const CURRENT_HEARDLE = SONGPOOL[CURRENT_PLAY_STATE.heardle_id];
 
 function savePlayStates() {
     localStorage.setItem("play_states", JSON.stringify(PLAY_STATES));

@@ -42,15 +42,18 @@ if (localStorage.getItem("userStats") !== null) {
 
         // Merge priority: new save > old save > dummy entry (unless current day)
         const mergedPlayStates = [];
+        let countPlayed = 0;
         for (let day = 1; day <= CURRENT_DAY; day++) {
             const newSave = existingStates.find(s => s.day === day);
             if (newSave) {
                 mergedPlayStates.push(newSave);
+                countPlayed++;
                 continue;
             }
             const oldSave = newPlayStates.find(s => s.day === day);
             if (oldSave) {
                 mergedPlayStates.push(oldSave);
+                countPlayed++;
                 continue;
             }
             if (day < CURRENT_DAY) {
@@ -69,7 +72,7 @@ if (localStorage.getItem("userStats") !== null) {
 
         const newStatistics = {
             byFailCount: [0, 0, 0, 0, 0, 0, 0],
-            viewed: mergedPlayStates.length,
+            viewed: countPlayed,
             cleared: 0,
             currentStreak: 0,
             highestStreak: 0

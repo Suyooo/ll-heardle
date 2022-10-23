@@ -42,7 +42,7 @@ if (localStorage.getItem("userStats") !== null) {
 
         // Merge priority: new save > old save > dummy entry (unless current day)
         const mergedPlayStates = [];
-        for (let day = 0; day <= CURRENT_DAY; day++) {
+        for (let day = 1; day <= CURRENT_DAY; day++) {
             const newSave = existingStates.find(s => s.day === day);
             if (newSave) {
                 mergedPlayStates.push(newSave);

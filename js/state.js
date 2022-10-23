@@ -38,6 +38,19 @@ if (IS_FIRST_PLAY || CURRENT_DAY > CURRENT_PLAY_STATE.day) {
         }
     }
 
+    // Recreate skipped days so song picks can properly avoid repeats (see song.js)
+    let LAST_STATE_DAY = CURRENT_PLAY_STATE?.day || 0;
+    if (CURRENT_DAY - LAST_STATE_DAY > 1) {
+        LAST_STATE_DAY++;
+        while (LAST_STATE_DAY < CURRENT_DAY) {
+            PLAY_STATES.push({
+                day: LAST_STATE_DAY,
+                heardle_id: getHeardleIdForDay(LAST_STATE_DAY)
+            });
+            LAST_STATE_DAY++;
+        }
+    }
+
     CURRENT_PLAY_STATE = {
         day: CURRENT_DAY,
         heardle_id: getHeardleIdForDay(CURRENT_DAY),

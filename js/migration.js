@@ -9,16 +9,6 @@ if (localStorage.getItem("userStats") !== null) {
         localStorage.setItem("old_heardle_userstats", oldInfoString); // back it up, just in case
         const oldInfo = JSON.parse(oldInfoString);
 
-        function findHeardleIdFromOldHeardleSongTitle(title) {
-            for (const [index, song] of SONGPOOL.entries()) {
-                // Artist might differ
-                if (title === song.titleEn || title.endsWith(" - " + song.titleEn) || title.endsWith(" - " + song.titleEn + " / " + song.titleJa)) {
-                    return index;
-                }
-            }
-            throw new Error("Unable to find new Heardle ID for title " + title);
-        }
-
         // While we're recreating the stats anyways, let's fix some unfair problems
         // Day 168: Kaguya no Shiro de Odoritai, but the linked song was taken down and nobody could play
         //  This day is removed all together, since it wasn't fixed at all
@@ -32,25 +22,13 @@ if (localStorage.getItem("userStats") !== null) {
                 || (oldState.id === 172 && oldState.guessList.length === 0)
                 || (oldState.id === 198 && oldState.guessList.length === 0)))
             .map(oldState => {
-                if (oldState.id === 172) {
-                    oldState.correctAnswer = "Sonoda Umi - Watashitachi wa Mirai no Hana / \u79c1\u305f\u3061\u306f\u672a\u6765\u306e\u82b1";
-                } else
-                if (oldState.id === 198) {
-                    oldState.correctAnswer = "Tsushima Yoshiko - in this unstable world";
-                }
                 const newState = {
                     day: oldState.id + 1,
-                    heardle_id: findHeardleIdFromOldHeardleSongTitle(oldState.correctAnswer),
+                    heardle_id: OLD_HEARDLE_ROUNDS[oldState.id],
                     guesses: oldState.guessList.map(guess => {
                         if (guess.isSkipped) return null;
-                        try {
-                            const song = SONGPOOL[findHeardleIdFromOldHeardleSongTitle(guess.answer)];
-                            return song.artistEn + " - " + song.titleEn;
-                        } catch (e) {
-                            // Misspelled guess - old heardle didn't allow existing songs only, so in that case,
-                            // just take the title as-is
-                            return guess.answer;
-                        }
+                        const song = SONGPOOL[OLD_HEARDLE_MAP[guess.answer]];
+                        return song ? song.artistEn + " - " + song.titleEn : guess.answer;
                     }),
                     cleared: oldState.guessList.some(guess => guess.isCorrect)
                 }
@@ -60,26 +38,45 @@ if (localStorage.getItem("userStats") !== null) {
             });
 
         // Make sure we don't delete in-progress Heardles on the new script
-        const existingStates = JSON.parse(localStorage.getItem("play_states"));
-        if (existingStates !== null) {
-            for (const existingState of existingStates) {
-                if (!newPlayStates.some(otherState => otherState.day === existingState.day)) {
-                    newPlayStates.push(existingState);
+        const existingStates = JSON.parse(localStorage.getItem("play_states")) || [];
+
+        // Merge priority: new save > old save > dummy entry (unless current day)
+        const mergedPlayStates = [];
+        for (let day = 0; day <= CURRENT_DAY; day++) {
+            const newSave = existingStates.find(s => s.day === day);
+            if (newSave) {
+                mergedPlayStates.push(newSave);
+                continue;
+            }
+            const oldSave = newPlayStates.find(s => s.day === day);
+            if (oldSave) {
+                mergedPlayStates.push(oldSave);
+                continue;
+            }
+            if (day < CURRENT_DAY) {
+                if (day <= OLD_HEARDLE_ROUNDS.length) {
+                    mergedPlayStates.push({
+                        day, heardle_id: OLD_HEARDLE_ROUNDS[day - 1]
+                    });
+                } else {
+                    mergedPlayStates.push({
+                        day, heardle_id: getHeardleIdForDay(day, mergedPlayStates)
+                    });
                 }
             }
         }
-        localStorage.setItem("play_states", JSON.stringify(newPlayStates));
+        localStorage.setItem("play_states", JSON.stringify(mergedPlayStates));
 
         const newStatistics = {
             byFailCount: [0, 0, 0, 0, 0, 0, 0],
-            viewed: newPlayStates.length,
+            viewed: mergedPlayStates.length,
             cleared: 0,
             currentStreak: 0,
             highestStreak: 0
         };
 
         let lastDay = 0;
-        for (const state of newPlayStates) {
+        for (const state of mergedPlayStates) {
             if (!state.finished) continue;
             if (!state.cleared || state.day - lastDay > 1) {
                 // Skip unfair streak breaks (see above)

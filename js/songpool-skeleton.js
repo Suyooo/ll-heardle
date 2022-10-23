@@ -3948,6 +3948,9 @@ const OLD_HEARDLE_ANSWERS = [
     "µ's - Listen to my heart!!", // 197
     "Tsushima Yoshiko - in this unstable world", // 198
     "Tennoji Rina - Tsunagaru Connect / ツナガルコネクト", // 199
+    "Aqours - Pops heart de Odorun damon! / Pops heartで踊るんだもん！", // 200
+    "Nishikino Maki - Daring!", // 201
+    "Saint Snow - CRASH MIND!", // 202
 ];
 
 /*

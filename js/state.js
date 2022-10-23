@@ -39,7 +39,7 @@ if (IS_FIRST_PLAY || CURRENT_DAY > CURRENT_PLAY_STATE.day) {
 
     CURRENT_PLAY_STATE = {
         day: CURRENT_DAY,
-        heardle_id: CURRENT_HEARDLE_ID,
+        heardle_id: getHeardleIdForDay(CURRENT_DAY),
         failed: 0,
         guesses: [],
         cleared: false,
@@ -58,6 +58,7 @@ if (IS_FIRST_PLAY || CURRENT_DAY > CURRENT_PLAY_STATE.day) {
         prepareNextGuess();
     }
 }
+const CURRENT_HEARDLE = SONGPOOL[CURRENT_PLAY_STATE.heardle_id];
 
 function savePlayStates() {
     localStorage.setItem("play_states", JSON.stringify(PLAY_STATES));

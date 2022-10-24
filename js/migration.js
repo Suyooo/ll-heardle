@@ -44,7 +44,7 @@ if (localStorage.getItem("userStats") !== null) {
         const mergedPlayStates = [];
         let countPlayed = 0;
         for (let day = 1; day <= CURRENT_DAY; day++) {
-            const newSave = existingStates.find(s => s.day === day);
+            const newSave = existingStates.find(s => s.day === day && s.guesses);
             if (newSave) {
                 mergedPlayStates.push(newSave);
                 countPlayed++;

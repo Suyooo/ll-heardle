@@ -37,9 +37,12 @@ const SONGPOOL = [
         }
     },
     /*
+     * LIST OF ALL RELEASES:
+     * https://ll-fans.jp/data/song?sortKey=SORT_RELEASED_ON&order=DESC
+     *
      * WHEN ADDING A NEW SONG:
      * - Copy one of the elements and paste it above this comment block (that way, songs are sorted by release order)
-     * - For solos, you can copy the artist line from one of the others above
+     * - For solos, you can copy the artist line from one of the others above. (It's always "Character (CV: Seiyuu)")
      * - !!! For new songs, make sure to set startOnDay to *at least* three days after the current day, or the current
      *       day's Heardle **WILL** break for players! (see below)
      *
@@ -49,7 +52,7 @@ const SONGPOOL = [
      * - Same thing happens if you remove a song, so **never remove a song**! (We'll have to add that as a new feature,
      *   if you ever need to get rid of a song)
      *
-     * For the listenOn links:
+     * FOR THE LISTEN-ON LINKS:
      * - Spotify is pretty straightforward - search for the song, open the three-dot menu that shows on the right when
      *   you hover over the result and click "Share" > "Copy Song Link". (Remove the ?si= part if you want.)
      * - YouTube however can be kind of a pain, because its own search sucks. I had a way easier time using the Google
@@ -57,7 +60,9 @@ const SONGPOOL = [
      *   (for example: https://www.google.com/search?q=youtube+%E3%82%82%E3%81%A3%E3%81%A8%E3%81%AD%EF%BC%81&tbm=vid)
      *   Make sure the video is from a channel ending with " - Topic", or it's not an official upload.
      * - If there is no upload on Spotify or no official upload on YT, just leave the field out (remove the entire line)
+     *   Don't remove the listenOn or the brackets, just leave it empty like this:    listenOn: {}
      *
+     * FOR TESTING:
      * - If you want to make sure everything worked, you can check the song pool via your browser's developer tools.
      *   Open it with F12, head to the Console tab, and access the llheardle.SONGPOOL property. For example:
      *       llheardle.SONGPOOL.at(-1)

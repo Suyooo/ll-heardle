@@ -554,8 +554,8 @@ const OLD_HEARDLE_MAP = {
     "Liella! - Hajimari wa Kimi no Sora": 355,
     "Liella! - Hajimari wa Kimi no Sora / 始まりは君の空": 355,
     "Liella! - HAPPY TO DO WA!": 385,
-    "Liella! - Kawaranai Subete": 355,
-    "Liella! - Kawaranai Subete / 変わらないすべて": 355,
+    "Liella! - Kawaranai Subete": 388,
+    "Liella! - Kawaranai Subete / 変わらないすべて": 388,
     "Liella! - Kono Machi de Ima Kimi to": 356,
     "Liella! - Kono Machi de Ima Kimi to / この街でいまキミと": 356,
     "Liella! - Mabataki no Saki e": 357,
@@ -570,9 +570,9 @@ const OLD_HEARDLE_MAP = {
     "Liella! - Sagashite! Future": 387,
     "Liella! - Sagashite! Future / 探して！Future": 387,
     "Liella! - Shooting Voice!!": 362,
-    "Liella! - Starlight Prologue": 310,
-    "Liella! - START!! True dreams": 363,
-    "Liella! - Stella!": 364,
+    "Liella! - Starlight Prologue": 363,
+    "Liella! - START!! True dreams": 364,
+    "Liella! - Stella!": 386,
     "Liella! - Tiny Stars": 365,
     "Liella! - Tokonatsu☆Sunshine": 366,
     "Liella! - Tokonatsu☆Sunshine / 常夏☆サンシャイン": 366,
@@ -583,7 +583,7 @@ const OLD_HEARDLE_MAP = {
     "Liella! - Watashi no Symphony": 367,
     "Liella! - Watashi no Symphony / 私のSymphony": 367,
     "Liella! - What a Wonderful Dream!!": 394,
-    "Liella! - Wish Song": 313,
+    "Liella! - Wish Song": 368,
     "Liella! - Star Sengen": 422,
     "Liella! - WE WILL!!": 423,
     "Liella! - Oi kakeru Yume no Saki de": 425,
@@ -641,7 +641,7 @@ const OLD_HEARDLE_ROUNDS = [
     115, // 13, BiBi - PSYCHIC FIRE
     186, // 14, Aqours - "MY LIST" to you!
     333, // 15, Emma Verde - La Bella Patria
-    310, // 16, Liella! - Starlight Prologue
+    363, // 16, Liella! - Starlight Prologue
     339, // 17, Mifune Shioriko - Aoi Canaria / 翠いカナリア
     63, // 18, µ's - ENDLESS PARADE
     268, // 19, Nijigasaki - Nijiiro Passions! / 虹色Passions!

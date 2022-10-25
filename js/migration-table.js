@@ -456,6 +456,7 @@ const OLD_HEARDLE_MAP = {
     "QU4RTZ - Twinkle Town": 290,
     "QU4RTZ - ENJOY IT!": 407,
     "R3BIRTH - MONSTER GIRLS": 291,
+    "R3BIRTH - Bubble Over! / バブルオーバー！": 442,
     "Uehara Ayumu - Awakening Promise": 292,
     "Uehara Ayumu - Break The System": 293,
     "Uehara Ayumu - Dream with You": 294,
@@ -831,4 +832,8 @@ const OLD_HEARDLE_ROUNDS = [
     431, // 204, Liella! - Yuragu wa
     328, // 205, Yuki Setsuna - Yada! / ヤダ！
     398, // 206, Shibuya Kanon - Aozora o Matteru / 青空を待ってる
+    442, // 207, R3BIRTH - Bubble Over! / バブルオーバー！
+    82, // 208, Printemps - Eien Friends / 永遠フレンズ
+    402, // 209, Watanabe You - Paradise Chime
+    36 // 210, µ's - Bokura wa Ima no Naka de / 僕らは今のなかで
 ];

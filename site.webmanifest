@@ -3,42 +3,42 @@
   "short_name": "LL! Heardle",
   "icons": [
     {
-      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-72x72.png?v=1665824014981",
+      "src": "https://cdn.glitch.global/083b3590-d842-4a55-8c3f-abd0eaff8519/icon-72x72.png",
       "sizes": "72x72",
       "type": "image/png"
     },
     {
-      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-96x96.png?v=1665824015707",
+      "src": "https://cdn.glitch.global/083b3590-d842-4a55-8c3f-abd0eaff8519/icon-96x96.png",
       "sizes": "96x96",
       "type": "image/png"
     },
     {
-      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-128x128.png?v=1665824017356",
+      "src": "https://cdn.glitch.global/083b3590-d842-4a55-8c3f-abd0eaff8519/icon-128x128.png",
       "sizes": "128x128",
       "type": "image/png"
     },
     {
-      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-144x144.png?v=1665824018689",
+      "src": "https://cdn.glitch.global/083b3590-d842-4a55-8c3f-abd0eaff8519/icon-144x144.png",
       "sizes": "144x144",
       "type": "image/png"
     },
     {
-      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-152x152.png?v=1665824019973",
+      "src": "https://cdn.glitch.global/083b3590-d842-4a55-8c3f-abd0eaff8519/icon-152x152.png",
       "sizes": "152x152",
       "type": "image/png"
     },
     {
-      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-192x192.png?v=1665824021440",
+      "src": "https://cdn.glitch.global/083b3590-d842-4a55-8c3f-abd0eaff8519/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-384x384.png?v=1665824023002",
+      "src": "https://cdn.glitch.global/083b3590-d842-4a55-8c3f-abd0eaff8519/icon-384x384.png",
       "sizes": "384x384",
       "type": "image/png"
     },
     {
-      "src": "https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/icon-512x512.png?v=1665824024217",
+      "src": "https://cdn.glitch.global/083b3590-d842-4a55-8c3f-abd0eaff8519/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

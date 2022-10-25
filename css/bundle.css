@@ -988,13 +988,13 @@ textarea {
 
 .logo {
     color: rgba(0,0,0,0);
-    background: url("https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/logo-tall.png?v=1665824025880") no-repeat center;
+    background: url("https://cdn.glitch.global/083b3590-d842-4a55-8c3f-abd0eaff8519/logo-tall.png") no-repeat center;
     background-size: contain;
     height: 4rem;
 }
 @media(min-width: 640px) {
     .logo {
-        background-image: url("https://cdn.glitch.global/ea27ab61-17a9-4fca-9886-fbab5bad45f8/logo-wide.png?v=1665824027013");
+        background-image: url("https://cdn.glitch.global/083b3590-d842-4a55-8c3f-abd0eaff8519/logo-wide.png");
         height: 2rem;
     }
 }

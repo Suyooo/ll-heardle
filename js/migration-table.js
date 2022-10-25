@@ -829,6 +829,6 @@ const OLD_HEARDLE_ROUNDS = [
     27, // 202, Nishikino Maki - Daring!
     207, // 203, Saint Snow - CRASH MIND
     431, // 204, Liella! - Yuragu wa
-    398, // 205, Shibuya Kanon - Aozora o Matteru / 青空を待ってる
-    328, // 206, Yuki Setsuna - Yada! / ヤダ！
+    328, // 205, Yuki Setsuna - Yada! / ヤダ！
+    398, // 206, Shibuya Kanon - Aozora o Matteru / 青空を待ってる
 ];

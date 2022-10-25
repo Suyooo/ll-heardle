@@ -188,7 +188,7 @@ const OLD_HEARDLE_MAP = {
     "Aqours - Aozora Jumping Heart / 青空Jumping Heart": 129,
     "Aqours - Aqours Pirates Desire": 156,
     "Aqours - Aqours☆HEROES": 105,
-    "Aqours - BANZAI! digital trippers": 432,
+    "Aqours - BANZAI! digital trippers": 430,
     "Aqours - Bokura no Hashittekita Michi wa…": 157,
     "Aqours - Bokura no Hashittekita Michi wa… / 僕らの走ってきた道は…": 157,
     "Aqours - Bouken Type A, B, C!!": 158,
@@ -206,7 +206,7 @@ const OLD_HEARDLE_MAP = {
     "Aqours - Future flight": 165,
     "Aqours - G Senjou no Cinderella": 145,
     "Aqours - G Senjou no Cinderella / G線上のシンデレラ": 145,
-    "Aqours - GEMSTONE \"DE‐A‐I\"": 400,
+    "Aqours - GEMSTONE \"DE‐A‐I\"": 398,
     "Aqours - Hajimari Road": 166,
     "Aqours - Hajimari Road / ハジマリロード": 166,
     "Aqours - HAPPY PARTY TRAIN": 152,
@@ -222,7 +222,7 @@ const OLD_HEARDLE_MAP = {
     "Aqours - Jingle Bells ga Tomaranai": 140,
     "Aqours - Jingle Bells ga Tomaranai / ジングルベルがとまらない": 140,
     "Aqours - Jump up HIGH!!": 172,
-    "Aqours - KA-GA-YA-KI-RA-RI-RA": 433,
+    "Aqours - KA-GA-YA-KI-RA-RI-RA": 431,
     "Aqours - Kimeta yo Hand in Hand": 130,
     "Aqours - Kimeta yo Hand in Hand / 決めたよHand in Hand": 130,
     "Aqours - Kimi no Hitomi wo Meguru Bouken": 173,
@@ -261,8 +261,8 @@ const OLD_HEARDLE_MAP = {
     "Aqours - Namida ga Yuki ni Naru Mae ni / 涙が雪になる前に": 188,
     "Aqours - Namida Janai": 189,
     "Aqours - Namida Janai / 涙×": 189,
-    "Aqours - Nando Datte Yakusoku!": 401,
-    "Aqours - Nando Datte Yakusoku! / なんどだって約束！": 401,
+    "Aqours - Nando Datte Yakusoku!": 399,
+    "Aqours - Nando Datte Yakusoku! / なんどだって約束！": 399,
     "Aqours - Natsu e no Tobira Never end ver.": 190,
     "Aqours - Natsu e no Tobira Never end ver. / 夏への扉 Never end ver. ": 190,
     "Aqours - Natsu no Owari no Amaoto ga": 191,
@@ -302,7 +302,7 @@ const OLD_HEARDLE_MAP = {
     "Aqours - WONDERFUL STORIES": 202,
     "Aqours - Yosoku Fukanou Driving!": 203,
     "Aqours - Yosoku Fukanou Driving! / 予測不可能Driving!": 203,
-    "Aqours - Yume + Mirai ＝ Mugendai": 418,
+    "Aqours - Yume + Mirai ＝ Mugendai": 416,
     "Aqours - Yume de Yozora wo Terashitai": 134,
     "Aqours - Yume de Yozora wo Terashitai / 夢で夜空を照らしたい": 134,
     "Aqours - Yume Kataru yori Yume Utaou": 132,
@@ -378,42 +378,42 @@ const OLD_HEARDLE_MAP = {
     "Sakurauchi Riko - PURE PHRASE": 245,
     "Matsuura Kanan - Motto ne!": 246,
     "Matsuura Kanan - Motto ne! / もっとね！": 246,
-    "Matsuura Kanan - RUN KAKERU RUN": 385,
+    "Matsuura Kanan - RUN KAKERU RUN": 383,
     "Matsuura Kanan - Sakana ka Nanadaka?": 247,
     "Matsuura Kanan - Sakana ka Nanadaka? / さかなかなんだか？": 247,
-    "Kurosawa Dia - MOTTO-ZUTTO be with you": 382,
+    "Kurosawa Dia - MOTTO-ZUTTO be with you": 380,
     "Kurosawa Dia - Perfect SEKAI": 248,
     "Kurosawa Dia - WHITE FIRST LOVE": 249,
     "Watanabe You - Beginner's Sailing": 250,
     "Watanabe You - Totsuzen GIRL": 251,
     "Watanabe You - Totsuzen GIRL / 突然GIRL": 251,
-    "Watanabe You - Paradise Chime": 402,
+    "Watanabe You - Paradise Chime": 400,
     "Tsushima Yoshiko - in this unstable world": 252,
-    "Tsushima Yoshiko - Meimei Tantei Yohane": 420,
-    "Tsushima Yoshiko - Meimei Tantei Yohane / 迷冥探偵ヨハネ": 420,
+    "Tsushima Yoshiko - Meimei Tantei Yohane": 418,
+    "Tsushima Yoshiko - Meimei Tantei Yohane / 迷冥探偵ヨハネ": 418,
     "Tsushima Yoshiko - Tatehoko Tsubasa": 253,
     "Tsushima Yoshiko - Tatehoko Tsubasa / タテホコツバサ": 253,
     "Kunikida Hanamaru - Akogare Ranraran": 254,
     "Kunikida Hanamaru - Akogare Ranraran / あこがれランララン": 254,
     "Kunikida Hanamaru - Oyasuminasan!": 255,
     "Kunikida Hanamaru - Oyasuminasan! / おやすみなさん！": 255,
-    "Kunikida Hanamaru - Yaa! Kouunryuusui!?": 399,
-    "Kunikida Hanamaru - Yaa! Kouunryuusui!? / やあ！行雲流水！？": 399,
-    "Ohara Mari - Love is all, I sing love is all!": 413,
+    "Kunikida Hanamaru - Yaa! Kouunryuusui!?": 397,
+    "Kunikida Hanamaru - Yaa! Kouunryuusui!? / やあ！行雲流水！？": 397,
+    "Ohara Mari - Love is all, I sing love is all!": 411,
     "Ohara Mari - New winding road": 256,
     "Ohara Mari - Shiny Racers": 257,
     "Kurosawa Ruby - 1STAR": 258,
     "Kurosawa Ruby - Cotton Candy Ei-Ei-Oh!": 259,
     "Kurosawa Ruby - Cotton Candy Ei-Ei-Oh! / コットンキャンディえいえいおー！": 259,
     "Kurosawa Ruby - RED GEM WINK": 260,
-    "Nijigasaki - Colorful Dreams! Colorful Smiles!": 404,
-    "Nijigasaki - Eien no Isshun": 446,
-    "Nijigasaki - Eien no Isshun / 永遠の一瞬": 446,
-    "Nijigasaki - Future Parade": 419,
+    "Nijigasaki - Colorful Dreams! Colorful Smiles!": 402,
+    "Nijigasaki - Eien no Isshun": 444,
+    "Nijigasaki - Eien no Isshun / 永遠の一瞬": 444,
+    "Nijigasaki - Future Parade": 417,
     "Nijigasaki - Hurray Hurray": 261,
     "Nijigasaki - Just Believe!!": 262,
     "Nijigasaki - L！L！L! (Love the Life We Live)": 263,
-    "Nijigasaki - Level Oops! Adventures": 422,
+    "Nijigasaki - Level Oops! Adventures": 420,
     "Nijigasaki - Love U my friends": 264,
     "Nijigasaki - Miracle STAY TUNE!": 265,
     "Nijigasaki - Miracle STAY TUNE! / ミラクル STAY TUNE!": 265,
@@ -422,14 +422,14 @@ const OLD_HEARDLE_MAP = {
     "Nijigasaki - NEO SKY, NEO MAP!": 267,
     "Nijigasaki - Nijiiro Passions!": 268,
     "Nijigasaki - Nijiiro Passions! / 虹色Passions!": 268,
-    "Nijigasaki - Ryouran! Victory Road": 406,
-    "Nijigasaki - Ryouran! Victory Road / 繚乱！ビクトリーロード": 406,
+    "Nijigasaki - Ryouran! Victory Road": 404,
+    "Nijigasaki - Ryouran! Victory Road / 繚乱！ビクトリーロード": 404,
     "Nijigasaki - Sweet Eyes": 269,
     "Nijigasaki - TOKIMEKI Runners": 270,
-    "Nijigasaki - Twilight": 403,
-    "Nijigasaki - Twilight / トワイライト": 403,
-    "Nijigasaki - Yume ga Bokura no Taiyou sa": 405,
-    "Nijigasaki - Yume ga Bokura no Taiyou sa / 夢が僕らの太陽さ": 405,
+    "Nijigasaki - Twilight": 401,
+    "Nijigasaki - Twilight / トワイライト": 401,
+    "Nijigasaki - Yume ga Bokura no Taiyou sa": 403,
+    "Nijigasaki - Yume ga Bokura no Taiyou sa / 夢が僕らの太陽さ": 403,
     "Nijigasaki - Yume ga Koko Kara Hajimaru yo": 271,
     "Nijigasaki - Yume ga Koko Kara Hajimaru yo / 夢がここからはじまるよ": 271,
     "Nijigasaki - Zensoku Dreamer": 272,
@@ -454,9 +454,9 @@ const OLD_HEARDLE_MAP = {
     "QU4RTZ - Sing & Smile!!": 288,
     "QU4RTZ - Swinging!": 289,
     "QU4RTZ - Twinkle Town": 290,
-    "QU4RTZ - ENJOY IT!": 407,
+    "QU4RTZ - ENJOY IT!": 405,
     "R3BIRTH - MONSTER GIRLS": 291,
-    "R3BIRTH - Bubble Over! / バブルオーバー！": 442,
+    "R3BIRTH - Bubble Over! / バブルオーバー！": 440,
     "Uehara Ayumu - Awakening Promise": 292,
     "Uehara Ayumu - Break The System": 293,
     "Uehara Ayumu - Dream with You": 294,
@@ -541,8 +541,8 @@ const OLD_HEARDLE_MAP = {
     "Liella! - 1,2,3!": 346,
     "Liella! - Bye Bye shichaeba!?": 347,
     "Liella! - Bye Bye shichaeba!? / バイバイしちゃえば！？": 347,
-    "Liella! - Crescendo Yu・Ra": 391,
-    "Liella! - Crescendo Yu・Ra / クレッシェンドゆ・ら": 391,
+    "Liella! - Crescendo Yu・Ra": 389,
+    "Liella! - Crescendo Yu・Ra / クレッシェンドゆ・ら": 389,
     "Liella! - Dakara Bokura wa Narasunda!": 348,
     "Liella! - Dakara Bokura wa Narasunda! / だから僕らは鳴らすんだ！": 348,
     "Liella! - Dancing Heart La-Pa-Pa-Pa!": 349,
@@ -553,76 +553,76 @@ const OLD_HEARDLE_MAP = {
     "Liella! - GOING UP": 354,
     "Liella! - Hajimari wa Kimi no Sora": 355,
     "Liella! - Hajimari wa Kimi no Sora / 始まりは君の空": 355,
-    "Liella! - HAPPY TO DO WA!": 387,
-    "Liella! - Kawaranai Subete": 356,
-    "Liella! - Kawaranai Subete / 変わらないすべて": 356,
-    "Liella! - Kono Machi de Ima Kimi to": 357,
-    "Liella! - Kono Machi de Ima Kimi to / この街でいまキミと": 357,
-    "Liella! - Mabataki no Saki e": 358,
-    "Liella! - Mabataki no Saki e / 瞬きの先へ": 358,
-    "Liella! - Mirai wa Kaze no You ni": 359,
-    "Liella! - Mirai wa Kaze no You ni / 未来は風のように": 359,
-    "Liella! - Mirai Yohou Hallelujah!": 360,
-    "Liella! - Mirai Yohou Hallelujah! / 未来予報ハレルヤ!": 360,
-    "Liella! - Nonfiction!!": 361,
-    "Liella! - Nonfiction!! / ノンフィクション!!": 361,
-    "Liella! - Primary": 362,
-    "Liella! - Sagashite! Future": 389,
-    "Liella! - Sagashite! Future / 探して！Future": 389,
-    "Liella! - Shooting Voice!!": 363,
+    "Liella! - HAPPY TO DO WA!": 385,
+    "Liella! - Kawaranai Subete": 355,
+    "Liella! - Kawaranai Subete / 変わらないすべて": 355,
+    "Liella! - Kono Machi de Ima Kimi to": 356,
+    "Liella! - Kono Machi de Ima Kimi to / この街でいまキミと": 356,
+    "Liella! - Mabataki no Saki e": 357,
+    "Liella! - Mabataki no Saki e / 瞬きの先へ": 357,
+    "Liella! - Mirai wa Kaze no You ni": 358,
+    "Liella! - Mirai wa Kaze no You ni / 未来は風のように": 358,
+    "Liella! - Mirai Yohou Hallelujah!": 359,
+    "Liella! - Mirai Yohou Hallelujah! / 未来予報ハレルヤ!": 359,
+    "Liella! - Nonfiction!!": 360,
+    "Liella! - Nonfiction!! / ノンフィクション!!": 360,
+    "Liella! - Primary": 361,
+    "Liella! - Sagashite! Future": 387,
+    "Liella! - Sagashite! Future / 探して！Future": 387,
+    "Liella! - Shooting Voice!!": 362,
     "Liella! - Starlight Prologue": 310,
-    "Liella! - START!! True dreams": 365,
-    "Liella! - Stella!": 366,
-    "Liella! - Tiny Stars": 367,
-    "Liella! - Tokonatsu☆Sunshine": 368,
-    "Liella! - Tokonatsu☆Sunshine / 常夏☆サンシャイン": 368,
-    "Liella! - Tu Tu Tu!": 386,
-    "Liella! - Tu Tu Tu! / トゥ トゥ トゥ！": 386,
-    "Liella! - Unison": 394,
-    "Liella! - Unison / ユニゾン": 394,
-    "Liella! - Watashi no Symphony": 369,
-    "Liella! - Watashi no Symphony / 私のSymphony": 369,
-    "Liella! - What a Wonderful Dream!!": 396,
+    "Liella! - START!! True dreams": 363,
+    "Liella! - Stella!": 364,
+    "Liella! - Tiny Stars": 365,
+    "Liella! - Tokonatsu☆Sunshine": 366,
+    "Liella! - Tokonatsu☆Sunshine / 常夏☆サンシャイン": 366,
+    "Liella! - Tu Tu Tu!": 384,
+    "Liella! - Tu Tu Tu! / トゥ トゥ トゥ！": 384,
+    "Liella! - Unison": 392,
+    "Liella! - Unison / ユニゾン": 392,
+    "Liella! - Watashi no Symphony": 367,
+    "Liella! - Watashi no Symphony / 私のSymphony": 367,
+    "Liella! - What a Wonderful Dream!!": 394,
     "Liella! - Wish Song": 313,
-    "Liella! - Star Sengen": 424,
-    "Liella! - WE WILL!!": 425,
-    "Liella! - Oi kakeru Yume no Saki de": 427,
-    "Liella! - Mizushibuki no Sign": 426,
-    "Liella! - Welcome to Bokura no Sekai": 430,
-    "Liella! - Irozuite Tomei": 429,
-    "Liella! - Go!! Restart": 428,
-    "Liella! - Yuragu wa": 431,
-    "Liella! - Utopia Magic": 440,
-    "Liella! - Vitamin SUMMER!": 438,
-    "Liella! - Chance Day, Chance Way!": 439,
-    "Liella! - POP TALKING": 437,
-    "Sunny Passion - HOT PASSION!!": 383,
-    "Sunny Passion - Till Sunrise": 384,
-    "Shibuya Kanon - Aozora o Matteru": 398,
-    "Shibuya Kanon - Aozora o Matteru / 青空を待ってる": 398,
-    "Shibuya Kanon - Kokoro Kirarara": 371,
-    "Shibuya Kanon - Kokoro Kirarara / 心キラララ": 371,
-    "Tang Keke - Mizuiro no Sunday": 393,
-    "Tang Keke - Mizuiro no Sunday / 水色のSunday": 393,
-    "Tang Keke - Oh! Ready Steady Positive": 372,
-    "Tang Keke - Oh! Ready Steady Positive / Oh！レディ・ステディ・ポジティブ": 372,
-    "Arashi Chisato - Flyer's High": 395,
-    "Arashi Chisato - Yuuki no Kakera": 373,
-    "Arashi Chisato - Yuuki no Kakera / 勇気のカケラ": 373,
-    "Heanna Sumire - Heroines☆Runway": 374,
-    "Heanna Sumire - Heroines☆Runway / ヒロインズ☆ランウェイ": 374,
-    "Heanna Sumire - Mitero!": 397,
-    "Heanna Sumire - Mitero! / みてろ！": 397,
-    "Hazuki Ren - Binetsu no Waltz": 392,
-    "Hazuki Ren - Binetsu no Waltz / 微熱のワルツ": 392,
-    "Hazuki Ren - Reverb": 375,
-    "Hazuki Ren - Reverb / リバーブ": 375,
-    "Shibuya Kanon / Heanna Sumire - Message": 376,
-    "Shibuya Kanon / Arashi Chisato - Memories": 377,
-    "Tang Keke / Hazuki Ren - Anniversary": 378,
-    "Tang Keke / Arashi Chisato - Ringing!": 379,
-    "Heanna Sumire / Hazuki Ren - Dears": 380,
-    "Aqours / Nijigasaki / Liella - LIVE with a smile!": 381,
+    "Liella! - Star Sengen": 422,
+    "Liella! - WE WILL!!": 423,
+    "Liella! - Oi kakeru Yume no Saki de": 425,
+    "Liella! - Mizushibuki no Sign": 424,
+    "Liella! - Welcome to Bokura no Sekai": 428,
+    "Liella! - Irozuite Tomei": 427,
+    "Liella! - Go!! Restart": 426,
+    "Liella! - Yuragu wa": 429,
+    "Liella! - Utopia Magic": 438,
+    "Liella! - Vitamin SUMMER!": 436,
+    "Liella! - Chance Day, Chance Way!": 437,
+    "Liella! - POP TALKING": 435,
+    "Sunny Passion - HOT PASSION!!": 381,
+    "Sunny Passion - Till Sunrise": 382,
+    "Shibuya Kanon - Aozora o Matteru": 396,
+    "Shibuya Kanon - Aozora o Matteru / 青空を待ってる": 396,
+    "Shibuya Kanon - Kokoro Kirarara": 369,
+    "Shibuya Kanon - Kokoro Kirarara / 心キラララ": 369,
+    "Tang Keke - Mizuiro no Sunday": 391,
+    "Tang Keke - Mizuiro no Sunday / 水色のSunday": 391,
+    "Tang Keke - Oh! Ready Steady Positive": 370,
+    "Tang Keke - Oh! Ready Steady Positive / Oh！レディ・ステディ・ポジティブ": 370,
+    "Arashi Chisato - Flyer's High": 393,
+    "Arashi Chisato - Yuuki no Kakera": 371,
+    "Arashi Chisato - Yuuki no Kakera / 勇気のカケラ": 371,
+    "Heanna Sumire - Heroines☆Runway": 372,
+    "Heanna Sumire - Heroines☆Runway / ヒロインズ☆ランウェイ": 372,
+    "Heanna Sumire - Mitero!": 395,
+    "Heanna Sumire - Mitero! / みてろ！": 395,
+    "Hazuki Ren - Binetsu no Waltz": 390,
+    "Hazuki Ren - Binetsu no Waltz / 微熱のワルツ": 390,
+    "Hazuki Ren - Reverb": 373,
+    "Hazuki Ren - Reverb / リバーブ": 373,
+    "Shibuya Kanon / Heanna Sumire - Message": 374,
+    "Shibuya Kanon / Arashi Chisato - Memories": 375,
+    "Tang Keke / Hazuki Ren - Anniversary": 376,
+    "Tang Keke / Arashi Chisato - Ringing!": 377,
+    "Heanna Sumire / Hazuki Ren - Dears": 378,
+    "Aqours / Nijigasaki / Liella - LIVE with a smile!": 379
 }
 
 const OLD_HEARDLE_ROUNDS = [
@@ -650,8 +650,8 @@ const OLD_HEARDLE_ROUNDS = [
     302, // 22, Nakasu Kasumi - Poppin' Up!
     89, // 23, lily white - Onaji Hoshi ga Mitai / 同じ星が見たい
     155, // 24, µ's - Natte Shimatta! / なってしまった！
-    374, // 25, Heanna Sumire - Heroines☆Runway / ヒロインズ☆ランウェイ
-    381, // 26, Aqours / Nijigasaki / Liella - LIVE with a smile!
+    372, // 25, Heanna Sumire - Heroines☆Runway / ヒロインズ☆ランウェイ
+    379, // 26, Aqours / Nijigasaki / Liella - LIVE with a smile!
     340, // 27, Mifune Shioriko - Concentrate! / コンセントレイト！
     103, // 28, µ's - Bokutachi wa Hitotsu no Hikari / 僕たちはひとつの光
     58, // 29, Printemps - Puwa Puwa-O! / ぷわぷわーお！
@@ -660,7 +660,7 @@ const OLD_HEARDLE_ROUNDS = [
     169, // 32, Aqours - i-n-g, I TRY!!
     238, // 33, Guilty Kiss - Shadow Gate to Love
     267, // 34, Nijigasaki - NEO SKY, NEO MAP!
-    402, // 35, Watanabe You - Paradise Chime
+    400, // 35, Watanabe You - Paradise Chime
     349, // 36, Liella! - Dancing Heart La-Pa-Pa-Pa!
     66, // 37, µ's - Donna Toki mo Zutto / どんなときもずっと
     1, // 38, µ's - Yuujou No Change / 友情ノーチェンジ
@@ -671,7 +671,7 @@ const OLD_HEARDLE_ROUNDS = [
     162, // 43, Aqours - Deep Resonance
     309, // 44, Asaka Karin - Fire Bird
     261, // 45, Nijigasaki - Hurray Hurray
-    367, // 46, Liella! - Tiny Stars
+    365, // 46, Liella! - Tiny Stars
     331, // 47, Emma Verde - Itsu datte for you! / いつだってfor you!
     139, // 48, Aqours - Omoi yo Hitotsu ni Nare / 想いよひとつになれ
     143, // 49, Saint Snow - SELF CONTROL!!
@@ -685,7 +685,7 @@ const OLD_HEARDLE_ROUNDS = [
     152, // 57, Aqours - HAPPY PARTY TRAIN
     249, // 58, Kurosawa Dia - WHITE FIRST LOVE
     299, // 59, Nakasu Kasumi - Diamond / ダイアモンド
-    361, // 60, Liella! - Nonfiction!! / ノンフィクション!!
+    360, // 60, Liella! - Nonfiction!! / ノンフィクション!!
     41, // 61, µ's - Korekara no Someday / これからのSomeday
     100, // 62, µ's - Hello, Hoshi o Kazoete / Hello,星を数えて
     184, // 63, Aqours - Misty Frosty Love
@@ -711,12 +711,12 @@ const OLD_HEARDLE_ROUNDS = [
     111, // 83, Printemps - NO EXIT ORION
     334, // 84, Tennoji Rina - Analog Heart / アナログハート
     27, // 85, Nishikino Maki - Daring!
-    401, // 86, Aqours - Nando Datte Yakusoku! / なんどだって約束！
+    399, // 86, Aqours - Nando Datte Yakusoku! / なんどだって約束！
     314, // 87, Miyashita Ai - Diabolic mulier
     328, // 88, Yuki Setsuna - Yada! / ヤダ！
-    382, // 89, Kurosawa Dia - MOTTO-ZUTTO be with you
+    380, // 89, Kurosawa Dia - MOTTO-ZUTTO be with you
     230, // 90, AZALEA - We‘ll get the next dream!!!
-    360, // 91, Liella! - Mirai Yohou Hallelujah! / 未来予報ハレルヤ!
+    359, // 91, Liella! - Mirai Yohou Hallelujah! / 未来予報ハレルヤ!
     327, // 92, Yuki Setsuna - MELODY
     259, // 93, Kurosawa Ruby - Cotton Candy Ei-Ei-Oh! / コットンキャンディえいえいおー！
     45, // 94, A-RISE - Private Wars
@@ -779,14 +779,14 @@ const OLD_HEARDLE_ROUNDS = [
     37, // 151, µ's - Kitto Seishun ga Kikoeru / きっと青春が聞こえる
     121, // 152, Aqours - Mattete Ai no Uta / 待ってて愛のうた
     69, // 153, µ's - SENTIMENTAL StepS
-    359, // 154, Liella! - Mirai wa Kaze no You ni / 未来は風のように
+    358, // 154, Liella! - Mirai wa Kaze no You ni / 未来は風のように
     252, // 155, Tsushima Yoshiko - in this unstable world
     318, // 156, Miyashita Ai - Yuu & Ai / 友 & 愛
-    384, // 157, Sunny Passion - Till Sunrise
+    382, // 157, Sunny Passion - Till Sunrise
     0, // 158, µ's - Bokura no LIVE Kimi to no LIFE / 僕らのLIVE 君とのLIFE
     204, // 159, Aqours - Yuuki wa doko ni? Kimi no Mune ni! / 勇気はどこに?君の胸に!
     3, // 160, µ's - baby maybe Koi no Button / baby maybe 恋のボタン
-    404, // 161, Nijigasaki - Colorful Dreams! Colorful Smiles!
+    402, // 161, Nijigasaki - Colorful Dreams! Colorful Smiles!
     148, // 162, Aqours - Taiyou o Oikakero! / 太陽を追いかけろ!
     214, // 163, CYaRon! - Braveheart Coaster
     24, // 164, Minami Kotori - Blueberry♥Train / ぶる～べりぃ♥とれいん
@@ -817,11 +817,11 @@ const OLD_HEARDLE_ROUNDS = [
     312, // 189, Asaka Karin - VIVID WORLD
     255, // 190, Kunikida Hanamaru - Oyasuminasan! / おやすみなさん！
     188, // 191, Aqours - Namida ga Yuki ni Naru Mae ni / 涙が雪になる前に
-    392, // 192, Hazuki Ren - Binetsu no Waltz / 微熱のワルツ
+    390, // 192, Hazuki Ren - Binetsu no Waltz / 微熱のワルツ
     172, // 193, Aqours - Jump up HIGH!!
-    407, // 194, QU4RTZ - ENJOY IT!
+    405, // 194, QU4RTZ - ENJOY IT!
     3, // 195, µ's - baby maybe Koi no Button / baby maybe 恋のボタン
-    424, // 196, Liella! - Star Sengen
+    422, // 196, Liella! - Star Sengen
     29, // 197, Ayase Eli - Arifureta Kanashimi no Hate / ありふれた悲しみの果て
     33, // 198, µ's - Listen to my heart!!
     252, // 199, Tsushima Yoshiko - in this unstable world
@@ -829,11 +829,11 @@ const OLD_HEARDLE_ROUNDS = [
     136, // 201, Aqours - Pops heart de Odorun damon! / Pops heartで踊るんだもん！
     27, // 202, Nishikino Maki - Daring!
     207, // 203, Saint Snow - CRASH MIND
-    431, // 204, Liella! - Yuragu wa
+    429, // 204, Liella! - Yuragu wa
     328, // 205, Yuki Setsuna - Yada! / ヤダ！
-    398, // 206, Shibuya Kanon - Aozora o Matteru / 青空を待ってる
-    442, // 207, R3BIRTH - Bubble Over! / バブルオーバー！
+    396, // 206, Shibuya Kanon - Aozora o Matteru / 青空を待ってる
+    440, // 207, R3BIRTH - Bubble Over! / バブルオーバー！
     82, // 208, Printemps - Eien Friends / 永遠フレンズ
-    402, // 209, Watanabe You - Paradise Chime
+    400, // 209, Watanabe You - Paradise Chime
     36 // 210, µ's - Bokura wa Ima no Naka de / 僕らは今のなかで
 ];

@@ -145,27 +145,23 @@ $resultshare.on("click", () => {
         insecureShareDiv.append($("<a>").text("Click here to learn more.").attr("href", "https://gist.github.com/Suyooo/84baa6a8a5fb57f2e05c02d0698985c4"));
         $resultshare.replaceWith(insecureShareDiv);
         requestAnimationFrame(() => shareTextarea.select());
-    } else if (navigator.share && /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
-        && !navigator.userAgent.includes("Firefox")) {
+    } else if (navigator.share && navigator.canShare({text: shareText})
+        && /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) && !navigator.userAgent.includes("Firefox")) {
         // Firefox for Android does not support sharing text via navigator.share
         // There is no way to programmatically check whether a browser supports sharing text via the native share
         // mechanism, so we simply have to remember to manually remove this when it is implemented in Firefox
-        navigator.share({text: shareText}).catch(() => copyShareText(shareText));
+        navigator.share({text: shareText});
     } else {
         // PC browsers usually don't have a native share mechanism - just copy it instead
-        copyShareText(shareText);
+        navigator.clipboard.writeText(shareText)
+            .then(() => {
+                $resultshare.text("Copied to your Clipboard!");
+            })
+            .catch((err) => {
+                alert("Unable to share or copy your result: " + err);
+            });
     }
 });
-
-function copyShareText(shareText) {
-    navigator.clipboard.writeText(shareText)
-        .then(() => {
-            $resultshare.text("Copied to your Clipboard!");
-        })
-        .catch((err) => {
-            alert("Unable to share or copy your result: " + err);
-        });
-}
 
 // Once everything is prepared, fade in
 $fadeout.fadeOut(250);

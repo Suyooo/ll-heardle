@@ -123,12 +123,12 @@ function updateResultTimer(target) {
 }
 
 $resultshare.on("click", () => {
-    let shareText = "Love Live! Heardle #" + CURRENT_DAY + "\n🔉";
+    let shareText = "Love Live! Heardle #" + CURRENT_DAY + "\n🔉\uFE0F";
     $resultcolorrowChildren.forEach($element => {
-        if ($element.hasClass("bg-custom-fg")) shareText += "️️⬛️";
-        else if ($element.hasClass("bg-custom-negative")) shareText += "🟥️";
-        else if ($element.hasClass("bg-custom-correct")) shareText += "🟩️";
-        else if ($element.hasClass("bg-custom-mg")) shareText += "⬜";
+        if ($element.hasClass("bg-custom-fg")) shareText += "️️⬛️\uFE0F";
+        else if ($element.hasClass("bg-custom-negative")) shareText += "🟥️\uFE0F";
+        else if ($element.hasClass("bg-custom-correct")) shareText += "🟩️\uFE0F";
+        else if ($element.hasClass("bg-custom-mg")) shareText += "⬜\uFE0F";
     });
     shareText += "\n#LoveLiveHeardle #lovelive #ラブライブ\nhttps://lovelive-heardle.glitch.me";
 

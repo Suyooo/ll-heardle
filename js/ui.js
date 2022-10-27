@@ -125,10 +125,10 @@ function updateResultTimer(target) {
 $resultshare.on("click", () => {
     let shareText = "Love Live! Heardle #" + CURRENT_DAY + "\n🔉";
     $resultcolorrowChildren.forEach($element => {
-        if ($element.hasClass("bg-custom-fg")) shareText += "️⬜";
+        if ($element.hasClass("bg-custom-fg")) shareText += "️️⬛️";
         else if ($element.hasClass("bg-custom-negative")) shareText += "🟥️";
         else if ($element.hasClass("bg-custom-correct")) shareText += "🟩️";
-        else if ($element.hasClass("bg-custom-mg")) shareText += "️️⬛";
+        else if ($element.hasClass("bg-custom-mg")) shareText += "⬜";
     });
     shareText += "\n#LoveLiveHeardle #lovelive #ラブライブ\nhttps://lovelive-heardle.glitch.me";
 

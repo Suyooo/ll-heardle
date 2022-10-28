@@ -1,7 +1,9 @@
 // Some functions for the testing phase.
 
-const HEADER = "Hi! Thanks for testing the new version of LL! Heardle - we managed to find a problem with your save " +
-    "file.\n Please let Kach or Suyooo know the following so we can fix it:\n\n"
+const HEADER = "Hi! We are currently testing an update for the LL! Heardle site, and we managed to find a problem " +
+    "with your save file.\nPlease let Kach or Suyooo know the following, so we can investigate it and make sure your" +
+    "save file is fine - you can find our Twitter handles in the About modal (info button in the top left). " +
+    "Thank you!\n\n"
 
 if (PLAY_STATES.length < CURRENT_DAY) {
     alert(HEADER + "Save file is too short");

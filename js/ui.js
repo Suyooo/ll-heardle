@@ -72,7 +72,10 @@ function reveal(success) {
     // Show result screen
     $guessingscreen.addClass("hidden");
     $resultscreen.removeClass("hidden");
-    $clearmessage.text(success ? "You got it!" : "Too bad...");
+
+    // Force screen readers to read result immediately
+    $clearmessage.text(success ? "You got it!" : "Too bad...").focus().attr("tabindex", "-1");
+
     $resultmessage.text(success
         ? "You got today's Love Live! Heardle within " + LENGTHS[CURRENT_PLAY_STATE.failed] + (LENGTHS[CURRENT_PLAY_STATE.failed] === 1 ? " second!" : " seconds!")
         : "You didn't get today's Love Live! Heardle. Better luck tomorrow!");

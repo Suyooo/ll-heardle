@@ -62,7 +62,9 @@
         <header class="border-b border-custom-line">
             <div class="max-w-screen-md mx-auto ">
                 <div class="flex justify-evenly text-custom-fgcolor p-3 items-center">
-                    <a class="opacity-0 focus:opacity-100 absolute left-3" href="#control">Jump to Play Button</a>
+                    <a class="opacity-0 focus:opacity-100 absolute left-3 pointer-events-none" href="#control">
+                        Jump to Play Button
+                    </a>
                     <div class="flex flex-1">
                         <button id="open-about" aria-label="About"
                                 class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white">
@@ -158,20 +160,20 @@
                     <p id="resulttitle" class="font-bold"></p>
                 </div>
                 <div class="flex flex-col items-center space-y-2">
-                    <a id="resultspotify" class="hidden flex items-center">
+                    <a id="resultspotify" class="hidden flex items-center" aria-label="Listen on Spotify">
                         <img class="h-5"
                              src="https://cdn.glitch.global/083b3590-d842-4a55-8c3f-abd0eaff8519/spotify.png"
-                             alt="Spotify Logo">
+                             alt="Spotify Logo" aria-hidden="true">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                              stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                              role="img" aria-hidden="true">
                             <path d="M9 18l6-6-6-6"></path>
                         </svg>
                     </a>
-                    <a id="resultyoutube" class="hidden flex items-center">
+                    <a id="resultyoutube" class="hidden flex items-center" aria-label="Listen on YouTube">
                         <img class="h-5"
                              src="https://cdn.glitch.global/083b3590-d842-4a55-8c3f-abd0eaff8519/youtube.png"
-                             alt="YouTube Logo">
+                             alt="YouTube Logo" aria-hidden="true">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                              stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                              role="img" aria-hidden="true">
@@ -182,7 +184,7 @@
             </div>
         </div>
         <div class="text-center px-3">
-            <p id="clearmessage" class="text-lg text-custom-line"></p>
+            <p id="clearmessage" tabindex="0" class="text-lg text-custom-line outline-none"></p>
             <div id="resultcolorrow" class="flex justify-center my-2">
                 <div class="w-4 h-1 m-0.5"></div>
                 <div class="w-4 h-1 m-0.5"></div>
@@ -320,7 +322,7 @@
                             About</h2>
                     </div>
                     <div class="close-modals justify-self-end flex">
-                        <button class="border-none text-custom-mg">
+                        <button class="border-none text-custom-mg" aria-label="Close Dialog">
                             <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                  role="img" aria-hidden="true">
@@ -365,7 +367,7 @@
                             News</h2>
                     </div>
                     <div class="close-modals justify-self-end flex">
-                        <button class="border-none text-custom-mg">
+                        <button class="border-none text-custom-mg" aria-label="Close Dialog">
                             <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                  role="img" aria-hidden="true">
@@ -391,7 +393,7 @@
                             Stats</h2>
                     </div>
                     <div class="close-modals justify-self-end flex">
-                        <button autofocus="" class="border-none text-custom-mg">
+                        <button autofocus="" class="border-none text-custom-mg" aria-label="Close Dialog">
                             <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                  role="img" aria-hidden="true">
@@ -514,7 +516,7 @@
                             Play</h2>
                     </div>
                     <div class="justify-self-end flex">
-                        <button class="close-modals border-none text-custom-mg">
+                        <button class="close-modals border-none text-custom-mg" aria-label="Close Dialog">
                             <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                  role="img" aria-hidden="true">

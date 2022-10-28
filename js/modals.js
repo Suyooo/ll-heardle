@@ -2,9 +2,12 @@
  * Modals
  ****/
 
+$makeInert = $("#guessingscreen, #resultscreen, #playerbar, header");
+
 $closeModals.on("click", () => {
     $modals.addClass("hidden");
     $modalsChildren.forEach($element => $element.addClass("hidden"));
+    $makeInert.prop("inert", false);
 });
 
 // Stop propagation of click events for each modal, so clicks within in the modal itself don't close it
@@ -15,6 +18,7 @@ $modalsChildren.forEach($element => $element.on("click", (e) => {
 $openAbout.on("click", () => {
     $modals.removeClass("hidden");
     $modalAbout.removeClass("hidden");
+    $makeInert.prop("inert", true);
 });
 
 $openAnnounce.on("click", () => {
@@ -28,6 +32,7 @@ $openAnnounce.on("click", () => {
     $openAnnounceUnread.addClass("hidden");
 
     localStorage.setItem("last_announcement_no", CURRENT_ANNOUNCEMENT.announcementNo);
+    $makeInert.prop("inert", true);
 });
 if (isNaN(LAST_ANNOUNCEMENT) || CURRENT_ANNOUNCEMENT.announcementNo > LAST_ANNOUNCEMENT) {
     $openAnnounceRead.addClass("hidden");
@@ -67,15 +72,15 @@ $openStats.on("click", () => {
 
     $modals.removeClass("hidden");
     $modalStats.removeClass("hidden");
+    $makeInert.prop("inert", true);
 });
 
 $openHelp.on("click", () => {
     $modals.removeClass("hidden");
     $modalHelp.removeClass("hidden");
+    $makeInert.prop("inert", true);
 });
 if (IS_FIRST_PLAY) {
     // First ever play? Show help modal
     $openHelp.trigger("click");
 }
-
-// TODO: remove reset button

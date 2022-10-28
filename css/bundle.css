@@ -983,6 +983,10 @@ input[type="textfield"] {
     }
 }
 
+.outline-none {
+    outline: none;
+}
+
 textarea {
     border: 0;
     outline: none;

@@ -16,7 +16,7 @@ function playerTimeUpdate() {
 
 $audio
     .attr("src", CURRENT_HEARDLE.songUrl)
-    .one("canplay", () => {
+    .one("loadedmetadata", () => {
         $timeduration.text(timer(audio.duration));
         $loading.addClass("hidden");
         $playerbar.removeClass("hidden");

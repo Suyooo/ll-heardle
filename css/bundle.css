@@ -142,7 +142,6 @@ textarea {
 button {
     background-color: transparent;
     background-image: none;
-    outline: none
 }
 button:not(:disabled):active {
     background-color: #dddddd;
@@ -587,6 +586,9 @@ video {
     border-bottom-left-radius: 0.375rem;
     border-bottom-right-radius: 0.375rem
 }
+.border-0 {
+    border-width: 0
+}
 .border-2 {
     border-width: 2px
 }
@@ -785,6 +787,12 @@ video {
 .focus\:outline-none:focus {
     outline: 2px solid transparent;
     outline-offset: 2px
+}
+.opacity-0 {
+    opacity: 0;
+}
+.focus\:opacity-100:focus {
+    opacity: 1;
 }
 html,
 body {
@@ -997,4 +1005,7 @@ textarea {
         background-image: url("https://cdn.glitch.global/083b3590-d842-4a55-8c3f-abd0eaff8519/logo-wide.png");
         height: 2rem;
     }
+}
+label {
+    display: none;
 }

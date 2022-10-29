@@ -1,13 +1,14 @@
 # Love Live Heardle
 
 Runs the original Heardle site, but using HTML5 Audio elements instead of Soundcloud embeds.  
-This project uses the site layout of the original Heardle by [Omakase](https://omakase.studio/).
+This project uses the site layout of the original Heardle by [Omakase](https://omakase.studio/), which does not fall
+under the GPL3 License the rest of the project is licensed under.
 
 This is set up as a *generated static site* on Glitch, which means that after you edit a file, some scripts run to
-combine all the JavaScript and compress all the files and make it all neat. And those resulting files are treated as
+bundle all the JavaScript and minimize all the files and make it all neat. And those resulting files are treated as
 a static site, which means it goes fast and never goes to sleep and doesn't count against project hours.
 
-This build script will automatically run a few minutes after you close out of the Glitch editor. That means that if
+That build script will automatically run a few minutes after you close out of the Glitch editor. That means that if
 you edit something, you won't immediately see the changes on the site! If you want to check your edits without
 closing the editor and waiting for the scripts to run, click the Terminal button in the footer below the editor, and
 type `npm run build; refresh`.

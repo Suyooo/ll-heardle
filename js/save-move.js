@@ -50,8 +50,8 @@ if (window.location.hash === "#export-save") {
                     statistics: localStorage.getItem("statistics"),
                     old_heardle_userstats: localStorage.getItem("old_heardle_userstats")
                 }),
-                contentType: 'application/json',
-                type: 'POST'
+                contentType: "application/json",
+                type: "POST"
             }).done(() => alert("Save data upload successful! Please tell us this code so we know which data is yours: " + filename))
                 .fail((e) => alert("There was a problem uploading your save data. Please let us know about it!\n\nThe error was:\n" + e));
         } catch (e) {

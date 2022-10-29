@@ -381,6 +381,9 @@ video {
 .hidden {
     display: none
 }
+.h-0 {
+    height: 0
+}
 .h-1 {
     height: 0.25rem
 }
@@ -407,6 +410,9 @@ video {
 }
 .h-full {
     height: 100%
+}
+.w-0 {
+    width: 0
 }
 .w-4 {
     width: 1rem

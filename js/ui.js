@@ -23,11 +23,15 @@ function resolveGuess(guessNo, wasCorrect, guess) {
 function showWrongGuess(guessNo, guess) {
     const guesslistRow = $guesslistChildren[guessNo];
     const symbol = guess === null ? symbolSkip() : symbolIncorrect();
+    const reader = styleVisuallyHidden().text(guess === null ? "The turn was" : "Wrong Guess: ");
     const text = guess === null ? styleGuessRowTitleSkipped().text("SKIPPED") : styleGuessRowTitleSong().text(guess);
     guesslistRow
         .append(styleGuessRowSymbol().append(symbol))
         .append(styleGuessRowTitle().append(text))
         .removeClass("border-custom-line");
+    if (reader !== null) {
+        text.prepend(reader);
+    }
 }
 
 function prepareNextGuess() {
@@ -72,13 +76,11 @@ function reveal(success) {
     // Show result screen
     $guessingscreen.addClass("hidden");
     $resultscreen.removeClass("hidden");
+    $clearmessage.text(success ? "You got it!" : "Too bad...");
 
-    // Force screen readers to read result immediately
-    $clearmessage.text(success ? "You got it!" : "Too bad...").focus().attr("tabindex", "-1");
-
-    $resultmessage.text(success
-        ? "You got today's Love Live! Heardle within " + LENGTHS[CURRENT_PLAY_STATE.failed] + (LENGTHS[CURRENT_PLAY_STATE.failed] === 1 ? " second!" : " seconds!")
-        : "You didn't get today's Love Live! Heardle. Better luck tomorrow!");
+    $resultmessage.html(success
+        ? "You got today's Love Live<span aria-hidden=\"true\">!</span> Heardle within " + LENGTHS[CURRENT_PLAY_STATE.failed] + (LENGTHS[CURRENT_PLAY_STATE.failed] === 1 ? " second!" : " seconds!")
+        : "You didn't get today's Love Live<span aria-hidden=\"true\">!</span> Heardle. Better luck tomorrow!");
     $resultsongbox.addClass(success ? "bg-custom-positive" : "bg-custom-mg");
     if (CURRENT_HEARDLE.coverUrl === "") {
         $resultcover.remove();

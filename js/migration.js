@@ -94,7 +94,7 @@ if (localStorage.getItem("userStats") !== null) {
         let lastDay = 0;
         for (const state of mergedPlayStates) {
             if (!state.finished) continue;
-            if (state.played) newStatistics.viewed++;
+            if (state.played !== false) newStatistics.viewed++;
             if (!state.cleared || state.day - lastDay > 1) {
                 // Skip unfair streak breaks (see above)
                 if (!(state.day === 169 && lastDay === 167) &&

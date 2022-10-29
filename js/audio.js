@@ -2,13 +2,19 @@
  * Audio Player
  ****/
 
+function playerTimeLimit() {
+    if (audio.currentTime >= LENGTHS[CURRENT_PLAY_STATE.failed]) {
+        playerStop();
+    }
+}
+const playerLimitInterval = setInterval(playerTimeLimit, 10);
+
 function playerTimeUpdate() {
     $timecurrent.text(timer(audio.currentTime));
     const playProgress = audio.currentTime / (CURRENT_PLAY_STATE.finished ? audio.duration : LENGTHS.at(-1));
     $playbarcurrent.width((playProgress * 100) + "%");
     if (!CURRENT_PLAY_STATE.finished && audio.currentTime >= LENGTHS[CURRENT_PLAY_STATE.failed]) {
         $playbarcurrent.width((LENGTHS[CURRENT_PLAY_STATE.failed] / LENGTHS.at(-1) * 100) + "%");
-        playerStop();
     } else if (!audio.paused) {
         requestAnimationFrame(playerTimeUpdate);
     }

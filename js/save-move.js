@@ -24,8 +24,8 @@ if (window.location.hash === "#export-save") {
         let saveDataParsed;
         try {
             saveDataParsed = JSON.parse(movingSaveData);
-            if (saveDataParsed["play_states"]) {
-                localStorage.setItem("play_states", JSON.stringify(saveDataParsed["play_states"]));
+            if (saveDataParsed["playStates"]) {
+                localStorage.setItem("play_states", JSON.stringify(saveDataParsed["playStates"]));
             }
             if (saveDataParsed["statistics"]) {
                 localStorage.setItem("statistics", JSON.stringify(saveDataParsed["statistics"]));

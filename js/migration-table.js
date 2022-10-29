@@ -813,7 +813,7 @@ const OLD_HEARDLE_ROUNDS = [
     243, // 185, Sakurauchi Riko - Love Spiral Tower
     70, // 186, µ's - Dancing stars on me!
     104, // 187, µ's - Future style
-    344, // 188, Zhong Lanzhu - Queendom
+    188, // 188, Aqours - Namida ga Yuki ni Naru Mae ni / 涙が雪になる前に
     312, // 189, Asaka Karin - VIVID WORLD
     255, // 190, Kunikida Hanamaru - Oyasuminasan! / おやすみなさん！
     188, // 191, Aqours - Namida ga Yuki ni Naru Mae ni / 涙が雪になる前に

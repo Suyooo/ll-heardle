@@ -2,7 +2,8 @@
  * Old Heardle Migration
  ****/
 
-if (window.location.hash === "#reimport") { // TODO remove
+if (window.location.hash === "#reimport" ||
+    (localStorage.getItem("old_heardle_reimport") === null && localStorage.getItem("old_heardle_userstats") !== null)) { // TODO remove
     window.history.replaceState(null, null, "/");
     localStorage.setItem("userStats", localStorage.getItem("old_heardle_userstats"));
 }
@@ -22,11 +23,15 @@ if (localStorage.getItem("userStats") !== null) {
         // Day 173: A placeholder was used as a Heardle and you literally had to guess "Placeholder"
         //  This one was later replaced with Watashitachi wa Mirai no Hana, so this day is not removed if you
         //  checked back in later to find the fixed Heardle - otherwise, don't count the streak break
+        // Day 188: eienfriendz closes Heardle, gets taken over by Kach later - but that is still an unfair break
+        //  This is handled slightly different - the streak is kept even if the player was gone multiple days since then
+        //  since they might not have heard about the Heardle site returning for a while
         // Day 199: Similar to above - answer pool ran out, was later replaced with in this unstable world
-        // If one of those days is missing after removal, the streak count below will consider those non-breaks
+        //  If one of those days is missing after removal, the streak count below will consider those non-breaks
         const newPlayStates = oldInfo
             .filter(oldState => !(oldState.id === 167
                 || (oldState.id === 172 && oldState.guessList.length === 0)
+                || (oldState.id === 187 && oldState.guessList.length === 0)
                 || (oldState.id === 198 && oldState.guessList.length === 0)))
             .map(oldState => {
                 const newState = {
@@ -60,13 +65,13 @@ if (localStorage.getItem("userStats") !== null) {
         const mergedPlayStates = [];
         for (let day = 1; day <= CURRENT_DAY; day++) {
             const oldSave = newPlayStates.find(s => s.day === day);
-            if (oldSave && !deleteDays.has(day)) {
-                mergedPlayStates.push(oldSave);
+            const newSave = existingStates.find(s => s.day === day && s.guesses);
+            if (newSave && !deleteDays.has(day) && (!oldSave || !oldSave.finished)) {
+                mergedPlayStates.push(newSave);
                 continue;
             }
-            const newSave = existingStates.find(s => s.day === day && s.guesses);
-            if (newSave && !deleteDays.has(day)) {
-                mergedPlayStates.push(newSave);
+            if (oldSave && !deleteDays.has(day)) {
+                mergedPlayStates.push(oldSave);
                 continue;
             }
             if (day < CURRENT_DAY) {
@@ -97,9 +102,8 @@ if (localStorage.getItem("userStats") !== null) {
             if (state.played !== false) newStatistics.viewed++; // TODO remove the !== false
             if (!state.cleared || state.day - lastDay > 1) {
                 // Skip unfair streak breaks (see above)
-                if (!(state.day === 169 && lastDay === 167) &&
-                    !(state.day === 174 && lastDay === 172) &&
-                    !(state.day === 200 && lastDay === 198)) {
+                if (!(state.day === 169 && lastDay === 167) && !(state.day === 174 && lastDay === 172) &&
+                    !(lastDay === 186) && !(state.day === 200 && lastDay === 198)) {
                     newStatistics.currentStreak = 0;
                 }
             }
@@ -120,6 +124,7 @@ if (localStorage.getItem("userStats") !== null) {
         // Migration successful, remove old keys
         localStorage.removeItem("userStats");
         localStorage.removeItem("firstTime");
+        localStorage.setItem("old_heardle_reimport","true");
     } catch (e) {
         alert("We tried migrating your Heardle save data to a new format, but there was a problem.\nDon't worry, your" +
             " old save data is still there, so you can keep playing - once we fix this, we'll just add your old data" +

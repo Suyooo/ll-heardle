@@ -7,7 +7,7 @@ const PLAY_STATES = LOADED_PLAY_STATES !== null
     ? JSON.parse(LOADED_PLAY_STATES)
     : [];
 PLAY_STATES.forEach(s => { // TODO remove
-    if (s.guesses !== undefined && s.played === undefined) {
+    if (s.guesses !== undefined && s.guesses.length > 0 && s.played === undefined) {
         s.played = true;
         savePlayStates();
     }

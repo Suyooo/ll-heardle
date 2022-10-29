@@ -75,7 +75,7 @@ function reveal(success) {
     $guessbar.addClass("hidden");
 
     // Unlock player
-    clearInterval(playerLimitInterval);
+    //clearInterval(playerLimitInterval);
 
     // Show result screen
     $guessingscreen.addClass("hidden");

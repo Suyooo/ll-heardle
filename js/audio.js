@@ -61,6 +61,7 @@ function playerPlay() {
     $controlplaying.removeClass("hidden");
     $playprompt.addClass("hidden");
     requestAnimationFrame(playerTimeUpdate);
+    markPlayed();
 }
 
 function playerStop() {

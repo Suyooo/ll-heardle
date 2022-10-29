@@ -4,6 +4,7 @@
 
 function resolveGuess(guessNo, wasCorrect, guess) {
     if (CURRENT_PLAY_STATE.finished) return;
+    markPlayed();
     CURRENT_PLAY_STATE.guesses.push(guess);
     if (wasCorrect) {
         CURRENT_PLAY_STATE.cleared = true;

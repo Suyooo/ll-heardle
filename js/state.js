@@ -29,8 +29,12 @@ if (IS_FIRST_PLAY || CURRENT_DAY > CURRENT_PLAY_STATE.day) {
     if (!IS_FIRST_PLAY) {
         // If the player played before...
         if (CURRENT_PLAY_STATE.finished === false) {
-            // If the last day was unfinished, add a fail to the statistics
-            addToStatistics();
+            // If the last day was played but unfinished, add a fail to the statistics, otherwise just cut streak
+            if (CURRENT_PLAY_STATE.played === true) {
+                addToStatistics();
+            } else {
+                STATISTICS.currentStreak = 0;
+            }
         }
         if (CURRENT_DAY - CURRENT_PLAY_STATE.day > 1) {
             // If a day was skipped, break streak
@@ -56,14 +60,13 @@ if (IS_FIRST_PLAY || CURRENT_DAY > CURRENT_PLAY_STATE.day) {
         heardle_id: getHeardleIdForDay(CURRENT_DAY),
         failed: 0,
         guesses: [],
+        played: false,
         cleared: false,
         finished: false
     };
     CURRENT_HEARDLE = SONGPOOL[CURRENT_PLAY_STATE.heardle_id];
     PLAY_STATES.push(CURRENT_PLAY_STATE);
     savePlayStates();
-    STATISTICS.viewed += 1;
-    saveStatistics();
     prepareNextGuess();
 } else {
     CURRENT_HEARDLE = SONGPOOL[CURRENT_PLAY_STATE.heardle_id];
@@ -81,6 +84,15 @@ function savePlayStates() {
 
 function saveStatistics() {
     localStorage.setItem("statistics", JSON.stringify(STATISTICS));
+}
+
+function markPlayed() {
+    if (CURRENT_PLAY_STATE.played !== true) {
+        CURRENT_PLAY_STATE.played = true;
+        savePlayStates();
+        STATISTICS.viewed++;
+        saveStatistics();
+    }
 }
 
 function addToStatistics() {

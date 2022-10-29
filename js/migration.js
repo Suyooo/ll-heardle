@@ -35,6 +35,7 @@ if (localStorage.getItem("userStats") !== null) {
                         const song = SONGPOOL[OLD_HEARDLE_MAP[guess.answer]];
                         return song ? song.artistEn + " - " + song.titleEn : guess.answer;
                     }),
+                    played: true,
                     cleared: oldState.guessList.some(guess => guess.isCorrect)
                 }
                 newState.failed = newState.guesses.length - (newState.cleared ? 1 : 0);
@@ -54,18 +55,15 @@ if (localStorage.getItem("userStats") !== null) {
 
         // Merge priority: old save > new save > dummy entry (unless current day)
         const mergedPlayStates = [];
-        let countPlayed = 0;
         for (let day = 1; day <= CURRENT_DAY; day++) {
             const oldSave = newPlayStates.find(s => s.day === day);
             if (oldSave) {
                 mergedPlayStates.push(oldSave);
-                countPlayed++;
                 continue;
             }
             const newSave = existingStates.find(s => s.day === day && s.guesses);
             if (newSave) {
                 mergedPlayStates.push(newSave);
-                countPlayed++;
                 continue;
             }
             if (day < CURRENT_DAY) {
@@ -84,7 +82,7 @@ if (localStorage.getItem("userStats") !== null) {
 
         const newStatistics = {
             byFailCount: [0, 0, 0, 0, 0, 0, 0],
-            viewed: countPlayed,
+            viewed: 0,
             cleared: 0,
             currentStreak: 0,
             highestStreak: 0
@@ -93,6 +91,7 @@ if (localStorage.getItem("userStats") !== null) {
         let lastDay = 0;
         for (const state of mergedPlayStates) {
             if (!state.finished) continue;
+            if (state.played) newStatistics.viewed++;
             if (!state.cleared || state.day - lastDay > 1) {
                 // Skip unfair streak breaks (see above)
                 if (!(state.day === 169 && lastDay === 167) &&

@@ -14,6 +14,8 @@ if (localStorage.getItem("userStats") !== null) {
         localStorage.setItem("old_heardle_userstats", oldInfoString); // back it up, just in case
         const oldInfo = JSON.parse(oldInfoString);
 
+        const deleteDays = new Set();
+
         // While we're recreating the stats anyways, let's fix some unfair problems
         // Day 168: Kaguya no Shiro de Odoritai, but the linked song was taken down and nobody could play
         //  This day is removed all together, since it wasn't fixed at all
@@ -45,6 +47,7 @@ if (localStorage.getItem("userStats") !== null) {
                     // As such, we do not count them as fails for imports either - just as a skip
                     // And the best way to do that is to pretend this round does not exist
                     // (This will get filtered out of the array after the map() finishes)
+                    deleteDays.add(newState.day);
                     return null;
                 }
                 return newState;
@@ -57,12 +60,12 @@ if (localStorage.getItem("userStats") !== null) {
         const mergedPlayStates = [];
         for (let day = 1; day <= CURRENT_DAY; day++) {
             const oldSave = newPlayStates.find(s => s.day === day);
-            if (oldSave) {
+            if (oldSave && !deleteDays.has(day)) {
                 mergedPlayStates.push(oldSave);
                 continue;
             }
             const newSave = existingStates.find(s => s.day === day && s.guesses);
-            if (newSave) {
+            if (newSave && !deleteDays.has(day)) {
                 mergedPlayStates.push(newSave);
                 continue;
             }

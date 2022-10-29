@@ -6,7 +6,7 @@ if (window.location.hash === "#export-save") {
     // Show save data for copying
     // It's shown as a textarea and has to be copied manually - which is somewhat awkward, but it's a good solution for
     // this case: it works on both insecure and secure connections, and works on mobile without having to open console
-    window.location.hash = "";
+    window.history.replaceState(null, null, "/");
     const saveDataDiv = $("<div>").addClass("text-xs flex flex-col");
     const saveDataTextarea = $("<textarea>").addClass("mt-6 mb-6 h-32")
         .val(`{"playStates":` + localStorage.getItem("play_states") + `,"statistics":` + localStorage.getItem("statistics") + `}`);
@@ -17,7 +17,7 @@ if (window.location.hash === "#export-save") {
     requestAnimationFrame(() => saveDataTextarea.select());
 } else if (window.location.hash === "#import-save") {
     // Prompt for data and load
-    window.location.hash = "";
+    window.history.replaceState(null, null, "/");
     const movingSaveData = prompt("Please paste your save data here to load it.\n\n" +
         "WARNING: Any save data you have will be overwritten! (Click Cancel if you don't want that)");
     if (movingSaveData) {
@@ -39,7 +39,7 @@ if (window.location.hash === "#export-save") {
     }
 } else if (window.location.hash === "#submit") {
     // Send data to devs
-    window.location.hash = "";
+    window.history.replaceState(null, null, "/");
     if (confirm("Would you like to upload your save data to the developers to analyze it?")) {
         try {
             const filename = new Array(5).fill(undefined).map(x => ["A", "B", "C", "D", "E"][Math.floor(Math.random() * 5)]).join("");

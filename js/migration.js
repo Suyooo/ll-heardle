@@ -2,12 +2,21 @@
  * Old Heardle Migration
  ****/
 
+if (window.location.hash === "#reimport") {
+    window.history.replaceState(null, null, "/");
+    localStorage.setItem("userStats", localStorage.getItem("old_heardle_userstats"));
+}
+
 if (localStorage.getItem("userStats") !== null) {
     try {
         // Old Heardle data available. Bring it over!
         const oldInfoString = localStorage.getItem("userStats");
         localStorage.setItem("old_heardle_userstats", oldInfoString); // back it up, just in case
         const oldInfo = JSON.parse(oldInfoString);
+
+        // Old Heardle did not count unfinished rounds as failed
+        // Add them to this set so when recreating the statistics, they can be counted as streak breaks, but not fails
+        const dontCountFail = new Set();
 
         // While we're recreating the stats anyways, let's fix some unfair problems
         // Day 168: Kaguya no Shiro de Odoritai, but the linked song was taken down and nobody could play
@@ -34,25 +43,28 @@ if (localStorage.getItem("userStats") !== null) {
                 }
                 newState.failed = newState.guesses.length - (newState.cleared ? 1 : 0);
                 newState.finished = newState.cleared || newState.failed === 6 || newState.day !== CURRENT_DAY;
+                if (newState.finished && newState.failed < 6 && !newState.cleared) {
+                    dontCountFail.add(newState.day);
+                }
                 return newState;
             });
 
         // Make sure we don't delete in-progress Heardles on the new script
         const existingStates = JSON.parse(localStorage.getItem("play_states")) || [];
 
-        // Merge priority: new save > old save > dummy entry (unless current day)
+        // Merge priority: old save > new save > dummy entry (unless current day)
         const mergedPlayStates = [];
         let countPlayed = 0;
         for (let day = 1; day <= CURRENT_DAY; day++) {
-            const newSave = existingStates.find(s => s.day === day && s.guesses);
-            if (newSave) {
-                mergedPlayStates.push(newSave);
-                countPlayed++;
-                continue;
-            }
             const oldSave = newPlayStates.find(s => s.day === day);
             if (oldSave) {
                 mergedPlayStates.push(oldSave);
+                countPlayed++;
+                continue;
+            }
+            const newSave = existingStates.find(s => s.day === day && s.guesses);
+            if (newSave) {
+                mergedPlayStates.push(newSave);
                 countPlayed++;
                 continue;
             }
@@ -96,7 +108,7 @@ if (localStorage.getItem("userStats") !== null) {
                     newStatistics.highestStreak = newStatistics.currentStreak;
                 }
                 newStatistics.byFailCount[state.failed]++;
-            } else {
+            } else if (!dontCountFail.has(state.day)) {
                 newStatistics.byFailCount[6]++;
             }
             lastDay = state.day;

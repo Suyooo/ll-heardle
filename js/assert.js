@@ -1,4 +1,4 @@
-// Some functions for the testing phase.
+// Some functions for the testing phase. // TODO remove
 
 const HEADER = "Hi! We are currently testing an update for the LL! Heardle site, and we managed to find a problem " +
     "with your save file.\nPlease let Kach or Suyooo know the following, so we can investigate it and make sure your" +

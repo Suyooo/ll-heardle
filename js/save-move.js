@@ -37,7 +37,7 @@ if (window.location.hash === "#export-save") {
                 "different error, please let us know and we'll help! @Suyo_ on Twitter\n\nThe error was:\n" + e);
         }
     }
-} else if (window.location.hash === "#submit") {
+} else if (window.location.hash === "#submit") { // TODO remove
     // Send data to devs
     window.history.replaceState(null, null, "/");
     if (confirm("Would you like to upload your save data to the developers to analyze it?")) {

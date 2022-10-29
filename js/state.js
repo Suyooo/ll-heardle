@@ -28,7 +28,7 @@ if (IS_FIRST_PLAY || CURRENT_DAY > CURRENT_PLAY_STATE.day) {
     // It's a new day, or it's the player's first ever visit
     if (!IS_FIRST_PLAY) {
         // If the player played before...
-        if (!CURRENT_PLAY_STATE.finished) {
+        if (CURRENT_PLAY_STATE.finished === false) {
             // If the last day was unfinished, add a fail to the statistics
             addToStatistics();
         }

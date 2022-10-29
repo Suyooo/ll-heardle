@@ -14,10 +14,6 @@ if (localStorage.getItem("userStats") !== null) {
         localStorage.setItem("old_heardle_userstats", oldInfoString); // back it up, just in case
         const oldInfo = JSON.parse(oldInfoString);
 
-        // Old Heardle did not count unfinished rounds as failed
-        // Add them to this set so when recreating the statistics, they can be counted as streak breaks, but not fails
-        const dontCountFail = new Set();
-
         // While we're recreating the stats anyways, let's fix some unfair problems
         // Day 168: Kaguya no Shiro de Odoritai, but the linked song was taken down and nobody could play
         //  This day is removed all together, since it wasn't fixed at all
@@ -44,10 +40,14 @@ if (localStorage.getItem("userStats") !== null) {
                 newState.failed = newState.guesses.length - (newState.cleared ? 1 : 0);
                 newState.finished = newState.cleared || newState.failed === 6 || newState.day !== CURRENT_DAY;
                 if (newState.finished && newState.failed < 6 && !newState.cleared) {
-                    dontCountFail.add(newState.day);
+                    // Old Heardle did not count unfinished rounds as failed
+                    // As such, we do not count them as fails for imports either - just as a skip
+                    // And the best way to do that is to pretend this round does not exist
+                    // (This will get filtered out of the array after the map() finishes)
+                    return null;
                 }
                 return newState;
-            });
+            }).filter(s => s !== null);
 
         // Make sure we don't delete in-progress Heardles on the new script
         const existingStates = JSON.parse(localStorage.getItem("play_states")) || [];
@@ -108,7 +108,7 @@ if (localStorage.getItem("userStats") !== null) {
                     newStatistics.highestStreak = newStatistics.currentStreak;
                 }
                 newStatistics.byFailCount[state.failed]++;
-            } else if (!dontCountFail.has(state.day)) {
+            } else {
                 newStatistics.byFailCount[6]++;
             }
             lastDay = state.day;

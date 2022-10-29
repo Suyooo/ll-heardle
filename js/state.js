@@ -6,10 +6,13 @@ const LOADED_PLAY_STATES = localStorage.getItem("play_states");
 const PLAY_STATES = LOADED_PLAY_STATES !== null
     ? JSON.parse(LOADED_PLAY_STATES)
     : [];
-PLAY_STATES.forEach(s => { // TODO remove
+PLAY_STATES.forEach((s,i) => { // TODO remove
     if (s.guesses !== undefined && s.guesses.length > 0 && s.played === undefined) {
         s.played = true;
         savePlayStates();
+    }
+    if (i < OLD_HEARDLE_ROUNDS.length) {
+        s.heardle_id = OLD_HEARDLE_ROUNDS[i];
     }
 });
 

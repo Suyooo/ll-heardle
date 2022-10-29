@@ -3,11 +3,11 @@
  ****/
 
 function playerTimeLimit() {
-    if (audio.currentTime >= LENGTHS[CURRENT_PLAY_STATE.failed]) {
+    if (!CURRENT_PLAY_STATE.finished && audio.currentTime >= LENGTHS[CURRENT_PLAY_STATE.failed]) {
         playerStop();
     }
 }
-const playerLimitInterval = setInterval(playerTimeLimit, 10);
+setInterval(playerTimeLimit, 10);
 
 function playerTimeUpdate() {
     $timecurrent.text(timer(audio.currentTime));

@@ -108,7 +108,9 @@ function reveal(success) {
             $element.addClass("bg-custom-mg");
         }
     });
-    const nextDayTime = FIRST_DAY_DATE + CURRENT_DAY * MS_PER_DAY;
+    const nextDayDate = new Date(FIRST_DAY_TIME);
+    nextDayDate.setDate(nextDayDate.getDate() + CURRENT_DAY);
+    const nextDayTime = nextDayDate.getTime();
     updateResultTimer(nextDayTime);
     setInterval(updateResultTimer.bind(this, nextDayTime), 1000);
 

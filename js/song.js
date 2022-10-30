@@ -4,7 +4,10 @@
 
 // Figure out the current day
 const MS_PER_DAY = 1000 * 60 * 60 * 24;
-const CURRENT_DAY = Math.floor((new Date().getTime() - FIRST_DAY_DATE) / MS_PER_DAY) + 1;
+const NOW_DATE = new Date();
+const FIRST_DAY_DATE = new Date(FIRST_DAY_TIME);
+const CURRENT_DAY = Math.floor((Date.UTC(NOW_DATE.getFullYear(), NOW_DATE.getMonth(), NOW_DATE.getDate()) -
+    Date.UTC(FIRST_DAY_DATE.getFullYear(), FIRST_DAY_DATE.getMonth(), FIRST_DAY_DATE.getDate())) / MS_PER_DAY) + 1;
 
 // Do random pick
 function getHeardleIdForDay(day, overrrideStates) {

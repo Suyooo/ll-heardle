@@ -6,7 +6,7 @@
 const MS_PER_DAY = 1000 * 60 * 60 * 24;
 const NOW_DATE = new Date();
 const FIRST_DAY_DATE = new Date(FIRST_DAY_TIME);
-const CURRENT_DAY = Math.floor((Date.UTC(NOW_DATE.getFullYear(), NOW_DATE.getMonth(), NOW_DATE.getDate()) -
+const CURRENT_DAY = Math.round((Date.UTC(NOW_DATE.getFullYear(), NOW_DATE.getMonth(), NOW_DATE.getDate()) -
     Date.UTC(FIRST_DAY_DATE.getFullYear(), FIRST_DAY_DATE.getMonth(), FIRST_DAY_DATE.getDate())) / MS_PER_DAY) + 1;
 
 // Do random pick
@@ -22,7 +22,11 @@ function getHeardleIdForDay(day, overrrideStates) {
     const blocked = new Set();
     const statesArray = overrrideStates || PLAY_STATES;
     for (let i = Math.max(statesArray.length - 100, 0); i < statesArray.length; i++) {
-        blocked.add(statesArray[i].heardle_id);
+        if (statesArray[i].day <= OLD_HEARDLE_ROUNDS.length) {
+            return OLD_HEARDLE_ROUNDS[day - 1];
+        } else {
+            blocked.add(statesArray[i].heardle_id);
+        }
     }
 
     prngSeed(day);

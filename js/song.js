@@ -23,7 +23,7 @@ function getHeardleIdForDay(day, overrrideStates) {
     const statesArray = overrrideStates || PLAY_STATES;
     for (let i = Math.max(statesArray.length - 100, 0); i < statesArray.length; i++) {
         if (statesArray[i].day <= OLD_HEARDLE_ROUNDS.length) {
-            return OLD_HEARDLE_ROUNDS[day - 1];
+            blocked.add(OLD_HEARDLE_ROUNDS[day - 1]);
         } else {
             blocked.add(statesArray[i].heardle_id);
         }

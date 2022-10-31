@@ -8,3 +8,10 @@ const LENGTHS = [1, 2, 4, 7, 11, 16];
 
 // First day (YYYY/MM/DD)
 const FIRST_DAY_TIME = Date.parse("2022/04/04");
+
+if (document.cookie.indexOf("errorReporting") !== -1) {
+    window.onerror = (err, file, line) => {
+        alert("Error @ " + file + ", line " + line + "\n" + err);
+        return false;
+    }
+}

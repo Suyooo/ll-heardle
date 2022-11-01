@@ -6,12 +6,20 @@ $field.on("keydown", e => {
     if (e.key === "Enter" && !e.originalEvent.repeat) submit();
 });
 
+function punctuationFullWidthToHalfWidth(s) {
+    return s.replace(/[\uFF00-\uFF5E]/g, function (char) {
+        return String.fromCharCode(32 /* space */ + (char.charCodeAt(0) - 65280 /* start of fullwidth block */));
+    }).replace(/　/g /* fullwidth space is U+3000, not U+FF00 */, " ");
+}
+
 const autoCompleteInstance = new autoComplete({
     selector: "#field",
     data: {
         src: SONGPOOL.map(song => ({
-            en: song.artistEn + " - " + song.titleEn,
-            ja: song.artistJa + " - " + song.titleJa
+            en: punctuationFullWidthToHalfWidth(song.artistEn + " - " + song.titleEn),
+            ja: punctuationFullWidthToHalfWidth(song.artistJa + " - " + song.titleJa),
+            origEn: song.artistEn + " - " + song.titleEn,
+            origJa: song.artistJa + " - " + song.titleJa
         })),
         cache: false,
         // If the player's browser is set to Japanese, prefer Japanese song titles, otherwise prefer English
@@ -55,6 +63,9 @@ const autoCompleteInstance = new autoComplete({
             return list.sort((a, b) => b.score - a.score);
         }
     },
+    query: (input) => {
+        return punctuationFullWidthToHalfWidth(input);
+    },
     threshold: 1,
     wrapper: false,
     resultsList: {
@@ -69,12 +80,12 @@ const autoCompleteInstance = new autoComplete({
     },
     events: {
         input: {
-            results: () => {
-                requestAnimationFrame(() => autoCompleteInstance.goTo(0));
+            results: (e) => {
+                if (e.detail.results.length > 0) requestAnimationFrame(() => autoCompleteInstance.goTo(0));
             },
             selection: (e) => {
                 if ($field.val() === "") return;
-                const value = e.detail.selection.value[e.detail.selection.key];
+                const value = e.detail.selection.value[e.detail.selection.key === "ja" ? "origJa" : "origEn"];
                 $field.val(value).focus();
             }
         }

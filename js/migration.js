@@ -75,15 +75,9 @@ if (localStorage.getItem("userStats") !== null) {
                 continue;
             }
             if (day < CURRENT_DAY) {
-                if (day <= OLD_HEARDLE_ROUNDS.length) {
-                    mergedPlayStates.push({
-                        day, heardle_id: OLD_HEARDLE_ROUNDS[day - 1]
-                    });
-                } else {
-                    mergedPlayStates.push({
-                        day, heardle_id: getHeardleIdForDay(day, mergedPlayStates)
-                    });
-                }
+                mergedPlayStates.push({
+                    day, heardle_id: getHeardleIdForDay(day)
+                });
             }
         }
         localStorage.setItem("play_states", JSON.stringify(mergedPlayStates));

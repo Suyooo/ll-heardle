@@ -23,6 +23,10 @@ function getHeardleIdForDay(day) {
     // Don't have any repeat from the last 100 days, in case of a collision just reroll
     // Heads up: changing that "100" magic number will break everything, it would need some special edits to work
     // So it's probably better to just not change this unless it turns out the repeats get really bad
+    // And yes, that means every visit, the entire Heardle history will get recreated.
+    // Is it inefficient? Yes! Is it inefficient to the point that it makes a noticeable difference when playing? No!
+    // So I think it's a fine tradeoff - by doing this instead of relying on a user's save file, we sacrifice some
+    // performance for the guarantee that everyone will always have exactly the same song forever
     const blocked = new Set();
     for (let i = Math.max(day - 100, 0); i < day; i++) {
         blocked.add(getHeardleIdForDay(i));

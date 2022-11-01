@@ -61,7 +61,7 @@ if (localStorage.getItem("userStats") !== null) {
         // Make sure we don't delete in-progress Heardles on the new script
         const existingStates = JSON.parse(localStorage.getItem("play_states")) || [];
 
-        // Merge priority: old save > new save > dummy entry (unless current day)
+        // Merge priority: old save > new save
         const mergedPlayStates = [];
         for (let day = 1; day <= CURRENT_DAY; day++) {
             const oldSave = newPlayStates.find(s => s.day === day);
@@ -72,12 +72,6 @@ if (localStorage.getItem("userStats") !== null) {
             }
             if (oldSave && !deleteDays.has(day)) {
                 mergedPlayStates.push(oldSave);
-                continue;
-            }
-            if (day < CURRENT_DAY) {
-                mergedPlayStates.push({
-                    day, heardle_id: getHeardleIdForDay(day)
-                });
             }
         }
         localStorage.setItem("play_states", JSON.stringify(mergedPlayStates));

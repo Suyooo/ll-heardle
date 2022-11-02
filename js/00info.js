@@ -55,7 +55,9 @@ const SONGPOOL = [
      * FOR THE LISTEN-ON LINKS:
      * - Spotify is pretty straightforward - search for the song, open the three-dot menu that shows on the right when
      *   you hover over the result and click "Share" > "Copy Song Link". (Remove the ?si= part if you want.)
-     * - YouTube however can be kind of a pain, because its own search sucks. I had a way easier time using the Google
+     * - YouTube however can be kind of a pain, because its own search sucks. Often, the LL-Fans site directly links it
+     *   on the song page, so just click on the song title there and open the YouTube video from there!
+     * - If LL-Fans doesn't have it for some reason, don't use YouTube search - I had a way easier time using the Google
      *   video search instead, and searching "youtube [Japanese title]", maybe with the group name too
      *   (for example: https://www.google.com/search?q=youtube+%E3%82%82%E3%81%A3%E3%81%A8%E3%81%AD%EF%BC%81&tbm=vid)
      *   Make sure the video is from a channel ending with " - Topic", or it's not an official upload.
@@ -64,8 +66,7 @@ const SONGPOOL = [
      *
      * FOR TESTING:
      * - If you want to make sure everything worked, you can check the song pool via your browser's developer tools.
-     *   Open it with F12, head to the Console tab, and access the llheardle.SONGPOOL property. For example:
-     *       llheardle.SONGPOOL.at(-1)
+     *   Open it with F12, head to the Console tab, and access the SONGPOOL object. For example:     SONGPOOL.at(-1)
      *   That call will show the last song in the pool (the one right above this comment), so you can check whether the
      *   pool updated correctly and the new song you just added is really in there. (Remember to wait for the build
      *   script or to run it manually - see the README file)

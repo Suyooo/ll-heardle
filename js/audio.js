@@ -11,10 +11,10 @@ setInterval(playerTimeLimit, 10);
 
 function playerTimeUpdate() {
     $timecurrent.text(timer(audio.currentTime));
-    const playProgress = audio.currentTime / (CURRENT_PLAY_STATE.finished ? audio.duration : LENGTHS.at(-1));
+    const playProgress = audio.currentTime / (CURRENT_PLAY_STATE.finished ? audio.duration : LENGTHS[5]);
     $playbarcurrent.width((playProgress * 100) + "%");
     if (!CURRENT_PLAY_STATE.finished && audio.currentTime >= LENGTHS[CURRENT_PLAY_STATE.failed]) {
-        $playbarcurrent.width((LENGTHS[CURRENT_PLAY_STATE.failed] / LENGTHS.at(-1) * 100) + "%");
+        $playbarcurrent.width((LENGTHS[CURRENT_PLAY_STATE.failed] / LENGTHS[5] * 100) + "%");
     } else if (!audio.paused) {
         requestAnimationFrame(playerTimeUpdate);
     }

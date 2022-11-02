@@ -42,7 +42,7 @@ function prepareNextGuess() {
     $guesslistChildren[CURRENT_PLAY_STATE.failed].addClass("border-custom-line");
 
     // Show timelimit in / next to play bar
-    $playbarlimit.width((LENGTHS[CURRENT_PLAY_STATE.failed] / LENGTHS.at(-1) * 100) + "%");
+    $playbarlimit.width((LENGTHS[CURRENT_PLAY_STATE.failed] / LENGTHS[5] * 100) + "%");
     $playbarmarkersChildren.forEach(($element, index) => {
         if (index <= CURRENT_PLAY_STATE.failed) {
             $element.removeClass("bg-custom-line bg-custom-mg").addClass("bg-custom-bg");

@@ -29,7 +29,7 @@ const STATISTICS = LOADED_STATISTICS !== null
         highestStreak: 0
     };
 
-let CURRENT_PLAY_STATE = PLAY_STATES.at(-1); // undefined if player's first visit
+let CURRENT_PLAY_STATE = PLAY_STATES[PLAY_STATES.length - 1]; // undefined if player's first visit
 const IS_FIRST_PLAY = CURRENT_PLAY_STATE === undefined;
 const LAST_ANNOUNCEMENT = parseInt(localStorage.getItem("last_announcement_no")); // NaN if news were never read
 let CURRENT_HEARDLE;

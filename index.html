@@ -21,13 +21,8 @@
             setTimeout(() => window.location.replace("https://lovelive-heardle.glitch.me/"), 1000);
         }
     </script>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
-          integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
-          crossorigin="anonymous" referrerpolicy="no-referrer" as="script">
-    <link rel="preload"
-          href="https://cdnjs.cloudflare.com/ajax/libs/tarekraafat-autocomplete.js/10.2.7/autoComplete.min.js"
-          integrity="sha512-NuM5bGxVydsGmzqbWc5F1FbV4mS3yJin2SKbl5G9R9ZEDyTrTGt49VBIZh5fKp9GKIeCZYFtR1FVujNTtMQqjQ=="
-          crossorigin="anonymous" referrerpolicy="no-referrer" as="script">
+    <link rel="preload" href="/dependencies/jquery/jquery.min.js" as="script">
+    <link rel="preload" href="/dependencies/autoComplete/autoComplete.min.js" as="script">
     <link rel="preload" href="/js/bundle.min.js" as="script">
 
     <meta itemprop="name" content="Love Live! Heardle - Daily Love Live! song intro game">
@@ -584,25 +579,18 @@
     </div>
 </main>
 <script>
-    function loadScript(src, cdnIntegrity) {
+    function loadScript(src) {
         let script = document.createElement('script');
         script.src = src;
         script.async = false;
-        if (cdnIntegrity) {
-            script.crossOrigin = "anonymous";
-            script.referrerPolicy = "no-referrer";
-            script.integrity = cdnIntegrity;
-        }
         document.body.append(script);
     }
 
     if (!redirecting) {
         setTimeout(() => document.getElementById("fadeouttext").style.display = "block", 5000);
         setTimeout(() => document.getElementById("fadeoutwarning").style.display = "block", 20000);
-        loadScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js",
-            "sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==");
-        loadScript("https://cdnjs.cloudflare.com/ajax/libs/tarekraafat-autocomplete.js/10.2.7/autoComplete.min.js",
-            "sha512-NuM5bGxVydsGmzqbWc5F1FbV4mS3yJin2SKbl5G9R9ZEDyTrTGt49VBIZh5fKp9GKIeCZYFtR1FVujNTtMQqjQ==");
+        loadScript("/dependencies/jquery/jquery.min.js");
+        loadScript("/dependencies/autoComplete/autoComplete.min.js");
         loadScript("/js/bundle.min.js");
     }
 </script>

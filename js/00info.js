@@ -24,7 +24,7 @@ Thanks for playing <i>Love Live! Heardle</i>!`
 
 const SONGPOOL = [
     {
-        "songUrl": "dummy url - if this property is an empty string, this song will never be chosen as a daily Heardle",
+        "songUrl": "dummy url",
         "coverUrl": "dummy url",
         "startOnDay": 0,
         "titleEn": "dummy song",

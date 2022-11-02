@@ -42,7 +42,8 @@ const SONGPOOL = [
      *
      * WHEN ADDING A NEW SONG:
      * - Copy one of the elements and paste it above this comment block (that way, songs are sorted by release order)
-     * - For solos, you can copy the artist line from one of the others above. (It's always "Character (CV: Seiyuu)")
+     * - For solos/duos/trios, you can copy the artist line from one of the others above. (It's always a mention like
+     *   "Character (CV: Seiyuu)" for artistEn or "Character (CV.Seiyuu)" for artistJa.)
      * - !!! For new songs, make sure to set startOnDay to *at least* three days after the current day, or the current
      *       day's Heardle **WILL** break for players! (see below)
      *
@@ -50,27 +51,28 @@ const SONGPOOL = [
      *   Heardle) when the song should be added to the pool of possible daily Heardles. This has to be done so that the
      *   RNG is guaranteed to deliver the same result, no matter when players visit the site.
      * - Same thing happens if you remove a song, so **never remove a song**! (We'll have to add that as a new feature,
-     *   if you ever need to get rid of a song)
+     *   if you ever need to get rid of a song for some reason)
      *
      * FOR THE LISTEN-ON LINKS:
-     * - Spotify is pretty straightforward - search for the song, open the three-dot menu that shows on the right when
-     *   you hover over the result and click "Share" > "Copy Song Link". (Remove the ?si= part if you want.)
-     * - YouTube however can be kind of a pain, because its own search sucks. Often, the LL-Fans site directly links it
-     *   on the song page, so just click on the song title there and open the YouTube video from there!
-     * - If LL-Fans doesn't have it for some reason, don't use YouTube search - I had a way easier time using the Google
-     *   video search instead, and searching "youtube [Japanese title]", maybe with the group name too
+     * - Spotify is pretty straightforward - search for the song (Japanese title), and it should be pretty easy to find.
+     *   Sometimes, for more generic names, you just have to add the group name to the end. Open the three-dot menu that
+     *   shows on the right when you hover over the result, and click "Share" > "Copy Song Link". (You can remove the
+     *   ?si= part from the URL if you want.)
+     * - For YouTube, the LL-Fans site directly links to the official upload on their song page, so just click on the
+     *   song title in that table and open the YouTube Music video from there!
+     * - If LL-Fans doesn't have a YouTube Music link, the song is probably a limited release like Blu-ray bonuses - so
+     *   it isn't uploaded anywhere. In that case, just remove the lines for the spotify/youtube links. Don't remove the
+     *   "listenOn" or the brackets, just leave it empty like this:     listenOn: {}
+     * - If you are sure it should be a regular release though, and LL-Fans maybe just forgot, don't use YouTube search
+     *   to look for it! It's bad! I had a way easier time using the Google video search instead, and just searching for
+     *   "youtube [Japanese title]" instead. Make sure the video's channel ends with " - Topic", or it's not official.
      *   (for example: https://www.google.com/search?q=youtube+%E3%82%82%E3%81%A3%E3%81%A8%E3%81%AD%EF%BC%81&tbm=vid)
-     *   Make sure the video is from a channel ending with " - Topic", or it's not an official upload.
-     * - If there is no upload on Spotify or no official upload on YT, just leave the field out (remove the entire line)
-     *   Don't remove the listenOn or the brackets, just leave it empty like this:    listenOn: {}
      *
      * FOR TESTING:
      * - If you want to make sure everything worked, you can check the song pool via your browser's developer tools.
-     *   Open it with F12, head to the Console tab, and access the SONGPOOL object. For example:     SONGPOOL.at(-1)
+     *   Open it with F12, head to the Console tab, and access the SONGPOOL object. For example:    SONGPOOL.at(-1)
      *   That call will show the last song in the pool (the one right above this comment), so you can check whether the
      *   pool updated correctly and the new song you just added is really in there. (Remember to wait for the build
      *   script or to run it manually - see the README file)
      */
 ];
-
-exports.SONGPOOL = SONGPOOL;

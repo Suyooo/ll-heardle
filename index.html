@@ -7,6 +7,13 @@
     <meta name="description" content="Guess the Love Live! song from the intro in as little tries as possible.">
 
     <script>
+        if (document.cookie.indexOf("errorReporting") !== -1) { // TODO: remove
+            window.onerror = (err, file, line) => {
+                alert("Error @ " + file + ", line " + line + "\n" + err);
+                return false;
+            }
+        }
+
         // Before doing anything: navigator.share/clipboard only works on HTTPS, redirect new users there
         // However, don't do that if save data exists - HTTP and HTTPS localStorage is seperate
         // Basically not much we can do about it, old Heardle never enforced HTTPS, so...

@@ -2,12 +2,6 @@
  * Old Heardle Migration
  ****/
 
-if (window.location.hash === "#reimport" ||
-    (localStorage.getItem("old_heardle_reimport") === null && localStorage.getItem("old_heardle_userstats") !== null)) { // TODO remove
-    window.history.replaceState(null, null, "/");
-    localStorage.setItem("userStats", localStorage.getItem("old_heardle_userstats"));
-}
-
 if (localStorage.getItem("userStats") !== null) {
     try {
         // Old Heardle data available. Bring it over!
@@ -87,7 +81,7 @@ if (localStorage.getItem("userStats") !== null) {
         let lastDay = 0;
         for (const state of mergedPlayStates) {
             if (!state.finished) continue;
-            if (state.played !== false) newStatistics.viewed++; // TODO remove the !== false
+            if (state.played) newStatistics.viewed++;
             if (!state.cleared || state.day - lastDay > 1) {
                 // Skip unfair streak breaks (see above)
                 if (!(state.day === 169 && lastDay === 167) && !(state.day === 174 && lastDay === 172) &&

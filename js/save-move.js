@@ -37,25 +37,4 @@ if (window.location.hash === "#export-save") {
                 "different error, please let us know and we'll help! @Suyo_ on Twitter\n\nThe error was:\n" + e);
         }
     }
-} else if (window.location.hash === "#submit") { // TODO remove
-    // Send data to devs
-    window.history.replaceState(null, null, "/");
-    if (confirm("Would you like to upload your save data to the developers to analyze it?")) {
-        try {
-            const filename = new Array(5).fill(undefined).map(x => ["A", "B", "C", "D", "E"][Math.floor(Math.random() * 5)]).join("");
-            $.ajax("/submit", {
-                data: JSON.stringify({
-                    filename,
-                    play_states: localStorage.getItem("play_states"),
-                    statistics: localStorage.getItem("statistics"),
-                    old_heardle_userstats: localStorage.getItem("old_heardle_userstats")
-                }),
-                contentType: "application/json",
-                type: "POST"
-            }).done(() => alert("Save data upload successful! Please tell us this code so we know which data is yours: " + filename))
-                .fail((e) => alert("There was a problem uploading your save data. Please let us know about it!\n\nThe error was:\n" + e));
-        } catch (e) {
-            alert("There was a problem uploading your save data. Please let us know about it!\n\nThe error was:\n" + e);
-        }
-    }
 }

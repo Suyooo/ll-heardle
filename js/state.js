@@ -4,19 +4,8 @@
 
 const LOADED_PLAY_STATES = localStorage.getItem("play_states");
 const PLAY_STATES = LOADED_PLAY_STATES !== null
-    ? JSON.parse(LOADED_PLAY_STATES).filter(s => { // TODO remove
-        return s.guesses !== undefined;
-    })
+    ? JSON.parse(LOADED_PLAY_STATES)
     : [];
-PLAY_STATES.forEach((s,i) => { // TODO remove
-    if (s.guesses.length > 0 && s.played === undefined) {
-        s.played = true;
-    }
-    if (s.day < OLD_HEARDLE_ROUNDS.length) {
-        s.heardle_id = OLD_HEARDLE_ROUNDS[s.day];
-    }
-});
-savePlayStates();
 
 const LOADED_STATISTICS = localStorage.getItem("statistics");
 const STATISTICS = LOADED_STATISTICS !== null

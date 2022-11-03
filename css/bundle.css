@@ -514,12 +514,10 @@ video {
     0%,
     100% {
         transform: translateY(-25%);
-        -webkit-animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
         animation-timing-function: cubic-bezier(0.8, 0, 1, 1)
     }
     50% {
         transform: none;
-        -webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
         animation-timing-function: cubic-bezier(0, 0, 0.2, 1)
     }
 }
@@ -527,12 +525,10 @@ video {
     0%,
     100% {
         transform: translateY(-25%);
-        -webkit-animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
         animation-timing-function: cubic-bezier(0.8, 0, 1, 1)
     }
     50% {
         transform: none;
-        -webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
         animation-timing-function: cubic-bezier(0, 0, 0.2, 1)
     }
 }
@@ -895,55 +891,42 @@ input[type="textfield"] {
 .max-h-50 {
     max-height: 50vh;
 }
-@-webkit-keyframes gg-bar {
-    10% {
-        box-shadow: inset 0 -4px 0
-    }
-    30% {
-        box-shadow: inset 0 -10px 0
-    }
-    60% {
-        box-shadow: inset 0 -6px 0
-    }
-    80% {
-        box-shadow: inset 0 -8px 0
-    }
-    to {
-        box-shadow: inset 0 -2px 0
-    }
-}
 @keyframes gg-bar {
     10% {
-        box-shadow: inset 0 -4px 0
+        height: 4px
     }
     30% {
-        box-shadow: inset 0 -10px 0
+        height: 10px
     }
     60% {
-        box-shadow: inset 0 -6px 0
+        height: 6px
     }
     80% {
-        box-shadow: inset 0 -8px 0
+        height: 8px
     }
     to {
-        box-shadow: inset 0 -2px 0
+        height: 2px
     }
+}
+
+#controlplayingicon {
+    width: 12px;
+    height: 12px;
 }
 .gg-loadbar-sound,
 .gg-loadbar-sound::after,
 .gg-loadbar-sound::before {
-    -webkit-animation: gg-bar 1.3s ease infinite alternate;
     animation: gg-bar 1.3s ease infinite alternate;
     display: block;
     box-sizing: border-box;
+    background-color: white;
+    height: 2px;
     width: 2px;
-    height: 12px;
-    box-shadow: inset 0 -1px 0;
+    position: absolute;
+    bottom: 0;
 }
 .gg-loadbar-sound {
-    position: relative;
-    margin-right: 5px;
-    margin-left: 5px
+    left: 5px;
 }
 .gg-loadbar-sound::after,
 .gg-loadbar-sound::before {
@@ -953,12 +936,10 @@ input[type="textfield"] {
 }
 .gg-loadbar-sound::before {
     left: -4px;
-    -webkit-animation-delay: -2.4s;
     animation-delay: -2.4s
 }
 .gg-loadbar-sound::after {
     right: -4px;
-    -webkit-animation-delay: -3.7s;
     animation-delay: -3.7s
 }
 .loader {
@@ -969,16 +950,7 @@ input[type="textfield"] {
     border-radius: 50%;
     display: inline-block;
     box-sizing: border-box;
-    -webkit-animation: rotation 1s linear infinite;
     animation: rotation 1s linear infinite
-}
-@-webkit-keyframes rotation {
-    0% {
-        transform: rotate(0deg)
-    }
-    100% {
-        transform: rotate(360deg)
-    }
 }
 @keyframes rotation {
     0% {

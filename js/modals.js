@@ -2,13 +2,26 @@
  * Modals
  ****/
 
-$makeInert = $("#guessingscreen, #resultscreen, #playerbar, header");
-
-$closeModals.on("click", () => {
+function closeModals() {
+    if ($modals.hasClass("hidden")) return;
     $modals.addClass("hidden");
     $modalsChildren.forEach($element => $element.addClass("hidden"));
-    $makeInert.prop("inert", false);
-});
+    $makeInert.removeAttr("aria-hidden").removeAttr("disabled").removeAttr("tabindex");
+    if (returnFocus) {
+        returnFocus.focus();
+        returnFocus = null;
+    }
+}
+
+document.addEventListener("keydown", (e) => {
+    console.log(e);
+    if (e.key === "Escape") closeModals();
+})
+
+$makeInert = $("*", $("#guessingscreen, #resultscreen, #playerbar, header"));
+
+let returnFocus = null;
+$closeModals.on("click", closeModals);
 
 // Stop propagation of click events for each modal, so clicks within in the modal itself don't close it
 $modalsChildren.forEach($element => $element.on("click", (e) => {
@@ -18,7 +31,9 @@ $modalsChildren.forEach($element => $element.on("click", (e) => {
 $openAbout.on("click", () => {
     $modals.removeClass("hidden");
     $modalAbout.removeClass("hidden");
-    $makeInert.prop("inert", true);
+    $makeInert.attr("aria-hidden", "true").attr("disabled", "true").attr("tabindex","-1");
+    returnFocus = $openAbout;
+    $(".close-modals button", $modalAbout).focus();
 });
 
 $openAnnounce.on("click", () => {
@@ -32,7 +47,9 @@ $openAnnounce.on("click", () => {
     $openAnnounceUnread.addClass("hidden");
 
     localStorage.setItem("last_announcement_no", CURRENT_ANNOUNCEMENT.announcementNo);
-    $makeInert.prop("inert", true);
+    $makeInert.attr("aria-hidden", "true").attr("disabled", "true").attr("tabindex","-1");
+    returnFocus = $openAnnounce;
+    $(".close-modals button", $modalAnnounce).focus();
 });
 if (isNaN(LAST_ANNOUNCEMENT) || CURRENT_ANNOUNCEMENT.announcementNo > LAST_ANNOUNCEMENT) {
     $openAnnounceRead.addClass("hidden");
@@ -57,11 +74,11 @@ $openStats.on("click", () => {
 
     if (CURRENT_PLAY_STATE.finished) {
         $modalStatsBars[CURRENT_PLAY_STATE.failed]
-            .removeClass("bg-custom-mg").addClass("bg-custom-positive").removeClass("border-custom-mg").addClass("border-custom-positive");
+                .removeClass("bg-custom-mg").addClass("bg-custom-positive").removeClass("border-custom-mg").addClass("border-custom-positive");
         $modalStatsCounters[CURRENT_PLAY_STATE.failed]
-            .addClass("font-semibold").removeClass("text-custom-fg").addClass("text-custom-positive");
+                .addClass("font-semibold").removeClass("text-custom-fg").addClass("text-custom-positive");
         $modalStatsLabels[CURRENT_PLAY_STATE.failed]
-            .addClass("font-semibold").removeClass("text-custom-fg").addClass("text-custom-positive");
+                .addClass("font-semibold").removeClass("text-custom-fg").addClass("text-custom-positive");
     }
 
     $modalStatsViewed.text(STATISTICS.viewed);
@@ -72,13 +89,17 @@ $openStats.on("click", () => {
 
     $modals.removeClass("hidden");
     $modalStats.removeClass("hidden");
-    $makeInert.prop("inert", true);
+    $makeInert.attr("aria-hidden", "true").attr("disabled", "true").attr("tabindex","-1");
+    returnFocus = $openStats;
+    $(".close-modals button", $modalStats).focus();
 });
 
 $openHelp.on("click", () => {
     $modals.removeClass("hidden");
     $modalHelp.removeClass("hidden");
-    $makeInert.prop("inert", true);
+    $makeInert.attr("aria-hidden", "true").attr("disabled", "true").attr("tabindex","-1");
+    returnFocus = $openHelp;
+    $("button.close-modals", $modalHelp).focus();
 });
 if (IS_FIRST_PLAY) {
     // First ever play? Show help modal

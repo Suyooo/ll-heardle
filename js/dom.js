@@ -14,6 +14,7 @@ const $field = $("#field");
 const $fieldclear = $("#fieldclear");
 const $skipbutton = $("#skipbutton");
 const $submitbutton = $("#submitbutton");
+const $invalidnote = $("#invalidnote");
 const $control = $("#control");
 const $controlpaused = $("#controlpaused");
 const $controlplaying = $("#controlplaying");

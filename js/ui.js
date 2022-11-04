@@ -130,6 +130,12 @@ function updateResultTimer(target) {
     }
 }
 
+function isDesktop() {
+    return !/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+        // iOS 13 stopped reporting iPad in the userAgent because that is good design thanks apple
+        && !(navigator.userAgent.includes("Mac") && "ontouchend" in document)
+}
+
 $resultshare.on("click", () => {
     let shareText = "Love Live! Heardle #" + CURRENT_DAY + "\n\ud83d\udd09";
     $resultcolorrowChildren.forEach($element => {
@@ -153,11 +159,11 @@ $resultshare.on("click", () => {
         insecureShareDiv.append($("<a>").text("Click here to learn more.").attr("href", "https://gist.github.com/Suyooo/84baa6a8a5fb57f2e05c02d0698985c4"));
         $resultshare.replaceWith(insecureShareDiv);
         requestAnimationFrame(() => shareTextarea.select());
-    } else if (navigator.share && navigator.canShare({text: shareText})
-        && /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) && !navigator.userAgent.includes("Firefox")) {
+    } else if (navigator.share && navigator.canShare({text: shareText}) && !isDesktop()
         // Firefox for Android does not support sharing text via navigator.share
         // There is no way to programmatically check whether a browser supports sharing text via the native share
         // mechanism, so we simply have to remember to manually remove this when it is implemented in Firefox
+        && !navigator.userAgent.includes("Firefox")) {
         navigator.share({text: shareText});
     } else {
         // PC browsers usually don't have a native share mechanism - just copy it instead

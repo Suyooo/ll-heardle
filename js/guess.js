@@ -27,6 +27,11 @@ const autoCompleteInstance = new autoComplete({
         // (No matter what, the other language will still show up for autocomplete suggestions if you enter it)
         keys: navigator.language.startsWith("ja") ? ["ja", "en"] : ["en", "ja"],
         filter: (list) => {
+            if (list.length === 0) {
+                // Show "no results"
+                return [{match: "No matching songs found", value: undefined, key: undefined}]
+            }
+
             // This function uses autoComplete.js as only a first step - it doesn't rank results, just filters them
             // So here we make sure to show every song only once at most, and then sort the results by quality
 
@@ -77,7 +82,11 @@ const autoCompleteInstance = new autoComplete({
     noresults: true,
     searchEngine: "loose",
     resultItem: {
-        highlight: true
+        highlight: true,
+        element: (list, data) => {
+            // Add random number to element IDs - screen reader might only read options out if the ID is different
+            list.id += "_" + Math.random().toString().substring(2,5);
+        }
     },
     events: {
         input: {
@@ -85,7 +94,7 @@ const autoCompleteInstance = new autoComplete({
                 if (e.detail.results.length > 0) requestAnimationFrame(() => autoCompleteInstance.goTo(0));
             },
             selection: (e) => {
-                if ($field.val() === "") return;
+                if ($field.val() === "" || e.detail.selection.key === undefined) return;
                 const value = e.detail.selection.value[e.detail.selection.key === "ja" ? "origJa" : "origEn"];
                 $field.val(value).focus();
             }

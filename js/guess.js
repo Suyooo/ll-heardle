@@ -124,7 +124,9 @@ function submit() {
     const guess = $field.val();
     // Block input that is not an option in the song pool
     if (!VALID_INPUTS.has(guess)) {
-        $invalidnote.removeClass("opacity-0").text("That's an invalid guess! You must pick an option from the list!").addClass("error");
+        if ($field.attr("aria-expanded") === "false") {
+            $invalidnote.removeClass("opacity-0").text("That's an invalid guess! You must pick an option from the list!").addClass("error");
+        }
         return;
     }
     // addToStatistics() is called in the guess submission method instead of reveal()

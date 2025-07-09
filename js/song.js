@@ -6,7 +6,7 @@
 const MS_PER_DAY = 1000 * 60 * 60 * 24;
 const NOW_DATE = new Date();
 const FIRST_DAY_DATE = new Date(FIRST_DAY_TIME);
-const CURRENT_DAY = Math.floor((new Date().getTime() - FIRST_DAY_DATE.getTime()) / MS_PER_DAY);
+const CURRENT_DAY = Math.floor((new Date().getTime() - FIRST_DAY_DATE.getTime()) / MS_PER_DAY) + 1;
 
 const HEARDLE_DAY_CACHE = {};
 

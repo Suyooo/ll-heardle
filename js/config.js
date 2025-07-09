@@ -7,4 +7,4 @@
 const LENGTHS = [1, 2, 4, 7, 11, 16];
 
 // First day (YYYY-MM-DD, then midnight in JST)
-const FIRST_DAY_TIME = Date.parse("2025-07-09T00:00+09:00");
+const FIRST_DAY_TIME = Date.parse("2022-04-04T00:00+09:00");

@@ -1,7 +1,7 @@
 .idea
 .htaccess
 dump
-py/secret.py
+scripts
 __pycache__
 build
 node_modules

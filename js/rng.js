@@ -5,8 +5,8 @@
 // Using a seperate PRNG with a seed instead of the native one means we can guarantee players will always get
 // the same song on the same day!
 let rand_z = 0;
-const rand_a = 1736762321;
-const rand_c = 11;
+const rand_a = 1103515245;
+const rand_c = 12345;
 
 function prngSeed(i) {
     rand_z = i;

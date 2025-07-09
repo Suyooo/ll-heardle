@@ -928,13 +928,13 @@ textarea {
 
 .logo {
     color: rgba(0,0,0,0);
-    background: url("https://cdn.glitch.global/083b3590-d842-4a55-8c3f-abd0eaff8519/logo-tall.png") no-repeat center;
+    background: url("/assets/logo-tall.png") no-repeat center;
     background-size: contain;
     height: 4rem;
 }
 @media(min-width: 640px) {
     .logo {
-        background-image: url("https://cdn.glitch.global/083b3590-d842-4a55-8c3f-abd0eaff8519/logo-wide.png");
+        background-image: url("/assets/logo-wide.png");
         height: 2rem;
     }
 }

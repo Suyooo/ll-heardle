@@ -1,8 +1,5 @@
-.idea
 .htaccess
-dump
+files
 scripts
-__pycache__
 build
 node_modules
-package-lock.json

@@ -6,21 +6,6 @@
     <title>Love Live! Heardle - Daily Love Live! song intro game</title>
     <meta name="description" content="Guess the Love Live! song from the intro in as little tries as possible.">
 
-    <script>
-        // Before doing anything: navigator.share/clipboard only works on HTTPS, redirect new users there
-        // However, don't do that if save data exists - HTTP and HTTPS localStorage is seperate
-        // Basically not much we can do about it, old Heardle never enforced HTTPS, so...
-        const redirecting = window.location.protocol !== "https:" && window.location.hash !== "#no-redirect"
-            && localStorage.getItem("userStats") === null && localStorage.getItem("play_states") === null;
-        if (redirecting) {
-            requestAnimationFrame(() => {
-                const main = document.getElementsByTagName("main")[0];
-                main.className += " justify-center items-center";
-                main.innerHTML = "<span>Redirecting you to a secure connection, please wait...</span><a href='https://lovelive-heardle.glitch.me/'>(or click here)</a>";
-            });
-            setTimeout(() => window.location.replace("https://lovelive-heardle.glitch.me/"), 1000);
-        }
-    </script>
     <link rel="preload" href="/dependencies/jquery/jquery.min.js" as="script">
     <link rel="preload" href="/dependencies/autoComplete/autoComplete.min.js" as="script">
     <link rel="preload" href="/js/info.min.js" as="script">
@@ -337,13 +322,10 @@
                 </div>
                 <div class="text">
                     <p class="mb-3">
-                        Run and maintained by <a href="https://twitter.com/Kachx" target="_blank">@Kachx</a>
+                        Run and maintained by <a href="https://suyo.be" target="_blank">@Suyo_</a>
                     </p>
                     <p class="mb-3">
-                        Some coding by <a href="https://twitter.com/Suyo_" target="_blank">@Suyo_</a>
-                    </p>
-                    <p class="mb-3">
-                        Formerly run by <a href="https://twitter.com/eienfriendz" target="_blank">@eienfriendz</a>
+                        Formerly run by eienfriendz and <a href="https://kachagain.com" target="_blank">Kach</a>
                     </p>
                     <p class="mb-3">
                         Original Heardle by <a href="https://omakase.studio" target="_blank">Studio Omakase</a>
@@ -356,7 +338,6 @@
                         <a href="https://fonts.google.com/noto/specimen/Noto+Sans">Noto Sans</a>,
                         <a href="https://iconsvg.xyz">IconSVG</a>,
                         <a href="https://tarekraafat.github.io/autoComplete.js/#/">autocomplete.js</a>.
-                        Hosted on <a href="https://glitch.com/">Glitch</a>.
                     </p>
                 </div>
             </div>
@@ -578,7 +559,7 @@
         <span id="fadeouttext" class="hidden w-full text-center font-bold">loading...</span>
         <span id="fadeoutwarning" class="hidden w-full text-center text-xs">
             This is taking longer than it should. Maybe try refreshing?<br>
-            You can also contact <a href="https://twitter.com/Kachx" target="_blank">@Kachx</a> if you feel like there's an error on our side.
+            You can also contact <a href="https://suyo.be" target="_blank">Suyooo</a> if you feel like there's an error on our side.
         </span>
     </div>
 </main>
@@ -590,14 +571,12 @@
         document.body.append(script);
     }
 
-    if (!redirecting) {
-        setTimeout(() => document.getElementById("fadeouttext").style.display = "block", 5000);
-        setTimeout(() => document.getElementById("fadeoutwarning").style.display = "block", 20000);
-        loadScript("/dependencies/jquery/jquery.min.js");
-        loadScript("/dependencies/autoComplete/autoComplete.min.js");
-        loadScript("/js/info.min.js");
-        loadScript("/js/bundle.min.js");
-    }
+    setTimeout(() => document.getElementById("fadeouttext").style.display = "block", 5000);
+    setTimeout(() => document.getElementById("fadeoutwarning").style.display = "block", 20000);
+    loadScript("/dependencies/jquery/jquery.min.js");
+    loadScript("/dependencies/autoComplete/autoComplete.min.js");
+    loadScript("/js/info.min.js");
+    loadScript("/js/bundle.min.js");
 </script>
 </body>
 </html>

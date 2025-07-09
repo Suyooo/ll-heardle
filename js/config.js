@@ -7,4 +7,4 @@
 const LENGTHS = [1, 2, 4, 7, 11, 16];
 
 // First day (YYYY/MM/DD)
-const FIRST_DAY_TIME = Date.parse("2022/04/04");
+const FIRST_DAY_TIME = Date.parse("2025/07/09");

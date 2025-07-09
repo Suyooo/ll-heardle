@@ -8,12 +8,8 @@ const CURRENT_ANNOUNCEMENT = {
     text:
 `Hello, everyone!<br>
 <br>
-With this, LL Heardle made it's second move. Sadly, we couldn't bring your save data along this time with Glitch.com
-completly shuttering everything, so you'll have to start your streaks over from zero.<br>
-<br>
-There is one important change - since we had to reset saves anyways, I went ahead an aligned the reset time to midnight
-in Japan Standard Time. No more spoilers from people in timezones ahead of you, everyone gets to play at the same time!
-<br>
+With this, LL Heardle made it's second move. Sadly, we couldn't bring your save data along this time become of
+Glitch.com completly shuttering everything, so you'll have to start your streaks over from zero.<br>
 <br>
 I'm planning to clean up some stuff and bring the song list up to date over the next few weekends. In the meantime, you
 can play just like before! (And if you want to play more, allow me a little bit of a plug - you can also come try

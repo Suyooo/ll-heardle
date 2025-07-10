@@ -18,6 +18,9 @@ can play just like before! (And if you want to play more, allow me a little bit 
 Thanks for playing <i>Love Live! Heardle</i>!`
 };
 
+/**
+ * @var {Array.<{songUrl: string, coverUrl: string, startOnDay: number, titleEn: string, artistEn: string, titleJa: string, artistJa: string, listenOn: {spotify: string, youtube:string}}>}
+ */
 const SONGPOOL = [
     {
         "songUrl": "https://kachagain.com/mp3/01%20-%20Bokura%20no%20LIVE%20Kimi%20to%20no%20LIFE.mp3",
@@ -3417,7 +3420,10 @@ const SONGPOOL = [
         "artistEn": "Nijigasaki High School Idol Club",
         "titleJa": "Hurray Hurray",
         "artistJa": "虹ヶ咲学園スクールアイドル同好会",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/5Ji3D1UvL0NpiMMf1d9yCi",
+            "youtube": "https://www.youtube.com/watch?v=586NzUXCi3A"
+        }
     },
     {
         "songUrl": "",
@@ -3609,7 +3615,10 @@ const SONGPOOL = [
         "artistEn": "A・ZU・NA",
         "titleJa": "Happy Nyan! Days",
         "artistJa": "A・ZU・NA",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/2occasmKFRrADf4vKqIjc1",
+            "youtube": "https://www.youtube.com/watch?v=OicyCCqlJkU"
+        }
     },
     {
         "songUrl": "",
@@ -3619,7 +3628,10 @@ const SONGPOOL = [
         "artistEn": "A・ZU・NA",
         "titleJa": "Kakushiaji!",
         "artistJa": "A・ZU・NA",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/0kuHUONx1ZDIy5XPaXj3TG",
+            "youtube": "https://www.youtube.com/watch?v=tn5iqBFBJRw"
+        }
     },
     {
         "songUrl": "",
@@ -3668,7 +3680,10 @@ const SONGPOOL = [
         "artistEn": "DiverDiva",
         "titleJa": "POWER SPOT!!",
         "artistJa": "DiverDiva",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/5WmSxiY7CyxEUwgT2kyj1Z",
+            "youtube": "https://www.youtube.com/watch?v=_0XMKlwsnn0"
+        }
     },
     {
         "songUrl": "",
@@ -3678,7 +3693,10 @@ const SONGPOOL = [
         "artistEn": "DiverDiva",
         "titleJa": "祭花 -saika-",
         "artistJa": "DiverDiva",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/7sp6309R5XDB1XNyjyVDG5",
+            "youtube": "https://www.youtube.com/watch?v=nxmL6vt0m10"
+        }
     },
     {
         "songUrl": "",
@@ -3727,7 +3745,10 @@ const SONGPOOL = [
         "artistEn": "QU4RTZ",
         "titleJa": "Make-up session ABC",
         "artistJa": "QU4RTZ",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/79et0immBzRfo96bnGep9r",
+            "youtube": "https://www.youtube.com/watch?v=zqVgZ7obL5U"
+        }
     },
     {
         "songUrl": "https://kachagain.com/mp3/02.%20Not%20Sad.mp3",
@@ -3776,7 +3797,10 @@ const SONGPOOL = [
         "artistEn": "QU4RTZ",
         "titleJa": "Twinkle Town",
         "artistJa": "QU4RTZ",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/6ldZaRUFcKh908SJXwdbZj",
+            "youtube": "https://www.youtube.com/watch?v=O_KyCCsHzK8"
+        }
     },
     {
         "songUrl": "https://kachagain.com/mp3/01.%20MONSTER%20GIRLS.mp3",
@@ -4800,7 +4824,10 @@ const SONGPOOL = [
         "artistEn": "Kanon Shibuya (CV: Sayuri Date)",
         "titleJa": "心キラララ",
         "artistJa": "澁谷かのん (CV.伊達さゆり)",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/5qnyyQDnoaBrrJrzV3WQm5",
+            "youtube": "https://www.youtube.com/watch?v=ZRQDZNQ4mjo"
+        }
     },
     {
         "songUrl": "https://kachagain.com/mp3/01.%20Oh%21%20%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BB%E3%82%B9%E3%83%86%E3%83%87%E3%82%A3%E3%83%BB%E3%83%9D%E3%82%B8%E3%83%86%E3%82%A3%E3%83%96.mp3",
@@ -4810,7 +4837,10 @@ const SONGPOOL = [
         "artistEn": "Keke Tang (CV: Liyuu)",
         "titleJa": "Oh！レディ・ステディ・ポジティブ",
         "artistJa": "唐 可可 (CV.Liyuu)",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/1msqLcldA2XpzxX87F9hji",
+            "youtube": "https://www.youtube.com/watch?v=MGT_k6kxkcs"
+        }
     },
     {
         "songUrl": "https://kachagain.com/mp3/01.%20%E5%8B%87%E6%B0%97%E3%81%AE%E3%82%AB%E3%82%B1%E3%83%A9.mp3",
@@ -4820,7 +4850,10 @@ const SONGPOOL = [
         "artistEn": "Chisato Arashi (CV: Nako Misaki)",
         "titleJa": "勇気のカケラ",
         "artistJa": "嵐 千砂都 (CV.岬 なこ)",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/3NtiL2Mdlt9w0sHL75Dnue",
+            "youtube": "https://www.youtube.com/watch?v=geOxQU_0lUQ"
+        }
     },
     {
         "songUrl": "https://kachagain.com/mp3/01.%20%E3%83%92%E3%83%AD%E3%82%A4%E3%83%B3%E3%82%BA%E2%98%86%E3%83%A9%E3%83%B3%E3%82%A6%E3%82%A7%E3%82%A4.mp3",
@@ -4830,7 +4863,10 @@ const SONGPOOL = [
         "artistEn": "Sumire Heanna (CV: Naomi Payton)",
         "titleJa": "ヒロインズ☆ランウェイ",
         "artistJa": "平安名すみれ (CV.ペイトン尚未)",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/74pLgdRLrF3bZBeCqS0rJV",
+            "youtube": "https://www.youtube.com/watch?v=wqcYJezfqWU"
+        }
     },
     {
         "songUrl": "",
@@ -4840,7 +4876,10 @@ const SONGPOOL = [
         "artistEn": "Ren Hazuki (CV: Nagisa Aoyama)",
         "titleJa": "リバーブ",
         "artistJa": "葉月 恋 (CV.青山なぎさ)",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/4au3Cvlm5UcaXGbf66hENe",
+            "youtube": "https://www.youtube.com/watch?v=XBLdMyuQi_0"
+        }
     },
     {
         "songUrl": "https://kachagain.com/mp3/07.%20Message.mp3",
@@ -4978,9 +5017,12 @@ const SONGPOOL = [
         "startOnDay": 999999,
         "titleEn": "Tu Tu Tu!",
         "artistEn": "Liella!",
-        "titleJa": "トゥ トゥ トゥ！",
+        "titleJa": "トゥトゥトゥ！",
         "artistJa": "Liella!",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/2IMQJ7Psno3RxlU0i0x4ux",
+            "youtube": "https://www.youtube.com/watch?v=LNjdgeDu1_o"
+        }
     },
     {
         "songUrl": "",
@@ -4990,7 +5032,10 @@ const SONGPOOL = [
         "artistEn": "Liella!",
         "titleJa": "HAPPY TO DO WA!",
         "artistJa": "Liella!",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/5AuzhUwtqasWbQgq9hWJBB",
+            "youtube": "https://www.youtube.com/watch?v=Moanef9tJBo"
+        }
     },
     {
         "songUrl": "",
@@ -5000,7 +5045,10 @@ const SONGPOOL = [
         "artistEn": "Liella!",
         "titleJa": "Stella!",
         "artistJa": "Liella!",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/5jX6yoZ6EvBURfLh1zBOcs",
+            "youtube": "https://www.youtube.com/watch?v=uelqrGSkuOE"
+        }
     },
     {
         "songUrl": "",
@@ -5010,7 +5058,10 @@ const SONGPOOL = [
         "artistEn": "Liella!",
         "titleJa": "探して！Future",
         "artistJa": "Liella!",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/6GyLiiqdUZmlaKwQjTwwDg",
+            "youtube": "https://www.youtube.com/watch?v=EtcON6nLJ00"
+        }
     },
     {
         "songUrl": "",
@@ -5020,7 +5071,10 @@ const SONGPOOL = [
         "artistEn": "Liella!",
         "titleJa": "変わらないすべて",
         "artistJa": "Liella!",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/7h0BBoDxVkGsAh0oHUUsm6",
+            "youtube": "https://www.youtube.com/watch?v=sl_Bjd69K_0"
+        }
     },
     {
         "songUrl": "",
@@ -5030,7 +5084,10 @@ const SONGPOOL = [
         "artistEn": "Liella!",
         "titleJa": "クレッシェンドゆ・ら",
         "artistJa": "Liella!",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/6gDRsyMPV4ee6hSex062yC",
+            "youtube": "https://www.youtube.com/watch?v=yFbYhnKZNik"
+        }
     },
     {
         "songUrl": "https://kachagain.com/mp3/07.%20%E5%BE%AE%E7%86%B1%E3%81%AE%E3%83%AF%E3%83%AB%E3%83%84.mp3",
@@ -5144,7 +5201,10 @@ const SONGPOOL = [
         "artistEn": "Aqours",
         "titleJa": "GEMSTONE \"DE-A-I\"",
         "artistJa": "Aqours",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/17XlbvpFzyTdELQOfLMw4n",
+            "youtube": "https://www.youtube.com/watch?v=4wNakOSVPHQ"
+        }
     },
     {
         "songUrl": "https://kachagain.com/mp3/01.%20%E3%81%AA%E3%82%93%E3%81%A9%E3%81%A0%E3%81%A3%E3%81%A6%E7%B4%84%E6%9D%9F%EF%BC%81.mp3",
@@ -5362,7 +5422,10 @@ const SONGPOOL = [
         "artistEn": "DiverDiva",
         "titleJa": "Fashionista",
         "artistJa": "DiverDiva",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/5mvYrPSjXzcx7KuHo0ULMj",
+            "youtube": "https://www.youtube.com/watch?v=JUgv0TkVjrg"
+        }
     },
     {
         "songUrl": "https://kachagain.com/mp3/01.%20%E3%83%A6%E3%83%A1%2B%E3%83%9F%E3%83%A9%E3%82%A4%3D%E7%84%A1%E9%99%90%E5%A4%A7.mp3",
@@ -5411,7 +5474,10 @@ const SONGPOOL = [
         "artistEn": "QU4RTZ",
         "titleJa": "Fuwa Fuwa アワー！",
         "artistJa": "QU4RTZ",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/6jnFBhAKLrjvz7IYsNBMpj",
+            "youtube": "https://www.youtube.com/watch?v=eg2JehPJuqM"
+        }
     },
     {
         "songUrl": "https://kachagain.com/mp3/02.%20Level%20Oops%21%20Adventures.mp3",
@@ -5577,7 +5643,10 @@ const SONGPOOL = [
         "artistEn": "A・ZU・NA",
         "titleJa": "ロマンスの中で",
         "artistJa": "A・ZU・NA",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/2CemjAKqoWDUfCwkzqsIYF",
+            "youtube": "https://www.youtube.com/watch?v=21m_DCnH3yQ"
+        }
     },
     {
         "songUrl": "https://kachagain.com/mp3/08.%20%E6%B0%B4%E9%9D%A2%E3%81%AB%E3%83%94%E3%82%A2%E3%83%8E.mp3",
@@ -5691,7 +5760,10 @@ const SONGPOOL = [
         "artistEn": "R3BIRTH",
         "titleJa": "Look at me now",
         "artistJa": "R3BIRTH",
-        "listenOn": {}
+        "listenOn": {
+            "spotify": "https://open.spotify.com/track/6av1xL9khQJQptHMmduHYI",
+            "youtube": "https://www.youtube.com/watch?v=wxjeXe36Opw"
+        }
     },
     {
         "songUrl": "https://kachagain.com/mp3/02.%20Kiss%20the%20Sun.mp3",

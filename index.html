@@ -1,583 +1,848 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Love Live! Heardle - Daily Love Live! song intro game</title>
-    <meta name="description" content="Guess the Love Live! song from the intro in as little tries as possible.">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Love Live! Heardle - Daily Love Live! song intro game</title>
+		<meta name="description" content="Guess the Love Live! song from the intro in as little tries as possible." />
 
-    <link rel="preload" href="/dependencies/jquery/jquery.min.js" as="script">
-    <link rel="preload" href="/dependencies/autoComplete/autoComplete.min.js" as="script">
-    <link rel="preload" href="/js/info.min.js" as="script">
-    <link rel="preload" href="/js/bundle.min.js" as="script">
+		<link rel="preload" href="/dependencies/jquery/jquery.min.js" as="script" />
+		<link rel="preload" href="/dependencies/autoComplete/autoComplete.min.js" as="script" />
+		<link rel="preload" href="/js/info.min.js" as="script" />
+		<link rel="preload" href="/js/bundle.min.js" as="script" />
 
-    <meta itemprop="name" content="Love Live! Heardle - Daily Love Live! song intro game">
-    <meta itemprop="description" content="Guess the Love Live! song from the intro in as little tries as possible.">
-    <meta itemprop="image" content="/assets/wide.png">
-    <meta property="og:url" content="https://llheardle.suyo.be/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Love Live! Heardle - Daily Love Live! song intro game">
-    <meta property="og:description" content="Guess the Love Live! song from the intro in as little tries as possible.">
-    <meta property="og:image" content="/assets/wide.png">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Love Live! Heardle - Daily Love Live! song intro game">
-    <meta name="twitter:description" content="Guess the Love Live! song from the intro in as little tries as possible.">
-    <meta name="twitter:image" content="/assets/square.png">
+		<meta itemprop="name" content="Love Live! Heardle - Daily Love Live! song intro game" />
+		<meta itemprop="description" content="Guess the Love Live! song from the intro in as little tries as possible." />
+		<meta itemprop="image" content="/assets/wide.png" />
+		<meta property="og:url" content="https://llheardle.suyo.be/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Love Live! Heardle - Daily Love Live! song intro game" />
+		<meta
+			property="og:description"
+			content="Guess the Love Live! song from the intro in as little tries as possible."
+		/>
+		<meta property="og:image" content="/assets/wide.png" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="Love Live! Heardle - Daily Love Live! song intro game" />
+		<meta
+			name="twitter:description"
+			content="Guess the Love Live! song from the intro in as little tries as possible."
+		/>
+		<meta name="twitter:image" content="/assets/square.png" />
 
-    <link rel="icon" type="image/png" href="/assets/icon-72x72.png">
-    <link rel="apple-touch-icon" href="/assets/icon-192x192.png">
-    <link rel="shortcut icon" href="/assets/icon-72x72.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="stylesheet" href="/css/bundle.min.css">
-</head>
+		<link rel="icon" type="image/png" href="/assets/icon-72x72.png" />
+		<link rel="apple-touch-icon" href="/assets/icon-192x192.png" />
+		<link rel="shortcut icon" href="/assets/icon-72x72.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<link rel="stylesheet" href="/css/bundle.min.css" />
+	</head>
 
-<body>
-<main class="bg-custom-bg text-custom-fg overflow-auto flex flex-col h-full">
-    <div class="flex-none">
-        <header class="border-b border-custom-line">
-            <div class="max-w-screen-md mx-auto ">
-                <div class="flex justify-evenly text-custom-fgcolor p-3 items-center">
-                    <a class="opacity-0 focus:opacity-100 absolute left-3 pointer-events-none" href="#control">
-                        Jump to Play Button
-                    </a>
-                    <div class="flex flex-1">
-                        <button id="open-about" aria-label="About"
-                                class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round" role="img" aria-hidden="true">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="12" y1="16" x2="12" y2="12"></line>
-                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                            </svg>
-                        </button>
-                        <button id="open-announce" aria-label="News"
-                                class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white">
-                            <svg id="open-announce-read" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                 viewBox="0 0 24 24" role="img" aria-hidden="true" fill="none" stroke="currentColor"
-                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path>
-                            </svg>
-                            <svg id="open-announce-unread" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                 viewBox="0 0 24 24" fill="none" stroke="#DE0A82" stroke-width="2" aria-hidden="true"
-                                 stroke-linecap="round" stroke-linejoin="round" class="hidden" role="img">
-                                <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path>
-                                <circle fill="#DE0A82" stroke-width="0" cx="22" cy="2" r="2"></circle>
-                            </svg>
-                        </button>
-                    </div>
-                    <h1 class="font-serif text-2xl font-bold flex-grow text-center flex-1 logo" aria-hidden="true">
-                        Love Live<span aria-hidden="true">!</span> Heardle!
-                    </h1>
-                    <div class="flex flex-1 justify-end">
-                        <button id="open-stats" aria-label="Stats"
-                                class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round" role="img" aria-hidden="true">
-                                <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                            </svg>
-                        </button>
-                        <button id="open-help" aria-label="How To Play"
-                                class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round" role="img" aria-hidden="true">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </header>
-    </div>
-    <div id="guessingscreen" class="w-full flex flex-col flex-grow relative" role="main">
-        <div class="w-full flex flex-col flex-grow relative">
-            <div class="max-w-screen-sm w-full mx-auto h-full flex flex-col justify-between overflow-auto">
-                <div id="guesslist" class="p-3 flex-col items-evenly">
-                    <div class="p-2 mb-2 border border-custom-mg flex items-center last:mb-0" aria-live="polite">
-                        <div class="w-0 h-5"></div>
-                    </div>
-                    <div class="p-2 mb-2 border border-custom-mg flex items-center last:mb-0" aria-live="polite">
-                        <div class="w-0 h-5"></div>
-                    </div>
-                    <div class="p-2 mb-2 border border-custom-mg flex items-center last:mb-0" aria-live="polite">
-                        <div class="w-0 h-5"></div>
-                    </div>
-                    <div class="p-2 mb-2 border border-custom-mg flex items-center last:mb-0" aria-live="polite">
-                        <div class="w-0 h-5"></div>
-                    </div>
-                    <div class="p-2 mb-2 border border-custom-mg flex items-center last:mb-0" aria-live="polite">
-                        <div class="w-0 h-5"></div>
-                    </div>
-                    <div class="p-2 mb-2 border border-custom-mg flex items-center last:mb-0" aria-live="polite">
-                        <div class="w-5 h-5"></div>
-                    </div>
-                </div>
-            </div>
-            <div id="playprompt" class="hidden text-center p-3 flex flex-col items-center text-sm text-custom-line">
-                <p>Turn up the volume and tap to start the track!</p>
-                <svg class="mt-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                     role="img" aria-hidden="true">
-                    <path d="M6 9l6 6 6-6"></path>
-                </svg>
-            </div>
-        </div>
-    </div>
-    <p class="clearmessage w-0 h-0 overflow-hidden" aria-live="polite"></p>
-    <div id="resultscreen" role="main"
-         class="hidden max-w-screen-sm w-full mx-auto h-full flex flex-col justify-between overflow-auto">
-        <div class="p-3 pb-0 flex-col items-evenly">
-            <div id="resultsongbox" class="p-2 flex items-center rounded-sm">
-                <span class="w-0 h-0 overflow-hidden">The answer was:</span>
-                <img id="resultcover" class="h-14" aria-hidden="true">
-                <div class="flex-grow mx-3 text-white">
-                    <p id="resultartist" class="text-sm"></p>
-                    <p id="resulttitle" class="font-bold"></p>
-                </div>
-                <div class="flex flex-col items-center space-y-2">
-                    <a id="resultspotify" class="hidden flex items-center" aria-label="Listen on Spotify">
-                        <img class="h-5"
-                             src="/assets/spotify.png"
-                             alt="Spotify Logo" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                             stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                             role="img" aria-hidden="true">
-                            <path d="M9 18l6-6-6-6"></path>
-                        </svg>
-                    </a>
-                    <a id="resultyoutube" class="hidden flex items-center" aria-label="Listen on YouTube">
-                        <img class="h-5"
-                             src="/assets/youtube.png"
-                             alt="YouTube Logo" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                             stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                             role="img" aria-hidden="true">
-                            <path d="M9 18l6-6-6-6"></path>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="text-center px-3">
-            <p class="clearmessage text-lg text-custom-line outline-none"></p>
-            <div id="resultcolorrow" class="flex justify-center my-2">
-                <div class="w-4 h-1 m-0.5"></div>
-                <div class="w-4 h-1 m-0.5"></div>
-                <div class="w-4 h-1 m-0.5"></div>
-                <div class="w-4 h-1 m-0.5"></div>
-                <div class="w-4 h-1 m-0.5"></div>
-                <div class="w-4 h-1 m-0.5"></div>
-            </div>
-            <p class="py-1" id="resultmessage"></p>
-            <div class="flex flex-col justify-center items-center pt-3">
-                <button id="resultshare"
-                        class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white bg-custom-positive">
-                    Share Result
-                    <svg class="inline-block ml-2" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                         stroke-linejoin="round" role="img" aria-hidden="true">
-                        <circle cx="18" cy="5" r="3"></circle>
-                        <circle cx="6" cy="12" r="3"></circle>
-                        <circle cx="18" cy="19" r="3"></circle>
-                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <div>
-            <div class="flex flex-col justify-center items-center mb-6 mx-3">
-                <div class="text-center text-custom-line text-sm">Next Love Live<span aria-hidden="true">!</span> Heardle in:</div>
-                <div id="resulttimer" class="tracking-widest text-lg">...</div>
-            </div>
-        </div>
-    </div>
-    <div id="loading" class="text-sm text-center text-custom-line p-6 max-w-screen-sm mx-auto">
-        <div class="flex justify-center m-3"><span class="loader"></span></div>
-        <p>loading player</p>
-    </div>
-    <div id="playerbar" class="hidden">
-        <div class="border-t border-custom-line">
-            <div class="max-w-screen-sm w-full mx-auto px-3 flex-col">
-                <div class="h-3 w-full relative overflow-hidden">
-                    <div id="playbarlimit" class="h-full absolute bg-custom-mg"></div>
-                    <div id="playbarcurrent" class="h-full absolute bg-custom-positive"></div>
-                    <div id="playbarmarkers" class="w-full h-full absolute">
-                        <div class="w-px h-full absolute left-0 bg-custom-mg"></div>
-                        <div class="w-px h-full absolute bg-custom-mg" style="left: 6.25%;"></div>
-                        <div class="w-px h-full absolute bg-custom-mg" style="left: 12.5%;"></div>
-                        <div class="w-px h-full absolute bg-custom-mg" style="left: 25%;"></div>
-                        <div class="w-px h-full absolute bg-custom-mg" style="left: 43.75%;"></div>
-                        <div class="w-px h-full absolute bg-custom-mg" style="left: 68.75%;"></div>
-                        <div class="w-px h-full absolute right-0 bg-custom-mg"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="border-t border-custom-line">
-            <div class="max-w-screen-sm w-full mx-auto flex-col">
-                <div class="px-3 ">
-                    <div class="flex justify-between items-center">
-                        <div class="flex items-center">
-                            <div id="timecurrent">0:00</div>
-                        </div>
-                        <div class="flex justify-center items-center p-1">
-                            <button id="control" aria-label="Play/Pause Song"
-                                    class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white">
-                                <div class="flex justify-center items-center text-custom-fg h-14 w-14 border-2 rounded-full relative overflow-hidden">
-                                    <div id="controlpaused" class="ml-1 relative z-10">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                             viewBox="0 0 24 24" role="img" aria-hidden="true"
-                                             fill="currentColor" stroke="currentColor" stroke-width="2"
-                                             stroke-linecap="round" stroke-linejoin="round">
-                                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                                        </svg>
-                                    </div>
-                                    <div id="controlplaying" class="relative z-10 hidden">
-                                        <div id="controlplayingicon" class="scale-150 transform relative">
-                                            <i class="gg-loadbar-sound"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                        <div id="timelimit" aria-hidden="true">...</div>
-                        <div id="timeduration" class="hidden" aria-hidden="true">...</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="hidden">
-            <audio id="audio_player" preload="auto"></audio>
-        </div>
-        <div id="guessbar" class="max-w-screen-sm w-full mx-auto flex-col">
-            <div class="m-3 mt-0">
-                <div>
-                    <div class="autoComplete_wrapper relative">
-                        <svg class="absolute top-4 left-3" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                             stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                        </svg>
-                        <input class="focus:outline-none focus:border-custom-positive w-full p-3 pl-9 placeholder:text-custom-line bg-custom-bg text-custom-fg border-custom-mg"
-                               id="field" type="search" dir="ltr" spellcheck="false" autocorrect="off"
-                               autocomplete="off" autocapitalize="none" aria-label="Your Guess. Autocomplete."
-                               placeholder="Know it? Search for the artist / title" role="combobox">
-                        <button id="fieldclear" class="absolute right-3 top-4 border-0" aria-label="Clear Guess Input">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round" role="img" aria-hidden="true" tabindex="-1">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </button>
-                        <div id="invalidnote" aria-live="polite"
-                             class="absolute left-0 top-0 z-10 w-full py-1 px-3 bg-custom-mg text-center transform transform-y-m-full pointer-events-none opacity-0">
-                        </div>
-                    </div>
-                    <div class="flex justify-between pt-3">
-                        <button id="skipbutton"
-                                class="px-2 py-2 uppercase tracking-widest bg-custom-mg border-none flex items-center font-semibold text-sm text-white">
-                            Skip
-                        </button>
-                        <button id="submitbutton"
-                                class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white bg-custom-positive">
-                            Submit
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="modals" class="hidden modal-container p-3">
-        <div id="modal-about" class="hidden modal max-w-screen-xs w-full mx-auto top-20 relative rounded-sm"
-             role="dialog" aria-modal="true">
-            <div class="bg-custom-bg border border-custom-mg p-6">
-                <div class="flex items-center justify-center mb-6">
-                    <div class="flex-1 pl-7">
-                        <h2 class="text-sm text-center uppercase text-custom-line font-semibold tracking-widest">
-                            About</h2>
-                    </div>
-                    <div class="close-modals justify-self-end flex">
-                        <button class="border-none text-custom-mg" aria-label="Close Dialog">
-                            <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                 role="img" aria-hidden="true">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="text">
-                    <p class="mb-3">
-                        Run and maintained by <a href="https://suyo.be" target="_blank">Suyooo</a>
-                    </p>
-                    <p class="mb-3">
-                        Formerly run by eienfriendz and <a href="https://kachagain.com" target="_blank">Kach</a>
-                    </p>
-                    <p class="mb-3">
-                        Original Heardle by <a href="https://omakase.studio" target="_blank">Studio Omakase</a>
-                    </p>
+	<body>
+		<main class="bg-custom-bg text-custom-fg overflow-auto flex flex-col h-full">
+			<div class="flex-none">
+				<header class="border-b border-custom-line">
+					<div class="max-w-screen-md mx-auto">
+						<div class="flex justify-evenly text-custom-fgcolor p-3 items-center">
+							<a class="opacity-0 focus:opacity-100 absolute left-3 pointer-events-none" href="#control">
+								Jump to Play Button
+							</a>
+							<div class="flex flex-1">
+								<button
+									id="open-about"
+									aria-label="About"
+									class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										role="img"
+										aria-hidden="true"
+									>
+										<circle cx="12" cy="12" r="10"></circle>
+										<line x1="12" y1="16" x2="12" y2="12"></line>
+										<line x1="12" y1="8" x2="12.01" y2="8"></line>
+									</svg>
+								</button>
+								<button
+									id="open-announce"
+									aria-label="News"
+									class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white"
+								>
+									<svg
+										id="open-announce-read"
+										xmlns="http://www.w3.org/2000/svg"
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+										role="img"
+										aria-hidden="true"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									>
+										<path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path>
+									</svg>
+									<svg
+										id="open-announce-unread"
+										xmlns="http://www.w3.org/2000/svg"
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="#DE0A82"
+										stroke-width="2"
+										aria-hidden="true"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										class="hidden"
+										role="img"
+									>
+										<path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path>
+										<circle fill="#DE0A82" stroke-width="0" cx="22" cy="2" r="2"></circle>
+									</svg>
+								</button>
+							</div>
+							<h1 class="font-serif text-2xl font-bold flex-grow text-center flex-1 logo" aria-hidden="true">
+								Love Live<span aria-hidden="true">!</span> Heardle!
+							</h1>
+							<div class="flex flex-1 justify-end">
+								<button
+									id="open-stats"
+									aria-label="Stats"
+									class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										role="img"
+										aria-hidden="true"
+									>
+										<path
+											d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+										></path>
+									</svg>
+								</button>
+								<button
+									id="open-help"
+									aria-label="How To Play"
+									class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										role="img"
+										aria-hidden="true"
+									>
+										<circle cx="12" cy="12" r="10"></circle>
+										<path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+										<line x1="12" y1="17" x2="12.01" y2="17"></line>
+									</svg>
+								</button>
+							</div>
+						</div>
+					</div>
+				</header>
+			</div>
+			<div id="guessingscreen" class="w-full flex flex-col flex-grow relative" role="main">
+				<div class="w-full flex flex-col flex-grow relative">
+					<div class="max-w-screen-sm w-full mx-auto h-full flex flex-col justify-between overflow-auto">
+						<div id="guesslist" class="p-3 flex-col items-evenly">
+							<div class="p-2 mb-2 border border-custom-mg flex items-center last:mb-0" aria-live="polite">
+								<div class="w-0 h-5"></div>
+							</div>
+							<div class="p-2 mb-2 border border-custom-mg flex items-center last:mb-0" aria-live="polite">
+								<div class="w-0 h-5"></div>
+							</div>
+							<div class="p-2 mb-2 border border-custom-mg flex items-center last:mb-0" aria-live="polite">
+								<div class="w-0 h-5"></div>
+							</div>
+							<div class="p-2 mb-2 border border-custom-mg flex items-center last:mb-0" aria-live="polite">
+								<div class="w-0 h-5"></div>
+							</div>
+							<div class="p-2 mb-2 border border-custom-mg flex items-center last:mb-0" aria-live="polite">
+								<div class="w-0 h-5"></div>
+							</div>
+							<div class="p-2 mb-2 border border-custom-mg flex items-center last:mb-0" aria-live="polite">
+								<div class="w-5 h-5"></div>
+							</div>
+						</div>
+					</div>
+					<div id="playprompt" class="hidden text-center p-3 flex flex-col items-center text-sm text-custom-line">
+						<p>Turn up the volume and tap to start the track!</p>
+						<svg
+							class="mt-2"
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							role="img"
+							aria-hidden="true"
+						>
+							<path d="M6 9l6 6 6-6"></path>
+						</svg>
+					</div>
+				</div>
+			</div>
+			<p class="clearmessage w-0 h-0 overflow-hidden" aria-live="polite"></p>
+			<div
+				id="resultscreen"
+				role="main"
+				class="hidden max-w-screen-sm w-full mx-auto h-full flex flex-col justify-between overflow-auto"
+			>
+				<div class="p-3 pb-0 flex-col items-evenly">
+					<div id="resultsongbox" class="p-2 flex items-center rounded-sm">
+						<span class="w-0 h-0 overflow-hidden">The answer was:</span>
+						<img id="resultcover" class="h-14" aria-hidden="true" />
+						<div class="flex-grow mx-3 text-white">
+							<p id="resultartist" class="text-sm"></p>
+							<p id="resulttitle" class="font-bold"></p>
+						</div>
+						<div class="flex flex-col items-center space-y-2">
+							<a id="resultspotify" class="hidden flex items-center" aria-label="Listen on Spotify">
+								<img class="h-5" src="/assets/spotify.png" alt="Spotify Logo" aria-hidden="true" />
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="14"
+									height="14"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="white"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									role="img"
+									aria-hidden="true"
+								>
+									<path d="M9 18l6-6-6-6"></path>
+								</svg>
+							</a>
+							<a id="resultyoutube" class="hidden flex items-center" aria-label="Listen on YouTube">
+								<img class="h-5" src="/assets/youtube.png" alt="YouTube Logo" aria-hidden="true" />
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="14"
+									height="14"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="white"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									role="img"
+									aria-hidden="true"
+								>
+									<path d="M9 18l6-6-6-6"></path>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="text-center px-3">
+					<p class="clearmessage text-lg text-custom-line outline-none"></p>
+					<div id="resultcolorrow" class="flex justify-center my-2">
+						<div class="w-4 h-1 m-0.5"></div>
+						<div class="w-4 h-1 m-0.5"></div>
+						<div class="w-4 h-1 m-0.5"></div>
+						<div class="w-4 h-1 m-0.5"></div>
+						<div class="w-4 h-1 m-0.5"></div>
+						<div class="w-4 h-1 m-0.5"></div>
+					</div>
+					<p class="py-1" id="resultmessage"></p>
+					<div class="flex flex-col justify-center items-center pt-3">
+						<button
+							id="resultshare"
+							class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white bg-custom-positive"
+						>
+							Share Result
+							<svg
+								class="inline-block ml-2"
+								xmlns="http://www.w3.org/2000/svg"
+								width="18"
+								height="18"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								role="img"
+								aria-hidden="true"
+							>
+								<circle cx="18" cy="5" r="3"></circle>
+								<circle cx="6" cy="12" r="3"></circle>
+								<circle cx="18" cy="19" r="3"></circle>
+								<line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+								<line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div>
+					<div class="flex flex-col justify-center items-center mb-6 mx-3">
+						<div class="text-center text-custom-line text-sm">
+							Next Love Live<span aria-hidden="true">!</span> Heardle in:
+						</div>
+						<div id="resulttimer" class="tracking-widest text-lg">...</div>
+					</div>
+				</div>
+			</div>
+			<div id="loading" class="text-sm text-center text-custom-line p-6 max-w-screen-sm mx-auto">
+				<div class="flex justify-center m-3"><span class="loader"></span></div>
+				<p>loading player</p>
+			</div>
+			<div id="playerbar" class="hidden">
+				<div class="border-t border-custom-line">
+					<div class="max-w-screen-sm w-full mx-auto px-3 flex-col">
+						<div class="h-3 w-full relative overflow-hidden">
+							<div id="playbarlimit" class="h-full absolute bg-custom-mg"></div>
+							<div id="playbarcurrent" class="h-full absolute bg-custom-positive"></div>
+							<div id="playbarmarkers" class="w-full h-full absolute">
+								<div class="w-px h-full absolute left-0 bg-custom-mg"></div>
+								<div class="w-px h-full absolute bg-custom-mg" style="left: 6.25%"></div>
+								<div class="w-px h-full absolute bg-custom-mg" style="left: 12.5%"></div>
+								<div class="w-px h-full absolute bg-custom-mg" style="left: 25%"></div>
+								<div class="w-px h-full absolute bg-custom-mg" style="left: 43.75%"></div>
+								<div class="w-px h-full absolute bg-custom-mg" style="left: 68.75%"></div>
+								<div class="w-px h-full absolute right-0 bg-custom-mg"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="border-t border-custom-line">
+					<div class="max-w-screen-sm w-full mx-auto flex-col">
+						<div class="px-3">
+							<div class="flex justify-between items-center">
+								<div class="flex items-center">
+									<div id="timecurrent">0:00</div>
+								</div>
+								<div class="flex justify-center items-center p-1">
+									<button
+										id="control"
+										aria-label="Play/Pause Song"
+										class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white"
+									>
+										<div
+											class="flex justify-center items-center text-custom-fg h-14 w-14 border-2 rounded-full relative overflow-hidden"
+										>
+											<div id="controlpaused" class="ml-1 relative z-10">
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													width="24"
+													height="24"
+													viewBox="0 0 24 24"
+													role="img"
+													aria-hidden="true"
+													fill="currentColor"
+													stroke="currentColor"
+													stroke-width="2"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+												>
+													<polygon points="5 3 19 12 5 21 5 3"></polygon>
+												</svg>
+											</div>
+											<div id="controlplaying" class="relative z-10 hidden">
+												<div id="controlplayingicon" class="scale-150 transform relative">
+													<i class="gg-loadbar-sound"></i>
+												</div>
+											</div>
+										</div>
+									</button>
+								</div>
+								<div id="timelimit" aria-hidden="true">...</div>
+								<div id="timeduration" class="hidden" aria-hidden="true">...</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="hidden">
+					<audio id="audio_player" preload="auto"></audio>
+				</div>
+				<div id="guessbar" class="max-w-screen-sm w-full mx-auto flex-col">
+					<div class="m-3 mt-0">
+						<div>
+							<div class="autoComplete_wrapper relative">
+								<svg
+									class="absolute top-4 left-3"
+									xmlns="http://www.w3.org/2000/svg"
+									width="18"
+									height="18"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									role="img"
+									aria-hidden="true"
+								>
+									<circle cx="11" cy="11" r="8"></circle>
+									<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+								</svg>
+								<input
+									class="focus:outline-none focus:border-custom-positive w-full p-3 pl-9 placeholder:text-custom-line bg-custom-bg text-custom-fg border-custom-mg"
+									id="field"
+									type="search"
+									dir="ltr"
+									spellcheck="false"
+									autocorrect="off"
+									autocomplete="off"
+									autocapitalize="none"
+									aria-label="Your Guess. Autocomplete."
+									placeholder="Know it? Search for the artist / title"
+									role="combobox"
+								/>
+								<button id="fieldclear" class="absolute right-3 top-4 border-0" aria-label="Clear Guess Input">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="18"
+										height="18"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										role="img"
+										aria-hidden="true"
+										tabindex="-1"
+									>
+										<line x1="18" y1="6" x2="6" y2="18"></line>
+										<line x1="6" y1="6" x2="18" y2="18"></line>
+									</svg>
+								</button>
+								<div
+									id="invalidnote"
+									aria-live="polite"
+									class="absolute left-0 top-0 z-10 w-full py-1 px-3 bg-custom-mg text-center transform transform-y-m-full pointer-events-none opacity-0"
+								></div>
+							</div>
+							<div class="flex justify-between pt-3">
+								<button
+									id="skipbutton"
+									class="px-2 py-2 uppercase tracking-widest bg-custom-mg border-none flex items-center font-semibold text-sm text-white"
+								>
+									Skip
+								</button>
+								<button
+									id="submitbutton"
+									class="px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white bg-custom-positive"
+								>
+									Submit
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="modals" class="hidden modal-container p-3">
+				<div
+					id="modal-about"
+					class="hidden modal max-w-screen-xs w-full mx-auto top-20 relative rounded-sm"
+					role="dialog"
+					aria-modal="true"
+				>
+					<div class="bg-custom-bg border border-custom-mg p-6">
+						<div class="flex items-center justify-center mb-6">
+							<div class="flex-1 pl-7">
+								<h2 class="text-sm text-center uppercase text-custom-line font-semibold tracking-widest">About</h2>
+							</div>
+							<div class="close-modals justify-self-end flex">
+								<button class="border-none text-custom-mg" aria-label="Close Dialog">
+									<svg
+										class="w-7 h-7"
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										role="img"
+										aria-hidden="true"
+									>
+										<line x1="18" y1="6" x2="6" y2="18"></line>
+										<line x1="6" y1="6" x2="18" y2="18"></line>
+									</svg>
+								</button>
+							</div>
+						</div>
+						<div class="text">
+							<p class="mb-3">Run and maintained by <a href="https://suyo.be" target="_blank">Suyooo</a></p>
+							<p class="mb-3">
+								Formerly run by eienfriendz and <a href="https://kachagain.com" target="_blank">Kach</a>
+							</p>
+							<p class="mb-3">
+								Original Heardle by <a href="https://omakase.studio" target="_blank">Studio Omakase</a>
+							</p>
 
-                    <p class="text-xs mb-3 text-custom-line">Created using
-                        <a href="https://jquery.com">jQuery</a>,
-                        <a href="https://tailwindcss.com">Tailwind CSS</a>,
-                        <a href="https://fonts.google.com/noto/specimen/Noto+Serif+Display">Noto Serif Display</a>,
-                        <a href="https://fonts.google.com/noto/specimen/Noto+Sans">Noto Sans</a>,
-                        <a href="https://iconsvg.xyz">IconSVG</a>,
-                        <a href="https://tarekraafat.github.io/autoComplete.js/#/">autocomplete.js</a>.
-                        <a href="https://github.com/Suyooo/ll-heardle">Check out the source code here!</a>
-                    </p>
-                    <p class="text-xs text-custom-line">
-                        Love Live! and all music, album art, and project/group names are copyrighted: ©PL! ©PL!S ©PL!N
-                        ©PL!SP ©PL!HS ©PL!SIM ©YHN ©IKZL ©SUNRISE ©bushiroad<br />
-                        This is a not-for-profit fan project, and unaffiliated with any of the projects or companies
-                        above. No challenge to copyright is intended.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div id="modal-announce" class="hidden modal max-w-screen-xs w-full mx-auto top-20 relative rounded-sm"
-             role="dialog" aria-modal="true">
-            <div class="bg-custom-bg border border-custom-mg p-6">
-                <div class="flex items-center justify-center mb-6">
-                    <div class="flex-1 pl-7">
-                        <h2 class="text-sm text-center uppercase text-custom-line font-semibold tracking-widest">
-                            News</h2>
-                    </div>
-                    <div class="close-modals justify-self-end flex">
-                        <button class="border-none text-custom-mg" aria-label="Close Dialog">
-                            <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                 role="img" aria-hidden="true">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="text">
-                    <h2 id="modal-announcetitle" class="text-custom-positive uppercase tracking-widest font-bold"></h2>
-                    <p id="modal-announcedate" class="text-custom-line text-xs mb-3 px-3"></p>
-                    <p id="modal-announcetext" class="max-h-50 overflow-auto text-justify px-3 text-sm"></p>
-                </div>
-            </div>
-        </div>
-        <div id="modal-stats" class="hidden modal max-w-screen-xs w-full mx-auto top-20 relative rounded-sm"
-             role="dialog" aria-modal="true">
-            <div class="bg-custom-bg border border-custom-mg p-6">
-                <div class="flex items-center justify-center mb-6">
-                    <div class="flex-1 pl-7">
-                        <h2 class="text-sm text-center uppercase text-custom-line font-semibold tracking-widest">
-                            Stats</h2>
-                    </div>
-                    <div class="close-modals justify-self-end flex">
-                        <button autofocus="" class="border-none text-custom-mg" aria-label="Close Dialog">
-                            <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                 role="img" aria-hidden="true">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div id="modal-stats-barcontainer" class="flex justify-between py-3">
-                    <div class="flex flex-col items-stretch">
-                        <div class="h-32 relative w-9 flex justify-center items-end">
-                            <div class="absolute w-6 bg-custom-mg border-b border-custom-mg">
-                                <span class="absolute top-m-4 left-50-p text-xs transform transform-x-m-50"></span>
-                            </div>
-                        </div>
-                        <div class="text-center text-xs pt-1 text-custom-fg">
-                            <span>1°</span>
-                        </div>
-                    </div>
-                    <div class="flex flex-col items-stretch">
-                        <div class="h-32 relative w-9 flex justify-center items-end">
-                            <div class="absolute w-6 bg-custom-mg border-b border-custom-mg">
-                                <span class="absolute top-m-4 left-50-p text-xs transform transform-x-m-50"></span>
-                            </div>
-                        </div>
-                        <div class="text-center text-xs pt-1 text-custom-fg">
-                            <span>2°</span>
-                        </div>
-                    </div>
-                    <div class="flex flex-col items-stretch">
-                        <div class="h-32 relative w-9 flex justify-center items-end">
-                            <div class="absolute w-6 bg-custom-mg border-b border-custom-mg">
-                                <span class="absolute top-m-4 left-50-p text-xs transform transform-x-m-50"></span>
-                            </div>
-                        </div>
-                        <div class="text-center text-xs pt-1 text-custom-fg">
-                            <span>3°</span>
-                        </div>
-                    </div>
-                    <div class="flex flex-col items-stretch">
-                        <div class="h-32 relative w-9 flex justify-center items-end">
-                            <div class="absolute w-6 bg-custom-mg border-b border-custom-mg">
-                                <span class="absolute top-m-4 left-50-p text-xs transform transform-x-m-50"></span>
-                            </div>
-                        </div>
-                        <div class="text-center text-xs pt-1 text-custom-fg">
-                            <span>4°</span>
-                        </div>
-                    </div>
-                    <div class="flex flex-col items-stretch">
-                        <div class="h-32 relative w-9 flex justify-center items-end">
-                            <div class="absolute w-6 bg-custom-mg border-b border-custom-mg">
-                                <span class="absolute top-m-4 left-50-p text-xs transform transform-x-m-50"></span>
-                            </div>
-                        </div>
-                        <div class="text-center text-xs pt-1 text-custom-fg">
-                            <span>5°</span>
-                        </div>
-                    </div>
-                    <div class="flex flex-col items-stretch">
-                        <div class="h-32 relative w-9 flex justify-center items-end">
-                            <div class="absolute w-6 bg-custom-mg border-b border-custom-mg">
-                                <span class="absolute top-m-4 left-50-p text-xs transform transform-x-m-50"></span>
-                            </div>
-                        </div>
-                        <div class="text-center text-xs pt-1 text-custom-fg">
-                            <span>6°</span>
-                        </div>
-                    </div>
-                    <div class="flex flex-col items-stretch">
-                        <div class="h-32 relative w-9 flex justify-center items-end">
-                            <div class="absolute w-6 bg-custom-mg border-b border-custom-mg">
-                                <span class="absolute top-m-4 left-50-p text-xs transform transform-x-m-50"></span>
-                            </div>
-                        </div>
-                        <div class="text-center text-xs pt-1 text-custom-fg">
-                            <svg class="mx-auto" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                 stroke-linecap="round" stroke-linejoin="round"
-                                 role="img" aria-hidden="true">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex justify-between text-center w-full py-3">
-                    <div class="flex-1">
-                        <div id="modal-stats-viewed" class="text-xl font-semibold"></div>
-                        <div class="text-custom-line text-sm ">Played</div>
-                    </div>
-                    <div class="flex-1">
-                        <div id="modal-stats-cleared" class="text-xl font-semibold"></div>
-                        <div class="text-custom-line text-sm ">Won</div>
-                    </div>
-                    <div class="flex-1">
-                        <div id="modal-stats-winrate" class="text-xl font-semibold"></div>
-                        <div class="text-custom-line text-sm">Win rate</div>
-                    </div>
-                </div>
-                <div class="flex justify-between text-center w-full py-3 pt-0">
-                    <div class="flex-1">
-                        <div id="modal-stats-currentstreak" class="text-xl font-semibold"></div>
-                        <div class="text-custom-line text-sm">Current Streak</div>
-                    </div>
-                    <div class="flex-1">
-                        <div id="modal-stats-higheststreak" class="text-xl font-semibold"></div>
-                        <div class="text-custom-line text-sm">Highest Streak</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="modal-help" class="hidden modal max-w-screen-xs w-full mx-auto top-20 relative rounded-sm"
-             role="dialog" aria-modal="true">
-            <div class="bg-custom-bg border border-custom-mg p-6">
-                <div class="flex items-center justify-center mb-6">
-                    <div class="flex-1 pl-7">
-                        <h2 class="text-sm text-center uppercase text-custom-line font-semibold tracking-widest">How To
-                            Play</h2>
-                    </div>
-                    <div class="justify-self-end flex">
-                        <button class="close-modals border-none text-custom-mg" aria-label="Close Dialog">
-                            <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                 role="img" aria-hidden="true">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div>
-                    <div class="flex items-center mb-6">
-                        <div class="mr-4 w-8 text-custom-line">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                 stroke="currentColor" role="img" aria-hidden="true"
-                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7">
-                                <circle cx="5.5" cy="17.5" r="2.5"></circle>
-                                <circle cx="17.5" cy="15.5" r="2.5"></circle>
-                                <path d="M8 17V5l12-2v12"></path>
-                            </svg>
-                        </div>
-                        <div><p>Listen to the intro, then find the correct Love Live<span aria-hidden="true">!</span> song in the list.</p></div>
-                    </div>
-                    <div class="flex items-center mb-6">
-                        <div class="mr-4 w-8 text-custom-line">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                 stroke="currentColor" role="img" aria-hidden="true"
-                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7">
-                                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                            </svg>
-                        </div>
-                        <div><p>Skipped or incorrect attempts unlock more of the intro!</p></div>
-                    </div>
-                    <div class="flex items-center mb-6">
-                        <div class="mr-4 w-8 text-custom-line">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                 stroke="currentColor" role="img" aria-hidden="true"
-                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7">
-                                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
-                            </svg>
-                        </div>
-                        <div><p>Answer in as few tries as possible and share your score!</p></div>
-                    </div>
-                    <div class="justify-center flex py-2 mt-2">
-                        <button class="close-modals px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white bg-custom-positive">
-                            Play
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="fadeout" class="bg-custom-bg absolute left-0 top-0 w-full h-full z-10000 flex flex-col justify-center">
-        <noscript><span class="w-full text-center font-bold">This site requires Javascript to be enabled.</span>
-        </noscript>
-        <span id="fadeouttext" class="hidden w-full text-center font-bold">loading...</span>
-        <span id="fadeoutwarning" class="hidden w-full text-center text-xs">
-            This is taking longer than it should. Maybe try refreshing?<br>
-            You can also contact <a href="https://suyo.be" target="_blank">Suyooo</a> if you feel like there's an error on our side.
-        </span>
-    </div>
-</main>
-<script>
-    function loadScript(src) {
-        let script = document.createElement('script');
-        script.src = src;
-        script.async = false;
-        document.body.append(script);
-    }
+							<p class="text-xs mb-3 text-custom-line">
+								Created using <a href="https://jquery.com">jQuery</a>,
+								<a href="https://tailwindcss.com">Tailwind CSS</a>,
+								<a href="https://fonts.google.com/noto/specimen/Noto+Serif+Display">Noto Serif Display</a>,
+								<a href="https://fonts.google.com/noto/specimen/Noto+Sans">Noto Sans</a>,
+								<a href="https://iconsvg.xyz">IconSVG</a>,
+								<a href="https://tarekraafat.github.io/autoComplete.js/#/">autocomplete.js</a>.
+								<a href="https://github.com/Suyooo/ll-heardle">Check out the source code here!</a>
+							</p>
+							<p class="text-xs text-custom-line">
+								Love Live! and all music, album art, and project/group names are copyrighted: ©PL! ©PL!S ©PL!N
+								©PL!SP ©PL!HS ©PL!SIM ©YHN ©IKZL ©SUNRISE ©bushiroad<br />
+								This is a not-for-profit fan project, and unaffiliated with any of the projects or companies above. No
+								challenge to copyright is intended.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div
+					id="modal-announce"
+					class="hidden modal max-w-screen-xs w-full mx-auto top-20 relative rounded-sm"
+					role="dialog"
+					aria-modal="true"
+				>
+					<div class="bg-custom-bg border border-custom-mg p-6">
+						<div class="flex items-center justify-center mb-6">
+							<div class="flex-1 pl-7">
+								<h2 class="text-sm text-center uppercase text-custom-line font-semibold tracking-widest">News</h2>
+							</div>
+							<div class="close-modals justify-self-end flex">
+								<button class="border-none text-custom-mg" aria-label="Close Dialog">
+									<svg
+										class="w-7 h-7"
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										role="img"
+										aria-hidden="true"
+									>
+										<line x1="18" y1="6" x2="6" y2="18"></line>
+										<line x1="6" y1="6" x2="18" y2="18"></line>
+									</svg>
+								</button>
+							</div>
+						</div>
+						<div class="text">
+							<h2 id="modal-announcetitle" class="text-custom-positive uppercase tracking-widest font-bold"></h2>
+							<p id="modal-announcedate" class="text-custom-line text-xs mb-3 px-3"></p>
+							<p id="modal-announcetext" class="max-h-50 overflow-auto text-justify px-3 text-sm"></p>
+						</div>
+					</div>
+				</div>
+				<div
+					id="modal-stats"
+					class="hidden modal max-w-screen-xs w-full mx-auto top-20 relative rounded-sm"
+					role="dialog"
+					aria-modal="true"
+				>
+					<div class="bg-custom-bg border border-custom-mg p-6">
+						<div class="flex items-center justify-center mb-6">
+							<div class="flex-1 pl-7">
+								<h2 class="text-sm text-center uppercase text-custom-line font-semibold tracking-widest">Stats</h2>
+							</div>
+							<div class="close-modals justify-self-end flex">
+								<button autofocus="" class="border-none text-custom-mg" aria-label="Close Dialog">
+									<svg
+										class="w-7 h-7"
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										role="img"
+										aria-hidden="true"
+									>
+										<line x1="18" y1="6" x2="6" y2="18"></line>
+										<line x1="6" y1="6" x2="18" y2="18"></line>
+									</svg>
+								</button>
+							</div>
+						</div>
+						<div id="modal-stats-barcontainer" class="flex justify-between py-3">
+							<div class="flex flex-col items-stretch">
+								<div class="h-32 relative w-9 flex justify-center items-end">
+									<div class="absolute w-6 bg-custom-mg border-b border-custom-mg">
+										<span class="absolute top-m-4 left-50-p text-xs transform transform-x-m-50"></span>
+									</div>
+								</div>
+								<div class="text-center text-xs pt-1 text-custom-fg">
+									<span>1°</span>
+								</div>
+							</div>
+							<div class="flex flex-col items-stretch">
+								<div class="h-32 relative w-9 flex justify-center items-end">
+									<div class="absolute w-6 bg-custom-mg border-b border-custom-mg">
+										<span class="absolute top-m-4 left-50-p text-xs transform transform-x-m-50"></span>
+									</div>
+								</div>
+								<div class="text-center text-xs pt-1 text-custom-fg">
+									<span>2°</span>
+								</div>
+							</div>
+							<div class="flex flex-col items-stretch">
+								<div class="h-32 relative w-9 flex justify-center items-end">
+									<div class="absolute w-6 bg-custom-mg border-b border-custom-mg">
+										<span class="absolute top-m-4 left-50-p text-xs transform transform-x-m-50"></span>
+									</div>
+								</div>
+								<div class="text-center text-xs pt-1 text-custom-fg">
+									<span>3°</span>
+								</div>
+							</div>
+							<div class="flex flex-col items-stretch">
+								<div class="h-32 relative w-9 flex justify-center items-end">
+									<div class="absolute w-6 bg-custom-mg border-b border-custom-mg">
+										<span class="absolute top-m-4 left-50-p text-xs transform transform-x-m-50"></span>
+									</div>
+								</div>
+								<div class="text-center text-xs pt-1 text-custom-fg">
+									<span>4°</span>
+								</div>
+							</div>
+							<div class="flex flex-col items-stretch">
+								<div class="h-32 relative w-9 flex justify-center items-end">
+									<div class="absolute w-6 bg-custom-mg border-b border-custom-mg">
+										<span class="absolute top-m-4 left-50-p text-xs transform transform-x-m-50"></span>
+									</div>
+								</div>
+								<div class="text-center text-xs pt-1 text-custom-fg">
+									<span>5°</span>
+								</div>
+							</div>
+							<div class="flex flex-col items-stretch">
+								<div class="h-32 relative w-9 flex justify-center items-end">
+									<div class="absolute w-6 bg-custom-mg border-b border-custom-mg">
+										<span class="absolute top-m-4 left-50-p text-xs transform transform-x-m-50"></span>
+									</div>
+								</div>
+								<div class="text-center text-xs pt-1 text-custom-fg">
+									<span>6°</span>
+								</div>
+							</div>
+							<div class="flex flex-col items-stretch">
+								<div class="h-32 relative w-9 flex justify-center items-end">
+									<div class="absolute w-6 bg-custom-mg border-b border-custom-mg">
+										<span class="absolute top-m-4 left-50-p text-xs transform transform-x-m-50"></span>
+									</div>
+								</div>
+								<div class="text-center text-xs pt-1 text-custom-fg">
+									<svg
+										class="mx-auto"
+										xmlns="http://www.w3.org/2000/svg"
+										width="16"
+										height="16"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										role="img"
+										aria-hidden="true"
+									>
+										<line x1="18" y1="6" x2="6" y2="18"></line>
+										<line x1="6" y1="6" x2="18" y2="18"></line>
+									</svg>
+								</div>
+							</div>
+						</div>
+						<div class="flex justify-between text-center w-full py-3">
+							<div class="flex-1">
+								<div id="modal-stats-viewed" class="text-xl font-semibold"></div>
+								<div class="text-custom-line text-sm">Played</div>
+							</div>
+							<div class="flex-1">
+								<div id="modal-stats-cleared" class="text-xl font-semibold"></div>
+								<div class="text-custom-line text-sm">Won</div>
+							</div>
+							<div class="flex-1">
+								<div id="modal-stats-winrate" class="text-xl font-semibold"></div>
+								<div class="text-custom-line text-sm">Win rate</div>
+							</div>
+						</div>
+						<div class="flex justify-between text-center w-full py-3 pt-0">
+							<div class="flex-1">
+								<div id="modal-stats-currentstreak" class="text-xl font-semibold"></div>
+								<div class="text-custom-line text-sm">Current Streak</div>
+							</div>
+							<div class="flex-1">
+								<div id="modal-stats-higheststreak" class="text-xl font-semibold"></div>
+								<div class="text-custom-line text-sm">Highest Streak</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div
+					id="modal-help"
+					class="hidden modal max-w-screen-xs w-full mx-auto top-20 relative rounded-sm"
+					role="dialog"
+					aria-modal="true"
+				>
+					<div class="bg-custom-bg border border-custom-mg p-6">
+						<div class="flex items-center justify-center mb-6">
+							<div class="flex-1 pl-7">
+								<h2 class="text-sm text-center uppercase text-custom-line font-semibold tracking-widest">
+									How To Play
+								</h2>
+							</div>
+							<div class="justify-self-end flex">
+								<button class="close-modals border-none text-custom-mg" aria-label="Close Dialog">
+									<svg
+										class="w-7 h-7"
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										role="img"
+										aria-hidden="true"
+									>
+										<line x1="18" y1="6" x2="6" y2="18"></line>
+										<line x1="6" y1="6" x2="18" y2="18"></line>
+									</svg>
+								</button>
+							</div>
+						</div>
+						<div>
+							<div class="flex items-center mb-6">
+								<div class="mr-4 w-8 text-custom-line">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										role="img"
+										aria-hidden="true"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										class="h-7 w-7"
+									>
+										<circle cx="5.5" cy="17.5" r="2.5"></circle>
+										<circle cx="17.5" cy="15.5" r="2.5"></circle>
+										<path d="M8 17V5l12-2v12"></path>
+									</svg>
+								</div>
+								<div>
+									<p>
+										Listen to the intro, then find the correct Love Live<span aria-hidden="true">!</span> song in the
+										list.
+									</p>
+								</div>
+							</div>
+							<div class="flex items-center mb-6">
+								<div class="mr-4 w-8 text-custom-line">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										role="img"
+										aria-hidden="true"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										class="h-7 w-7"
+									>
+										<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+										<path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+									</svg>
+								</div>
+								<div><p>Skipped or incorrect attempts unlock more of the intro!</p></div>
+							</div>
+							<div class="flex items-center mb-6">
+								<div class="mr-4 w-8 text-custom-line">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										role="img"
+										aria-hidden="true"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										class="h-7 w-7"
+									>
+										<path
+											d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+										></path>
+									</svg>
+								</div>
+								<div><p>Answer in as few tries as possible and share your score!</p></div>
+							</div>
+							<div class="justify-center flex py-2 mt-2">
+								<button
+									class="close-modals px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm text-white bg-custom-positive"
+								>
+									Play
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="fadeout" class="bg-custom-bg absolute left-0 top-0 w-full h-full z-10000 flex flex-col justify-center">
+				<noscript
+					><span class="w-full text-center font-bold">This site requires Javascript to be enabled.</span>
+				</noscript>
+				<span id="fadeouttext" class="hidden w-full text-center font-bold">loading...</span>
+				<span id="fadeoutwarning" class="hidden w-full text-center text-xs">
+					This is taking longer than it should. Maybe try refreshing?<br />
+					You can also contact <a href="https://suyo.be" target="_blank">Suyooo</a> if you feel like there's an error on
+					our side.
+				</span>
+			</div>
+		</main>
+		<script>
+			function loadScript(src) {
+				let script = document.createElement("script");
+				script.src = src;
+				script.async = false;
+				document.body.append(script);
+			}
 
-    setTimeout(() => document.getElementById("fadeouttext").style.display = "block", 5000);
-    setTimeout(() => document.getElementById("fadeoutwarning").style.display = "block", 20000);
-    loadScript("/dependencies/jquery/jquery.min.js");
-    loadScript("/dependencies/autoComplete/autoComplete.min.js");
-    loadScript("/js/info.min.js");
-    loadScript("/js/bundle.min.js");
-</script>
-</body>
+			setTimeout(() => (document.getElementById("fadeouttext").style.display = "block"), 5000);
+			setTimeout(() => (document.getElementById("fadeoutwarning").style.display = "block"), 20000);
+			loadScript("/dependencies/jquery/jquery.min.js");
+			loadScript("/dependencies/autoComplete/autoComplete.min.js");
+			loadScript("/js/info.min.js");
+			loadScript("/js/bundle.min.js");
+		</script>
+	</body>
 </html>

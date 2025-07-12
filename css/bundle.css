@@ -15,16 +15,8 @@ html {
 }
 body {
 	margin: 0;
-	font-family:
-		system-ui,
-		-apple-system,
-		/* Firefox supports this but not yet `system-ui` */ "Segoe UI",
-		Roboto,
-		Helvetica,
-		Arial,
-		sans-serif,
-		"Apple Color Emoji",
-		"Segoe UI Emoji";
+	font-family: system-ui, -apple-system, /* Firefox supports this but not yet `system-ui` */ "Segoe UI", Roboto,
+		Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 	line-height: inherit;
 }
 hr {
@@ -151,15 +143,12 @@ fieldset {
 }
 ol,
 ul {
-	list-style: none;
+	list-style: disc;
 	margin: 0;
 	padding: 0;
 }
 html {
-	font-family:
-		Noto Sans,
-		ui-sans-serif,
-		system-ui;
+	font-family: Noto Sans, ui-sans-serif, system-ui;
 	line-height: 1.5;
 }
 *,
@@ -668,10 +657,7 @@ video {
 	text-align: justify;
 }
 .font-serif {
-	font-family:
-		Noto Serif Display,
-		ui-serif,
-		Georgia;
+	font-family: Noto Serif Display, ui-serif, Georgia;
 }
 .text-xs {
 	font-size: 0.75rem;

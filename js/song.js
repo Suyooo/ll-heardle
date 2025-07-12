@@ -4,14 +4,8 @@
 
 // Figure out the current day
 const MS_PER_DAY = 1000 * 60 * 60 * 24;
-const NOW_DATE = new Date();
 const FIRST_DAY_DATE = new Date(FIRST_DAY_TIME);
-const CURRENT_DAY =
-	Math.round(
-		(Date.UTC(NOW_DATE.getFullYear(), NOW_DATE.getMonth(), NOW_DATE.getDate()) -
-			Date.UTC(FIRST_DAY_DATE.getFullYear(), FIRST_DAY_DATE.getMonth(), FIRST_DAY_DATE.getDate())) /
-			MS_PER_DAY
-	) + 1;
+const CURRENT_DAY = Math.floor((Date.now() - FIRST_DAY_TIME) / MS_PER_DAY) + 1;
 
 // CHECKPOINT: A continious chain of 100 heardles here means that the reroll check doesn't have to go back all the way
 // to the start to generate today's heardle.

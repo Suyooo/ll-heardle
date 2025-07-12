@@ -114,12 +114,9 @@ function reveal(success) {
 			$element.addClass("bg-custom-mg");
 		}
 	});
-	const nextDayTime = Date.UTC(
-		FIRST_DAY_DATE.getFullYear(),
-		FIRST_DAY_DATE.getMonth(),
-		FIRST_DAY_DATE.getDate() + CURRENT_DAY
-	);
-	console.log(nextDayTime);
+	const nextDayDate = new Date(FIRST_DAY_TIME);
+	nextDayDate.setDate(nextDayDate.getDate() + CURRENT_DAY);
+	const nextDayTime = nextDayDate.getTime();
 	updateResultTimer(nextDayTime);
 	setInterval(updateResultTimer.bind(this, nextDayTime), 1000);
 
@@ -131,10 +128,7 @@ function reveal(success) {
 }
 
 function updateResultTimer(target) {
-	const now = new Date();
-	const msLeft =
-		target -
-		Date.UTC(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), now.getMinutes(), now.getSeconds());
+	const msLeft = target - Date.now();
 	if (msLeft <= 0) {
 		$resulttimer.text("NOW! (refresh the page)");
 	} else {

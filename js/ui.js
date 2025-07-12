@@ -80,11 +80,11 @@ function reveal(success) {
 	$clearmessage.text(success ? "You got it!" : "Too bad...");
 
 	$resultmessage.html(
-		success ?
-			'You got today\'s Love Live<span aria-hidden="true">!</span> Heardle within ' +
-				LENGTHS[CURRENT_PLAY_STATE.failed] +
-				(LENGTHS[CURRENT_PLAY_STATE.failed] === 1 ? " second!" : " seconds!")
-		:	"You didn't get today's Love Live<span aria-hidden=\"true\">!</span> Heardle. Better luck tomorrow!"
+		success
+			? 'You got today\'s Love Live<span aria-hidden="true">!</span> Heardle within ' +
+					LENGTHS[CURRENT_PLAY_STATE.failed] +
+					(LENGTHS[CURRENT_PLAY_STATE.failed] === 1 ? " second!" : " seconds!")
+			: "You didn't get today's Love Live<span aria-hidden=\"true\">!</span> Heardle. Better luck tomorrow!"
 	);
 	$resultsongbox.addClass(success ? "bg-custom-positive" : "bg-custom-mg");
 	if (CURRENT_HEARDLE.coverUrl === "") {
@@ -114,9 +114,12 @@ function reveal(success) {
 			$element.addClass("bg-custom-mg");
 		}
 	});
-	const nextDayDate = new Date(FIRST_DAY_TIME);
-	nextDayDate.setDate(nextDayDate.getDate() + CURRENT_DAY);
-	const nextDayTime = nextDayDate.getTime();
+	const nextDayTime = Date.UTC(
+		FIRST_DAY_DATE.getFullYear(),
+		FIRST_DAY_DATE.getMonth(),
+		FIRST_DAY_DATE.getDate() + CURRENT_DAY
+	);
+	console.log(nextDayTime);
 	updateResultTimer(nextDayTime);
 	setInterval(updateResultTimer.bind(this, nextDayTime), 1000);
 
@@ -128,7 +131,10 @@ function reveal(success) {
 }
 
 function updateResultTimer(target) {
-	const msLeft = target - Date.now();
+	const now = new Date();
+	const msLeft =
+		target -
+		Date.UTC(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), now.getMinutes(), now.getSeconds());
 	if (msLeft <= 0) {
 		$resulttimer.text("NOW! (refresh the page)");
 	} else {

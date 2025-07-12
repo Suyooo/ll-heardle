@@ -20,7 +20,7 @@ Thanks for playing <i>Love Live! Heardle</i>!<br>
 <h3 class="text-custom-positive uppercase tracking-widest font-bold">Changelog</h3>
 <br>
 <b>July 12th, 2025</b>
-<ul>
+<ul class="list">
 <li>Fixed some timezone weirdness. If you live in UTC -x timezones, you might not be getting a new Heardle today - sorry
 about that! But from now on, your Heardles should reset at your local midnight and match with other players.</li>
 <li>Fixed the reset time countdown counting down to something that is not the reset time.</li>

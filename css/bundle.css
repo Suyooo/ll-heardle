@@ -143,9 +143,15 @@ fieldset {
 }
 ol,
 ul {
-	list-style: disc;
-	margin: 0;
+	list-style: none;
+	margin-left: 0;
 	padding: 0;
+}
+ol.list,
+ul.list {
+	list-style: disc;
+	margin-left: 1em;
+	margin-top: 0;
 }
 html {
 	font-family: Noto Sans, ui-sans-serif, system-ui;

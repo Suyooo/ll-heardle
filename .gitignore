@@ -1,5 +1,6 @@
-.htaccess
-files
-scripts
 build
 node_modules
+scripts/.venv
+scripts/songpool.json
+songs
+covers

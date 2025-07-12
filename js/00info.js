@@ -5526,7 +5526,7 @@ const SONGPOOL = [
 		artistJa: "高海千歌 (CV.伊波杏樹)",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/7Cr3DaArhpgfTrirPiNikf",
-			youtube: "https://www.youtube.com/watch?v=EhyMWEW1RxU",
+			youtube: "https://www.youtube.com/watch?v=XRw3JQI-ql0",
 		},
 	},
 	{
@@ -5685,7 +5685,7 @@ const SONGPOOL = [
 		artistJa: "桜内梨子 (CV.逢田梨香子)",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/3RS9vKkGpHczl1jXAXq0k4",
-			youtube: "https://www.youtube.com/watch?v=0aSUGXPeW7w",
+			youtube: "https://www.youtube.com/watch?v=iNU2jsT__pI",
 		},
 	},
 	{
@@ -5698,7 +5698,7 @@ const SONGPOOL = [
 		artistJa: "黒澤ルビィ (CV.降幡 愛)",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/2lR7tmZ6VqMYzBvv2XKhiN",
-			youtube: "https://www.youtube.com/watch?v=mGTymSZargU",
+			youtube: "https://www.youtube.com/watch?v=I3Et6X1vnqY",
 		},
 	},
 	{
@@ -6025,7 +6025,7 @@ const SONGPOOL = [
 		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/61KNN1WWCUEFFH5h59qd9q",
-			youtube: "https://www.youtube.com/watch?v=pFA9b7PkCOQ",
+			youtube: "https://www.youtube.com/watch?v=3EWpPP5d2zU",
 		},
 	},
 	{
@@ -6038,7 +6038,7 @@ const SONGPOOL = [
 		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/5aWKHY8SI52dN1xKApx7RD",
-			youtube: "https://www.youtube.com/watch?v=Jqmyvux-ztY",
+			youtube: "https://www.youtube.com/watch?v=E81kCmanMUs",
 		},
 	},
 	{
@@ -6051,7 +6051,7 @@ const SONGPOOL = [
 		artistJa: "スリーズブーケ",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/1ZTCKDuj8qf6ItRQC3MLxr",
-			youtube: "https://www.youtube.com/watch?v=xt8pJ4riNA0",
+			youtube: "https://www.youtube.com/watch?v=eyZToz8APoA",
 		},
 	},
 	{
@@ -6064,7 +6064,7 @@ const SONGPOOL = [
 		artistJa: "DOLLCHESTRA",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/1Spe8gvGG2KJlWlKc7z8wP",
-			youtube: "https://www.youtube.com/watch?v=7mxDqSZH-sA",
+			youtube: "https://www.youtube.com/watch?v=bR35CFImmgI",
 		},
 	},
 	{
@@ -6077,7 +6077,7 @@ const SONGPOOL = [
 		artistJa: "みらくらぱーく！",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/7drRBmRxfO56CTK1UjOfUo",
-			youtube: "https://www.youtube.com/watch?v=5TXxIDBRPEI",
+			youtube: "https://www.youtube.com/watch?v=8N7qPnMR79Q",
 		},
 	},
 	{
@@ -6090,7 +6090,7 @@ const SONGPOOL = [
 		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/6ImIP53PHXFcpYJJxmU9rx",
-			youtube: "https://www.youtube.com/watch?v=hcYTaeVWGgs",
+			youtube: "https://www.youtube.com/watch?v=OETBB1AUUBA",
 		},
 	},
 	{
@@ -6103,7 +6103,7 @@ const SONGPOOL = [
 		artistJa: "スリーズブーケ",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/6a4eCfuob5gA5S7fyHkcPo",
-			youtube: "https://www.youtube.com/watch?v=bL35w4BmqbU",
+			youtube: "https://www.youtube.com/watch?v=eKSKavz2DcQ",
 		},
 	},
 	{
@@ -6117,7 +6117,7 @@ const SONGPOOL = [
 		artistJa: "スリーズブーケ",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/14Psf2FqhXX29QRDrsVoLG",
-			youtube: "https://www.youtube.com/watch?v=vdEfvaQchKk",
+			youtube: "https://www.youtube.com/watch?v=uhfAutOwebs",
 		},
 	},
 	{
@@ -6130,7 +6130,7 @@ const SONGPOOL = [
 		artistJa: "スリーズブーケ",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/7yOts7itNrqxAMwuI7T8Dv",
-			youtube: "https://www.youtube.com/watch?v=GD6a1gH-Ue0",
+			youtube: "https://www.youtube.com/watch?v=esfBOY0sbgA",
 		},
 	},
 	{
@@ -6143,7 +6143,7 @@ const SONGPOOL = [
 		artistJa: "DOLLCHESTRA",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/5L2Gqb8YpMytGYjbSDiWXG",
-			youtube: "https://www.youtube.com/watch?v=jH7ioKohWSQ",
+			youtube: "https://www.youtube.com/watch?v=RiSVzGsyZaY",
 		},
 	},
 	{
@@ -6156,7 +6156,7 @@ const SONGPOOL = [
 		artistJa: "DOLLCHESTRA",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/0XYtyqKNKs02zdE4GpwezG",
-			youtube: "https://www.youtube.com/watch?v=kdVlX5MN1CM",
+			youtube: "https://www.youtube.com/watch?v=X3l5zagl1W8",
 		},
 	},
 	{
@@ -6169,7 +6169,7 @@ const SONGPOOL = [
 		artistJa: "DOLLCHESTRA",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/1PkLEEu6iuM5dhqcJYJyPD",
-			youtube: "https://www.youtube.com/watch?v=jbkbdCtyTJE",
+			youtube: "https://www.youtube.com/watch?v=PdqCKZykeMY",
 		},
 	},
 	{
@@ -6182,7 +6182,7 @@ const SONGPOOL = [
 		artistJa: "スリーズブーケ",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/2rU91dQvA1sROjRwzwvHGx",
-			youtube: "https://www.youtube.com/watch?v=2bmCAQkcZgk",
+			youtube: "https://www.youtube.com/watch?v=lSOw23p1sEs",
 		},
 	},
 	{
@@ -6195,7 +6195,7 @@ const SONGPOOL = [
 		artistJa: "DOLLCHESTRA",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/741TrQhP4jBQsS1uGBaFiX",
-			youtube: "https://www.youtube.com/watch?v=E6cz82WKIEc",
+			youtube: "https://www.youtube.com/watch?v=-ShXD9TpP_8",
 		},
 	},
 	{
@@ -6208,7 +6208,7 @@ const SONGPOOL = [
 		artistJa: "スリーズブーケ",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/56hreyBUabzSo4T4k3vrHe",
-			youtube: "https://www.youtube.com/watch?v=dSeW7qZuMl0",
+			youtube: "https://www.youtube.com/watch?v=6q3bT34uW10",
 		},
 	},
 	{
@@ -6221,7 +6221,7 @@ const SONGPOOL = [
 		artistJa: "DOLLCHESTRA",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/38VKbksS3bJAa46hQtgP6a",
-			youtube: "https://www.youtube.com/watch?v=Son91mCRRWM",
+			youtube: "https://www.youtube.com/watch?v=xG-DnVheJ5c",
 		},
 	},
 	{
@@ -6234,7 +6234,7 @@ const SONGPOOL = [
 		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/1Yt6acUiarfV1HjLlF3zz0",
-			youtube: "https://www.youtube.com/watch?v=WrNSHEgmt3g",
+			youtube: "https://www.youtube.com/watch?v=0WBC4Lg-EtA",
 		},
 	},
 	{
@@ -6247,7 +6247,7 @@ const SONGPOOL = [
 		artistJa: "スリーズブーケ",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/081HuW1codiQaNs0vZqzap",
-			youtube: "https://www.youtube.com/watch?v=Fka-LXn0WgE",
+			youtube: "https://www.youtube.com/watch?v=1vVZiDRjBj4",
 		},
 	},
 	{
@@ -6260,7 +6260,7 @@ const SONGPOOL = [
 		artistJa: "スリーズブーケ",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/3osragxx9xjtRomwMHfqPQ",
-			youtube: "https://www.youtube.com/watch?v=1uSVqpAdUPs",
+			youtube: "https://www.youtube.com/watch?v=ArxRK8_s5U0",
 		},
 	},
 	{
@@ -6274,7 +6274,7 @@ const SONGPOOL = [
 		artistJa: "DOLLCHESTRA",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/0uqpi08FsNbf2dnqHxuTJU",
-			youtube: "https://www.youtube.com/watch?v=C_vgcge9aHw",
+			youtube: "https://www.youtube.com/watch?v=gduipbQuBaw",
 		},
 	},
 	{
@@ -6287,7 +6287,7 @@ const SONGPOOL = [
 		artistJa: "DOLLCHESTRA",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/1TxcAEqcxFdsvQwbgavbbw",
-			youtube: "https://www.youtube.com/watch?v=Z0NHCaNbAYc",
+			youtube: "https://www.youtube.com/watch?v=gSM3IxZSzBw",
 		},
 	},
 	{
@@ -6300,7 +6300,7 @@ const SONGPOOL = [
 		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/1TxcAEqcxFdsvQwbgavbbw",
-			youtube: "https://www.youtube.com/watch?v=9unBx6g1BH8",
+			youtube: "https://www.youtube.com/watch?v=2UP2M_OiBWI",
 		},
 	},
 	{
@@ -6313,7 +6313,7 @@ const SONGPOOL = [
 		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/1TxcAEqcxFdsvQwbgavbbw",
-			youtube: "https://www.youtube.com/watch?v=GRnf3OQUjt8",
+			youtube: "https://www.youtube.com/watch?v=UFyo0W_V81s",
 		},
 	},
 	{
@@ -6327,7 +6327,7 @@ const SONGPOOL = [
 		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/1TxcAEqcxFdsvQwbgavbbw",
-			youtube: "https://www.youtube.com/watch?v=6gPuvbfYHWc",
+			youtube: "https://www.youtube.com/watch?v=NY4c2TfMRDs",
 		},
 	},
 	{
@@ -6340,7 +6340,7 @@ const SONGPOOL = [
 		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/1TxcAEqcxFdsvQwbgavbbw",
-			youtube: "https://www.youtube.com/watch?v=1W_m5py0egM",
+			youtube: "https://www.youtube.com/watch?v=eew2gzavZgE",
 		},
 	},
 	{
@@ -6353,7 +6353,7 @@ const SONGPOOL = [
 		artistJa: "スリーズブーケ",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/3osragxx9xjtRomwMHfqPQ",
-			youtube: "https://www.youtube.com/watch?v=yy-wVjE_7Y0",
+			youtube: "https://www.youtube.com/watch?v=gme_Ns-ceQ4",
 		},
 	},
 	{
@@ -6366,7 +6366,7 @@ const SONGPOOL = [
 		artistJa: "スリーズブーケ",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/3osragxx9xjtRomwMHfqPQ",
-			youtube: "https://www.youtube.com/watch?v=GwDIWuBT6G0",
+			youtube: "https://www.youtube.com/watch?v=ePMtIaRgfK8",
 		},
 	},
 	{
@@ -6380,7 +6380,7 @@ const SONGPOOL = [
 		artistJa: "DOLLCHESTRA",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/1TxcAEqcxFdsvQwbgavbbw",
-			youtube: "https://www.youtube.com/watch?v=FqYiECR1eq0",
+			youtube: "https://www.youtube.com/watch?v=AT-Jy5GyZXY",
 		},
 	},
 	{
@@ -6393,7 +6393,7 @@ const SONGPOOL = [
 		artistJa: "DOLLCHESTRA",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/1TxcAEqcxFdsvQwbgavbbw",
-			youtube: "https://www.youtube.com/watch?v=1cscakt1bHU",
+			youtube: "https://www.youtube.com/watch?v=9GSgpgQ07Og",
 		},
 	},
 	{
@@ -6407,7 +6407,7 @@ const SONGPOOL = [
 		artistJa: "みらくらぱーく！",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/7drRBmRxfO56CTK1UjOfUo",
-			youtube: "https://www.youtube.com/watch?v=7bqwkmQh8Zc",
+			youtube: "https://www.youtube.com/watch?v=ZvxsarVizSM",
 		},
 	},
 	{
@@ -6420,7 +6420,7 @@ const SONGPOOL = [
 		artistJa: "みらくらぱーく！",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/7drRBmRxfO56CTK1UjOfUo",
-			youtube: "https://www.youtube.com/watch?v=f2DQ5HJJ2c0",
+			youtube: "https://www.youtube.com/watch?v=I74xWNxq1HY",
 		},
 	},
 	{
@@ -6554,7 +6554,7 @@ const SONGPOOL = [
 		artistJa: "Aqours",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/6fg6hnVNpSgjacbtADgYoa",
-			youtube: "https://www.youtube.com/watch?v=pjgrQQZVeU4",
+			youtube: "https://www.youtube.com/watch?v=OYJPyOGgPWc",
 		},
 	},
 	{
@@ -6567,7 +6567,7 @@ const SONGPOOL = [
 		artistJa: "Aqours",
 		listenOn: {
 			spotify: "https://open.spotify.com/track/1q5rHGKMG2OvRhajoMFzwo",
-			youtube: "https://www.youtube.com/watch?v=WPMEbcdLQi4",
+			youtube: "https://www.youtube.com/watch?v=4UXmyfnHZeI",
 		},
 	},
 

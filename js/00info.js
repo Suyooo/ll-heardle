@@ -1,6 +1,6 @@
 const CURRENT_ANNOUNCEMENT = {
 	// Increase this number for every new announcement - this will be stored/checked for marking the button as unread or not
-	announcementNo: 1,
+	announcementNo: 2,
 
 	title: "And it's back again",
 	date: "July 9th, 2025",
@@ -8,13 +8,24 @@ const CURRENT_ANNOUNCEMENT = {
 	text: `Hello, everyone!<br>
 <br>
 With this, LL Heardle made it's second move. Sadly, we couldn't bring your save data along this time become of
-Glitch.com completly shuttering everything, so you'll have to start your streaks over from zero.<br>
+Glitch.com completly shuttering everything, so you'll have to start your streaks over from zero. Make sure to change
+your bookmarks if you have any, since the redirect from the old site will stop working at some point!<br>
 <br>
 I'm planning to clean up some stuff and bring the song list up to date over the next few weekends. In the meantime, you
 can play just like before! (And if you want to play more, allow me a little bit of a plug - you can also come try
 <a href="https://llalbum.suyo.be/">Guess That Album</a>!)<br>
 <br>
-Thanks for playing <i>Love Live! Heardle</i>!`,
+Thanks for playing <i>Love Live! Heardle</i>!<br>
+<br>
+<h3 class="text-custom-positive uppercase tracking-widest font-bold">Changelog</h3>
+<br>
+<b>July 12th, 2025</b>
+<ul>
+<li>Fixed some timezone weirdness. If you live in UTC -x timezones, you might not be getting a new Heardle today - sorry
+about that! But from now on, your Heardles should reset at your local midnight and match with other players.</li>
+<li>Fixed the reset time countdown counting down to something that is not the reset time.</li>
+<li>Replaced some YouTube URLs that linked to removed videos.</li>
+</ul>`,
 };
 
 /**
@@ -4647,7 +4658,7 @@ const SONGPOOL = [
 	},
 	{
 		songUrl: "",
-		coverUrl: "https://kachagain.com/mp3/06.%20%E5%A7%8B%E3%81%BE%E3%82%8A%E3%81%AF%E5%90%9B%E3%81%AE%E7%A9%BA.mp3",
+		coverUrl: "",
 		startOnDay: 999999,
 		titleEn: "Hajimari wa Kimi no Sora",
 		artistEn: "Liella!",

@@ -4630,7 +4630,7 @@ const SONGPOOL = [
 	},
 	{
 		songUrl: "songs/352_dreamrainbow.mp3",
-		coverUrl: "covers/352_dreamrainbow.png",
+		coverUrl: "covers/363_starlightprologue.png",
 		startOnDay: 1200,
 		titleEn: "Dream Rainbow",
 		artistEn: "Liella!",

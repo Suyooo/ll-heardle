@@ -8,5 +8,5 @@ ffmpeg -y \
 	-metadata "artist=???" \
 	-af "silenceremove=start_periods=1:start_silence=0:start_threshold=0" \
 	-t 20 \
-	-b:a 192k \
+	-codec:a libmp3lame -q:a 6 \
 	"$2"

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -218,14 +218,15 @@
 				class="hidden max-w-screen-sm w-full mx-auto h-full flex flex-col justify-between overflow-auto"
 			>
 				<div class="p-3 pb-0 flex-col items-evenly">
-					<div id="resultsongbox" class="p-2 flex items-center rounded-sm">
+					<div id="resultsongbox" class="p-2 flex sm:items-center rounded-sm">
 						<span class="w-0 h-0 overflow-hidden">The answer was:</span>
 						<img id="resultcover" class="h-14" aria-hidden="true" />
-						<div class="flex-grow mx-3 text-white">
+						<div class="flex-grow flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+							<div class="flex-grow min-h-14 flex flex-col justify-center mx-3 text-white">
 							<p id="resultartist" class="text-sm"></p>
 							<p id="resulttitle" class="font-bold"></p>
 						</div>
-						<div class="flex flex-col items-center space-y-2">
+							<div class="flex-none flex sm:flex-col items-center justify-evenly gap-2">
 							<a id="resultspotify" class="hidden flex items-center" aria-label="Listen on Spotify">
 								<img class="h-5" src="/assets/spotify.png" alt="Spotify Logo" aria-hidden="true" />
 								<svg
@@ -235,7 +236,7 @@
 									viewBox="0 0 24 24"
 									fill="none"
 									stroke="white"
-									stroke-width="2"
+										stroke-width="5"
 									stroke-linecap="round"
 									stroke-linejoin="round"
 									role="img"
@@ -253,7 +254,7 @@
 									viewBox="0 0 24 24"
 									fill="none"
 									stroke="white"
-									stroke-width="2"
+										stroke-width="5"
 									stroke-linecap="round"
 									stroke-linejoin="round"
 									role="img"
@@ -264,6 +265,7 @@
 							</a>
 						</div>
 					</div>
+				</div>
 				</div>
 				<div class="text-center px-3">
 					<p class="clearmessage text-lg text-custom-line outline-none"></p>
@@ -339,11 +341,9 @@
 				<div class="border-t border-custom-line">
 					<div class="max-w-screen-sm w-full mx-auto flex-col">
 						<div class="px-3">
-							<div class="flex justify-between items-center">
-								<div class="flex items-center">
-									<div id="timecurrent">0:00</div>
-								</div>
-								<div class="flex justify-center items-center p-1">
+							<div class="flex hidden justify-between items-center">
+								<div id="timecurrent" class="basis-0 flex-grow">0:00</div>
+								<div id="playbutton" class="flex justify-center items-center p-1 basis-0">
 									<button
 										id="control"
 										aria-label="Play/Pause Song"
@@ -377,8 +377,8 @@
 										</div>
 									</button>
 								</div>
-								<div id="timelimit" aria-hidden="true">...</div>
-								<div id="timeduration" class="hidden" aria-hidden="true">...</div>
+								<div id="timelimit" class="basis-0 flex-grow text-right" aria-hidden="true">...</div>
+								<div id="timeduration" class="basis-0 flex-grow hidden text-right" aria-hidden="true">...</div>
 							</div>
 						</div>
 					</div>
@@ -514,8 +514,8 @@
 								<a href="https://github.com/Suyooo/ll-heardle">Check out the source code here!</a>
 							</p>
 							<p class="text-xs text-custom-line">
-								Love Live! and all music, album art, and project/group names are copyrighted: ©PL! ©PL!S ©PL!N
-								©PL!SP ©PL!HS ©PL!SIM ©YHN ©IKZL ©SUNRISE ©bushiroad<br />
+								Love Live! and all music, album art, and project/group names are copyrighted: ©PL! ©PL!S ©PL!N ©PL!SP
+								©PL!HS ©PL!SIM ©YHN ©IKZL ©SUNRISE ©bushiroad<br />
 								This is a not-for-profit fan project, and unaffiliated with any of the projects or companies above. No
 								challenge to copyright is intended.
 							</p>

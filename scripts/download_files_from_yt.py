@@ -6,10 +6,10 @@ import json
 import tempfile
 import os
 import re
+import shutil
 import subprocess
 import sys
 from typing import NotRequired, TypedDict, cast
-import urllib.request
 
 import chompjs  # pyright: ignore[reportMissingTypeStubs]
 from yt_dlp import YoutubeDL  # pyright: ignore[reportMissingTypeStubs]
@@ -62,8 +62,9 @@ def run():
 			)
 
 	for idx, song in enumerate(songpool):
-		if not "youtube" in song["listenOn"]:
-			print(song["titleEn"], "has no YT video, skipped")
+		if song["songUrl"].startswith("songs/") and song["coverUrl"].startswith(
+			"covers/"
+		):
 			continue
 		print(song["titleEn"], "...")
 		download_from_yt = True
@@ -71,42 +72,51 @@ def run():
 		writethumbnail = False
 
 		with tempfile.TemporaryDirectory() as tmpdir:
+			# If songUrl is unset, download from the YouTube link
+			# Otherwise, if the file is not in the songs/ folder, copy the song from the given path
 			if song["songUrl"] != "":
 				download_from_yt = False
 				skip_download = True
-				if song["songUrl"].startswith("https://kachagain.com/"):
-					_ = urllib.request.urlretrieve(
-						song["songUrl"], os.path.join(tmpdir, "song.mp3")
+				if not song["songUrl"].startswith("songs/"):
+					ext = os.path.splitext(song["songUrl"])[1]
+					_ = shutil.copyfile(
+						song["songUrl"], os.path.join(tmpdir, "song." + ext)
 					)
 
+			# If coverUrl is unset, download from the YouTube link
+			# Otherwise, if the file is not in the covers/ folder, copy the cover from the given path
 			if song["coverUrl"] == "":
 				download_from_yt = True
 				writethumbnail = True
-			elif song["coverUrl"].startswith("https://kachagain.com/"):
-				_ = urllib.request.urlretrieve(
-					song["coverUrl"], os.path.join(tmpdir, "thumb.jpg")
+			elif not song["coverUrl"].startswith("covers/"):
+				ext = os.path.splitext(song["coverUrl"])[1]
+				_ = shutil.copyfile(
+					song["coverUrl"], os.path.join(tmpdir, "thumb." + ext)
 				)
 
 			if download_from_yt:
-				with YoutubeDL(
-					{
-						"format": "bestaudio",
-						"outtmpl": {
-							"default": os.path.join(tmpdir, "song.%(ext)s"),
-							"thumbnail": os.path.join(tmpdir, "thumb"),
-						},
-						"skip_download": skip_download,
-						"writethumbnail": writethumbnail,
-					}
-				) as ydl:
-					ytdl_exit_code: int = (
-						ydl.download(  # pyright: ignore[reportUnknownMemberType]
-							[song["listenOn"]["youtube"]]
+				if not "youtube" in song["listenOn"]:
+					print(song["titleEn"], "has no YT video, skipped")
+				else:
+					with YoutubeDL(
+						{
+							"format": "bestaudio",
+							"outtmpl": {
+								"default": os.path.join(tmpdir, "song.%(ext)s"),
+								"thumbnail": os.path.join(tmpdir, "thumb"),
+							},
+							"skip_download": skip_download,
+							"writethumbnail": writethumbnail,
+						}
+					) as ydl:
+						ytdl_exit_code: int = (
+							ydl.download(  # pyright: ignore[reportUnknownMemberType]
+								[song["listenOn"]["youtube"]]
+							)
 						)
-					)
-				if ytdl_exit_code != 0:
-					print("Failed download for", song["titleEn"])
-					sys.exit()
+					if ytdl_exit_code != 0:
+						print("Failed download for", song["titleEn"])
+						sys.exit()
 
 			outname = str(idx) + "_" + re.sub("[^0-9a-z]+", "", song["titleEn"].lower())
 

@@ -19,6 +19,12 @@ Thanks for playing <i>Love Live! Heardle</i>!<br>
 <br>
 <h3 class="text-custom-positive uppercase tracking-widest font-bold">Changelog</h3>
 <br>
+<b>July 25th, 2025</b>
+<ul class="list">
+<li>Added 217 songs. These are still older songs - which were available as guesses before, but were missing song files
+and so were never picked for a round. I'll add more every so often, keeping with release order!</li>
+</ul>
+<br>
 <b>July 12th, 2025</b>
 <ul class="list">
 <li>Fixed some timezone weirdness. If you live in UTC -x timezones, you might not be getting a new Heardle today - sorry
@@ -1814,7 +1820,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/136_popsheartdeodorundamon.mp3",
 		coverUrl: "covers/165_futureflight.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Pops heart de Odorun damon!",
 		artistEn: "Aqours",
 		titleJa: "Pops heart\u3067\u8e0a\u308b\u3093\u3060\u3082\u3093\uff01",
@@ -1827,7 +1833,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/137_soramokokoromoharerukara.mp3",
 		coverUrl: "covers/165_futureflight.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Sora mo Kokoro mo Hareru kara",
 		artistEn: "Aqours",
 		titleJa: "\u7a7a\u3082\u5fc3\u3082\u6674\u308c\u308b\u304b\u3089",
@@ -1866,7 +1872,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/140_jinglebellsgatomaranai.mp3",
 		coverUrl: "covers/140_jinglebellsgatomaranai.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Jingle Bells ga Tomaranai",
 		artistEn: "Aqours",
 		titleJa: "\u30b8\u30f3\u30b0\u30eb\u30d9\u30eb\u304c\u3068\u307e\u3089\u306a\u3044",
@@ -1879,7 +1885,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/141_seinaruhinoinori.mp3",
 		coverUrl: "covers/140_jinglebellsgatomaranai.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Seinaru Hi no Inori",
 		artistEn: "Aqours",
 		titleJa: "\u8056\u306a\u308b\u65e5\u306e\u7948\u308a",
@@ -1892,7 +1898,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/142_wakuwakuweek.mp3",
 		coverUrl: "covers/165_futureflight.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Waku-Waku-Week!",
 		artistEn: "Aqours",
 		titleJa: "Waku-Waku-Week!",
@@ -1931,7 +1937,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/145_gsenjounocinderella.mp3",
 		coverUrl: "covers/165_futureflight.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "G Senjou no Cinderella",
 		artistEn: "Aqours",
 		titleJa: "G\u7dda\u4e0a\u306e\u30b7\u30f3\u30c7\u30ec\u30e9",
@@ -1957,7 +1963,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/147_guiltyeyesfever.mp3",
 		coverUrl: "covers/239_shootingstarwarrior.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Guilty Eyes Fever",
 		artistEn: "Guilty Kiss",
 		titleJa: "Guilty Eyes Fever",
@@ -1970,7 +1976,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/148_taiyouooikakero.mp3",
 		coverUrl: "covers/165_futureflight.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Taiyou o Oikakero!",
 		artistEn: "Aqours",
 		titleJa: "\u592a\u967d\u3092\u8ffd\u3044\u304b\u3051\u308d!",
@@ -1983,7 +1989,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/149_psnomukougawa.mp3",
 		coverUrl: "covers/213_aruhieienmitaini.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "P.S. no Mukougawa",
 		artistEn: "CYaRon!",
 		titleJa: "P.S.\u306e\u5411\u3053\u3046\u5074",
@@ -1996,7 +2002,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/150_lonelytuning.mp3",
 		coverUrl: "covers/230_wellgetthenextdream.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "LONELY TUNING",
 		artistEn: "AZALEA",
 		titleJa: "LONELY TUNING",
@@ -2009,7 +2015,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/151_shoujoijounokoigashitai.mp3",
 		coverUrl: "covers/152_happypartytrain.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Shoujo Ijou no Koi ga Shitai",
 		artistEn: "Aqours",
 		titleJa: "\u5c11\u5973\u4ee5\u4e0a\u306e\u604b\u304c\u3057\u305f\u3044",
@@ -2022,7 +2028,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/152_happypartytrain.mp3",
 		coverUrl: "covers/152_happypartytrain.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "HAPPY PARTY TRAIN",
 		artistEn: "Aqours",
 		titleJa: "HAPPY PARTY TRAIN",
@@ -2035,7 +2041,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/153_skyjourney.mp3",
 		coverUrl: "covers/152_happypartytrain.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "SKY JOURNEY",
 		artistEn: "Aqours",
 		titleJa: "SKY JOURNEY",
@@ -2074,7 +2080,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/156_aqourspiratesdesire.mp3",
 		coverUrl: "covers/164_fantasticdeparture.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Aqours Pirates Desire",
 		artistEn: "Aqours",
 		titleJa: "Aqours Pirates Desire",
@@ -2087,7 +2093,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/157_bokuranohashittekitamichiwa.mp3",
 		coverUrl: "covers/157_bokuranohashittekitamichiwa.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Bokura no Hashittekita Michi wa...",
 		artistEn: "Aqours",
 		titleJa: "\u50d5\u3089\u306e\u8d70\u3063\u3066\u304d\u305f\u9053\u306f...",
@@ -2100,7 +2106,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/158_boukentypeabc.mp3",
 		coverUrl: "covers/158_boukentypeabc.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Bouken Type A, B, C!!",
 		artistEn: "Aqours",
 		titleJa: "\u5192\u967aType A, B, C\u203c",
@@ -2113,7 +2119,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/159_brightestmelody.mp3",
 		coverUrl: "covers/206_believeagain.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Brightest Melody",
 		artistEn: "Aqours",
 		titleJa: "Brightest Melody",
@@ -2126,7 +2132,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/160_cyazaleakissdadandaaan.mp3",
 		coverUrl: "covers/160_cyazaleakissdadandaaan.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "CYaZALEA\u2606Kiss\u2606DADANDAAAN",
 		artistEn: "Aqours",
 		titleJa: "\u30b7\u30e3\u30bc\u30ea\u30a2\u2606\u30ad\u30c3\u30b9\u2606\u30c0\u30c0\u30f3\u30c0\u30fc\u30f3",
@@ -2139,7 +2145,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/161_dancewithminotaurus.mp3",
 		coverUrl: "covers/185_mitaikenhorizon.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Dance with Minotaurus",
 		artistEn: "Aqours",
 		titleJa: "Dance with Minotaurus",
@@ -2152,7 +2158,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/162_deepresonance.mp3",
 		coverUrl: "covers/185_mitaikenhorizon.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Deep Resonance",
 		artistEn: "Aqours",
 		titleJa: "Deep Resonance",
@@ -2165,7 +2171,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/163_dreamycolor.mp3",
 		coverUrl: "covers/163_dreamycolor.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "DREAMY COLOR",
 		artistEn: "Aqours",
 		titleJa: "DREAMY COLOR",
@@ -2178,7 +2184,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/164_fantasticdeparture.mp3",
 		coverUrl: "covers/164_fantasticdeparture.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Fantastic Departure!",
 		artistEn: "Aqours",
 		titleJa: "Fantastic Departure!",
@@ -2191,7 +2197,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/165_futureflight.mp3",
 		coverUrl: "covers/165_futureflight.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Future flight",
 		artistEn: "Aqours",
 		titleJa: "Future flight",
@@ -2204,7 +2210,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/166_hajimariroad.mp3",
 		coverUrl: "covers/166_hajimariroad.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Hajimari Road",
 		artistEn: "Aqours",
 		titleJa: "\u30cf\u30b8\u30de\u30ea\u30ed\u30fc\u30c9",
@@ -2217,7 +2223,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/167_hopstopnonstop.mp3",
 		coverUrl: "covers/199_tousoumeisoumobiusloop.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Hop? Stop? Nonstop!",
 		artistEn: "Aqours",
 		titleJa: "Hop? Stop? Nonstop!",
@@ -2230,7 +2236,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/168_hopstepwaai.mp3",
 		coverUrl: "covers/168_hopstepwaai.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Hop\u30fbStep\u30fbWaai!",
 		artistEn: "Aqours",
 		titleJa: "\u30db\u30c3\u30d7\u30fb\u30b9\u30c6\u30c3\u30d7\u30fb\u30ef\u30fc\u30a4\uff01",
@@ -2243,7 +2249,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/169_ingitry.mp3",
 		coverUrl: "covers/189_namidajanai.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "i-n-g, I TRY!!",
 		artistEn: "Aqours",
 		titleJa: "i-n-g, I TRY!!",
@@ -2256,7 +2262,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/170_jimoaimantansummerlife.mp3",
 		coverUrl: "covers/170_summervacation.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Jimo Ai \u2661 Mantan \u2606 Summer Life",
 		artistEn: "You Watanabe (CV: Shuka Saitou), Yoshiko Tsushima (CV: Aika Kobayashi)",
 		titleJa: "\u5730\u5143\u611b\u2661\u6e80\u30bf\u30f3\u2606\u30b5\u30de\u30fc\u30e9\u30a4\u30d5",
@@ -2270,7 +2276,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/171_jimoaidash.mp3",
 		coverUrl: "covers/171_jimoaidash.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "JIMO-AI Dash!",
 		artistEn: "Aqours",
 		titleJa: "JIMO-AI Dash!",
@@ -2283,7 +2289,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/172_jumpuphigh.mp3",
 		coverUrl: "covers/172_jumpuphigh.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Jump up HIGH!!",
 		artistEn: "Aqours",
 		titleJa: "Jump up HIGH!!",
@@ -2296,7 +2302,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/173_kiminohitomiomegurubouken.mp3",
 		coverUrl: "covers/183_mirainobokurawashitteruyo.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Kimi no Hitomi o Meguru Bouken",
 		artistEn: "Aqours",
 		titleJa: "\u541b\u306e\u77b3\u3092\u5de1\u308b\u5192\u967a",
@@ -2309,7 +2315,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/174_kimochimoyumemoisshodane.mp3",
 		coverUrl: "covers/174_wintervacation.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Kimochi mo Yume mo Issho da ne!",
 		artistEn: "Hanamaru Kunikida (CV: Kanako Takatsuki), Ruby Kurosawa (CV: Ai Furihata)",
 		titleJa: "\u30ad\u30e2\u30c1\u3082\u30e6\u30e1\u3082\u4e00\u7dd2\u3060\u306d\uff01",
@@ -2323,7 +2329,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/175_kisekihikaru.mp3",
 		coverUrl: "covers/165_futureflight.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Kiseki Hikaru",
 		artistEn: "Aqours",
 		titleJa: "\u30ad\u30bb\u30ad\u30d2\u30ab\u30eb",
@@ -2336,7 +2342,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/176_kokoromagicatoz.mp3",
 		coverUrl: "covers/176_kokoromagicatoz.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: 'KOKORO Magic "A to Z"',
 		artistEn: "Aqours",
 		titleJa: 'KOKORO Magic "A to Z"',
@@ -2349,7 +2355,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/177_kokoronohaneyokimietondeke.mp3",
 		coverUrl: "covers/196_smilesmileshipstart.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Kokoro no Hane yo Kimi e Tondeke!",
 		artistEn: "Aqours",
 		titleJa: "\u5fc3\u306e\u7fbd\u3088\u541b\u3078\u98db\u3093\u3067\u3051\uff01",
@@ -2375,7 +2381,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/179_landingactionyeah.mp3",
 		coverUrl: "covers/179_landingactionyeah.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Landing action Yeah!!",
 		artistEn: "Aqours",
 		titleJa: "Landing action Yeah!!",
@@ -2388,7 +2394,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/180_manatsuwadarenomono.mp3",
 		coverUrl: "covers/170_summervacation.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Manatsu wa Dare no Mono?",
 		artistEn: "Dia Kurosawa (CV: Arisa Komiya), Ruby Kurosawa (CV: Ai Furihata)",
 		titleJa: "\u771f\u590f\u306f\u8ab0\u306e\u30e2\u30ce\uff1f",
@@ -2402,7 +2408,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/181_marineborderparasol.mp3",
 		coverUrl: "covers/181_marineborderparasol.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Marine Border Parasol",
 		artistEn: "Aqours",
 		titleJa: "Marine Border Parasol",
@@ -2415,7 +2421,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/182_miraclewave.mp3",
 		coverUrl: "covers/187_mymaitonight.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "MIRACLE WAVE",
 		artistEn: "Aqours",
 		titleJa: "MIRACLE WAVE",
@@ -2428,7 +2434,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/183_mirainobokurawashitteruyo.mp3",
 		coverUrl: "covers/183_mirainobokurawashitteruyo.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Mirai no Bokura wa Shitteru yo",
 		artistEn: "Aqours",
 		titleJa: "\u672a\u6765\u306e\u50d5\u3089\u306f\u77e5\u3063\u3066\u308b\u3088",
@@ -2441,7 +2447,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/184_mistyfrostylove.mp3",
 		coverUrl: "covers/174_wintervacation.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Misty Frosty Love",
 		artistEn: "Riko Sakurauchi (CV: Rikako Aida), You Watanabe (CV: Shuka Saitou)",
 		titleJa: "Misty Frosty Love",
@@ -2455,7 +2461,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/185_mitaikenhorizon.mp3",
 		coverUrl: "covers/185_mitaikenhorizon.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Mitaiken HORIZON",
 		artistEn: "Aqours",
 		titleJa: "\u672a\u4f53\u9a13HORIZON",
@@ -2468,7 +2474,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/186_mylisttoyou.mp3",
 		coverUrl: "covers/204_yuukiwadokonikiminomuneni.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: '"MY LIST" to you!',
 		artistEn: "Aqours",
 		titleJa: '"MY LIST" to you!',
@@ -2481,7 +2487,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/187_mymaitonight.mp3",
 		coverUrl: "covers/187_mymaitonight.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "MY Mai\u2606TONIGHT",
 		artistEn: "Aqours",
 		titleJa: "MY\u821e\u2606TONIGHT ",
@@ -2494,7 +2500,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/188_namidagayukininarumaeni.mp3",
 		coverUrl: "covers/174_wintervacation.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Namida ga Yuki ni Naru Mae ni",
 		artistEn: "Kanan Matsuura (CV: Nanaka Suwa), Mari Ohara (CV: Aina Suzuki)",
 		titleJa: "\u6d99\u304c\u96ea\u306b\u306a\u308b\u524d\u306b",
@@ -2508,7 +2514,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/189_namidajanai.mp3",
 		coverUrl: "covers/189_namidajanai.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Namida Janai",
 		artistEn: "Aqours",
 		titleJa: "\u6d99\u00d7",
@@ -2521,7 +2527,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/190_natsuenotobiraneverendver.mp3",
 		coverUrl: "covers/170_summervacation.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Natsu e no Tobira Never end ver.",
 		artistEn:
 			"Riko Sakurauchi (CV: Rikako Aida), Hanamaru Kunikida (CV: Kanako Takatsuki), Mari Ohara (CV: Aina Suzuki)",
@@ -2536,7 +2542,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/191_natsunoowarinoamaotoga.mp3",
 		coverUrl: "covers/170_summervacation.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Natsu no Owari no Amaoto ga",
 		artistEn: "Chika Takami (CV: Anju Inami), Kanan Matsuura (CV: Nanaka Suwa)",
 		titleJa: "\u590f\u306e\u7d42\u308f\u308a\u306e\u96e8\u97f3\u304c",
@@ -2550,7 +2556,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/192_nextsparkling.mp3",
 		coverUrl: "covers/157_bokuranohashittekitamichiwa.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Next SPARKLING!!",
 		artistEn: "Aqours",
 		titleJa: "Next SPARKLING!!",
@@ -2563,7 +2569,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/193_no10.mp3",
 		coverUrl: "covers/198_thankyoufriends.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "No.10",
 		artistEn: "Aqours",
 		titleJa: "No.10",
@@ -2589,7 +2595,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/195_partypartypapapaparty.mp3",
 		coverUrl: "covers/174_wintervacation.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Party! Party! PaPaPaParty!",
 		artistEn: "Chika Takami (CV: Anju Inami), Dia Kurosawa (CV: Arisa Komiya), Yoshiko Tsushima (CV: Aika Kobayashi)",
 		titleJa: "Party! Party! PaPaPaParty!",
@@ -2603,7 +2609,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/196_smilesmileshipstart.mp3",
 		coverUrl: "covers/196_smilesmileshipstart.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "smile smile ship Start!",
 		artistEn: "Aqours",
 		titleJa: "smile smile ship Start!",
@@ -2629,7 +2635,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/198_thankyoufriends.mp3",
 		coverUrl: "covers/198_thankyoufriends.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Thank you, FRIENDS!!",
 		artistEn: "Aqours",
 		titleJa: "Thank you, FRIENDS!!",
@@ -2642,7 +2648,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/199_tousoumeisoumobiusloop.mp3",
 		coverUrl: "covers/199_tousoumeisoumobiusloop.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Tousou Meisou Mobius Loop",
 		artistEn: "Aqours",
 		titleJa: "\u9003\u8d70\u8ff7\u8d70\u30e1\u30d3\u30a6\u30b9\u30eb\u30fc\u30d7",
@@ -2655,7 +2661,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/200_wakeupchallenger.mp3",
 		coverUrl: "covers/176_kokoromagicatoz.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Wake up, Challenger!!",
 		artistEn: "Aqours",
 		titleJa: "Wake up, Challenger!!",
@@ -2668,7 +2674,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/201_waterbluenewworld.mp3",
 		coverUrl: "covers/201_waterbluenewworld.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "WATER BLUE NEW WORLD",
 		artistEn: "Aqours",
 		titleJa: "WATER BLUE NEW WORLD",
@@ -2681,7 +2687,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/202_wonderfulstories.mp3",
 		coverUrl: "covers/201_waterbluenewworld.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "WONDERFUL STORIES",
 		artistEn: "Aqours",
 		titleJa: "WONDERFUL STORIES",
@@ -2694,7 +2700,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/203_yosokufukanoudriving.mp3",
 		coverUrl: "covers/203_yosokufukanoudriving.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Yosoku Fukanou Driving!",
 		artistEn: "Aqours",
 		titleJa: "\u4e88\u6e2c\u4e0d\u53ef\u80fdDriving!",
@@ -2707,7 +2713,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/204_yuukiwadokonikiminomuneni.mp3",
 		coverUrl: "covers/204_yuukiwadokonikiminomuneni.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Yuuki wa doko ni? Kimi no Mune ni!",
 		artistEn: "Aqours",
 		titleJa: "\u52c7\u6c17\u306f\u3069\u3053\u306b?\u541b\u306e\u80f8\u306b!",
@@ -2720,7 +2726,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/205_aftertherain.mp3",
 		coverUrl: "covers/208_dazzlingwhitetown.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "After The Rain",
 		artistEn: "Saint Snow",
 		titleJa: "After The Rain",
@@ -2733,7 +2739,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/206_believeagain.mp3",
 		coverUrl: "covers/206_believeagain.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Believe again",
 		artistEn: "Saint Snow",
 		titleJa: "Believe again",
@@ -2746,7 +2752,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/207_crashmind.mp3",
 		coverUrl: "covers/211_awakenthepower.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "CRASH MIND",
 		artistEn: "Saint Snow",
 		titleJa: "CRASH MIND",
@@ -2759,7 +2765,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/208_dazzlingwhitetown.mp3",
 		coverUrl: "covers/208_dazzlingwhitetown.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Dazzling White Town",
 		artistEn: "Saint Snow",
 		titleJa: "Dazzling White Town",
@@ -2772,7 +2778,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/209_dropout.mp3",
 		coverUrl: "covers/211_awakenthepower.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "DROPOUT!?",
 		artistEn: "Saint Snow",
 		titleJa: "DROPOUT!?",
@@ -2785,7 +2791,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/210_lonelysnowplanet.mp3",
 		coverUrl: "covers/208_dazzlingwhitetown.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Lonely Snow Planet",
 		artistEn: "Saint Snow",
 		titleJa: "Lonely Snow Planet",
@@ -2798,7 +2804,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/211_awakenthepower.mp3",
 		coverUrl: "covers/211_awakenthepower.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Awaken the power",
 		artistEn: "Saint Aqours Snow",
 		titleJa: "Awaken the power",
@@ -2811,7 +2817,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/212_overthenextrainbow.mp3",
 		coverUrl: "covers/206_believeagain.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Over The Next Rainbow",
 		artistEn: "Saint Aqours Snow",
 		titleJa: "Over The Next Rainbow",
@@ -2824,7 +2830,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/213_aruhieienmitaini.mp3",
 		coverUrl: "covers/213_aruhieienmitaini.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Aru Hi... Eien Mitai ni!",
 		artistEn: "CYaRon!",
 		titleJa: "\u3042\u308b\u65e5...\u6c38\u9060\u307f\u305f\u3044\u306b\uff01",
@@ -2837,7 +2843,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/214_braveheartcoaster.mp3",
 		coverUrl: "covers/214_braveheartcoaster.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Braveheart Coaster",
 		artistEn: "CYaRon!",
 		titleJa: "Braveheart Coaster",
@@ -2850,7 +2856,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/215_changeless.mp3",
 		coverUrl: "covers/214_braveheartcoaster.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "CHANGELESS",
 		artistEn: "CYaRon!",
 		titleJa: "CHANGELESS",
@@ -2863,7 +2869,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/216_dragonriders.mp3",
 		coverUrl: "covers/213_aruhieienmitaini.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Dragon Riders",
 		artistEn: "CYaRon!",
 		titleJa: "\u30c9\u30e9\u30b4\u30f3\u30e9\u30a4\u30c0\u30fc\u30ba",
@@ -2876,7 +2882,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/217_kaigandooridematteruyo.mp3",
 		coverUrl: "covers/218_kinmiraihappyend.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Kaigandoori de Matteru yo",
 		artistEn: "CYaRon!",
 		titleJa: "\u6d77\u5cb8\u901a\u308a\u3067\u5f85\u3063\u3066\u308b\u3088",
@@ -2889,7 +2895,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/218_kinmiraihappyend.mp3",
 		coverUrl: "covers/218_kinmiraihappyend.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Kinmirai Happy End",
 		artistEn: "CYaRon!",
 		titleJa: "\u8fd1\u672a\u6765\u30cf\u30c3\u30d4\u30fc\u30a8\u30f3\u30c9",
@@ -2902,7 +2908,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/219_kodokuteleport.mp3",
 		coverUrl: "covers/214_braveheartcoaster.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Kodoku\u30fbTeleport",
 		artistEn: "CYaRon!",
 		titleJa: "\u30b3\u30c9\u30af\u30fb\u30c6\u30ec\u30dd\u30fc\u30c8",
@@ -2915,7 +2921,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/220_sakurabyebye.mp3",
 		coverUrl: "covers/213_aruhieienmitaini.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Sakura Bye Bye",
 		artistEn: "CYaRon!",
 		titleJa: "\u30b5\u30af\u30e9\u30d0\u30a4\u30d0\u30a4",
@@ -2928,7 +2934,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/221_whistleofrevolution.mp3",
 		coverUrl: "covers/213_aruhieienmitaini.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Whistle of Revolution",
 		artistEn: "CYaRon!",
 		titleJa: "Whistle of Revolution",
@@ -2941,7 +2947,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/222_amazingtraveldna.mp3",
 		coverUrl: "covers/222_amazingtraveldna.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Amazing Travel DNA",
 		artistEn: "AZALEA",
 		titleJa: "Amazing Travel DNA",
@@ -2954,7 +2960,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/223_galaxyhideandseek.mp3",
 		coverUrl: "covers/223_galaxyhideandseek.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "GALAXY HidE and SeeK",
 		artistEn: "AZALEA",
 		titleJa: "GALAXY HidE and SeeK",
@@ -2967,7 +2973,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/224_innocentbird.mp3",
 		coverUrl: "covers/223_galaxyhideandseek.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "INNOCENT BIRD",
 		artistEn: "AZALEA",
 		titleJa: "INNOCENT BIRD",
@@ -2980,7 +2986,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/225_kuuchuurenairon.mp3",
 		coverUrl: "covers/222_amazingtraveldna.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Kuuchuu Renai Ron",
 		artistEn: "AZALEA",
 		titleJa: "\u7a7a\u4e2d\u604b\u611b\u8ad6",
@@ -2993,7 +2999,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/226_mazesekai.mp3",
 		coverUrl: "covers/222_amazingtraveldna.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Maze Sekai",
 		artistEn: "AZALEA",
 		titleJa: "\u30e1\u30a4\u30ba\u30bb\u30ab\u30a4",
@@ -3032,7 +3038,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/229_sotsugyoudesune.mp3",
 		coverUrl: "covers/230_wellgetthenextdream.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Sotsugyou desu ne",
 		artistEn: "AZALEA",
 		titleJa: "\u5352\u696d\u3067\u3059\u306d",
@@ -3058,7 +3064,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/231_deepseacocoon.mp3",
 		coverUrl: "covers/239_shootingstarwarrior.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Deep Sea Cocoon",
 		artistEn: "Guilty Kiss",
 		titleJa: "Deep Sea Cocoon",
@@ -3071,7 +3077,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/232_guiltyfarewellparty.mp3",
 		coverUrl: "covers/239_shootingstarwarrior.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Guilty!? Farewell party",
 		artistEn: "Guilty Kiss",
 		titleJa: "Guilty!? Farewell party",
@@ -3084,7 +3090,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/233_kowareyasuki.mp3",
 		coverUrl: "covers/233_kowareyasuki.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Kowareyasuki",
 		artistEn: "Guilty Kiss",
 		titleJa: "\u30b3\u30ef\u30ec\u30e4\u30b9\u30ad",
@@ -3097,7 +3103,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/234_lovepulsar.mp3",
 		coverUrl: "covers/236_newromanticsailors.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Love Pulsar",
 		artistEn: "Guilty Kiss",
 		titleJa: "Love Pulsar",
@@ -3110,7 +3116,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/235_namelesslovesong.mp3",
 		coverUrl: "covers/239_shootingstarwarrior.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Nameless Love Song",
 		artistEn: "Guilty Kiss",
 		titleJa: "Nameless Love Song",
@@ -3123,7 +3129,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/236_newromanticsailors.mp3",
 		coverUrl: "covers/236_newromanticsailors.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "New Romantic Sailors",
 		artistEn: "Guilty Kiss",
 		titleJa: "New Romantic Sailors",
@@ -3136,7 +3142,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/237_phantomrocketadventure.mp3",
 		coverUrl: "covers/236_newromanticsailors.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Phantom Rocket Adventure",
 		artistEn: "Guilty Kiss",
 		titleJa: "Phantom Rocket Adventure",
@@ -3149,7 +3155,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/238_shadowgatetolove.mp3",
 		coverUrl: "covers/233_kowareyasuki.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Shadow gate to love",
 		artistEn: "Guilty Kiss",
 		titleJa: "Shadow gate to love",
@@ -3162,7 +3168,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/239_shootingstarwarrior.mp3",
 		coverUrl: "covers/239_shootingstarwarrior.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Shooting Star Warrior",
 		artistEn: "Guilty Kiss",
 		titleJa: "Shooting Star Warrior",
@@ -3175,7 +3181,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/240_nevergivingup.mp3",
 		coverUrl: "covers/240_nevergivingup.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Never giving up!",
 		artistEn: "Chika Takami (CV: Anju Inami)",
 		titleJa: "Never giving up!",
@@ -3188,7 +3194,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/241_okawarihappylife.mp3",
 		coverUrl: "covers/241_okawarihappylife.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "OKAWARI Happy life!",
 		artistEn: "Chika Takami (CV: Anju Inami)",
 		titleJa: "OKAWARI Happy life!",
@@ -3201,7 +3207,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/242_onemoresunshinestory.mp3",
 		coverUrl: "covers/240_nevergivingup.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "One More Sunshine Story",
 		artistEn: "Chika Takami (CV: Anju Inami)",
 		titleJa: "One More Sunshine Story",
@@ -3214,7 +3220,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/243_lovespiraltower.mp3",
 		coverUrl: "covers/243_lovespiraltower.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Love Spiral Tower",
 		artistEn: "Riko Sakurauchi (CV: Rikako Aida)",
 		titleJa: "Love Spiral Tower",
@@ -3227,7 +3233,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/244_pianofortemonologue.mp3",
 		coverUrl: "covers/244_pianofortemonologue.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Pianoforte Monologue",
 		artistEn: "Riko Sakurauchi (CV: Rikako Aida)",
 		titleJa: "Pianoforte Monologue",
@@ -3240,7 +3246,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/245_purephrase.mp3",
 		coverUrl: "covers/244_pianofortemonologue.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "PURE PHRASE",
 		artistEn: "Riko Sakurauchi (CV: Rikako Aida)",
 		titleJa: "PURE PHRASE",
@@ -3253,7 +3259,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/246_mottone.mp3",
 		coverUrl: "covers/246_mottone.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Motto ne!",
 		artistEn: "Kanan Matsuura (CV: Nanaka Suwa)",
 		titleJa: "\u3082\u3063\u3068\u306d\uff01",
@@ -3266,7 +3272,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/247_sakanakananadaka.mp3",
 		coverUrl: "covers/246_mottone.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Sakana ka Nanadaka?",
 		artistEn: "Kanan Matsuura (CV: Nanaka Suwa)",
 		titleJa: "\u3055\u304b\u306a\u304b\u306a\u3093\u3060\u304b\uff1f",
@@ -3279,7 +3285,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/248_perfectsekai.mp3",
 		coverUrl: "covers/248_perfectsekai.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Perfect SEKAI",
 		artistEn: "Dia Kurosawa (CV: Arisa Komiya)",
 		titleJa: "Perfect SEKAI",
@@ -3305,7 +3311,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/250_beginnerssailing.mp3",
 		coverUrl: "covers/250_beginnerssailing.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Beginner's Sailing",
 		artistEn: "You Watanabe (CV: Shuka Saitou)",
 		titleJa: "Beginner's Sailing",
@@ -3318,7 +3324,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/251_totsuzengirl.mp3",
 		coverUrl: "covers/250_beginnerssailing.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Totsuzen GIRL",
 		artistEn: "You Watanabe (CV: Shuka Saitou)",
 		titleJa: "\u7a81\u7136GIRL",
@@ -3331,7 +3337,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/252_inthisunstableworld.mp3",
 		coverUrl: "covers/252_inthisunstableworld.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "in this unstable world",
 		artistEn: "Yoshiko Tsushima (CV: Aika Kobayashi)",
 		titleJa: "in this unstable world",
@@ -3344,7 +3350,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/253_tatehokotsubasa.mp3",
 		coverUrl: "covers/252_inthisunstableworld.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Tatehoko Tsubasa",
 		artistEn: "Yoshiko Tsushima (CV: Aika Kobayashi)",
 		titleJa: "\u30bf\u30c6\u30db\u30b3\u30c4\u30d0\u30b5",
@@ -3357,7 +3363,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/254_akogareranraran.mp3",
 		coverUrl: "covers/254_akogareranraran.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Akogare Ranraran",
 		artistEn: "Hanamaru Kunikida (CV: Kanako Takatsuki)",
 		titleJa: "\u3042\u3053\u304c\u308c\u30e9\u30f3\u30e9\u30e9\u30f3",
@@ -3370,7 +3376,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/255_oyasuminasan.mp3",
 		coverUrl: "covers/254_akogareranraran.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Oyasuminasan!",
 		artistEn: "Hanamaru Kunikida (CV: Kanako Takatsuki)",
 		titleJa: "\u304a\u3084\u3059\u307f\u306a\u3055\u3093\uff01",
@@ -3383,7 +3389,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/256_newwindingroad.mp3",
 		coverUrl: "covers/256_newwindingroad.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "New winding road",
 		artistEn: "Mari Ohara (CV: Aina Suzuki)",
 		titleJa: "New winding road",
@@ -3396,7 +3402,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/257_shinyracers.mp3",
 		coverUrl: "covers/256_newwindingroad.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Shiny Racers",
 		artistEn: "Mari Ohara (CV: Aina Suzuki)",
 		titleJa: "Shiny Racers",
@@ -3409,7 +3415,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/258_1star.mp3",
 		coverUrl: "covers/258_1star.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "1STAR",
 		artistEn: "Ruby Kurosawa (CV: Ai Furihata)",
 		titleJa: "1STAR",
@@ -3422,7 +3428,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/259_cottoncandyeieioh.mp3",
 		coverUrl: "covers/259_cottoncandyeieioh.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Cotton Candy Ei-Ei-Oh!",
 		artistEn: "Ruby Kurosawa (CV: Ai Furihata)",
 		titleJa: "\u30b3\u30c3\u30c8\u30f3\u30ad\u30e3\u30f3\u30c7\u30a3\u3048\u3044\u3048\u3044\u304a\u30fc\uff01",
@@ -3448,7 +3454,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/261_hurrayhurray.mp3",
 		coverUrl: "covers/261_hurrayhurray.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Hurray Hurray",
 		artistEn: "Nijigasaki High School Idol Club",
 		titleJa: "Hurray Hurray",
@@ -3461,7 +3467,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/262_justbelieve.mp3",
 		coverUrl: "covers/262_justbelieve.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Just Believe!!!",
 		artistEn: "Nijigasaki High School Idol Club",
 		titleJa: "Just Believe!!!",
@@ -3474,7 +3480,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/263_llllovethelifewelive.mp3",
 		coverUrl: "covers/263_llllovethelifewelive.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "L!L!L! (Love the Life We Live)",
 		artistEn: "Nijigasaki High School Idol Club",
 		titleJa: "L\uff01L\uff01L! (Love the Life We Live)",
@@ -3487,7 +3493,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/264_loveumyfriends.mp3",
 		coverUrl: "covers/264_loveumyfriends.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Love U my friends",
 		artistEn: "Nijigasaki High School Idol Club",
 		titleJa: "Love U my friends",
@@ -3513,7 +3519,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/266_miraiharmony.mp3",
 		coverUrl: "covers/301_mutekikyuubeliever.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Mirai Harmony",
 		artistEn: "Nijigasaki High School Idol Club",
 		titleJa: "\u672a\u6765\u30cf\u30fc\u30e2\u30cb\u30fc",
@@ -3526,7 +3532,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/267_neoskyneomap.mp3",
 		coverUrl: "covers/267_neoskyneomap.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "NEO SKY, NEO MAP!",
 		artistEn: "Nijigasaki High School Idol Club",
 		titleJa: "NEO SKY, NEO MAP!",
@@ -3539,7 +3545,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/268_nijiiropassions.mp3",
 		coverUrl: "covers/268_nijiiropassions.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Nijiiro Passions!",
 		artistEn: "Nijigasaki High School Idol Club",
 		titleJa: "\u8679\u8272Passions!",
@@ -3552,7 +3558,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/269_sweeteyes.mp3",
 		coverUrl: "covers/268_nijiiropassions.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Sweet Eyes",
 		artistEn: "Nijigasaki High School Idol Club",
 		titleJa: "Sweet Eyes",
@@ -3565,7 +3571,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/270_tokimekirunners.mp3",
 		coverUrl: "covers/270_tokimekirunners.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "TOKIMEKI Runners",
 		artistEn: "Nijigasaki High School Idol Club",
 		titleJa: "TOKIMEKI Runners",
@@ -3578,7 +3584,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/271_yumegakokokarahajimaruyo.mp3",
 		coverUrl: "covers/271_yumegakokokarahajimaruyo.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Yume ga Koko Kara Hajimaru yo",
 		artistEn: "Nijigasaki High School Idol Club",
 		titleJa: "\u5922\u304c\u3053\u3053\u304b\u3089\u306f\u3058\u307e\u308b\u3088",
@@ -3591,7 +3597,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/272_zensokudreamer.mp3",
 		coverUrl: "covers/267_neoskyneomap.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Zensoku Dreamer",
 		artistEn: "Nijigasaki High School Idol Club",
 		titleJa: "\u5168\u901f\u30c9\u30ea\u30fc\u30de\u30fc",
@@ -3604,7 +3610,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/273_cheerforyou.mp3",
 		coverUrl: "covers/274_dreamlanddreamworld.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Cheer for you!!",
 		artistEn: "A\u30fbZU\u30fbNA",
 		titleJa: "Cheer for you!!",
@@ -3617,7 +3623,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/274_dreamlanddreamworld.mp3",
 		coverUrl: "covers/274_dreamlanddreamworld.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Dream Land! Dream World!",
 		artistEn: "A\u30fbZU\u30fbNA",
 		titleJa: "Dream Land! Dream World!",
@@ -3630,7 +3636,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/275_folklorekankinouta.mp3",
 		coverUrl: "covers/278_mazetown.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Folklore ~Kanki no Uta~",
 		artistEn: "A\u30fbZU\u30fbNA",
 		titleJa: "\u30d5\u30a9\u30eb\u30af\u30ed\u30a2 \uff5e\u6b53\u559c\u306e\u6b4c\uff5e",
@@ -3643,7 +3649,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/276_happynyandays.mp3",
 		coverUrl: "covers/261_hurrayhurray.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Happy Nyan! Days",
 		artistEn: "A\u30fbZU\u30fbNA",
 		titleJa: "Happy Nyan! Days",
@@ -3656,7 +3662,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/277_kakushiaji.mp3",
 		coverUrl: "covers/261_hurrayhurray.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Kakushiaji!",
 		artistEn: "A\u30fbZU\u30fbNA",
 		titleJa: "Kakushiaji!",
@@ -3669,7 +3675,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/278_mazetown.mp3",
 		coverUrl: "covers/278_mazetown.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Maze Town",
 		artistEn: "A\u30fbZU\u30fbNA",
 		titleJa: "Maze Town",
@@ -3682,7 +3688,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/279_flyintothesky.mp3",
 		coverUrl: "covers/284_thesecretnight.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Fly into the sky",
 		artistEn: "DiverDiva",
 		titleJa: "Fly into the sky",
@@ -3695,7 +3701,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/280_lovetriangle.mp3",
 		coverUrl: "covers/283_supernova.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Love Triangle",
 		artistEn: "DiverDiva",
 		titleJa: "Love Triangle",
@@ -3708,7 +3714,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/281_powerspot.mp3",
 		coverUrl: "covers/261_hurrayhurray.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "POWER SPOT!!",
 		artistEn: "DiverDiva",
 		titleJa: "POWER SPOT!!",
@@ -3721,7 +3727,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/282_saikasaika.mp3",
 		coverUrl: "covers/261_hurrayhurray.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Saika -saika-",
 		artistEn: "DiverDiva",
 		titleJa: "\u796d\u82b1 -saika-",
@@ -3734,7 +3740,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/283_supernova.mp3",
 		coverUrl: "covers/283_supernova.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "SUPER NOVA",
 		artistEn: "DiverDiva",
 		titleJa: "SUPER NOVA",
@@ -3747,7 +3753,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/284_thesecretnight.mp3",
 		coverUrl: "covers/284_thesecretnight.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "THE SECRET NiGHT",
 		artistEn: "DiverDiva",
 		titleJa: "THE SECRET NiGHT",
@@ -3760,7 +3766,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/285_beautifulmoonlight.mp3",
 		coverUrl: "covers/288_singsmile.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Beautiful Moonlight",
 		artistEn: "QU4RTZ",
 		titleJa: "Beautiful Moonlight",
@@ -3773,7 +3779,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/286_makeupsessionabc.mp3",
 		coverUrl: "covers/261_hurrayhurray.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Make-up session ABC",
 		artistEn: "QU4RTZ",
 		titleJa: "Make-up session ABC",
@@ -3799,7 +3805,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/288_singsmile.mp3",
 		coverUrl: "covers/288_singsmile.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Sing & Smile!!",
 		artistEn: "QU4RTZ",
 		titleJa: "Sing & Smile!!",
@@ -3825,7 +3831,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/290_twinkletown.mp3",
 		coverUrl: "covers/261_hurrayhurray.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Twinkle Town",
 		artistEn: "QU4RTZ",
 		titleJa: "Twinkle Town",
@@ -3851,7 +3857,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/292_awakeningpromise.mp3",
 		coverUrl: "covers/271_yumegakokokarahajimaruyo.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Awakening Promise",
 		artistEn: "Ayumu Uehara (CV: Aguri Onishi)",
 		titleJa: "Awakening Promise",
@@ -3864,7 +3870,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/293_breakthesystem.mp3",
 		coverUrl: "covers/263_llllovethelifewelive.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Break The System",
 		artistEn: "Ayumu Uehara (CV: Aguri Onishi)",
 		titleJa: "Break The System",
@@ -3877,7 +3883,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/294_dreamwithyou.mp3",
 		coverUrl: "covers/294_dreamwithyou.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Dream with You",
 		artistEn: "Ayumu Uehara (CV: Aguri Onishi)",
 		titleJa: "Dream with You",
@@ -3890,7 +3896,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/295_kaikasengen.mp3",
 		coverUrl: "covers/264_loveumyfriends.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Kaika Sengen",
 		artistEn: "Ayumu Uehara (CV: Aguri Onishi)",
 		titleJa: "\u958b\u82b1\u5ba3\u8a00",
@@ -3903,7 +3909,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/296_saygoodbyenamida.mp3",
 		coverUrl: "covers/262_justbelieve.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Say Good-Bye Namida",
 		artistEn: "Ayumu Uehara (CV: Aguri Onishi)",
 		titleJa: "Say Good-Bye \u6d99",
@@ -3916,7 +3922,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/297_yumeenoippo.mp3",
 		coverUrl: "covers/270_tokimekirunners.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Yume e no Ippo",
 		artistEn: "Ayumu Uehara (CV: Aguri Onishi)",
 		titleJa: "\u5922\u3078\u306e\u4e00\u6b69",
@@ -3929,7 +3935,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/298_wonderland.mp3",
 		coverUrl: "covers/264_loveumyfriends.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "\u2606Wonderland\u2606",
 		artistEn: "Kasumi Nakasu (CV: Mayu Sagara)",
 		titleJa: "\u2606\u30ef\u30f3\u30c0\u30fc\u30e9\u30f3\u30c9\u2606",
@@ -3942,7 +3948,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/299_diamond.mp3",
 		coverUrl: "covers/270_tokimekirunners.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Diamond",
 		artistEn: "Kasumi Nakasu (CV: Mayu Sagara)",
 		titleJa: "\u30c0\u30a4\u30a2\u30e2\u30f3\u30c9",
@@ -3955,7 +3961,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/300_margaret.mp3",
 		coverUrl: "covers/262_justbelieve.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Margaret",
 		artistEn: "Kasumi Nakasu (CV: Mayu Sagara)",
 		titleJa: "Margaret",
@@ -3968,7 +3974,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/301_mutekikyuubeliever.mp3",
 		coverUrl: "covers/301_mutekikyuubeliever.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Mutekikyuu*Believer",
 		artistEn: "Kasumi Nakasu (CV: Mayu Sagara)",
 		titleJa: "\u7121\u6575\u7d1a*\u30d3\u30ea\u30fc\u30d0\u30fc",
@@ -3981,7 +3987,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/302_poppinup.mp3",
 		coverUrl: "covers/302_poppinup.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Poppin' Up!",
 		artistEn: "Kasumi Nakasu (CV: Mayu Sagara)",
 		titleJa: "Poppin' Up!",
@@ -3994,7 +4000,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/303_tobeyourself.mp3",
 		coverUrl: "covers/263_llllovethelifewelive.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "TO BE YOURSELF",
 		artistEn: "Kasumi Nakasu (CV: Mayu Sagara)",
 		titleJa: "TO BE YOURSELF",
@@ -4007,7 +4013,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/304_anatanorisounoheroine.mp3",
 		coverUrl: "covers/270_tokimekirunners.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Anata no Risou no Heroine",
 		artistEn: "Shizuku Osaka (CV: Kaori Maeda)",
 		titleJa: "\u3042\u306a\u305f\u306e\u7406\u60f3\u306e\u30d2\u30ed\u30a4\u30f3",
@@ -4020,7 +4026,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/305_audrey.mp3",
 		coverUrl: "covers/264_loveumyfriends.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Audrey",
 		artistEn: "Shizuku Osaka (CV: Kaori Maeda)",
 		titleJa: "\u30aa\u30fc\u30c9\u30ea\u30fc",
@@ -4033,7 +4039,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/306_eieisa.mp3",
 		coverUrl: "covers/263_llllovethelifewelive.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Eieisa",
 		artistEn: "Shizuku Osaka (CV: Kaori Maeda)",
 		titleJa: "\u30a8\u30a4\u30a8\u6226\u30b5\u30fc",
@@ -4046,7 +4052,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/307_solituderain.mp3",
 		coverUrl: "covers/307_solituderain.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Solitude Rain",
 		artistEn: "Shizuku Osaka (CV: Kaori Maeda)",
 		titleJa: "Solitude Rain",
@@ -4059,7 +4065,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/308_yagatehitotsunomonogatari.mp3",
 		coverUrl: "covers/262_justbelieve.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Yagate Hitotsu no Monogatari",
 		artistEn: "Shizuku Osaka (CV: Kaori Maeda)",
 		titleJa: "\u3084\u304c\u3066\u3072\u3068\u3064\u306e\u7269\u8a9e",
@@ -4072,7 +4078,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/309_firebird.mp3",
 		coverUrl: "covers/262_justbelieve.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Fire Bird",
 		artistEn: "Karin Asaka (CV: Miyu Kubota)",
 		titleJa: "Fire Bird",
@@ -4085,7 +4091,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/310_starlight.mp3",
 		coverUrl: "covers/270_tokimekirunners.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Starlight",
 		artistEn: "Karin Asaka (CV: Miyu Kubota)",
 		titleJa: "Starlight",
@@ -4098,7 +4104,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/311_turnitup.mp3",
 		coverUrl: "covers/263_llllovethelifewelive.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Turn it Up!",
 		artistEn: "Karin Asaka (CV: Miyu Kubota)",
 		titleJa: "Turn it Up!",
@@ -4111,7 +4117,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/312_vividworld.mp3",
 		coverUrl: "covers/312_vividworld.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "VIVID WORLD",
 		artistEn: "Karin Asaka (CV: Miyu Kubota)",
 		titleJa: "VIVID WORLD",
@@ -4124,7 +4130,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/313_wish.mp3",
 		coverUrl: "covers/264_loveumyfriends.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Wish",
 		artistEn: "Karin Asaka (CV: Miyu Kubota)",
 		titleJa: "Wish",
@@ -4137,7 +4143,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/314_diabolicmulier.mp3",
 		coverUrl: "covers/263_llllovethelifewelive.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Diabolic mulier",
 		artistEn: "Ai Miyashita (CV: Natsumi Murakami)",
 		titleJa: "Diabolic mulier",
@@ -4150,7 +4156,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/315_mecchagoing.mp3",
 		coverUrl: "covers/270_tokimekirunners.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Meccha Going!!",
 		artistEn: "Ai Miyashita (CV: Natsumi Murakami)",
 		titleJa: "\u3081\u3063\u3061\u3083Going!! ",
@@ -4163,7 +4169,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/316_saikouheart.mp3",
 		coverUrl: "covers/316_saikouheart.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Saikou Heart",
 		artistEn: "Ai Miyashita (CV: Natsumi Murakami)",
 		titleJa: "\u30b5\u30a4\u30b3\u30fc\u30cf\u30fc\u30c8",
@@ -4176,7 +4182,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/317_tanoshiinotensai.mp3",
 		coverUrl: "covers/262_justbelieve.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Tanoshii no Tensai",
 		artistEn: "Ai Miyashita (CV: Natsumi Murakami)",
 		titleJa: "\u697d\u3057\u3044\u306e\u5929\u624d",
@@ -4189,7 +4195,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/318_yuuai.mp3",
 		coverUrl: "covers/264_loveumyfriends.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Yuu & Ai",
 		artistEn: "Ai Miyashita (CV: Natsumi Murakami)",
 		titleJa: "\u53cb & \u611b",
@@ -4202,7 +4208,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/319_butterfly.mp3",
 		coverUrl: "covers/319_butterfly.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Butterfly",
 		artistEn: "Kanata Konoe (CV: Akari Kito)",
 		titleJa: "Butterfly",
@@ -4215,7 +4221,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/320_myownfairytale.mp3",
 		coverUrl: "covers/264_loveumyfriends.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "My Own Fairy-Tale",
 		artistEn: "Kanata Konoe (CV: Akari Kito)",
 		titleJa: "My Own Fairy-Tale",
@@ -4228,7 +4234,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/321_mrchenstar.mp3",
 		coverUrl: "covers/262_justbelieve.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "M\u00e4rchen Star",
 		artistEn: "Kanata Konoe (CV: Akari Kito)",
 		titleJa: "M\u00e4rchen Star",
@@ -4241,7 +4247,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/322_nemurerumoriniikitaina.mp3",
 		coverUrl: "covers/270_tokimekirunners.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Nemureru Mori ni Ikitai na",
 		artistEn: "Kanata Konoe (CV: Akari Kito)",
 		titleJa: "\u7720\u308c\u308b\u68ee\u306b\u884c\u304d\u305f\u3044\u306a",
@@ -4254,7 +4260,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/323_silentblaze.mp3",
 		coverUrl: "covers/263_llllovethelifewelive.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Silent Blaze",
 		artistEn: "Kanata Konoe (CV: Akari Kito)",
 		titleJa: "Silent Blaze",
@@ -4267,7 +4273,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/324_chase.mp3",
 		coverUrl: "covers/270_tokimekirunners.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "CHASE!",
 		artistEn: "Setsuna Yuki (CV: Tomori Kusunoki)",
 		titleJa: "CHASE!",
@@ -4280,7 +4286,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/325_dive.mp3",
 		coverUrl: "covers/325_dive.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "DIVE!",
 		artistEn: "Setsuna Yuki (CV: Tomori Kusunoki)",
 		titleJa: "DIVE!",
@@ -4293,7 +4299,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/326_likeitloveit.mp3",
 		coverUrl: "covers/262_justbelieve.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "LIKE IT! LOVE IT!",
 		artistEn: "Setsuna Yuki (CV: Tomori Kusunoki)",
 		titleJa: "LIKE IT! LOVE IT!",
@@ -4306,7 +4312,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/327_melody.mp3",
 		coverUrl: "covers/264_loveumyfriends.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "MELODY",
 		artistEn: "Setsuna Yuki (CV: Tomori Kusunoki)",
 		titleJa: "MELODY",
@@ -4332,7 +4338,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/329_aionnouta.mp3",
 		coverUrl: "covers/262_justbelieve.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Aion no Uta",
 		artistEn: "Emma Verde (CV: Maria Sashide)",
 		titleJa: "\u54c0\u6e29\u30ce\u8a69",
@@ -4345,7 +4351,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/330_evergreen.mp3",
 		coverUrl: "covers/270_tokimekirunners.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Evergreen",
 		artistEn: "Emma Verde (CV: Maria Sashide)",
 		titleJa: "Evergreen",
@@ -4358,7 +4364,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/331_itsudatteforyou.mp3",
 		coverUrl: "covers/263_llllovethelifewelive.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Itsu datte for you!",
 		artistEn: "Emma Verde (CV: Maria Sashide)",
 		titleJa: "\u3044\u3064\u3060\u3063\u3066for you!",
@@ -4371,7 +4377,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/332_koetsunagouyo.mp3",
 		coverUrl: "covers/264_loveumyfriends.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Koe Tsunagou yo",
 		artistEn: "Emma Verde (CV: Maria Sashide)",
 		titleJa: "\u58f0\u7e4b\u3054\u3046\u3088",
@@ -4384,7 +4390,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/333_labellapatria.mp3",
 		coverUrl: "covers/333_labellapatria.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "La Bella Patria",
 		artistEn: "Emma Verde (CV: Maria Sashide)",
 		titleJa: "La Bella Patria",
@@ -4397,7 +4403,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/334_analogheart.mp3",
 		coverUrl: "covers/262_justbelieve.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Analog Heart",
 		artistEn: "Rina Tennoji (CV: Chiemi Tanaka)",
 		titleJa: "\u30a2\u30ca\u30ed\u30b0\u30cf\u30fc\u30c8",
@@ -4410,7 +4416,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/335_dokipipoemotion.mp3",
 		coverUrl: "covers/270_tokimekirunners.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Doki Pipo \u2606 Emotion",
 		artistEn: "Rina Tennoji (CV: Chiemi Tanaka)",
 		titleJa: "\u30c9\u30ad\u30d4\u30dd\u2606\u30a8\u30e2\u30fc\u30b7\u30e7\u30f3",
@@ -4423,7 +4429,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/336_firstloveagain.mp3",
 		coverUrl: "covers/263_llllovethelifewelive.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "First Love Again",
 		artistEn: "Rina Tennoji (CV: Chiemi Tanaka)",
 		titleJa: "First Love Again",
@@ -4436,7 +4442,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/337_teletelepathy.mp3",
 		coverUrl: "covers/264_loveumyfriends.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Tele-telepathy",
 		artistEn: "Rina Tennoji (CV: Chiemi Tanaka)",
 		titleJa: "\u30c6\u30ec\u30c6\u30ec\u30d1\u30b7\u30fc",
@@ -4449,7 +4455,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/338_tsunagaruconnect.mp3",
 		coverUrl: "covers/338_tsunagaruconnect.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Tsunagaru Connect",
 		artistEn: "Rina Tennoji (CV: Chiemi Tanaka)",
 		titleJa: "\u30c4\u30ca\u30ac\u30eb\u30b3\u30cd\u30af\u30c8",
@@ -4475,7 +4481,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/340_concentrate.mp3",
 		coverUrl: "covers/263_llllovethelifewelive.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Concentrate!",
 		artistEn: "Shioriko Mifune (CV: Moeka Koizumi)",
 		titleJa: "\u30b3\u30f3\u30bb\u30f3\u30c8\u30ec\u30a4\u30c8\uff01",
@@ -4488,7 +4494,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/341_ketsuinohikari.mp3",
 		coverUrl: "covers/262_justbelieve.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Ketsui no Hikari",
 		artistEn: "Shioriko Mifune (CV: Moeka Koizumi)",
 		titleJa: "\u6c7a\u610f\u306e\u5149",
@@ -4514,7 +4520,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/343_toydoll.mp3",
 		coverUrl: "covers/263_llllovethelifewelive.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Toy Doll",
 		artistEn: "Mia Taylor (CV: Shu Uchida)",
 		titleJa: "Toy Doll",
@@ -4540,7 +4546,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/345_yemingzhu.mp3",
 		coverUrl: "covers/263_llllovethelifewelive.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Ye Mingzhu",
 		artistEn: "Lanzhu Zhong (CV: Akina Homoto)",
 		titleJa: "\u591c\u660e\u73e0\uff08\u30a4\u30a8\u30df\u30f3\u30b8\u30e5\uff09",
@@ -4592,7 +4598,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/349_dancingheartlapapapa.mp3",
 		coverUrl: "covers/355_hajimariwakiminosora.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Dancing Heart La-Pa-Pa-Pa!",
 		artistEn: "Liella!",
 		titleJa: "Dancing Heart La-Pa-Pa-Pa!",
@@ -4631,7 +4637,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/352_dreamrainbow.mp3",
 		coverUrl: "covers/363_starlightprologue.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Dream Rainbow",
 		artistEn: "Liella!",
 		titleJa: "Dream Rainbow",
@@ -4644,7 +4650,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/353_dreamingenergy.mp3",
 		coverUrl: "covers/355_hajimariwakiminosora.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Dreaming Energy",
 		artistEn: "Liella!",
 		titleJa: "Dreaming Energy",
@@ -4670,7 +4676,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/355_hajimariwakiminosora.mp3",
 		coverUrl: "covers/355_hajimariwakiminosora.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Hajimari wa Kimi no Sora",
 		artistEn: "Liella!",
 		titleJa: "\u59cb\u307e\u308a\u306f\u541b\u306e\u7a7a",
@@ -4826,7 +4832,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/367_watashinosymphony.mp3",
 		coverUrl: "covers/367_hajimariwakiminosora.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Watashi no Symphony",
 		artistEn: "Liella!",
 		titleJa: "\u79c1\u306eSymphony",
@@ -4904,7 +4910,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/373_reverb.mp3",
 		coverUrl: "covers/373_reverb.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Reverb",
 		artistEn: "Ren Hazuki (CV: Nagisa Aoyama)",
 		titleJa: "\u30ea\u30d0\u30fc\u30d6",
@@ -5051,7 +5057,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/384_tututu.mp3",
 		coverUrl: "covers/384_tututu.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Tu Tu Tu!",
 		artistEn: "Liella!",
 		titleJa: "\u30c8\u30a5\u30c8\u30a5\u30c8\u30a5\uff01",
@@ -5064,7 +5070,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/385_happytodowa.mp3",
 		coverUrl: "covers/385_happytodowa.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "HAPPY TO DO WA!",
 		artistEn: "Liella!",
 		titleJa: "HAPPY TO DO WA!",
@@ -5077,7 +5083,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/386_stella.mp3",
 		coverUrl: "covers/386_stella.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Stella!",
 		artistEn: "Liella!",
 		titleJa: "Stella!",
@@ -5090,7 +5096,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/387_sagashitefuture.mp3",
 		coverUrl: "covers/387_sagashitefuture.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Sagashite! Future",
 		artistEn: "Liella!",
 		titleJa: "\u63a2\u3057\u3066\uff01Future",
@@ -5103,7 +5109,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/388_kawaranaisubete.mp3",
 		coverUrl: "covers/388_kawaranaisubete.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Kawaranai Subete",
 		artistEn: "Liella!",
 		titleJa: "\u5909\u308f\u3089\u306a\u3044\u3059\u3079\u3066",
@@ -5116,7 +5122,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/389_crescendoyura.mp3",
 		coverUrl: "covers/389_crescendoyura.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Crescendo Yu\u30fbRa",
 		artistEn: "Liella!",
 		titleJa: "\u30af\u30ec\u30c3\u30b7\u30a7\u30f3\u30c9\u3086\u30fb\u3089",
@@ -5220,7 +5226,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/397_yaakouunryuusui.mp3",
 		coverUrl: "covers/397_yaakouunryuusui.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Yaa! Kouunryuusui!?",
 		artistEn: "Hanamaru Kunikida (CV: Kanako Takatsuki)",
 		titleJa: "\u3084\u3042\uff01\u884c\u96f2\u6d41\u6c34\uff01\uff1f",
@@ -5272,7 +5278,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/401_twilight.mp3",
 		coverUrl: "covers/402_colorfuldreamscolorfulsmiles.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Twilight",
 		artistEn: "Nijigasaki High School Idol Club",
 		titleJa: "\u30c8\u30ef\u30a4\u30e9\u30a4\u30c8",
@@ -5285,7 +5291,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/402_colorfuldreamscolorfulsmiles.mp3",
 		coverUrl: "covers/402_colorfuldreamscolorfulsmiles.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Colorful Dreams! Colorful Smiles!",
 		artistEn: "Nijigasaki High School Idol Club",
 		titleJa: "Colorful Dreams! Colorful Smiles!",
@@ -5298,7 +5304,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/403_yumegabokuranotaiyousa.mp3",
 		coverUrl: "covers/403_yumegabokuranotaiyousa.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Yume ga Bokura no Taiyou sa",
 		artistEn: "Nijigasaki High School Idol Club",
 		titleJa: "\u5922\u304c\u50d5\u3089\u306e\u592a\u967d\u3055",
@@ -5311,7 +5317,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/404_ryouranvictoryroad.mp3",
 		coverUrl: "covers/403_yumegabokuranotaiyousa.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Ryouran! Victory Road",
 		artistEn: "Nijigasaki High School Idol Club",
 		titleJa: "\u7e5a\u4e71\uff01\u30d3\u30af\u30c8\u30ea\u30fc\u30ed\u30fc\u30c9",
@@ -5857,7 +5863,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/446_singshinesmile.mp3",
 		coverUrl: "covers/446_singshinesmile.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Sing! Shine! Smile!",
 		artistEn: "Liella!",
 		titleJa: "Sing\uff01Shine\uff01Smile\uff01",
@@ -5870,7 +5876,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/447_mirainootogakikoeru.mp3",
 		coverUrl: "covers/447_mirainootogakikoeru.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Mirai no Oto ga Kikoeru",
 		artistEn: "Liella!",
 		titleJa: "\u672a\u6765\u306e\u97f3\u304c\u8074\u3053\u3048\u308b",
@@ -5883,7 +5889,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/448_namaeyobiauyouni.mp3",
 		coverUrl: "covers/446_singshinesmile.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Namae Yobiau You ni",
 		artistEn: "Liella!",
 		titleJa: "\u540d\u524d\u547c\u3073\u3042\u3046\u3088\u3046\u306b",
@@ -5896,7 +5902,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/449_tobecontinued.mp3",
 		coverUrl: "covers/447_mirainootogakikoeru.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "TO BE CONTINUED",
 		artistEn: "Liella!",
 		titleJa: "TO BE CONTINUED",
@@ -5909,7 +5915,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/450_dreamercoaster.mp3",
 		coverUrl: "covers/450_liellanouta2.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Dreamer Coaster",
 		artistEn: "Kanon Shibuya (CV: Sayuri Date) / Kinako Sakurakoji (CV: Nozomi Suzuhara)",
 		titleJa: "Dreamer Coaster",
@@ -5923,7 +5929,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/451_endlesscircuit.mp3",
 		coverUrl: "covers/450_liellanouta2.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Endless Circuit",
 		artistEn: "Keke Tang (CV: Liyuu) / Sumire Heanna (CV: Naomi Payton)",
 		titleJa: "\u30a8\u30f3\u30c9\u30ec\u30b9\u30b5\u30fc\u30ad\u30c3\u30c8",
@@ -5937,7 +5943,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/452_meikyuusanka.mp3",
 		coverUrl: "covers/450_liellanouta2.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Meikyuu Sanka",
 		artistEn: "Ren Hazuki (CV: Nagisa Aoyama) / Natsumi Onitsuka (CV: Aya Emori)",
 		titleJa: "\u8ff7\u5bae\u8b83\u6b4c",
@@ -5951,7 +5957,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/453_primeadventure.mp3",
 		coverUrl: "covers/450_liellanouta2.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Prime Adventure",
 		artistEn: "Liella!",
 		titleJa: "\u30d7\u30e9\u30a4\u30e0\u30fb\u30a2\u30c9\u30d9\u30f3\u30c1\u30e3\u30fc",
@@ -5964,7 +5970,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/454_paradewaitsumo.mp3",
 		coverUrl: "covers/450_liellanouta2.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Parade wa Itsumo",
 		artistEn: "Mei Yoneme (CV: Akane Yabushima) / Shiki Wakana (CV: Wakana Ookuma)",
 		titleJa: "\u30d1\u30ec\u30fc\u30c9\u306f\u3044\u3064\u3082",
@@ -5978,7 +5984,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/455_kakerumerrygoround.mp3",
 		coverUrl: "covers/450_liellanouta2.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Kakeru Merry-go-round",
 		artistEn: "Chisato Arashi (CV: Nako Misaki) / Kanon Shibuya (CV: Sayuri Date)",
 		titleJa: "\u99c6\u3051\u308b\u30e1\u30ea\u30fc\u30b4\u30fc\u30e9\u30f3\u30c9",
@@ -5992,7 +5998,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/456_timetogo.mp3",
 		coverUrl: "covers/450_liellanouta2.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Time to go",
 		artistEn: "Liella!",
 		titleJa: "Time to go",
@@ -6005,7 +6011,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/457_blue.mp3",
 		coverUrl: "covers/457_blue.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Blue!",
 		artistEn: "A\u30fbZU\u30fbNA",
 		titleJa: "Blue!",
@@ -6018,7 +6024,7 @@ const SONGPOOL = [
 	{
 		songUrl: "songs/458_dancinginthelight.mp3",
 		coverUrl: "covers/457_blue.png",
-		startOnDay: 1200,
+		startOnDay: 1212,
 		titleEn: "Dancing in the Light",
 		artistEn: "A\u30fbZU\u30fbNA",
 		titleJa: "Dancing in the Light",

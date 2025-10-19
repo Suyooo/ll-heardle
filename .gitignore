@@ -5,3 +5,4 @@ scripts/.venv
 scripts/songpool.json
 songs
 covers
+.missing

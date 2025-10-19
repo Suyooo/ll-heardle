@@ -7468,7 +7468,7 @@ const SONGPOOL = [
 		coverUrl: "covers/570_whatismylife.png",
 		startOnDay: 1298,
 		titleEn: "What is my LIFE?",
-		artistEn: "IKIZULIVE!",
+		artistEn: "Ikizurai-Bu!",
 		titleJa: "What is my LIFE?",
 		artistJa: "いきづらい部!",
 		listenOn: {
@@ -7481,7 +7481,7 @@ const SONGPOOL = [
 		coverUrl: "covers/570_whatismylife.png",
 		startOnDay: 1298,
 		titleEn: "Himitsu Michi",
-		artistEn: "IKIZULIVE!",
+		artistEn: "Ikizurai-Bu!",
 		titleJa: "ヒミツミチ",
 		artistJa: "いきづらい部!",
 		listenOn: {

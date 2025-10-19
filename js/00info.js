@@ -28,8 +28,9 @@ Thanks for playing <i>Love Live! Heardle</i>!<br>
 <br>
 <b>October 19th, 2025</b>
 <ul class="list">
-<li>Added 71 songs to the song pool (with this, all of the songs up to and including 2023 are in - plus some extras like
-IKIZULIVE!'s debut album).</li>
+<li>Added 71 songs to the song pool
+(<a href="https://github.com/Suyooo/ll-heardle/blob/main/songpoolupdates.md#october-19th-2025">list</a>). With this, all
+of the songs up to and including 2023 are in - plus some extras like IKIZULIVE!'s debut album.</li>
 </ul>
 <br>
 <b>July 25th, 2025</b>

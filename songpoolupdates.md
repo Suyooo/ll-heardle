@@ -2,6 +2,67 @@
 
 Detailed list of all the songs added in each update!
 
+## November 17th, 2025
+
+### Aqours
+
+- peace piece pizza
+- U-CYU
+- Deep Blue
+- SAKURA-saku KOKORO-saku
+- Bokura no Umi de Mata Aou / 僕らの海でまた会おう
+
+### Liella!
+
+- Shekira☆☆☆ / シェキラ ☆☆☆
+- FANTASTiC
+- Distortion / ディストーション
+- Zenryoku Riot / 全力ライオット
+- Neutral / ニュートラル
+- Camellia no Sasayaki / カメリアの囁き
+- Jellyfish
+- Thank you Good morning
+
+### Nijigasaki
+
+- New Year's March!
+- Nijigasaki Gakuen Kouka (Rock Ver.) / 虹ヶ咲学園校歌 (Rock Ver.)
+- Nijigasaki Gakuen Kouka (Piano Ver.) / 虹ヶ咲学園校歌 (Piano Ver.)
+
+### Hasunosora
+
+- Trick & Cute
+- Tsubasa La Liberte / ツバサ・ラ・リベルテ
+- Link to the FUTURE
+- Special Thanks
+- Ao to Shabon / 青とシャボン
+- Milk / ミルク
+- Colorfulness
+- Happy Shijou Shugi! / ハッピー至上主義！
+- Pleasure Feather
+- Ishin☆Denshin / 以心 ☆ 電信
+- BANG YOU Gravity / BANG YOU グラビティ
+- Mahara Jamboree / マハラジャンボリー
+- Aoku Haruka / アオクハルカ
+- Ladybug / レディバグ
+- Miracreation / みらくりえーしょん
+- Retrofuture
+- Tenchi Reimei / 天地黎明
+- Chili Con Carne / チリコンカン
+
+### Ikizurai-Bu!
+
+- Asakusa Guilty Girl no Uta / 浅草 Guilty Girl の歌
+- Public Style
+- Itsuka Ao / いつか碧
+- HIBANA -Hibana- / HIBANA―火花―
+- HomeRun Queen!!
+- Koi no One-Time Password / 恋のワンタイムパスワード
+- Pray for love
+- Kimi wa Yoru no Polaris / キミは夜のポラリス
+- Little Green Iinkai / Little Green 委員会
+- Ikitakunai every day / イキタクナイ every day
+
 ## October 19th, 2025
 
 ### Aqours
@@ -80,7 +141,7 @@ Detailed list of all the songs added in each update!
 - Dancing Raspberry
 - A Little Love
 
-### IKIZULIVE!
+### Ikizurai-Bu!
 
 - What is my LIFE?
 - Himitsu Michi / ヒミツミチ

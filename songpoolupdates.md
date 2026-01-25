@@ -2,6 +2,69 @@
 
 Detailed list of all the songs added in each update!
 
+## January 25th, 2026
+
+### Aqours
+
+- Eikyuu hours / 永久hours
+- Bokura no Tabi wa Owaranai / 僕らの旅は終わらない
+
+### Nijigasaki
+
+- Rise Up High!
+- Daydream Mermaid
+- Cara Tesoro
+- PHOENIX
+- Stellar Stream
+- Doko ni Itemo Kimi wa Kimi / どこにいても君は君
+
+### Liella!
+
+- Aikotoba! / アイコトバ！
+- Let's be ONE
+- Seishun HOPPERS / 青春HOPPERS
+- DAISUKI FULL POWER
+- Within a Dream
+- Bubble Rise
+- Itsumo no Peace Sign / いつものピースサイン
+- Special Color
+- Fighting Call / ファイティングコール
+- Zettaiteki LOVER / 絶対的LOVER
+- QUESTION99
+- Dazzling Game
+- Makka. / 真っ赤。
+- Egao no Promise / 笑顔のPromise
+- Superstar!! / スーパースター!!
+- Kimi・Machi・Sora・Hoshi / 君・街・空・星
+
+### Hasunosora
+
+- Bloom the smile, Bloom the dream!
+- 365 Days
+- Tsukuyomi Kurage / 月夜見海月
+- Proof
+- Fanfare!!! / ファンファーレ！！！
+- Hanamusubi / ハナムスビ
+- Birdcage / バアドケージ
+- Joushou Kiryuu / ジョーショーキリュー
+
+### Ikizurai-Bu!
+
+- Odoru Polka / オドルポルカ
+- Hissatsu My Mai Mode / ひっさつマイマイモード
+- Jet Starter / ジェットスターター
+- First Ride
+- Magical♡Recipe・S'il Vous Plaît! / マジカル♡レシピ・シルブプレ！
+- Centimeter・Rendezvous / センチメートル・ランデヴー
+- Futari wa Itsudemo Happy End / 二人はいつでもHappy End
+- Kurari to Bright / クラリトブライト
+- LOVE♡YOU♡Save the EARTH!!
+- Trick or Toxic
+
+### Other
+
+- Bring the LOVE!
+
 ## November 17th, 2025
 
 ### Aqours
@@ -11,6 +74,12 @@ Detailed list of all the songs added in each update!
 - Deep Blue
 - SAKURA-saku KOKORO-saku
 - Bokura no Umi de Mata Aou / 僕らの海でまた会おう
+
+### Nijigasaki
+
+- New Year's March!
+- Nijigasaki Gakuen Kouka (Rock Ver.) / 虹ヶ咲学園校歌 (Rock Ver.)
+- Nijigasaki Gakuen Kouka (Piano Ver.) / 虹ヶ咲学園校歌 (Piano Ver.)
 
 ### Liella!
 
@@ -22,12 +91,6 @@ Detailed list of all the songs added in each update!
 - Camellia no Sasayaki / カメリアの囁き
 - Jellyfish
 - Thank you Good morning
-
-### Nijigasaki
-
-- New Year's March!
-- Nijigasaki Gakuen Kouka (Rock Ver.) / 虹ヶ咲学園校歌 (Rock Ver.)
-- Nijigasaki Gakuen Kouka (Piano Ver.) / 虹ヶ咲学園校歌 (Piano Ver.)
 
 ### Hasunosora
 

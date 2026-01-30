@@ -16,7 +16,7 @@ Today's update brings 43 new songs to the game. Here's the highlights:<br>
 <li>The B-Sides for all the solos from Ikizurai-Bu!</li>
 <li>And finally, we're closing out the Aqours song pool with <i>Eikyuu hours</i></li>
 </ul>
-As always, <a href="https://github.com/Suyooo/ll-heardle/blob/main/songpoolupdates.md">you can find a full list of the
+As always, <a href="https://github.com/Suyooo/ll-heardle/blob/main/songpoolupdates.md" target="_blank">you can find a full list of the
 added songs here</a>!<br>
 <br>
 Thanks for playing <i>Love Live! Heardle</i>!<br>
@@ -26,21 +26,21 @@ Thanks for playing <i>Love Live! Heardle</i>!<br>
 <b>January 25th, 2026</b>
 <ul class="list">
 <li>Added 43 songs to the song pool
-(<a href="https://github.com/Suyooo/ll-heardle/blob/main/songpoolupdates.md#january-25th-2026">list</a>). This includes
+(<a href="https://github.com/Suyooo/ll-heardle/blob/main/songpoolupdates.md#january-25th-2026" target="_blank">list</a>). This includes
 songs from the second half of 2024, plus IKIZULIVE!'s first solo B-Sides and Egao no Promise/Superstar!!.</li>
 </ul>
 <br>
 <b>November 17th, 2025</b>
 <ul class="list">
 <li>Added 44 songs to the song pool
-(<a href="https://github.com/Suyooo/ll-heardle/blob/main/songpoolupdates.md#november-17th-2025">list</a>). This includes
+(<a href="https://github.com/Suyooo/ll-heardle/blob/main/songpoolupdates.md#november-17th-2025" target="_blank">list</a>). This includes
 songs from the first half of 2024, plus IKIZULIVE!'s first solos and Edel Note's first album.</li>
 </ul>
 <br>
 <b>October 19th, 2025</b>
 <ul class="list">
 <li>Added 71 songs to the song pool
-(<a href="https://github.com/Suyooo/ll-heardle/blob/main/songpoolupdates.md#october-19th-2025">list</a>). With this, all
+(<a href="https://github.com/Suyooo/ll-heardle/blob/main/songpoolupdates.md#october-19th-2025" target="_blank">list</a>). With this, all
 of the songs up to and including 2023 are in - plus some extras like IKIZULIVE!'s debut album.</li>
 </ul>
 <br>

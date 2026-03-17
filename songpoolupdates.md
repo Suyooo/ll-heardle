@@ -2,6 +2,79 @@
 
 Detailed list of all the songs added in each update!
 
+## March 17th, 2026
+
+### Nijigasaki
+
+- White Delight
+- Joy is All Around
+- Starry Night Serenade
+- Dream☆Shooter / ドリーム☆シューター
+- The Sweetest Time♡
+- secret
+- Nijiiro☆Lumiere / にじいろ☆ルミエール
+- Hello! OK??
+- What a Beautiful Day!
+- INNER TRAVEL
+- Eternalize Love!!
+- Pichi Chapu Tinton Tanton / ピチチャプティントンタントン
+- My Untold Diary
+
+### Liella!
+
+- dolce
+- Summer Escape!!
+- 11th moon
+- Hitohira Dake / ひとひらだけ
+- Musubu Melody / 結ぶメロディ
+- Aspire
+- Over Over
+- Sky Linker
+- Wildcard / ワイルドカード
+- Just woo!!
+- Pastel Collage / パステルコラージュ
+- Rhythm
+- LiLiA
+- Fundamental / ファンダメンタル
+- Musubiba / 結び葉
+- Luca / ルカ
+- Tekuteku Biyori / てくてく日和
+
+### Hasunosora
+
+- KEY of Like!
+- Now or Never
+- AURORA FLOWER
+- Gekka Bijin / ゲッカビジン
+- Yume Wazurai / ユメワズライ
+- Chu! Chocolate
+- COMPASS
+- Rem / レム
+- Zenhoui Kyun♡ / 全方位キュン♡
+- Kakurenbo Shiyou / かくれんぼしよう
+- Oide yo! Ishikawa Daikankou / おいでよ！石川大観光
+- Koigeshiki Shouwa Roman / 恋景色昭和ロマン
+- Veggie・Love・Roux / ベジ・ラブ・ルー
+- Mahara Jamboree II / マハラジャンボリーⅡ
+- Haji wa Jinsei no Kakisute / 恥は人生のかきすて
+- Love it! Wonderful Trip!
+- Asterism / アステリズム
+- Itsudemo, Itsumademo / いつでも、いつまでも
+- Ittan / いったん
+- Celebration!
+- Ampere / アンペア
+- WAWO!
+- Edelied
+- Hello, new dream!
+- be proud
+- Shiawase no Ribbon / 幸せのリボン
+- Yappa Tenshi! / やっぱ天使！
+
+### Other
+
+- Ai♡Scream! / 愛♡スクリ～ム！
+- ICE LIMIT
+
 ## January 25th, 2026
 
 ### Aqours

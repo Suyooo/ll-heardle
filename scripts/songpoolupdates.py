@@ -1,8 +1,12 @@
-import json, sys
+import json, os, sys
 
 if len(sys.argv) < 2:
 	print("Usage: songpoolupdates.py [minimum startOnDay]")
 	exit(1)
+
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
 
 with open("songpool.json", "r") as jsonf:
 	j = json.load(jsonf)

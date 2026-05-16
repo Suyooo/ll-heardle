@@ -2,6 +2,75 @@
 
 Detailed list of all the songs added in each update!
 
+## May 16th, 2026
+
+### Nijigasaki
+
+- Ride the wave!
+- Manmaru Otsukisama / まんまるお月さま
+- SUMMER WARNING
+- MaMiMuMe Motor Girl / まみむめMotor Girl
+- Sanketsu / 酸欠
+- Yoin / 余韻
+- Dress Code
+- Wake Up!!
+- Itoshiki Yume yo Izanaite / いとしき夢よ いざないて
+- Cheer Mode
+- Like a Treasure
+- Stay
+- Burn!!
+- Circle of Love
+- Yakusoku ni Nare Bokura no Uta / 約束になれ僕らの歌
+- YES! to Tomorrow
+- think of you
+- VIVA!
+- DIZZY LILY VALLEY
+- SAVOTINA!!
+- SOL de ROSA
+- Wondermates / ワンダーメイツ
+- Fuwa Fuwari / ふわふわり
+- Boooooom Boooooom Bee!!
+- Bravo!
+- Seabird
+
+### Liella!
+
+- Orange no Mama de / オレンジのままで
+- OPEN THE G☆TE!!!
+- High! Motivation / High！モチベーション
+
+### Hasunosora
+
+- 37.5°C no Fantasy / 37.5℃のファンタジー
+- I My Mayday
+- BLAST!!
+- Izayoi Selene / 十六夜セレーネ
+- I Do Me! / アイドゥーミー！
+- Tohyo☆Star! / とーひょー☆スター！
+- Fruit Punch / フルーツパンチ
+- My Lucky Clover
+- Taiyou de Are! / 太陽であれ！
+- diamondz
+- Nyao Signyal / ニャオシグニャル
+- Heart ni Q / ハートにQ
+- Henyoku no Toribaga / 片翼のトリバガ
+- Drive・Spade・Crazy / ドライブ・スペード・クレイジー
+- Atarayo Hanabi / 可惜夜花火
+- Blue Moment / ブルウモーメント
+- Very! Very! COCO Natsu / Very! Very! COCO夏っ
+- Fusion Crust / フュージョンクラスト
+- Cho, Toutoi LOVE / ちょ、尊いLOVE
+- Heisei Galz!!!! / 平成ギャルズ!!!!
+- Nεw Black
+- IcHiGo milK love
+- Otome Anthology / 乙女詞華集
+- Garando Flash / ガランドFlash
+- Vital Sign / バイタルサイン
+- Theater Ikizama / シアター生き様
+- Hajimari no Hane Oto / はじまりの羽音
+- Charming na Hanataba o! / チャーミングな花束を！
+- Runway
+
 ## March 17th, 2026
 
 ### Nijigasaki

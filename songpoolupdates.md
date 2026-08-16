@@ -2,6 +2,67 @@
 
 Detailed list of all the songs added in each update!
 
+## August 16th, 2026
+
+### Aqours
+
+- WAKE:WOKE
+- BURN:BORN
+- BLACK OUT
+- WHITE OUT
+
+### Liella!
+
+- Koi no Tutorial / 恋のチュートリアル
+- Hyper Glowing!
+- Tokubetsu Janai Mahou / トクベツじゃない魔法
+- Winds of YELL
+- Mebae / 芽生え
+
+### Hasunosora
+
+- Berry Merry Go Round
+- Freesia / フリジア
+- PANAI☆
+- Saka now! / 咲かnow！
+- Echoes Beyond
+- JOKER.
+- Sayo-Shigure
+- Reboot / リブウト
+- Hip, hip, hooray!
+- Reijou Mob! / 令嬢モブ！
+- Fushigi to Kimi to Library / 不思議と君とライブラリー
+- Kanazawa One-Side Love / 金沢片恋慕
+- Icy / アイシイ
+- Umbrella / アンブレラ
+- Tomodachi ni Nareru Basho / トモダチになれる場所
+- Senpai / センパイ
+- EdelinieN
+- Meu Amoré・Meerkat / ミアモーレ・ミーアキャット
+- A Deru Note / A出るノート
+- Hitoyo ni Yume ga Saku You ni / 一生に夢が咲くように
+- Yuki Mau Sora to Nibyou no Eien / 雪舞う空と二秒の永遠
+- Ima, Kako, Mirai no Sangenshoku / 今、過去、未来の三原色
+- Hana Sakeba Yume Kakeru / ハナ咲けばユメ駆ける
+- Hikari no Naka de Hana Saite / 光の中で花咲いて
+- Playlist / "Ano Hi" / プレイリスト/「あの日」
+- Bless you!
+- Mijinko Transformation / ミジンコトランスフォーメーション
+
+### Ikizurai-Bu!
+
+- Dou-Da? DOING!
+- REGAIN AGAIN LLLLOVE
+- SUPER SUMMER SENSATION!!
+- Dekoboko Quartet / 凸凹Quartet
+- Daitan Party Time
+- Symmetry / シンメトリー
+- Silent Stella
+
+### Other
+
+- NEXT CARD
+
 ## May 16th, 2026
 
 ### Nijigasaki

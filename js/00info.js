@@ -1,32 +1,42 @@
 const CURRENT_ANNOUNCEMENT = {
 	// Increase this number for every new announcement - this will be stored/checked for marking the button as unread or not
-	announcementNo: 7,
+	announcementNo: 8,
 
-	title: "Song Pool Update",
-	date: "May 16th, 2026",
-	text: `Hello, everyone!<br>
+	title: "Song Pool Update (we're up to date!!)",
+	date: "August 16th, 2026",
+	text: `Hi there!<br>
 <br>
-The pool just got 58 new songs added. Highlights include:<br>
+This update brings 44 new songs into the pool - but most importantly, with this, the song pool is now <b>up to date
+again</b> for the first time in years! Wahoo! Highlights include:<br>
 <br>
 <ul class="list">
-<li>The rest of Nijigasaki's Monthly Songs CDs</li>
-<li>The songs from the second Niji movie and <i>Nijigaku Flower Music</i></li>
-<li>The theme song Liella!'s 7th live show, <i>OPEN THE G☆TE!!!</i></li>
-<li>A bunch of Hasunosora songs, including the 6th set of subunit singles, the <i>Ruri&To</i>/<i>PRINCEε>ε></i> split single, <i>I Do Me!</i> and <i>Hajimari no Hane Oto</i></li>
+<li><i>WAKE:WOKE</i> and <i>BURN:BORN</i> from the GKSS Two-Man Live</li>
+<li>Liella!'s <i>Hyper Glowing!</i> mini album</li>
+<li>Ikizurai-Bu!'s second single, <i>Dou-Da? DOING!</i>, and the songs from the first subunit groupings</li>
+<li>A lot of Hasunosora stuff, like the 7th set of subunit singles, and the songs for the graduation of the 103rd class</li>
+<li>And also AiScReam's newest single, <i>NEXT CARD</i></li>
 </ul>
-With that, the catch-up is almost complete...!<br><br>
-As always, <a href="https://github.com/Suyooo/ll-heardle/blob/main/songpoolupdates.md" target="_blank">there's a list of
-all the added songs available here</a>!<br>
+So, from now on, you won't get these big song pool updates anymore, just recent releases. I'll try to keep the same pace
+as I do for the album art game - which means, new songs are usually added 2 to 4 weeks after release.<br><br>
+<a href="https://github.com/Suyooo/ll-heardle/blob/main/songpoolupdates.md" target="_blank">A list of the songs added in
+this update is available here</a>!<br>
 <br>
 Thanks for playing <i>Love Live! Heardle</i>!<br>
 <br>
 <h3 class="text-custom-positive uppercase tracking-widest font-bold">Changelog</h3>
 <br>
+<b>August 16th, 2026</b>
+<ul class="list">
+<li>Added 44 songs to the song pool
+(<a href="https://github.com/Suyooo/ll-heardle/blob/main/songpoolupdates.md#august-16th-2026" target="_blank">list</a>).
+This includes all songs released so far in 2026.</li>
+</ul>
+<br>
 <b>May 16th, 2026</b>
 <ul class="list">
 <li>Added 58 songs to the song pool
 (<a href="https://github.com/Suyooo/ll-heardle/blob/main/songpoolupdates.md#may-16th-2026" target="_blank">list</a>).
-This includes songs from the second  half of 2025.</li>
+This includes songs from the second half of 2025.</li>
 </ul>
 <br>
 <b>March 17th, 2026</b>
@@ -10163,6 +10173,578 @@ const SONGPOOL = [
 		listenOn: {
 			spotify: null,
 			youtube: "https://www.youtube.com/watch?v=e_9dl14X51A",
+		},
+	},
+	{
+		songUrl: "songs/776_berrymerrygoround.mp3",
+		coverUrl: "covers/776_berrymerrygoround.png",
+		startOnDay: 1599,
+		titleEn: "Berry Merry Go Round",
+		artistEn: "Cerise Bouquet",
+		titleJa: "Berry Merry Go Round",
+		artistJa: "スリーズブーケ",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=V3DtHIdQToM",
+		},
+	},
+	{
+		songUrl: "songs/777_freesia.mp3",
+		coverUrl: "covers/777_freesia.png",
+		startOnDay: 1599,
+		titleEn: "Freesia",
+		artistEn: "DOLLCHESTRA",
+		titleJa: "フリジア",
+		artistJa: "DOLLCHESTRA",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=nJ7DwkA2K54",
+		},
+	},
+	{
+		songUrl: "songs/778_panai.mp3",
+		coverUrl: "covers/778_panai.png",
+		startOnDay: 1599,
+		titleEn: "PANAI☆",
+		artistEn: "Mira-Cra Park!",
+		titleJa: "PANAI☆",
+		artistJa: "みらくらぱーく！",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=nvVdWHLWyD8",
+		},
+	},
+	{
+		songUrl: "songs/779_sakanow.mp3",
+		coverUrl: "covers/779_sakanow.png",
+		startOnDay: 1599,
+		titleEn: "Saka now!",
+		artistEn: "Edel Note",
+		titleJa: "咲かnow！",
+		artistJa: "Edel Note",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=ufK14rcy7pk",
+		},
+	},
+	{
+		songUrl: "songs/780_echoesbeyond.mp3",
+		coverUrl: "covers/780_echoesbeyond.png",
+		startOnDay: 1599,
+		titleEn: "Echoes Beyond",
+		artistEn: "Hasunosora Girls' High School Idol Club",
+		titleJa: "Echoes Beyond",
+		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=i8I9LptuIKc",
+		},
+	},
+	{
+		songUrl: "songs/781_joker.mp3",
+		coverUrl: "covers/780_echoesbeyond.png",
+		startOnDay: 1599,
+		titleEn: "JOKER.",
+		artistEn: "Hasunosora Girls' High School Idol Club",
+		titleJa: "JOKER.",
+		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=68FhiJvw_Dg",
+		},
+	},
+	{
+		songUrl: "songs/782_sayoshigure.mp3",
+		coverUrl: "covers/782_sayoshigure.png",
+		startOnDay: 1599,
+		titleEn: "Sayo-Shigure",
+		artistEn: "Cerise Bouquet",
+		titleJa: "Sayo-Shigure",
+		artistJa: "スリーズブーケ",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=av5INTLVc7I",
+		},
+	},
+	{
+		songUrl: "songs/783_reboot.mp3",
+		coverUrl: "covers/782_sayoshigure.png",
+		startOnDay: 1599,
+		titleEn: "Reboot",
+		artistEn: "DOLLCHESTRA",
+		titleJa: "リブウト",
+		artistJa: "DOLLCHESTRA",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=0zuMFmQVuvo",
+		},
+	},
+	{
+		songUrl: "songs/784_hiphiphooray.mp3",
+		coverUrl: "covers/782_sayoshigure.png",
+		startOnDay: 1599,
+		titleEn: "Hip, hip, hooray!",
+		artistEn: "Mira-Cra Park!",
+		titleJa: "Hip, hip, hooray!",
+		artistJa: "みらくらぱーく！",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=mpN7GaPuz_0",
+		},
+	},
+	{
+		songUrl: "songs/785_reijoumob.mp3",
+		coverUrl: "covers/782_sayoshigure.png",
+		startOnDay: 1599,
+		titleEn: "Reijou Mob!",
+		artistEn: "Edel Note",
+		titleJa: "令嬢モブ！",
+		artistJa: "Edel Note",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=uNg4fH-kddc",
+		},
+	},
+	{
+		songUrl: "songs/786_wakewoke.mp3",
+		coverUrl: "covers/786_wakewoke.png",
+		startOnDay: 1599,
+		titleEn: "WAKE:WOKE",
+		artistEn: "GKSS (Guilty Kiss × Saint Snow)",
+		titleJa: "WAKE:WOKE",
+		artistJa: "GKSS (Guilty Kiss × Saint Snow)",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=HGN3ZPE7B34",
+		},
+	},
+	{
+		songUrl: "songs/787_burnborn.mp3",
+		coverUrl: "covers/787_burnborn.png",
+		startOnDay: 1599,
+		titleEn: "BURN:BORN",
+		artistEn: "GKSS (Guilty Kiss × Saint Snow)",
+		titleJa: "BURN:BORN",
+		artistJa: "GKSS (Guilty Kiss × Saint Snow)",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=AH5vlpCSCtE",
+		},
+	},
+	{
+		songUrl: "songs/788_blackout.mp3",
+		coverUrl: "covers/786_wakewoke.png",
+		startOnDay: 1599,
+		titleEn: "BLACK OUT",
+		artistEn: "Guilty Kiss",
+		titleJa: "BLACK OUT",
+		artistJa: "Guilty Kiss",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=lk-rd9lWJaI",
+		},
+	},
+	{
+		songUrl: "songs/789_whiteout.mp3",
+		coverUrl: "covers/787_burnborn.png",
+		startOnDay: 1599,
+		titleEn: "WHITE OUT",
+		artistEn: "Saint Snow",
+		titleJa: "WHITE OUT",
+		artistJa: "Saint Snow",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=fuJLLMJISX0",
+		},
+	},
+	{
+		songUrl: "songs/790_fushigitokimitolibrary.mp3",
+		coverUrl: "covers/790_fushigitokimitolibrary.png",
+		startOnDay: 1599,
+		titleEn: "Fushigi to Kimi to Library",
+		artistEn: "Cerise Bouquet",
+		titleJa: "不思議と君とライブラリー",
+		artistJa: "スリーズブーケ",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=BHF5MPTRnII",
+		},
+	},
+	{
+		songUrl: "songs/791_kanazawaonesidelove.mp3",
+		coverUrl: "covers/790_fushigitokimitolibrary.png",
+		startOnDay: 1599,
+		titleEn: "Kanazawa One-Side Love",
+		artistEn: "Cerise Bouquet",
+		titleJa: "金沢片恋慕",
+		artistJa: "スリーズブーケ",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=UxPD31ymhk0",
+		},
+	},
+	{
+		songUrl: "songs/792_icy.mp3",
+		coverUrl: "covers/792_icy.png",
+		startOnDay: 1599,
+		titleEn: "Icy",
+		artistEn: "DOLLCHESTRA",
+		titleJa: "アイシイ",
+		artistJa: "DOLLCHESTRA",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=_pM1kgypNAA",
+		},
+	},
+	{
+		songUrl: "songs/793_umbrella.mp3",
+		coverUrl: "covers/792_icy.png",
+		startOnDay: 1599,
+		titleEn: "Umbrella",
+		artistEn: "DOLLCHESTRA",
+		titleJa: "アンブレラ",
+		artistJa: "DOLLCHESTRA",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=ROE9Y9I-3Ts",
+		},
+	},
+	{
+		songUrl: "songs/794_tomodachininarerubasho.mp3",
+		coverUrl: "covers/794_tomodachininarerubasho.png",
+		startOnDay: 1599,
+		titleEn: "Tomodachi ni Nareru Basho",
+		artistEn: "Mira-Cra Park!",
+		titleJa: "トモダチになれる場所",
+		artistJa: "みらくらぱーく！",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=f99v_1wveUk",
+		},
+	},
+	{
+		songUrl: "songs/795_senpai.mp3",
+		coverUrl: "covers/794_tomodachininarerubasho.png",
+		startOnDay: 1599,
+		titleEn: "Senpai",
+		artistEn: "Mira-Cra Park!",
+		titleJa: "センパイ",
+		artistJa: "みらくらぱーく！",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=DpGg1zbhMG4",
+		},
+	},
+	{
+		songUrl: "songs/796_edelinien.mp3",
+		coverUrl: "covers/796_edelinien.png",
+		startOnDay: 1599,
+		titleEn: "EdelinieN",
+		artistEn: "Edel Note",
+		titleJa: "EdelinieN",
+		artistJa: "Edel Note",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=6xlIineEX-g",
+		},
+	},
+	{
+		songUrl: "songs/797_meuamormeerkat.mp3",
+		coverUrl: "covers/796_edelinien.png",
+		startOnDay: 1599,
+		titleEn: "Meu Amoré・Meerkat",
+		artistEn: "Edel Note",
+		titleJa: "ミアモーレ・ミーアキャット",
+		artistJa: "Edel Note",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=CZh0nUauOws",
+		},
+	},
+	{
+		songUrl: "songs/798_aderunote.mp3",
+		coverUrl: "covers/796_edelinien.png",
+		startOnDay: 1599,
+		titleEn: "A Deru Note",
+		artistEn: "Edel Note",
+		titleJa: "A出るノート",
+		artistJa: "Edel Note",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=uIQt3dFo3c4",
+		},
+	},
+	{
+		songUrl: "songs/799_hitoyoniyumegasakuyouni.mp3",
+		coverUrl: "covers/799_hitoyoniyumegasakuyouni.png",
+		startOnDay: 1599,
+		titleEn: "Hitoyo ni Yume ga Saku You ni",
+		artistEn: "Hasunosora Girls' High School Idol Club",
+		titleJa: "一生に夢が咲くように",
+		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=zJ2fD-rE_X0",
+		},
+	},
+	{
+		songUrl: "songs/800_yukimausoratonibyounoeien.mp3",
+		coverUrl: "covers/799_hitoyoniyumegasakuyouni.png",
+		startOnDay: 1599,
+		titleEn: "Yuki Mau Sora to Nibyou no Eien",
+		artistEn: "Hasunosora Girls' High School Idol Club",
+		titleJa: "雪舞う空と二秒の永遠",
+		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=6aX8cARmIhE",
+		},
+	},
+	{
+		songUrl: "songs/801_imakakomirainosangenshoku.mp3",
+		coverUrl: "covers/799_hitoyoniyumegasakuyouni.png",
+		startOnDay: 1599,
+		titleEn: "Ima, Kako, Mirai no Sangenshoku",
+		artistEn: "Hasunosora Girls' High School Idol Club",
+		titleJa: "今、過去、未来の三原色",
+		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=o0x0w8cOD3I",
+		},
+	},
+	{
+		songUrl: "songs/802_hanasakebayumekakeru.mp3",
+		coverUrl: "covers/802_hanasakebayumekakeru.png",
+		startOnDay: 1599,
+		titleEn: "Hana Sakeba Yume Kakeru",
+		artistEn: "Hasunosora Girls' High School Idol Club",
+		titleJa: "ハナ咲けばユメ駆ける",
+		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=PVoXSZCXWbY",
+		},
+	},
+	{
+		songUrl: "songs/803_hikarinonakadehanasaite.mp3",
+		coverUrl: "covers/802_hanasakebayumekakeru.png",
+		startOnDay: 1599,
+		titleEn: "Hikari no Naka de Hana Saite",
+		artistEn: "Hasunosora Girls' High School Idol Club",
+		titleJa: "光の中で花咲いて",
+		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=PVoXSZCXWbY",
+		},
+	},
+	{
+		songUrl: "songs/804_doudadoing.mp3",
+		coverUrl: "covers/804_doudadoing.png",
+		startOnDay: 1599,
+		titleEn: "Dou-Da? DOING!",
+		artistEn: "Ikizurai-Bu!",
+		titleJa: "Dou-Da? DOING!",
+		artistJa: "いきづらい部!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=ORumVTJ0P-s",
+		},
+	},
+	{
+		songUrl: "songs/805_regainagainllllove.mp3",
+		coverUrl: "covers/804_doudadoing.png",
+		startOnDay: 1599,
+		titleEn: "REGAIN AGAIN LLLLOVE",
+		artistEn: "Ikizurai-Bu!",
+		titleJa: "REGAIN AGAIN LLLLOVE",
+		artistJa: "いきづらい部!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=yLX_mviuV-Y",
+		},
+	},
+	{
+		songUrl: "songs/806_supersummersensation.mp3",
+		coverUrl: "covers/804_doudadoing.png",
+		startOnDay: 1599,
+		titleEn: "SUPER SUMMER SENSATION!!",
+		artistEn: "Ikizurai-Bu!",
+		titleJa: "SUPER SUMMER SENSATION!!",
+		artistJa: "いきづらい部!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=SVU8m65z2ZI",
+		},
+	},
+	{
+		songUrl: "songs/807_koinotutorial.mp3",
+		coverUrl: "covers/807_koinotutorial.png",
+		startOnDay: 1599,
+		titleEn: "Koi no Tutorial",
+		artistEn: "Liella!",
+		titleJa: "恋のチュートリアル",
+		artistJa: "Liella!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=PO0dSIk0MXQ",
+		},
+	},
+	{
+		songUrl: "songs/808_playlistanohi.mp3",
+		coverUrl: "covers/808_playlistanohi.png",
+		startOnDay: 1599,
+		titleEn: 'Playlist / "Ano Hi"',
+		artistEn: "Kaho Hinoshita (CV: Nozomi Nirei)",
+		titleJa: "プレイリスト/「あの日」",
+		artistJa: "日野下花帆 (CV.楡井希実)",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=zlN4zywCRkU",
+		},
+	},
+	{
+		songUrl: "songs/809_blessyou.mp3",
+		coverUrl: "covers/809_blessyou.png",
+		startOnDay: 1599,
+		titleEn: "Bless you!",
+		artistEn: "Sayaka Murano (CV: Kokona Nonaka)",
+		titleJa: "Bless you!",
+		artistJa: "村野さやか (CV.野中ここな)",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=QC9tAkJHyT8",
+		},
+	},
+	{
+		songUrl: "songs/810_mijinkotransformation.mp3",
+		coverUrl: "covers/810_mijinkotransformation.png",
+		startOnDay: 1599,
+		titleEn: "Mijinko Transformation",
+		artistEn: "Rurino Osawa (CV: Kanna Kan)",
+		titleJa: "ミジンコトランスフォーメーション",
+		artistJa: "大沢 瑠璃乃 (CV.菅 叶和)",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=zw7wRNlPDMQ",
+		},
+	},
+	{
+		songUrl: "songs/811_hyperglowing.mp3",
+		coverUrl: "covers/811_hyperglowing.png",
+		startOnDay: 1599,
+		titleEn: "Hyper Glowing!",
+		artistEn: "Liella!",
+		titleJa: "Hyper Glowing!",
+		artistJa: "Liella!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=gS7dlKWPFwc",
+		},
+	},
+	{
+		songUrl: "songs/812_tokubetsujanaimahou.mp3",
+		coverUrl: "covers/811_hyperglowing.png",
+		startOnDay: 1599,
+		titleEn: "Tokubetsu Janai Mahou",
+		artistEn: "Liella!",
+		titleJa: "トクベツじゃない魔法",
+		artistJa: "Liella!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=0RNvcMX1Jzo",
+		},
+	},
+	{
+		songUrl: "songs/813_windsofyell.mp3",
+		coverUrl: "covers/811_hyperglowing.png",
+		startOnDay: 1599,
+		titleEn: "Winds of YELL",
+		artistEn: "Liella!",
+		titleJa: "Winds of YELL",
+		artistJa: "Liella!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=ppzAcNfufgU",
+		},
+	},
+	{
+		songUrl: "songs/814_mebae.mp3",
+		coverUrl: "covers/811_hyperglowing.png",
+		startOnDay: 1599,
+		titleEn: "Mebae",
+		artistEn: "Liella!",
+		titleJa: "芽生え",
+		artistJa: "Liella!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=43Aai-L6RWU",
+		},
+	},
+	{
+		songUrl: "songs/815_dekobokoquartet.mp3",
+		coverUrl: "covers/815_dekobokoquartet.png",
+		startOnDay: 1599,
+		titleEn: "Dekoboko Quartet",
+		artistEn: "Ikizurai-Bu!",
+		titleJa: "凸凹Quartet",
+		artistJa: "いきづらい部!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=JUBOTct-IzE",
+		},
+	},
+	{
+		songUrl: "songs/816_daitanpartytime.mp3",
+		coverUrl: "covers/816_daitanpartytime.png",
+		startOnDay: 1599,
+		titleEn: "Daitan Party Time",
+		artistEn: "Ikizurai-Bu!",
+		titleJa: "Daitan Party Time",
+		artistJa: "いきづらい部!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=e0s4isobZAI",
+		},
+	},
+	{
+		songUrl: "songs/817_symmetry.mp3",
+		coverUrl: "covers/817_symmetry.png",
+		startOnDay: 1599,
+		titleEn: "Symmetry",
+		artistEn: "Ikizurai-Bu!",
+		titleJa: "シンメトリー",
+		artistJa: "いきづらい部!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=tESyTrE3ezo",
+		},
+	},
+	{
+		songUrl: "songs/818_silentstella.mp3",
+		coverUrl: "covers/818_silentstella.png",
+		startOnDay: 1599,
+		titleEn: "Silent Stella",
+		artistEn: "Ikizurai-Bu!",
+		titleJa: "Silent Stella",
+		artistJa: "いきづらい部!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=rbxFLGVR4Ds",
+		},
+	},
+	{
+		songUrl: "songs/819_nextcard.mp3",
+		coverUrl: "covers/819_nextcard.png",
+		startOnDay: 1599,
+		titleEn: "NEXT CARD",
+		artistEn: "AiScReam",
+		titleJa: "NEXT CARD",
+		artistJa: "AiScReam",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=M2k_ugNeAzI",
 		},
 	},
 ];

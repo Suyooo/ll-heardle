@@ -95,3 +95,34 @@ function addToStatistics() {
 	}
 	saveStatistics();
 }
+
+function resetDay() {
+	// for debugging
+
+	if (CURRENT_PLAY_STATE.played) {
+		STATISTICS.viewed--;
+	}
+
+	if (CURRENT_PLAY_STATE.finished) {
+		if (CURRENT_PLAY_STATE.cleared) {
+			STATISTICS.cleared -= 1;
+			STATISTICS.byFailCount[CURRENT_PLAY_STATE.failed] -= 1;
+		} else {
+			STATISTICS.byFailCount[6] -= 1;
+		}
+	}
+
+	PLAY_STATES.pop();
+	let streak = 0;
+	for (let i = PLAY_STATES.length - 1; i >= 0; i--) {
+		if (!PLAY_STATES[i].cleared) break;
+		if (i < PLAY_STATES.length - 1 && PLAY_STATES[i + 1].day - PLAY_STATES[i].day > 1) break;
+		streak++;
+	}
+	STATISTICS.currentStreak = streak;
+
+	savePlayStates();
+	saveStatistics();
+	window.location.reload();
+}
+window.resetDay = resetDay;

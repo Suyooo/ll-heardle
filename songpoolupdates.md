@@ -2,6 +2,21 @@
 
 Detailed list of all the songs added in each update!
 
+## September 13th, 2026
+
+### Nijigasaki
+
+- CROWNed SOUL
+- Bitter Blue
+- Monochrome Labyrinth / モノクロラビリンス
+- Jungle Hunter♡
+
+### Ikizurai-Bu!
+
+- Zenryoku Calling!! I LOVE YOU!! / 全力Calling!! I LOVE YOU!!
+- tap tap tappin'!!
+- Mikansei na Love Letter / 未完成なラブレター
+
 ## August 16th, 2026
 
 ### Aqours

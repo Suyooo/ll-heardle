@@ -25,6 +25,13 @@ Thanks for playing <i>Love Live! Heardle</i>!<br>
 <br>
 <h3 class="text-custom-positive uppercase tracking-widest font-bold">Changelog</h3>
 <br>
+<b>September 13th, 2026</b>
+<ul class="list">
+<li>Added 7 songs to the song pool
+(<a href="https://github.com/Suyooo/ll-heardle/blob/main/songpoolupdates.md#september-13th-2026" target="_blank">list</a>).
+</li>
+</ul>
+<br>
 <b>August 16th, 2026</b>
 <ul class="list">
 <li>Added 44 songs to the song pool

@@ -20,18 +20,22 @@ function playerTimeUpdate() {
 	}
 }
 
+function finishAudioLoad() {
+	$timeduration.text(timer(audio.duration));
+	$loading.addClass("hidden");
+	$playerbar.removeClass("hidden");
+
+	// Show "Click Play" prompt if no guesses have been made yet
+	if (CURRENT_PLAY_STATE.failed === 0) {
+		$playprompt.removeClass("hidden");
+	}
+}
+
+setTimeout(finishAudioLoad, 3000);
+
 $audio
 	.attr("src", CURRENT_HEARDLE.songUrl)
-	.one("loadedmetadata", () => {
-		$timeduration.text(timer(audio.duration));
-		$loading.addClass("hidden");
-		$playerbar.removeClass("hidden");
-
-		// Show "Click Play" prompt if no guesses have been made yet
-		if (CURRENT_PLAY_STATE.failed === 0) {
-			$playprompt.removeClass("hidden");
-		}
-	})
+	.one("loadedmetadata", finishAudioLoad)
 	.one("error", () => {
 		$loading.html("<b>Failed to load today's song. Please double-check your connection and refresh!</b>");
 		if (!CURRENT_PLAY_STATE.finished) {

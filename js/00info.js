@@ -1,29 +1,29 @@
 const CURRENT_ANNOUNCEMENT = {
 	// Increase this number for every new announcement - this will be stored/checked for marking the button as unread or not
-	announcementNo: 8,
+	announcementNo: 9,
 
-	title: "Song Pool Update (we're up to date!!)",
-	date: "August 16th, 2026",
-	text: `Hi there!<br>
+	title: "iOS 27 Issues",
+	date: "September 18th, 2026",
+	text: `Hello!<br>
 <br>
-This update brings 44 new songs into the pool - but most importantly, with this, the song pool is now <b>up to date
-again</b> for the first time in years! Wahoo! Highlights include:<br>
+Apparently, there's some issues with iOS 27 and the game.<br>
 <br>
-<ul class="list">
-<li><i>WAKE:WOKE</i> and <i>BURN:BORN</i> from the GKSS Two-Man Live</li>
-<li>Liella!'s <i>Hyper Glowing!</i> mini album</li>
-<li>Ikizurai-Bu!'s second single, <i>Dou-Da? DOING!</i>, and the songs from the first subunit groupings</li>
-<li>A lot of Hasunosora stuff, like the 7th set of subunit singles, and the songs for the graduation of the 103rd class</li>
-<li>And also AiScReam's newest single, <i>NEXT CARD</i></li>
-</ul>
-So, from now on, you won't get these big song pool updates anymore, just recent releases. I'll try to keep the same pace
-as I do for the album art game - which means, new songs are usually added 2 to 4 weeks after release.<br><br>
-<a href="https://github.com/Suyooo/ll-heardle/blob/main/songpoolupdates.md" target="_blank">A list of the songs added in
-this update is available here</a>!<br>
+I've added a fix for what I <i>think</i> the issue is, but I can't be sure whether it works because I don't own
+any iOS devices. If you are still having issues &ndash; in this case, an infinite "player loading" screen &ndash;
+try turning on the "Auto-Play Video Previews" toggle in iOS Settings &rarr; Accessibility &rarr; Motion. (Thank you to
+Akai for reporting the error and solution!)<br>
+<br>
+Please let me know if you had this problem, so I can try to make a more permanent fix! You can find how to
+contact me by clicking the Info button in the header.<br>
 <br>
 Thanks for playing <i>Love Live! Heardle</i>!<br>
 <br>
 <h3 class="text-custom-positive uppercase tracking-widest font-bold">Changelog</h3>
+<br>
+<b>September 18th, 2026</b>
+<ul class="list">
+<li>Potential fix for iOS 27 issues.</li>
+</ul>
 <br>
 <b>September 13th, 2026</b>
 <ul class="list">

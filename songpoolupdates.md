@@ -2,6 +2,33 @@
 
 Detailed list of all the songs added in each update!
 
+## October 17th, 2026
+
+### Nijigasaki
+
+- Shiokaze Cycling / 潮風サイクリング
+- Sequel / シークウェル
+- BONES BONES BONES
+- Kokoro TAKE OFF / ココロ TAKE OFF
+
+### Hasunosora
+
+- Oide yo! Ishikawa Daikankou II / おいでよ！石川大観光Ⅱ
+- Payappa♪ Rhythmic Heart / ぱやっぱ♪リズミックハート
+- Joou no Isu / 女王の椅子
+- Zenbu, Harukaze ni Natta / 全部、春風になった
+- Tsunaida Kyou no Bokutachi Yori / 繋いだ今日の僕たちより
+- Perennial / ペレニアル
+
+### Ikizurai-Bu!
+
+- Churi♡CHU Chu Kirari♪ / チュリ♡CHUちゅきらり♪
+- Spinning Parade
+- POP LOVE
+- Darling Wanted!
+- Seishun Soda / 青春ソーダ
+- Tale of Primavera
+
 ## September 13th, 2026
 
 ### Nijigasaki

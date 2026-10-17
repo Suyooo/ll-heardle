@@ -20,6 +20,13 @@ Thanks for playing <i>Love Live! Heardle</i>!<br>
 <br>
 <h3 class="text-custom-positive uppercase tracking-widest font-bold">Changelog</h3>
 <br>
+<b>October 17th, 2026</b>
+<ul class="list">
+<li>Added 16 songs to the song pool
+(<a href="https://github.com/Suyooo/ll-heardle/blob/main/songpoolupdates.md#october-17th-2026" target="_blank">list</a>).
+</li>
+</ul>
+<br>
 <b>September 18th, 2026</b>
 <ul class="list">
 <li>Potential fix for iOS 27 issues.</li>
@@ -10843,6 +10850,214 @@ const SONGPOOL = [
 		listenOn: {
 			spotify: null,
 			youtube: "https://www.youtube.com/watch?v=zDRO8h9uBH8",
+		},
+	},
+	{
+		songUrl: "songs/827_oideyoishikawadaikankouii.mp3",
+		coverUrl: "covers/827_oideyoishikawadaikankouii.png",
+		startOnDay: 1661,
+		titleEn: "Oide yo! Ishikawa Daikankou II",
+		artistEn: "Hasunosora Girls' High School Idol Club",
+		titleJa: "おいでよ！石川大観光Ⅱ",
+		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=4dums0LO_fk",
+		},
+	},
+	{
+		songUrl: "songs/828_payapparhythmicheart.mp3",
+		coverUrl: "covers/827_oideyoishikawadaikankouii.png",
+		startOnDay: 1661,
+		titleEn: "Payappa♪ Rhythmic Heart",
+		artistEn: "Hasunosora Girls' High School Idol Club",
+		titleJa: "ぱやっぱ♪リズミックハート",
+		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=55Iv1nA57tU",
+		},
+	},
+	{
+		songUrl: "songs/829_joounoisu.mp3",
+		coverUrl: "covers/827_oideyoishikawadaikankouii.png",
+		startOnDay: 1661,
+		titleEn: "Joou no Isu",
+		artistEn: "Hasunosora Girls' High School Idol Club",
+		titleJa: "女王の椅子",
+		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=BioIHedwmk0",
+		},
+	},
+	{
+		songUrl: "songs/830_zenbuharukazeninatta.mp3",
+		coverUrl: "covers/827_oideyoishikawadaikankouii.png",
+		startOnDay: 1661,
+		titleEn: "Zenbu, Harukaze ni Natta",
+		artistEn: "Hasunosora Girls' High School Idol Club",
+		titleJa: "全部、春風になった",
+		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=5-Yz4kLTilY",
+		},
+	},
+	{
+		songUrl: "songs/831_tsunaidakyounobokutachiyori.mp3",
+		coverUrl: "covers/827_oideyoishikawadaikankouii.png",
+		startOnDay: 1661,
+		titleEn: "Tsunaida Kyou no Bokutachi Yori",
+		artistEn: "Hasunosora Girls' High School Idol Club",
+		titleJa: "繋いだ今日の僕たちより",
+		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=n1Zz5fs6ULM",
+		},
+	},
+	{
+		songUrl: "songs/832_perennial.mp3",
+		coverUrl: "covers/827_oideyoishikawadaikankouii.png",
+		startOnDay: 1661,
+		titleEn: "Perennial",
+		artistEn: "Hasunosora Girls' High School Idol Club",
+		titleJa: "ペレニアル",
+		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=ChoPlXWbcYE",
+		},
+	},
+	{
+		songUrl: "songs/833_churichuchukirari.mp3",
+		coverUrl: "covers/833_churichuchukirari.png",
+		startOnDay: 1661,
+		titleEn: "Churi♡CHU Chu Kirari♪",
+		artistEn: "Ikizurai-Bu!",
+		titleJa: "チュリ♡CHUちゅきらり♪",
+		artistJa: "いきづらい部!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=HAnjHDr3AwA",
+		},
+	},
+	{
+		songUrl: "songs/834_spinningparade.mp3",
+		coverUrl: "covers/834_spinningparade.png",
+		startOnDay: 1661,
+		titleEn: "Spinning Parade",
+		artistEn: "Ikizurai-Bu!",
+		titleJa: "Spinning Parade",
+		artistJa: "いきづらい部!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=CWQSpz96wSo",
+		},
+	},
+	{
+		songUrl: "songs/835_poplove.mp3",
+		coverUrl: "covers/835_poplove.png",
+		startOnDay: 1661,
+		titleEn: "POP LOVE",
+		artistEn: "Ikizurai-Bu!",
+		titleJa: "POP LOVE",
+		artistJa: "いきづらい部!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=EWe0nyo330k",
+		},
+	},
+	{
+		songUrl: "songs/836_darlingwanted.mp3",
+		coverUrl: "covers/836_darlingwanted.png",
+		startOnDay: 1661,
+		titleEn: "Darling Wanted!",
+		artistEn: "Ikizurai-Bu!",
+		titleJa: "Darling Wanted!",
+		artistJa: "いきづらい部!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=Qucbon2XOYk",
+		},
+	},
+	{
+		songUrl: "songs/837_seishunsoda.mp3",
+		coverUrl: "covers/837_seishunsoda.png",
+		startOnDay: 1661,
+		titleEn: "Seishun Soda",
+		artistEn: "Ikizurai-Bu!",
+		titleJa: "青春ソーダ",
+		artistJa: "いきづらい部!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=gCmYtmyyjkY",
+		},
+	},
+	{
+		songUrl: "songs/838_taleofprimavera.mp3",
+		coverUrl: "covers/838_taleofprimavera.png",
+		startOnDay: 1661,
+		titleEn: "Tale of Primavera",
+		artistEn: "Ikizurai-Bu!",
+		titleJa: "Tale of Primavera",
+		artistJa: "いきづらい部!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=28jWLgE8vLA",
+		},
+	},
+	{
+		songUrl: "songs/839_shiokazecycling.mp3",
+		coverUrl: "covers/839_shiokazecycling.png",
+		startOnDay: 1661,
+		titleEn: "Shiokaze Cycling",
+		artistEn: "QU4RTZ",
+		titleJa: "潮風サイクリング",
+		artistJa: "QU4RTZ",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=5wFKYm66hMk",
+		},
+	},
+	{
+		songUrl: "songs/840_sequel.mp3",
+		coverUrl: "covers/839_shiokazecycling.png",
+		startOnDay: 1661,
+		titleEn: "Sequel",
+		artistEn: "QU4RTZ",
+		titleJa: "シークウェル",
+		artistJa: "QU4RTZ",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=eXKdvbdK5Xs",
+		},
+	},
+	{
+		songUrl: "songs/841_bonesbonesbones.mp3",
+		coverUrl: "covers/841_bonesbonesbones.png",
+		startOnDay: 1661,
+		titleEn: "BONES BONES BONES",
+		artistEn: "R3BIRTH",
+		titleJa: "BONES BONES BONES",
+		artistJa: "R3BIRTH",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=dvSyrt3Eov8",
+		},
+	},
+	{
+		songUrl: "songs/842_kokorotakeoff.mp3",
+		coverUrl: "covers/841_bonesbonesbones.png",
+		startOnDay: 1661,
+		titleEn: "Kokoro TAKE OFF",
+		artistEn: "R3BIRTH",
+		titleJa: "ココロ TAKE OFF",
+		artistJa: "R3BIRTH",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=yV1CY6ofSKM",
 		},
 	},
 ];

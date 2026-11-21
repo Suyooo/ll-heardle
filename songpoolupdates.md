@@ -17,15 +17,6 @@ Detailed list of all the songs added in each update!
 - Soleil Smile / ソレイユスマイル
 - Hyaku Okunen Bun no Shiawase / 百億年分のしあわせ
 
-### Ikizurai-Bu!
-
-- Churi♡CHU Chu Kirari♪ / チュリ♡CHUちゅきらり♪
-- Spinning Parade
-- POP LOVE
-- Darling Wanted!
-- Seishun Soda / 青春ソーダ
-- Tale of Primavera
-
 ## October 17th, 2026
 
 ### Nijigasaki

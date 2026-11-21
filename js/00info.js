@@ -20,6 +20,13 @@ Thanks for playing <i>Love Live! Heardle</i>!<br>
 <br>
 <h3 class="text-custom-positive uppercase tracking-widest font-bold">Changelog</h3>
 <br>
+<b>November 21st, 2026</b>
+<ul class="list">
+<li>Added 7 songs to the song pool
+(<a href="https://github.com/Suyooo/ll-heardle/blob/main/songpoolupdates.md#november-21st-2026" target="_blank">list</a>).
+</li>
+</ul>
+<br>
 <b>October 17th, 2026</b>
 <ul class="list">
 <li>Added 16 songs to the song pool
@@ -11058,6 +11065,97 @@ const SONGPOOL = [
 		listenOn: {
 			spotify: null,
 			youtube: "https://www.youtube.com/watch?v=yV1CY6ofSKM",
+		},
+	},
+	{
+		songUrl: "songs/843_soleilsmile.mp3",
+		coverUrl: "covers/843_soleilsmile.png",
+		startOnDay: 1696,
+		titleEn: "Soleil Smile",
+		artistEn: "Hasunosora Girls' High School Idol Club",
+		titleJa: "ソレイユスマイル",
+		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=CqYex5evGGI",
+		},
+	},
+	{
+		songUrl: "songs/844_hyakuokunenbunnoshiawase.mp3",
+		coverUrl: "covers/843_soleilsmile.png",
+		startOnDay: 1696,
+		titleEn: "Hyaku Okunen Bun no Shiawase",
+		artistEn: "Hasunosora Girls' High School Idol Club",
+		titleJa: "百億年分のしあわせ",
+		artistJa: "蓮ノ空女学院スクールアイドルクラブ",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=XH9KOP5G5Fc",
+		},
+	},
+	{
+		songUrl: "songs/845_songbirds.mp3",
+		coverUrl: "covers/845_songbirds.png",
+		startOnDay: 1707,
+		titleEn: "Songbirds",
+		artistEn: "Liella!",
+		titleJa: "Songbirds",
+		artistJa: "Liella!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=kNoW7ZfUiGc",
+		},
+	},
+	{
+		songUrl: "songs/846_target01.mp3",
+		coverUrl: "covers/845_songbirds.png",
+		startOnDay: 1707,
+		titleEn: "Target:01",
+		artistEn: "Liella!",
+		titleJa: "Target:01",
+		artistJa: "Liella!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=VW8WGUUdnGQ",
+		},
+	},
+	{
+		songUrl: "songs/847_gimmegimmenonstop.mp3",
+		coverUrl: "covers/845_songbirds.png",
+		startOnDay: 1707,
+		titleEn: "Gimme Gimme Nonstop",
+		artistEn: "Liella!",
+		titleJa: "ギミギミノンストップ",
+		artistJa: "Liella!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=OYKqR0_Yh5s",
+		},
+	},
+	{
+		songUrl: "songs/848_senronosakimokyounosora.mp3",
+		coverUrl: "covers/845_songbirds.png",
+		startOnDay: 1707,
+		titleEn: "Senro no Saki mo Kyou no Sora",
+		artistEn: "Liella!",
+		titleJa: "線路の先も今日の空",
+		artistJa: "Liella!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=0CrYE_ZoN2w",
+		},
+	},
+	{
+		songUrl: "/mnt/quickdata/Nextcloud/Music/J/Love Live! Superstar/Skip・Capsule/001-スキップ・カプセル_48282141.m4a",
+		coverUrl: "/mnt/quickdata/Nextcloud/Projekte/lyrics-manager/covers/liella_skipcapsule.jpg",
+		startOnDay: 1696,
+		titleEn: "Skip・Capsule",
+		artistEn: "Liella!",
+		titleJa: "スキップ・カプセル",
+		artistJa: "Liella!",
+		listenOn: {
+			spotify: null,
+			youtube: "https://www.youtube.com/watch?v=hXxsDXTcbWY",
 		},
 	},
 ];

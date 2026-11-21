@@ -2,6 +2,30 @@
 
 Detailed list of all the songs added in each update!
 
+## November 21st, 2026
+
+### Liella!
+
+- Skip・Capsule / スキップ・カプセル
+- Songbirds
+- Target:01
+- Gimme Gimme Nonstop / ギミギミノンストップ
+- Senro no Saki mo Kyou no Sora / 線路の先も今日の空
+
+### Hasunosora
+
+- Soleil Smile / ソレイユスマイル
+- Hyaku Okunen Bun no Shiawase / 百億年分のしあわせ
+
+### Ikizurai-Bu!
+
+- Churi♡CHU Chu Kirari♪ / チュリ♡CHUちゅきらり♪
+- Spinning Parade
+- POP LOVE
+- Darling Wanted!
+- Seishun Soda / 青春ソーダ
+- Tale of Primavera
+
 ## October 17th, 2026
 
 ### Nijigasaki

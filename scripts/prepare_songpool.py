@@ -52,7 +52,7 @@ def run():
 	_ = subprocess.run(["mkdir", "-p", "../covers"], check=True)
 	_ = subprocess.run(["mkdir", "-p", "../songs"], check=True)
 
-	if os.path.exists("songpool.json"):
+	if os.path.exists("songpool.json") and os.stat("songpool.json").st_size > 0:
 		with open("songpool.json", "r", encoding="utf-8") as json_file:
 			songpool = cast(list[SongPoolEntry], json.load(json_file))
 	else:
